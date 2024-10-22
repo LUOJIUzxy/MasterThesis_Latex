@@ -1,8 +1,8 @@
-PWD /Users/xiyuezhang/Downloads/tum-thesis-latex-master (1)
+PWD /Users/xiyuezhang/Documents/Projects/master-thesis
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf.cnf
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/web2c/texmf.cnf
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/xiyuezhang/Downloads/tum-thesis-latex-master (1)/main.tex
+INPUT /Users/xiyuezhang/Documents/Projects/master-thesis/main.tex
 OUTPUT main.log
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/nag/nag.sty
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/nag/nag.sty

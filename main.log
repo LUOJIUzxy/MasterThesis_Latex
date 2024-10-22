@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  16 OCT 2024 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  22 OCT 2024 14:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/xiyuezhang/Downloads/tum-thesis-latex-master (1)/main.tex"
-(/Users/xiyuezhang/Downloads/tum-thesis-latex-master (1)/main.tex
+**/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex
+(/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
 (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/nag/nag.sty
@@ -1227,16 +1227,19 @@ chapter 3.
 
 LaTeX Warning: Citation 'latex' on page 5 undefined on input line 7.
 
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-)
+
 
 [5
 
 
 ]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+)
 
 [6]
+
+[7]
 chapter without number
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 55.
 (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmss.fd
@@ -1248,7 +1251,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[7
+[8
 
 
 ]
@@ -1259,7 +1262,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 59.
 
 
 
-[8
+[9
 
 
 ]
@@ -1275,7 +1278,7 @@ LaTeX Warning: Empty bibliography on input line 62.
 No complaints by nag.
 
 
-[9
+[10
 
 
 ] (./main.aux)
@@ -1302,18 +1305,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49491 strings out of 475496
- 1115571 string characters out of 5775029
- 2233976 words of memory out of 5000000
+ 49538 strings out of 475496
+ 1115947 string characters out of 5775029
+ 2233999 words of memory out of 5000000
  71170 multiletter control sequences out of 15000+600000
- 612004 words of font info for 203 fonts, out of 8000000 for 9000
+ 614555 words of font info for 238 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 111i,19n,124p,10973b,2370s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 111i,19n,124p,10966b,2370s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (15 pages, 147414 bytes).
+Output written on main.pdf (16 pages, 151245 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 227 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 231 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  96389 words of extra memory for PDF output out of 106986 (max. 10000000)
 

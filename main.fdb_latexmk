@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1729089682.87602 "main.bcf" "main.bbl" "main" 1729089867.24973 2
+["biber main"] 1729089682.87602 "main.bcf" "main.bbl" "main" 1729600270.0915 2
   "bibliography.bib" 1728734216 196 e5dd5d847c874dbd79bdb6c5cfddde2f ""
-  "main.bcf" 1729089867.14321 108872 ca3688f39f845c475b0559fb41f1b5b5 "pdflatex"
+  "main.bcf" 1729600269.99062 108872 ca3688f39f845c475b0559fb41f1b5b5 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1729089865.10852 "/Users/xiyuezhang/Downloads/tum-thesis-latex-master (1)/main.tex" "main.pdf" "main" 1729089867.25006 0
-  "/Users/xiyuezhang/Downloads/tum-thesis-latex-master (1)/main.tex" 1729084148.58483 2011 9dd96e1281fb797d747aa79da8f90be7 ""
+["pdflatex"] 1729600268.14668 "/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex" "main.pdf" "main" 1729600270.09177 0
+  "/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex" 1729600268.05838 2034 0034e4a134fcec89c227c15bc36bfef0 ""
   "/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136768653 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -277,15 +277,15 @@
   "/Users/xiyuezhang/Library/TinyTeX/texmf.cnf" 1728789386 637 edd806fb06a89761a6034e1968af9017 ""
   "chapters/01_introduction.tex" 1729089856.13145 2719 6a4d614a7f0d7c859db41e1b3abcbfba ""
   "chapters/02_Previous Literature.tex" 1728734216 2733 fbc2f41016c9d016ee293ff10ae09ed3 ""
-  "chapters/03_stock market.tex" 1728734216 2726 ba91de6de39142b7cd828e18b40f0429 ""
-  "main.aux" 1729089867.13931 9465 0f296488b66f08be47b082df3225569d "pdflatex"
+  "chapters/03_stock market.tex" 1729598314.46727 4610 e56b4b0c11041dee78b1688066ea41cb ""
+  "main.aux" 1729600269.98705 9466 6bccc56f84234b05062b90772cfec890 "pdflatex"
   "main.bbl" 1729089684.75804 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.lof" 1729089867.14398 1046 2c2a1f534ab8aa9601ab2c4d3f333c35 "pdflatex"
-  "main.lot" 1729089867.14401 469 1671519ad47509f258d31c6195eb60f9 "pdflatex"
-  "main.out" 1729089866.73237 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.run.xml" 1729089867.14389 2374 7209794d5eaebf99839478688c3cdaf6 "pdflatex"
-  "main.tex" 1729084148.58483 2011 9dd96e1281fb797d747aa79da8f90be7 ""
-  "main.toc" 1729089867.14396 1156 43f16bddd2e2b79a0015f78a5ed1b2e3 "pdflatex"
+  "main.lof" 1729600269.99137 1046 5428dc0b450754ae6adf20075ac36b7d "pdflatex"
+  "main.lot" 1729600269.99141 469 b3d646e3b9b8cfd11f9355b6fe85f333 "pdflatex"
+  "main.out" 1729600269.61932 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.run.xml" 1729600269.99125 2374 7209794d5eaebf99839478688c3cdaf6 "pdflatex"
+  "main.tex" 1729600268.05838 2034 0034e4a134fcec89c227c15bc36bfef0 ""
+  "main.toc" 1729600269.99133 1157 9dabbbdef6e3e2ba9977d5cd5e6c2dbf "pdflatex"
   "pages/abstract.tex" 1728734216 41 8587a8aa0ec76be6aa11be8412b50b4e ""
   "pages/acknowledgments.tex" 1728734216 242 8955d5a2fec3493bcfd4b1fe970e1c8c ""
   "pages/cover.tex" 1728734216 979 52c2f918ec29c92d90a2beca2903f819 ""
