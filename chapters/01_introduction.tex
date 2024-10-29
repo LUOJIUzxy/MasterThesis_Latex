@@ -3,7 +3,7 @@
 
 \chapter{Introduction}\label{chapter:introduction}
 
-\section{Section}
+\section{Background and Motivation}
 Citation test~\parencite{latex}.
 
 Acronyms must be added in \texttt{main.tex} and are referenced using macros. The first occurrence is automatically replaced with the long version of the acronym, while all subsequent usages use the abbreviation.
@@ -11,12 +11,38 @@ Acronyms must be added in \texttt{main.tex} and are referenced using macros. The
 E.g. \texttt{\textbackslash ac\{TUM\}, \textbackslash ac\{TUM\}} $\Rightarrow$ \ac{TUM}, \ac{TUM}
 
 For more details, see the documentation of the \texttt{acronym} package\footnote{\url{https://ctan.org/pkg/acronym}}.
-\subsection{Subsection}
 
-See~\autoref{tab:sample}, \autoref{fig:sample-drawing}, \autoref{fig:sample-plot}, \autoref{fig:sample-listing}.
+\subsection{the US stock market}
+Sharpe Ratio.
+The idea combines not only return and volatility but also the fixed-income market. The fixed-income market is important because it shows what any risk-adverse investor would earn by simply being in the most conservative investment: the risk-free rate. The risk-free rate is the rate earned simply for investing in a risk-free bond. Since stocks are risky, they should earn returns in excess of that return. If a stock were to earn less than the risk-free return, then a rational investor would forgo the volatility of the stock market and stick with risk-free investments, which protect the principal while still earning some return.
+
+The numerator in our example is the market premium. So, suppose for stock C, the market premium and standard deviation are 7\% and 10\%, respectively. Suppose for stock D, the market premium and standard deviation are 8\% and 12\%, respectively. Which is the preferred investment?
+In this case, stock C has a higher return per unit of volatility (risk) than stock D does. We would prefer the investment that has a higher amount of return per unit of risk. Now, this is the opposite of our coefficient of variation. When we express volatility units per return, we would like the lower number. When we express return units per volatility, we prefer the larger number. Here, the larger number means we expect to earn more return per unit of volatility.
+
+In this case, we will name this ratio (keep a *sharp* lookout for it) and use it extensively to compare investments, but for now, the important thing is that we have seen how return and volatility can be combined to compare investments. This can just as easily work if these securities are from different asset classes. Return and risk help encapsulate the key statistical properties of a financial asset's performance. In the next lesson, we’ll dive deeper into the details of these statistics.
+
+\subsection{Evolution of portfolio optimization techniques}
+\subsection{Role of machine learning in financial forecasting}
+\subsection{Challenges in time-series forecasting and traditional portfolio optimization methods}
+
+\section{Research Objectives}
+
+\subsection{Develop and evaluate a predictive portfolio optimization framework using GPR}
+1. Implement GPR for multi-asset return prediction
+2. Compare various portfolio optimization strategies
+3. Develop a probability-based dynamic strategy selection mechanism
+4. Evaluate strategy performance considering transaction costs
+
+\subsection{Research Contributions}
+1. Novel integration of GPR with dynamic portfolio optimization
+2. Probabilistic approach to strategy selection
+3. Practical implementation considering transaction costs
+4. Comparative analysis of different optimization strategies
+
+
 
 \begin{table}[htpb]
-  \caption[Example table]{An example for a simple table.}\label{tab:sample}
+  \caption[Example table]{An example for a simple table.}
   \centering
   \begin{tabular}{l l l l}
     \toprule
@@ -45,7 +71,7 @@ See~\autoref{tab:sample}, \autoref{fig:sample-drawing}, \autoref{fig:sample-plot
       (R2) edge (R1)
       (R1) edge (R4);
   \end{tikzpicture}
-  \caption[Example drawing]{An example for a simple drawing.}\label{fig:sample-drawing}
+  \caption[Example drawing]{An example for a simple drawing.}
 \end{figure}
 
 \begin{figure}[htpb]
@@ -81,7 +107,7 @@ See~\autoref{tab:sample}, \autoref{fig:sample-drawing}, \autoref{fig:sample-plot
       \addlegendentry{Example B};
     \end{axis}
   \end{tikzpicture}
-  \caption[Example plot]{An example for a simple plot.}\label{fig:sample-plot}
+  \caption[Example plot]{An example for a simple plot.}
 \end{figure}
 
 \begin{figure}[htpb]
@@ -91,5 +117,5 @@ See~\autoref{tab:sample}, \autoref{fig:sample-drawing}, \autoref{fig:sample-plot
     SELECT * FROM tbl WHERE tbl.str = "str"
   \end{lstlisting}
   \end{tabular}
-  \caption[Example listing]{An example for a source code listing.}\label{fig:sample-listing}
+  \caption[Example listing]{An example for a source code listing.}
 \end{figure}
