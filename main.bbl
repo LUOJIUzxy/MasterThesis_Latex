@@ -19,6 +19,48 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global/global}
+    \entry{heaton2017deep}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d2c1bcb1b03a47cce63cf7db9f3f9fac}{%
+           family={Heaton},
+           familyi={H\bibinitperiod},
+           given={James\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c782f2b0a57bb490ef246bfbfd177e82}{%
+           family={Polson},
+           familyi={P\bibinitperiod},
+           given={Nicholas\bibnamedelima G.},
+           giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5b4ee4d71cac6f1c95716beeb3722b15}{%
+           family={Witte},
+           familyi={W\bibinitperiod},
+           given={Jan\bibnamedelima Hendrik},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bd6c1a4ccaf2d395c55acc5ddaa66b7c}
+      \strng{fullhash}{bd6c1a4ccaf2d395c55acc5ddaa66b7c}
+      \strng{fullhashraw}{bd6c1a4ccaf2d395c55acc5ddaa66b7c}
+      \strng{bibnamehash}{bd6c1a4ccaf2d395c55acc5ddaa66b7c}
+      \strng{authorbibnamehash}{bd6c1a4ccaf2d395c55acc5ddaa66b7c}
+      \strng{authornamehash}{bd6c1a4ccaf2d395c55acc5ddaa66b7c}
+      \strng{authorfullhash}{bd6c1a4ccaf2d395c55acc5ddaa66b7c}
+      \strng{authorfullhashraw}{bd6c1a4ccaf2d395c55acc5ddaa66b7c}
+      \field{labelalpha}{HPW17}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Stochastic Models in Business and Industry}
+      \field{number}{1}
+      \field{title}{Deep Learning for Finance: Deep Portfolios}
+      \field{volume}{33}
+      \field{year}{2017}
+      \field{pages}{3\bibrangedash 12}
+      \range{pages}{10}
+    \endentry
     \entry{latex}{book}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=5d77435450d10a850a5b58577b9a456b}{%
@@ -47,7 +89,178 @@
       \field{title}{LaTeX : A Documentation Preparation System User's Guide and Reference Manual}
       \field{year}{1994}
     \endentry
+    \entry{lintner1965security}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5abe640305d81308b73b9051f8c6e0fe}{%
+           family={Lintner},
+           familyi={L\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5abe640305d81308b73b9051f8c6e0fe}
+      \strng{fullhash}{5abe640305d81308b73b9051f8c6e0fe}
+      \strng{fullhashraw}{5abe640305d81308b73b9051f8c6e0fe}
+      \strng{bibnamehash}{5abe640305d81308b73b9051f8c6e0fe}
+      \strng{authorbibnamehash}{5abe640305d81308b73b9051f8c6e0fe}
+      \strng{authornamehash}{5abe640305d81308b73b9051f8c6e0fe}
+      \strng{authorfullhash}{5abe640305d81308b73b9051f8c6e0fe}
+      \strng{authorfullhashraw}{5abe640305d81308b73b9051f8c6e0fe}
+      \field{labelalpha}{Lin65}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Review of Economics and Statistics}
+      \field{number}{1}
+      \field{title}{The Valuation of Risk Assets and the Selection of Risky Investments in Stock Portfolios and Capital Budgets}
+      \field{volume}{47}
+      \field{year}{1965}
+      \field{pages}{13\bibrangedash 37}
+      \range{pages}{25}
+    \endentry
+    \entry{markowitz1952portfolio}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bdfa1c8585b5a4ae901315043a00f2f2}{%
+           family={Markowitz},
+           familyi={M\bibinitperiod},
+           given={Harry},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bdfa1c8585b5a4ae901315043a00f2f2}
+      \strng{fullhash}{bdfa1c8585b5a4ae901315043a00f2f2}
+      \strng{fullhashraw}{bdfa1c8585b5a4ae901315043a00f2f2}
+      \strng{bibnamehash}{bdfa1c8585b5a4ae901315043a00f2f2}
+      \strng{authorbibnamehash}{bdfa1c8585b5a4ae901315043a00f2f2}
+      \strng{authornamehash}{bdfa1c8585b5a4ae901315043a00f2f2}
+      \strng{authorfullhash}{bdfa1c8585b5a4ae901315043a00f2f2}
+      \strng{authorfullhashraw}{bdfa1c8585b5a4ae901315043a00f2f2}
+      \field{labelalpha}{Mar52}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Finance}
+      \field{number}{1}
+      \field{title}{Portfolio Selection}
+      \field{volume}{7}
+      \field{year}{1952}
+      \field{pages}{77\bibrangedash 91}
+      \range{pages}{15}
+    \endentry
+    \entry{mossin1966equilibrium}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c62853668bdb2e78376578bdeb97ab6d}{%
+           family={Mossin},
+           familyi={M\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c62853668bdb2e78376578bdeb97ab6d}
+      \strng{fullhash}{c62853668bdb2e78376578bdeb97ab6d}
+      \strng{fullhashraw}{c62853668bdb2e78376578bdeb97ab6d}
+      \strng{bibnamehash}{c62853668bdb2e78376578bdeb97ab6d}
+      \strng{authorbibnamehash}{c62853668bdb2e78376578bdeb97ab6d}
+      \strng{authornamehash}{c62853668bdb2e78376578bdeb97ab6d}
+      \strng{authorfullhash}{c62853668bdb2e78376578bdeb97ab6d}
+      \strng{authorfullhashraw}{c62853668bdb2e78376578bdeb97ab6d}
+      \field{labelalpha}{Mos66}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{number}{4}
+      \field{title}{Equilibrium in a Capital Asset Market}
+      \field{volume}{34}
+      \field{year}{1966}
+      \field{pages}{768\bibrangedash 783}
+      \range{pages}{16}
+    \endentry
+    \entry{qian2005risk}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=25349f6ca0e64616a08b57d0bcf0ea48}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Panagora Asset Management}%
+      }
+      \strng{namehash}{25349f6ca0e64616a08b57d0bcf0ea48}
+      \strng{fullhash}{25349f6ca0e64616a08b57d0bcf0ea48}
+      \strng{fullhashraw}{25349f6ca0e64616a08b57d0bcf0ea48}
+      \strng{bibnamehash}{25349f6ca0e64616a08b57d0bcf0ea48}
+      \strng{authorbibnamehash}{25349f6ca0e64616a08b57d0bcf0ea48}
+      \strng{authornamehash}{25349f6ca0e64616a08b57d0bcf0ea48}
+      \strng{authorfullhash}{25349f6ca0e64616a08b57d0bcf0ea48}
+      \strng{authorfullhashraw}{25349f6ca0e64616a08b57d0bcf0ea48}
+      \field{labelalpha}{Qia05}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Risk Parity Portfolios: Efficient Portfolios Through True Diversification}
+      \field{year}{2005}
+    \endentry
+    \entry{sharpe1964capital}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7713eaeb6845785b0f6bb5cffab120d1}{%
+           family={Sharpe},
+           familyi={S\bibinitperiod},
+           given={William\bibnamedelima F.},
+           giveni={W\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7713eaeb6845785b0f6bb5cffab120d1}
+      \strng{fullhash}{7713eaeb6845785b0f6bb5cffab120d1}
+      \strng{fullhashraw}{7713eaeb6845785b0f6bb5cffab120d1}
+      \strng{bibnamehash}{7713eaeb6845785b0f6bb5cffab120d1}
+      \strng{authorbibnamehash}{7713eaeb6845785b0f6bb5cffab120d1}
+      \strng{authornamehash}{7713eaeb6845785b0f6bb5cffab120d1}
+      \strng{authorfullhash}{7713eaeb6845785b0f6bb5cffab120d1}
+      \strng{authorfullhashraw}{7713eaeb6845785b0f6bb5cffab120d1}
+      \field{labelalpha}{Sha64}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Finance}
+      \field{number}{3}
+      \field{title}{Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk}
+      \field{volume}{19}
+      \field{year}{1964}
+      \field{pages}{425\bibrangedash 442}
+      \range{pages}{18}
+    \endentry
   \enddatalist
+  \missing{almahdi2019adaptive}
+  \missing{ang2002regime}
+  \missing{bellman1957dynamic}
+  \missing{bennell2006gaussian}
+  \missing{cao2018financial}
+  \missing{fernandez2018machine}
+  \missing{garleanu2009dynamic}
+  \missing{hagenau2013automated}
+  \missing{hamilton1989new}
+  \missing{huang2019building}
+  \missing{lessmann2015benchmarking}
+  \missing{marcellino2020gaussian}
+  \missing{merton1969lifetime}
+  \missing{merton1971optimum}
+  \missing{moody1998performance}
+  \missing{nevmyvaka2006reinforcement}
+  \missing{phua2010comprehensive}
+  \missing{poterba2000portfolio}
+  \missing{primbs2009dynamic}
+  \missing{rasmussen2006gaussian}
+  \missing{sezer2020financial}
+  \missing{sharpe1966mutual}
+  \missing{shen2014gaussian}
 \endrefsection
 \endinput
 

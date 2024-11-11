@@ -1,21 +1,94 @@
-!TeX root = ../main.tex
+% !TeX root = ../main.tex
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Methodology}\label{chapter:methodology}
 
 \section{Data Collection and Preprocessing}
 
-\subsection{Asset selection and justification}
-Entropy, OrdianlEntroPy is a Python 3 package providing several time efficient, ordinal pattern based entropy algorithms for computing the complexity of one-dimensional time-series.
-\subsection{Data sources and time period}
-\subsection{Feature engineering and preprocessing steps}
-\subsection{Data normalization and scaling}
-\subsection{Treatment of missing data and outliers}
-\subsection{Data splitting and cross-validation}
-\subsection{sliding window approach}
+\subsection{Asset Selection and Justification}
 
+In this study, we selected a diverse set of 10 assets to capture a wide range of market dynamics and enhance the robustness of our predictive models. The assets include foreign exchange (forex) pairs, commodities such as gold, cryptocurrencies like Bitcoin (BTC), and various stocks from different sectors. The inclusion of these assets allows us to model a comprehensive financial market and test the generalizability of our Gaussian Process Regression models across different asset classes.
+
+The justification for selecting these assets is based on their liquidity, volatility, and significance in global financial markets. Forex pairs and commodities like gold are known for their high liquidity and serve as benchmarks for economic stability. Bitcoin represents the rapidly evolving cryptocurrency market, offering unique volatility characteristics. The selected stocks provide exposure to equity markets and contribute to the diversification of the portfolio.
+
+To assess the complexity of the time-series data for these assets, we utilized entropy-based methods. Specifically, we employed the \texttt{OrdianlEntropy} package in Python, which provides time-efficient, ordinal pattern-based entropy algorithms for computing the complexity of one-dimensional time-series. This analysis informed our feature engineering process by highlighting the inherent unpredictability and dynamic behavior of the asset prices.
+
+\subsection{Data Sources and Time Period}
+
+Historical market data for the selected assets were obtained from reputable financial data providers, such as Bloomberg, Yahoo Finance, and CoinMarketCap for cryptocurrency data. The dataset includes daily closing prices, trading volumes, and other relevant financial indicators.
+
+The time period covered spans from January 1, 2015, to December 31, 2020. This period encompasses various market conditions, including bull and bear markets, economic events like interest rate changes, geopolitical tensions, and significant volatility episodes. Such a comprehensive time frame ensures that the models are trained and tested on data reflecting diverse market environments, enhancing their ability to generalize and perform reliably in different scenarios.
+
+\subsection{Feature Engineering and Preprocessing Steps}
+
+Data preprocessing and feature engineering are critical steps in preparing the dataset for modeling. They ensure that the data fed into the Gaussian Process Regression models are clean, consistent, and informative.
+
+\paragraph{Data Normalization and Scaling}
+
+To bring all features onto a similar scale and improve the numerical stability of the models, we applied data normalization techniques. Specifically, we used min-max scaling to normalize the historical return features and the time index:
+
+\begin{equation}
+    X_{\text{normalized}} = \frac{X - X_{\text{min}}}{X_{\text{max}} - X_{\text{min}}},
+\end{equation}
+
+where $X$ represents the original feature values, and $X_{\text{min}}$ and $X_{\text{max}}$ are the minimum and maximum values of the feature, respectively. This scaling transforms the data to a [0, 1] range, facilitating efficient model training.
+
+\paragraph{Treatment of Missing Data and Outliers}
+
+Financial time-series data often contain missing values and outliers due to market closures, data recording errors, or extreme market events. To address missing data, we employed interpolation methods appropriate for time-series, such as linear interpolation and forward/backward filling, ensuring temporal continuity in the data.
+
+Outliers were identified using the Interquartile Range (IQR) method:
+
+\begin{equation}
+    \text{IQR} = Q_3 - Q_1,
+\end{equation}
+
+where $Q_1$ and $Q_3$ are the first and third quartiles, respectively. Data points lying outside 1.5 times the IQR from the quartiles were considered outliers. We assessed these outliers to determine whether they were due to data errors or genuine market anomalies. Genuine outliers representing significant market movements were retained to preserve the dataset's integrity, while erroneous data points were corrected or removed.
+
+\paragraph{Data Splitting and Cross-Validation}
+
+The dataset was divided into training and testing sets to evaluate the model's predictive performance. The training set consisted of the first 80\% of the time period, while the remaining 20\% was reserved for testing. This chronological split respects the temporal order of the data, avoiding look-ahead bias.
+
+To further validate the models, we used time-series cross-validation with a rolling window approach. In each iteration, the model was trained on a window of consecutive data points and tested on the subsequent period. This method provides a more robust assessment of the model's performance over time and simulates real-world forecasting conditions.
+
+\paragraph{Sliding Window Approach}
+
+A sliding window approach was employed for feature extraction and model training. This method involves using a fixed-size window of past observations to predict future returns. The window size was determined based on autocorrelation analysis and set to capture significant temporal dependencies without introducing excessive lag.
+
+Mathematically, for a given time $t$, the feature vector $\mathbf{X}_t$ includes the returns from time $t - w + 1$ to $t$, where $w$ is the window size:
+
+\begin{equation}
+    \mathbf{X}_t = [R_{t - w + 1}, R_{t - w + 2}, \dots, R_t],
+\end{equation}
+
+where $R_t$ denotes the return at time $t$.
+
+\paragraph{Denoising the Data}
+
+To improve the quality of the input data, we applied denoising techniques to filter out noise and highlight underlying patterns. One effective method used was the wavelet transform, which decomposes the time-series into components associated with different frequency bands.
+
+We also employed the Hodrick-Prescott (HP) filter to separate the cyclical component from the trend component of the data:
+
+\begin{equation}
+    \min_{\{ \tau_t \}} \sum_{t=1}^{T} (R_t - \tau_t)^2 + \lambda \sum_{t=2}^{T-1} \left[ (\tau_{t+1} - \tau_t) - (\tau_t - \tau_{t-1}) \right]^2,
+\end{equation}
+
+where $R_t$ is the observed return, $\tau_t$ is the trend component, and $\lambda$ is the smoothing parameter.
+
+The filtered data retained essential market movements while reducing random fluctuations, allowing the Gaussian Process Regression models to focus on meaningful signals.
+
+\subsection{Summary}
+
+By carefully selecting assets, sourcing reliable data, and meticulously preprocessing the dataset, we established a solid foundation for our predictive modeling. The combination of normalization, outlier treatment, strategic data splitting, and denoising ensured that the inputs to our models were of high quality. These steps are crucial for enhancing the performance of the Gaussian Process Regression models and, ultimately, for developing effective portfolio optimization strategies.
+
+
+
+\section{Model Development}
 \subsection{Performance metrics}
+MSE, MAE, RMSE, MAPE
+Sharpe ratio
 \subsection{Baseline models}
+ARIMA model
 \subsection{Hyperparameter tuning}
 \subsection{Model evaluation and comparison}
 \subsection{Portfolio optimization strategies}
@@ -23,15 +96,16 @@ Entropy, OrdianlEntroPy is a Python 3 package providing several time efficient, 
 \subsection{Strategy selection mechanism}
 \subsection{Implementation details}
 
-\section{Gaussian Process Regression Model}
-
-\subsection{Introduction to Gaussian Processes}
+\section{Forecasting Approach}
+Describe the iterative forecasting method and how predictions are updated daily.
+\subsection{Single-input Gaussian Process Regression model}
 \subsection{Multi-input Gaussian Process Regression model}
 \subsection{Kernel functions selection and hyperparameter optimization}
 \subsection{Implementation of rolling window predictions}
 \subsection{Model updating mechanism}
 
 \section{Portfolio Optimization Strategies}
+Explain each portfolio optimization strategy in depth, including mathematical formulations and constraints.
 \subsection{Traditional Strategies}
 Maximum return strategy formulation
 Minimum volatility approach
@@ -42,4 +116,8 @@ Probability distribution modeling
 Strategy switching criteria
 Position holding logic
 Transaction cost considerations
+
+\section{Backtesting Framework}
+Describe the backtesting process and how the strategies are evaluated.
+
 

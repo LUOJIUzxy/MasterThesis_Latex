@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  11 NOV 2024 01:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  9 NOV 2024 12:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -942,80 +942,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip92
-) (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2024/05/23 v2.17q AMS math features
-\@mathmargin=\skip93
-
-For additional information on amsmath, use the `?' option.
-(/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2021/08/26 v2.01 AMS text
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks46
-\ex@=\dimen299
-)) (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen300
-) (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count467
-LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count468
-\leftroot@=\count469
-LaTeX Info: Redefining \overline on input line 398.
-LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count470
-\DOTSCASE@=\count471
-LaTeX Info: Redefining \ldots on input line 495.
-LaTeX Info: Redefining \dots on input line 498.
-LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box72
-\strutbox@=\box73
-LaTeX Info: Redefining \big on input line 721.
-LaTeX Info: Redefining \Big on input line 722.
-LaTeX Info: Redefining \bigg on input line 723.
-LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen301
-LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count472
-LaTeX Info: Redefining \bmod on input line 904.
-LaTeX Info: Redefining \pmod on input line 909.
-LaTeX Info: Redefining \smash on input line 939.
-LaTeX Info: Redefining \relbar on input line 969.
-LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count473
-\dotsspace@=\muskip22
-\c@parentequation=\count474
-\dspbrk@lvl=\count475
-\tag@help=\toks47
-\row@=\count476
-\column@=\count477
-\maxfields@=\count478
-\andhelp@=\toks48
-\eqnshift@=\dimen302
-\alignsep@=\dimen303
-\tagshift@=\dimen304
-\tagwidth@=\dimen305
-\totwidth@=\dimen306
-\lineht@=\dimen307
-\@envbody=\toks49
-\multlinegap=\skip94
-\multlinetaggap=\skip95
-\mathdisplay@stack=\toks50
-LaTeX Info: Redefining \[ on input line 2953.
-LaTeX Info: Redefining \] on input line 2954.
-) (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup5
-\symAMSb=\mathgroup6
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
 TUM-Dev LaTeX-Thesis-Template: oneside
 )
 Package csquotes Info: Checking for multilingual support...
@@ -1023,7 +950,8 @@ Package csquotes Info: ... found 'babel' package.
 LaTeX Font Info:    Trying to load font information for T1+pplx on input line 24.
  (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pplx.fd
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
-) (./main.aux)
+)
+No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -1064,36 +992,11 @@ Package scrbase Info: activating english \listfigurename on input line 24.
 Package scrbase Info: activating english \listtablename on input line 24.
 Package scrbase Info: activating english \bibname on input line 24.
 Package scrbase Info: activating english \indexname on input line 24.
+\big@size=\dimen299
 Package biblatex Info: Trying to load language 'german'...
 Package biblatex Info: ... file 'german.lbx' found.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+(/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load language 'ngerman'...
-Package biblatex Info: ... file 'ngerman.lbx' found.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
-File: ngerman.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/german.lbx
-File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-
-
-Package biblatex Warning: No hyphenation patterns for 'ngerman' on input line 581.
-
-)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/german.lbx
-File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-
-
-Package biblatex Warning: No hyphenation patterns for 'ngerman' on input line 581.
-
-)
-
-Package biblatex Warning: No hyphenation patterns for 'ngerman' on input line 19.
-
 )
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -1107,169 +1010,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                almahdi2019adaptive
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                ang2002regime
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                bellman1957dynamic
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                bennell2006gaussian
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                cao2018financial
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                fernandez2018machine
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                garleanu2009dynamic
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                hagenau2013automated
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                hamilton1989new
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                huang2019building
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                lessmann2015benchmarking
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                marcellino2020gaussian
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                merton1969lifetime
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                merton1971optimum
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                moody1998performance
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                nevmyvaka2006reinforcement
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                phua2010comprehensive
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                poterba2000portfolio
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                primbs2009dynamic
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                rasmussen2006gaussian
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                sezer2020financial
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                sharpe1966mutual
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                shen2014gaussian
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+ (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
  (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -1278,9 +1019,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count479
+\c@lstlisting=\count467
 Package tocbasic Info: setting babel extension for `lol' on input line 24.
-\scr@dte@lstlisting@maxnumwidth=\skip96
+\scr@dte@lstlisting@maxnumwidth=\skip93
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -1307,7 +1048,6 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 24.
- (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -1323,7 +1063,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count480
+\BKM@id=\count468
 ))
 Package nag Info: Command \hc@caption not defined, skipping amendment on input line 24.
 Package nag Info: Command \topcaption not defined, skipping amendment on input line 24.
@@ -1355,8 +1095,14 @@ Package babel Info: Importing basic data for ngerman
 )
 Package babel Info: Hyphen rules for 'ngerman' set to \l@english
 (babel)             (\language0). Reported on input line 23.
+
+
+Package biblatex Warning: No localisation for language 'ngerman' loaded.
+(biblatex)                Please rerun LaTeX to ensure languages can
+(biblatex)                be requested properly.
+
 LaTeX Font Info:    Trying to load font information for OT1+pplx on input line 26.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+(/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 26.
@@ -1379,24 +1125,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zplm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 26.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 26.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 26.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 26.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 26.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 26.
 
 
 [1
@@ -1425,24 +1153,19 @@ chapter without number
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 38.
- (./main.toc
+
+No file main.toc.
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+
 
 [5
 
 
 
 
-]
-
-LaTeX Font Info:    Font shape `T1/pplx/m/sl' in size <10.95> not available
-(Font)              Font shape `T1/pplx/m/it' tried instead on input line 136.
-[6])
-\tf@toc=\write6
-\openout6 = `main.toc'.
-
-
-
-[7] (./chapters/01_introduction.tex
+] (./chapters/01_introduction.tex
 chapter 1.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9.
 (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -1454,20 +1177,21 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 Package acronym Info: Label `acro:TUM' newly defined as it shall be overridden
 although it is yet undefined on input line 11.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 13.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 13.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 13.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 13.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 13.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 13.
+
+
+Package acronym Warning: Acronym `TUM' is not defined on input line 11.
+
+
+Package acronym Warning: Acronym `TUM' is not defined on input line 11.
+
+
+Package acronym Warning: Acronym `TUM' is not defined on input line 11.
+
+
+LaTeX Warning: Citation 'markowitz1952portfolio' on page 1 undefined on input line 22.
+
 LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 25.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pplx.fd
+(/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 )
 
@@ -1476,214 +1200,152 @@ File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 
 
 {/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
+./chapters/01_introduction.tex:39: Undefined control sequence.
+l.39         \item Developed by \citet
+                                      {sharpe1964capital}, \citet{lintner196...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+./chapters/01_introduction.tex:39: Undefined control sequence.
+l.39 ...loped by \citet{sharpe1964capital}, \citet
+                                                  {lintner1965security}, and...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./chapters/01_introduction.tex:39: Undefined control sequence.
+l.39 ...}, \citet{lintner1965security}, and \citet
+                                                  {mossin1966equilibrium}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (19.52167pt too wide) in paragraph at lines 39--40
+[]\T1/pplx/m/n/10.95 (-20) Developed by sharpe1964capital, lint-ner1965security, and mossin1966equilibrium 
+ []
+
+./chapters/01_introduction.tex:68: Undefined control sequence.
+l.68 ...velopment of risk parity strategies \citep
+                                                  {qian2005risk}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+
+LaTeX Font Info:    Font shape `T1/pplx/m/sl' in size <10.95> not available
+(Font)              Font shape `T1/pplx/m/it' tried instead on input line 85.
 [2]
+./chapters/01_introduction.tex:97: Undefined control sequence.
+l.97 ...ural networks for return prediction \citep
+                                                  {heaton2017deep}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
 
 [3]
 
 [4]
+chapter without number
+./chapters/01_introduction.tex:175: Misplaced alignment tab character &.
+l.175 ...2017deep} Heaton, J. B., Polson, N. G., &
+                                                   Witte, J. H. (2017). Deep...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-[5]
 
-[6]
 
-[7]
+[5
 
-[8]
 
-[9]
-
-[10]
+]
+pdfTeX warning (ext4): destination with the same identifier (name{section.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.196 \section{Research Objectives}
+                                   
+pdfTeX warning (ext4): destination with the same identifier (name{subsection.1.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.198 ...rtfolio optimization framework using GPR}
+                                                  
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 447.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 285.
 ) (./chapters/02_Previous Literature.tex
+
+[6]
+
+[7]
+
+[8]
+chapter 2.
+) (./chapters/03_Methodology.tex
+
+[9
+
+
+]
+chapter 3.
+
+
+[10
+
+
+]) (./chapters/04_Results&Analysis.tex
 
 [11]
 
 [12]
-chapter 2.
-
+chapter 4.
+) (./chapters/05_Discussion.tex
 
 [13
 
 
 ]
-LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 68.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ufplmbb.fd
-File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-)
-
-LaTeX Warning: Citation 'sharpe1966mutual' on page 14 undefined on input line 75.
-
-
 
 [14]
-
-LaTeX Warning: Citation 'rasmussen2006gaussian' on page 15 undefined on input line 100.
-
-
-
-[15]
-
-[16]
-
-[17]
-
-[18]
-
-LaTeX Warning: Citation 'sezer2020financial' on page 19 undefined on input line 246.
-
-
-LaTeX Warning: Citation 'nevmyvaka2006reinforcement' on page 19 undefined on input line 250.
-
-
-LaTeX Warning: Citation 'lessmann2015benchmarking' on page 19 undefined on input line 254.
-
-
-Overfull \hbox (23.93924pt too wide) in paragraph at lines 254--255
-\T1/pplx/m/n/10.95 (-20) data and iden-ti-fy-ing fac-tors that con-tribute to po-ten-tial losses [[]]. 
- []
-
-
-LaTeX Warning: Citation 'phua2010comprehensive' on page 19 undefined on input line 262.
-
-
-
-[19]
-
-LaTeX Warning: Citation 'hagenau2013automated' on page 20 undefined on input line 266.
-
-
-LaTeX Warning: Citation 'rasmussen2006gaussian' on page 20 undefined on input line 274.
-
-
-Overfull \hbox (21.11613pt too wide) in paragraph at lines 274--275
-\T1/pplx/m/n/10.95 (-20) set of func-tion val-ues fol-lows a mul-ti-vari-ate Gaus-sian dis-tri-bu-tion [[]].
- []
-
-
-
-[20]
-
-LaTeX Warning: Citation 'cao2018financial' on page 21 undefined on input line 347.
-
-
-
-[21]
-
-LaTeX Warning: Citation 'shen2014gaussian' on page 22 undefined on input line 351.
-
-
-LaTeX Warning: Citation 'bennell2006gaussian' on page 22 undefined on input line 355.
-
-
-LaTeX Warning: Citation 'marcellino2020gaussian' on page 22 undefined on input line 359.
-
-
-
-[22]
-
-LaTeX Warning: Citation 'bellman1957dynamic' on page 23 undefined on input line 392.
-
-
-LaTeX Warning: Citation 'merton1969lifetime' on page 23 undefined on input line 400.
-
-
-
-[23]
-
-LaTeX Warning: Citation 'merton1971optimum' on page 24 undefined on input line 404.
-
-
-LaTeX Warning: Citation 'moody1998performance' on page 24 undefined on input line 408.
-
-
-LaTeX Warning: Citation 'almahdi2019adaptive' on page 24 undefined on input line 412.
-
-
-LaTeX Warning: Citation 'primbs2009dynamic' on page 24 undefined on input line 416.
-
-
-
-[24]
-
-LaTeX Warning: Citation 'garleanu2009dynamic' on page 25 undefined on input line 438.
-
-
-LaTeX Warning: Citation 'ang2002regime' on page 25 undefined on input line 456.
-
-
-Overfull \hbox (26.1626pt too wide) in paragraph at lines 456--457
-\T1/pplx/m/n/10.95 (-20) vestors can switch to strate-gies that are bet-ter suited to pre-vail-ing con-di-tions [[]]. 
- []
-
-
-LaTeX Warning: Citation 'hamilton1989new' on page 25 undefined on input line 460.
-
-
-
-[25]
-
-LaTeX Warning: Citation 'huang2019building' on page 26 undefined on input line 464.
-
-
-LaTeX Warning: Citation 'poterba2000portfolio' on page 26 undefined on input line 468.
-
-
-LaTeX Warning: Citation 'fernandez2018machine' on page 26 undefined on input line 482.
-
-
-
-[26]) (./chapters/03_Methodology.tex
-
-[27]
-chapter 3.
-
-
-[28
-
-
-]
-
-[29]
-
-[30]
-
-[31]) (./chapters/04_Results&Analysis.tex
-
-[32]
-chapter 4.
-) (./chapters/05_Discussion.tex
-
-[33
-
-
-]
-
-[34]
 chapter 5.
 
 
-[35
+[15
 
 
 ]) (./chapters/06_Conclusion.tex
 
-[36]
+[16]
 chapter 6.
 )
 
-[37
+[17
 
 
 ]
 chapter without number
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 59.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 61.
 (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1693,29 +1355,31 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[38
+[18
 
 
 ]
 Package tocbasic Info: character protrusion at lof deactivated on input line 64.
- (./main.lof)
+
+No file main.lof.
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
 
 
-[39
+[19
 
 
 ]
 Package tocbasic Info: character protrusion at lot deactivated on input line 65.
- (./main.lot)
+
+No file main.lot.
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
 
 
-[40
+[20
 
 
 ]
@@ -1723,7 +1387,7 @@ chapter without number
 No complaints by nag.
 
 
-[41
+[21
 
 
 ] (./main.aux)
@@ -1731,25 +1395,43 @@ No complaints by nag.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51681 strings out of 475496
- 1143727 string characters out of 5775029
- 2241214 words of memory out of 5000000
- 72636 multiletter control sequences out of 15000+600000
- 650944 words of font info for 518 fonts, out of 8000000 for 9000
+ 49896 strings out of 475496
+ 1120173 string characters out of 5775029
+ 2218794 words of memory out of 5000000
+ 71351 multiletter control sequences out of 15000+600000
+ 623840 words of font info for 297 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
- 111i,19n,124p,10966b,2437s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmb.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (49 pages, 314347 bytes).
+ 111i,19n,124p,10966b,2304s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (27 pages, 179353 bytes).
 PDF statistics:
- 1057 PDF objects out of 1200 (max. 8388607)
- 966 compressed objects within 10 object streams
- 344 named destinations out of 1000 (max. 500000)
- 111341 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 606 PDF objects out of 1000 (max. 8388607)
+ 557 compressed objects within 6 object streams
+ 156 named destinations out of 1000 (max. 500000)
+ 101613 words of extra memory for PDF output out of 106986 (max. 10000000)
 
