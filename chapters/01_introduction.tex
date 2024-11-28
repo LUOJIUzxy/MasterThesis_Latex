@@ -19,7 +19,7 @@ This evolution reflects both the advancing computational capabilities and our de
 
 
 \paragraph{Classical Foundations (1950s-1960s)}
-The modern era of portfolio optimization began with \parencite{markowitz1952portfolio}'s seminal paper ``Portfolio Selection,'' which laid the groundwork for Modern Portfolio Theory (MPT). Markowitz introduced several revolutionary concepts:
+The modern era of portfolio optimization began with \parencite{markowitz1952portfolio}'s seminal paper ``Portfolio Selection,'' which laid the groundwork for \ac{MPT}. Markowitz introduced several revolutionary concepts:
 
 \begin{itemize}
     \item The mathematical formalization of diversification
@@ -97,7 +97,7 @@ Recent developments have focused on addressing classical methods' limitations:
         \item Neural networks for return prediction \parencite{heaton2017deep}
         \item Support vector machines for risk assessment
         \item Reinforcement learning for portfolio management
-        \item Gaussian processes for uncertainty quantification
+        \item \ac{GP} for uncertainty quantification
     \end{itemize}
 \end{enumerate}
 
@@ -162,13 +162,13 @@ This evolution of portfolio optimization techniques sets the stage for our resea
 
 
 \subsection{Role of machine learning in financial forecasting}
-Machine learning (ML) has gained significant traction in financial markets due to its ability to analyze vast amounts of data and identify complex patterns that traditional models may overlook.
-In particular, Gaussian Process Regression (GPR) has emerged as a powerful tool for time-series forecasting, offering a flexible framework for capturing non-linear relationships and uncertainty in predictions.
+\ac{ML} has gained significant traction in financial markets due to its ability to analyze vast amounts of data and identify complex patterns that traditional models may overlook.
+In particular, \ac{GPR} has emerged as a powerful tool for time-series forecasting, offering a flexible framework for capturing non-linear relationships and uncertainty in predictions.
 
 \subsection{Challenges in time-series forecasting and traditional portfolio optimization methods}
-Despite the advancements in ML techniques, predicting asset returns remains a challenging task due to the inherent volatility and non-stationarity of financial markets.
+Despite the advancements in \ac{ML} techniques, predicting asset returns remains a challenging task due to the inherent volatility and non-stationarity of financial markets.
 Moreover, traditional portfolio optimization methods, while theoretically elegant, often face significant practical challenges in implementation. These challenges primarily stem from the difficulty in accurately estimating input parameters and the inherent uncertainty in financial time-series forecasting. 
-This section examines these challenges and introduces how Gaussian Process Regression (GPR) provides a novel approach to addressing them.
+This section examines these challenges and introduces how \ac{GPR} provides a novel approach to addressing them.
 
 \paragraph{Parameter Estimation Challenges in Modern Portfolio Theory}
 Modern Portfolio Theory (MPT), despite its theoretical elegance, relies heavily on accurate estimation of key parameters:
@@ -203,7 +203,7 @@ Moreover, the challenge extends beyond simple volatility estimation. The correla
 \end{itemize}
 
 \paragraph{Limitations of Traditional Forecasting Methods}
-Traditional forecasting approaches in finance have predominantly relied on methods that provide point estimates, failing to capture the inherent uncertainty in financial predictions. These methods often make strong assumptions about the underlying data distribution and struggle to adapt to the non-linear, non-stationary nature of financial time series. ARIMA models, exponential smoothing, and other classical approaches, while mathematically tractable, often fall short in capturing the complex dynamics of financial markets.
+Traditional forecasting approaches in finance have predominantly relied on methods that provide point estimates, failing to capture the inherent uncertainty in financial predictions. These methods often make strong assumptions about the underlying data distribution and struggle to adapt to the non-linear, non-stationary nature of financial time series. \ac{ARIMA} models, exponential smoothing, and other classical approaches, while mathematically tractable, often fall short in capturing the complex dynamics of financial markets.
 
 A fundamental limitation of these traditional approaches is their rigidity in handling uncertainty. Point forecasts, even when accompanied by confidence intervals based on historical volatility, fail to capture the dynamic nature of prediction uncertainty. This limitation becomes particularly problematic in portfolio optimization, where understanding the reliability of forecasts is as important as the forecasts themselves.
 
@@ -236,7 +236,7 @@ Conventional approaches to financial time-series forecasting exhibit several lim
 \end{enumerate}
 
 \paragraph{Advantages of Gaussian Process Regression}
-Our research proposes GPR as a solution to these challenges, offering several key advantages:
+Our research proposes \ac{GPR} as a solution to these challenges, offering several key advantages:
 
 \begin{enumerate}
     \item \textbf{Probabilistic Framework}
@@ -265,7 +265,7 @@ Our research proposes GPR as a solution to these challenges, offering several ke
 \end{enumerate}
 
 \paragraph{Addressing Traditional Limitations}
-Our GPR-based approach specifically addresses the key limitations of MPT:
+Our \ac{GPR}-based approach specifically addresses the key limitations of \ac{MPT}:
 
 \begin{equation}
     \sigma_{GPR}^2(x_*) = k(x_*, x_*) - k(x_*, X)[K(X,X) + \sigma_n^2I]^{-1}k(X, x_*)
@@ -281,16 +281,16 @@ Where $\sigma_{GPR}^2(x_*)$ represents the posterior variance at prediction poin
     \item Incorporates both local and global market information
 \end{itemize}
 
-The GPR approach offers several fundamental advantages over traditional methods. Unlike historical volatility estimates that require arbitrary window selection, GPR's volatility estimates emerge naturally from the probabilistic learning process. The method adapts automatically to different market regimes through its kernel function, which can capture both long-term trends and short-term fluctuations in market behavior.
+The \ac{GPR} approach offers several fundamental advantages over traditional methods. Unlike historical volatility estimates that require arbitrary window selection, \ac{GPR}'s volatility estimates emerge naturally from the probabilistic learning process. The method adapts automatically to different market regimes through its kernel function, which can capture both long-term trends and short-term fluctuations in market behavior.
 
-Furthermore, GPR's non-parametric nature frees it from restrictive assumptions about return distributions. The method can capture complex, non-linear patterns in the data while maintaining the ability to quantify uncertainty in its predictions. This combination of flexibility and uncertainty awareness makes it particularly well-suited for financial applications where both accuracy and risk assessment are crucial.
+Furthermore, \ac{GPR}'s non-parametric nature frees it from restrictive assumptions about return distributions. The method can capture complex, non-linear patterns in the data while maintaining the ability to quantify uncertainty in its predictions. This combination of flexibility and uncertainty awareness makes it particularly well-suited for financial applications where both accuracy and risk assessment are crucial.
 
 
 \paragraph{Implications for Portfolio Optimization}
-The GPR framework transforms the traditional portfolio optimization problem by:
-The integration of GPR into portfolio optimization transforms the traditional MPT framework by providing more reliable and dynamic parameter estimates. By directly modeling the uncertainty in our predictions, we can make more informed portfolio allocation decisions that account for both expected returns and our confidence in those expectations. This approach naturally leads to more robust portfolios that adapt to changing market conditions while maintaining a principled approach to risk management.
+The \ac{GPR} framework transforms the traditional portfolio optimization problem by:
+The integration of \ac{GPR} into portfolio optimization transforms the traditional \ac{MPT} framework by providing more reliable and dynamic parameter estimates. By directly modeling the uncertainty in our predictions, we can make more informed portfolio allocation decisions that account for both expected returns and our confidence in those expectations. This approach naturally leads to more robust portfolios that adapt to changing market conditions while maintaining a principled approach to risk management.
 
-The significance of this advancement cannot be overstated. By addressing one of the fundamental criticisms of MPT – the difficulty of accurately estimating volatility – our GPR-based approach bridges the gap between theoretical elegance and practical applicability. This enhancement makes MPT more reliable and useful for real-world portfolio management, where accurate risk assessment is crucial for maintaining stable, long-term investment performance.
+The significance of this advancement cannot be overstated. By addressing one of the fundamental criticisms of \ac{MPT} – the difficulty of accurately estimating volatility – our \ac{GPR}-based approach bridges the gap between theoretical elegance and practical applicability. This enhancement makes \ac{MPT} more reliable and useful for real-world portfolio management, where accurate risk assessment is crucial for maintaining stable, long-term investment performance.
 
 
 \section{Research Objectives}
@@ -299,17 +299,17 @@ By integrating advanced predictive modeling with strategic asset allocation, the
 The specific objectives are as follows:
 
 \begin{enumerate}
-    \item \textbf{Develop and Validate GPR Models for Asset Return Prediction}
+    \item \textbf{Develop and Validate \ac{GPR} Models for Asset Return Prediction}
     \begin{itemize}
         \item \emph{Model Construction:} Build individual GPR models to forecast future returns of selected assets, including forex, gold, Bitcoin, and various stocks.
         \item \emph{Feature Engineering:} Utilize historical one-month returns and time as input features to capture both market dynamics and temporal patterns.
         \item \emph{Model Updating:} Implement an iterative training process where models are updated daily with new market data to ensure predictions remain current and adaptive.
     \end{itemize}
     
-    \item \textbf{Integrate GPR Predictions into Portfolio Optimization Strategies}
+    \item \textbf{Integrate \ac{GPR} Predictions into Portfolio Optimization Strategies}
     \begin{itemize}
         \item \emph{Expected Returns and Volatilities:} Extract predicted returns and associated volatilities from the GPR models for use in portfolio construction.
-        \item \emph{Strategy Formulation:} Design multiple optimization strategies---Maximum Return, Minimum Volatility, Maximum Sharpe Ratio, and a Dynamic Strategy---based on the GPR outputs.
+        \item \emph{Strategy Formulation:} Design multiple optimization strategies---Maximum Return, Minimum Volatility, Maximum Sharpe Ratio, and a Dynamic Strategy---based on the \ac{GPR} outputs.
     \end{itemize}
     
     \item \textbf{Develop a Dynamic Portfolio Optimization Strategy}
@@ -341,7 +341,7 @@ The specific objectives are as follows:
     \end{itemize}
 \end{enumerate}
 
-By achieving these objectives, the study seeks to demonstrate that incorporating sophisticated predictive models like GPR into portfolio optimization can significantly enhance investment outcomes. The findings aim to contribute valuable knowledge to the field of quantitative finance, particularly in the areas of time-series forecasting and dynamic asset allocation.
+By achieving these objectives, the study seeks to demonstrate that incorporating sophisticated predictive models like \ac{GPR} into portfolio optimization can significantly enhance investment outcomes. The findings aim to contribute valuable knowledge to the field of quantitative finance, particularly in the areas of time-series forecasting and dynamic asset allocation.
 
 \subsection{Research Contributions}
 
@@ -350,7 +350,7 @@ This study makes several significant contributions to the field of predictive po
 \begin{enumerate}
     \item \textbf{Novel Integration of Gaussian Process Regression with Dynamic Portfolio Optimization}
 
-    This research presents a unique integration of Gaussian Process Regression (GPR) models with dynamic portfolio optimization strategies. By employing GPR for time-series forecasting, we capture complex, non-linear relationships in financial data, enhancing the accuracy of return predictions. The integration facilitates a more responsive and informed portfolio allocation process, adapting to market changes in real-time.
+    This research presents a unique integration of \ac{GPR} models with dynamic portfolio optimization strategies. By employing \ac{GPR} for time-series forecasting, we capture complex, non-linear relationships in financial data, enhancing the accuracy of return predictions. The integration facilitates a more responsive and informed portfolio allocation process, adapting to market changes in real-time.
 
     \item \textbf{Probabilistic Approach to Strategy Selection}
 

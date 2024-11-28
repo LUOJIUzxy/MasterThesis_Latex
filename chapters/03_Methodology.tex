@@ -15,13 +15,67 @@ To assess the complexity of the time-series data for these assets, we utilized e
 
 \subsection{Data Sources and Time Period}
 
-Historical market data for the selected assets were obtained from reputable financial data providers, such as Bloomberg, Yahoo Finance, and CoinMarketCap for cryptocurrency data. The dataset includes daily closing prices, trading volumes, and other relevant financial indicators.
 
-The time period covered spans from January 1, 2015, to December 31, 2020. This period encompasses various market conditions, including bull and bear markets, economic events like interest rate changes, geopolitical tensions, and significant volatility episodes. Such a comprehensive time frame ensures that the models are trained and tested on data reflecting diverse market environments, enhancing their ability to generalize and perform reliably in different scenarios.
+To acquire the historical market data necessary for this study, we employed the EOD Historical Data API, a reputable and comprehensive source for end-of-day and historical financial data across various asset classes. The data retrieval process was automated using a Python script that constructs API requests based on the asset ticker, desired data period (e.g., daily, weekly), and specified date range.
 
-\subsection{Feature Engineering and Preprocessing Steps}
+For U.S.-listed assets, the script utilizes the endpoint format:
 
+\begin{verbatim}
+https://eodhd.com/api/eod/{ticker}.US?period={period}&api_token={api_token}&fmt=json&from={start_date}&to={end_date}
+\end{verbatim}
+
+where \texttt{\{ticker\}} represents the stock symbol, \texttt{\{period\}} denotes the data frequency, \texttt{\{api\_token\}} is the authentication token, and \texttt{\{start\_date\}} and \texttt{\{end\_date\}} define the data range. For Bitcoin (BTC), which is categorized differently in the API, the script accesses data using the endpoint:
+
+\begin{verbatim}
+https://eodhd.com/api/eod/BTC-USD.CC?period={period}&api_token={api_token}&fmt=json&from={start_date}&to={end_date}
+\end{verbatim}
+
+An API token, securely stored using environment variables to maintain confidentiality, is included in the requests for authentication. The script handles HTTP responses by checking for successful status codes and raising exceptions in case of errors, ensuring robust data retrieval.
+
+Upon receiving a valid response, the JSON data is parsed into a pandas DataFrame for efficient data manipulation and analysis. The DataFrame includes essential financial indicators such as open, high, low, close prices, and trading volumes. The data is then saved as a CSV file in a structured directory hierarchy corresponding to each asset, following the path:
+
+\begin{verbatim}
+../Stocks/{ticker}/{ticker}_us_{period}.csv
+\end{verbatim}
+
+By automating the data fetching and saving process, we ensured consistency and repeatability in data collection of the whole pipeline. This method allowed us to systematically gather historical market data for all selected assets over the specified time periods, providing a reliable dataset for training the Gaussian Process Regression models and conducting backtesting for the portfolio optimization strategies. The use of the EOD Historical Data API ensured that the data was up-to-date and accurate, reflecting real market conditions essential for the validity of our analysis.
+
+Typically, stocks indexes data like S\&P500 and Nasdaq100 is fetched from https://www.nasdaq.com/, are used to represent the overall market performance. In this study, we included the S\&P 500 index as a benchmark for the U.S. equity market. The S\&P 500 index is widely regarded as a barometer for the U.S. stock market and is composed of 500 large-cap companies representing various sectors.
+
+\subsection{Data Preprocessing and Log Returns}
 Data preprocessing and feature engineering are critical steps in preparing the dataset for modeling. They ensure that the data fed into the Gaussian Process Regression models are clean, consistent, and informative.
+
+\paragraph{Use of Log Returns}
+
+In this project, log returns are utilized for modeling asset price movements due to several compelling reasons that align with both theoretical and practical considerations in financial analysis.
+
+\subparagraph{Theoretical Foundation in Finance}
+
+Log returns are integral to many foundational financial models, such as the Black-Scholes option pricing model, which assume that asset prices follow a log-normal distribution. By using log returns, we align our modeling approach with these theoretical frameworks, facilitating more accurate and consistent analyses. \ac{GPR} models assume normally distributed outputs, and since log returns of log-normally distributed prices are normally distributed, this compatibility enhances the effectiveness of our predictive modeling.
+
+\subparagraph{Stability Over Time}
+
+Log returns exhibit greater stability compared to simple arithmetic returns, particularly in the presence of extreme outliers or during periods of high market volatility. They tend to smooth out spikes and reduce the impact of short-term noise, making the models less sensitive to sudden market anomalies. This stability is crucial for developing robust predictive models that can perform reliably under various market conditions.
+
+\subparagraph{Time Consistency (Additivity)}
+
+One of the key mathematical properties of log returns is their additive nature over time. The total log return over a period is the sum of the log returns over sub-periods:
+
+\begin{equation}
+\log\left( \frac{S_t}{S_0} \right) = \log\left( \frac{S_t}{S_{t-1}} \right) + \log\left( \frac{S_{t-1}}{S_{t-2}} \right) + \dots + \log\left( \frac{S_1}{S_0} \right),
+\end{equation}
+
+where $S_t$ is the asset price at time $t$. This additive property simplifies the computation of returns over arbitrary time horizons, such as weekly or monthly periods, by allowing us to sum daily log returns. It is particularly beneficial for forecasting and portfolio optimization over multi-day horizons, as it facilitates the aggregation of returns without the need for complex compounding calculations.
+
+\subparagraph{Normalization of Price Scale}
+
+Log returns are scale-invariant, meaning they standardize returns across assets regardless of their price levels. Whether an asset is priced at \$1 or \$1,000, the log return brings their percentage changes onto a consistent scale. This normalization simplifies comparisons across assets with vastly different price levels and reduces the need for additional data scaling or normalization procedures. It ensures that no single asset disproportionately influences the model due to its absolute price, allowing for a more balanced and equitable analysis within the portfolio.
+
+\subparagraph{Conclusion}
+
+By incorporating log returns into our modeling framework, we leverage their theoretical compatibility with financial models, enhance stability against market volatility, benefit from their time-additive properties, and achieve scale normalization across diverse assets. These advantages contribute to the robustness and accuracy of our Gaussian Process Regression models and improve the effectiveness of our dynamic portfolio optimization strategies.
+
+
 
 \paragraph{Data Normalization and Scaling}
 
@@ -53,29 +107,53 @@ To further validate the models, we used time-series cross-validation with a roll
 
 \paragraph{Sliding Window Approach}
 
-A sliding window approach was employed for feature extraction and model training. This method involves using a fixed-size window of past observations to predict future returns. The window size was determined based on autocorrelation analysis and set to capture significant temporal dependencies without introducing excessive lag.
+To denoise the time-series data and reduce short-term fluctuations, we employed a sliding window approach using a centered rolling window mechanism. For each data point in the series, a window of a specified size $w$ was centered around it, and a statistical function was applied to the data within this window to compute a denoised value. The primary function used was the mean, though other functions could be applied as needed.
 
-Mathematically, for a given time $t$, the feature vector $\mathbf{X}_t$ includes the returns from time $t - w + 1$ to $t$, where $w$ is the window size:
-
-\begin{equation}
-    \mathbf{X}_t = [R_{t - w + 1}, R_{t - w + 2}, \dots, R_t],
-\end{equation}
-
-where $R_t$ denotes the return at time $t$.
-
-\paragraph{Denoising the Data}
-
-To improve the quality of the input data, we applied denoising techniques to filter out noise and highlight underlying patterns. One effective method used was the wavelet transform, which decomposes the time-series into components associated with different frequency bands.
-
-We also employed the Hodrick-Prescott (HP) filter to separate the cyclical component from the trend component of the data:
+Formally, let $\{ x_t \}_{t=1}^T$ represent the original time-series data, and $\{ \tilde{x}_t \}_{t=1}^T$ denote the denoised series. The denoised value at time $t$, $\tilde{x}_t$, is calculated as:
 
 \begin{equation}
-    \min_{\{ \tau_t \}} \sum_{t=1}^{T} (R_t - \tau_t)^2 + \lambda \sum_{t=2}^{T-1} \left[ (\tau_{t+1} - \tau_t) - (\tau_t - \tau_{t-1}) \right]^2,
+\tilde{x}_t = \frac{1}{n_t} \sum_{i = t - k}^{t + k} x_i,
 \end{equation}
 
-where $R_t$ is the observed return, $\tau_t$ is the trend component, and $\lambda$ is the smoothing parameter.
+where $k = \left\lfloor \frac{w}{2} \right\rfloor$, and $n_t$ is the number of data points within the window centered at time $t$. The window size $w$ is an odd integer to ensure symmetry around the central point. At the edges of the time-series (when $t - k < 1$ or $t + k > T$), the window is adjusted by including available data points, and the minimum number of periods is set to 1 to allow computation even with incomplete windows.
+
+To handle any missing values that may arise at the edges due to insufficient data points, we applied forward and backward filling methods. Forward filling propagates the last observed non-missing value forward to fill subsequent missing positions, while backward filling fills missing values by propagating the next observed non-missing value backward. These steps ensure that the denoised series is complete and free from missing values.
+
+This sliding window denoising process effectively smooths the data by averaging over the local neighborhood of each data point, reducing random noise while preserving significant trends and patterns. By enhancing the signal-to-noise ratio in the time-series, this approach improves the quality of the input data for the Gaussian Process Regression models, leading to better predictive performance and more reliable portfolio optimization decisions.
+
+\paragraph{Gaussian Filter Denoising Method}
+
+To further enhance the quality of the time-series data and reduce high-frequency noise, we employed the Gaussian filter denoising method. The Gaussian filter is a convolutional filter that applies a Gaussian kernel to smooth data by averaging neighboring points with weights determined by the Gaussian function. This technique preserves significant trends and patterns while effectively attenuating random fluctuations and noise.
+
+The Gaussian kernel is defined by the Gaussian (normal) distribution function:
+
+\begin{equation}
+G(i) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( -\frac{i^2}{2\sigma^2} \right),
+\end{equation}
+
+where $i$ is the index distance from the central data point, and $\sigma$ is the standard deviation of the Gaussian distribution, controlling the degree of smoothing. A larger $\sigma$ results in a wider kernel and more extensive smoothing.
+
+The denoised value at time $t$, $\tilde{x}_t$, is computed by convolving the original time-series data $x_t$ with the Gaussian kernel:
+
+\begin{equation}
+\tilde{x}_t = \sum_{i = -k}^{k} G(i) \cdot x_{t + i},
+\end{equation}
+
+where $k$ is the window size parameter determining the range of data points considered around time $t$.
+
+In our implementation, we applied the Gaussian filter to the closing prices of the assets using a standard deviation $\sigma = 1$, which provides a balanced smoothing effect without overly distorting the data. The following code snippet illustrates the application of the Gaussian filter using the \texttt{gaussian\_filter} function from the SciPy library in Python:
+
+\begin{lstlisting}[language=Python]
+if isFiltered:
+    df['filtered_close'] = gaussian_filter(df['close'], sigma=1)
+\end{lstlisting}
+
+In this code, \texttt{df['close']} represents the original closing price data, and \texttt{df['filtered\_close']} stores the denoised data after applying the Gaussian filter. The \texttt{isFiltered} flag allows for conditional application of the filtering process.
+
+By using the Gaussian filter denoising method, we effectively reduced the impact of noise and short-term fluctuations in the financial time-series data. This preprocessing step enhances the signal-to-noise ratio, allowing the Gaussian Process Regression models to focus on underlying market trends and improving the accuracy of the return predictions. The combination of the sliding window approach and Gaussian filtering provides a robust methodology for data smoothing, contributing significantly to the reliability and performance of the predictive modeling and subsequent portfolio optimization.
 
 The filtered data retained essential market movements while reducing random fluctuations, allowing the Gaussian Process Regression models to focus on meaningful signals.
+
 
 \subsection{Summary}
 
@@ -98,7 +176,6 @@ ARIMA model
 
 \section{Forecasting Approach}
 Describe the iterative forecasting method and how predictions are updated daily.
-\subsection{Single-input Gaussian Process Regression model}
 \subsection{Multi-input Gaussian Process Regression model}
 \subsection{Kernel functions selection and hyperparameter optimization}
 \subsection{Implementation of rolling window predictions}
@@ -113,9 +190,84 @@ Maximum Sharpe ratio optimization
 Constraint specifications and justifications as Baseline models
 \subsection{Dynamic Strategy}
 Probability distribution modeling
-Strategy switching criteria
-Position holding logic
-Transaction cost considerations
+
+\section{Probability Estimation: $P(S_1 > S_2)$}
+
+When estimating the probability $P(S_1 > S_2)$ for two random variables $S_1$ and $S_2$, the methodology depends on the nature of their distributions and their dependence structure. This section outlines three approaches: numerical integration, Monte Carlo simulation, and the use of copulas for dependent variables.
+
+\subsection{Numerical Integration}
+
+If the probability density functions (PDFs) of $S_1$ and $S_2$ are known, the probability $P(S_1 > S_2)$ can be expressed as:
+\begin{equation}
+P(S_1 > S_2) = \int_{-\infty}^\infty \int_{y}^\infty f_{S_1}(x) f_{S_2}(y) \, dx \, dy,
+\end{equation}
+where:
+\begin{itemize}
+    \item $f_{S_1}(x)$ is the PDF of $S_1$,
+    \item $f_{S_2}(y)$ is the PDF of $S_2$.
+\end{itemize}
+
+This double integral represents the joint probability over the region where $S_1 > S_2$, and it requires numerical methods for evaluation when closed-form solutions are unavailable.
+
+
+\subsection{Copulas for Dependence}
+
+Especially, When $S_1$ and $S_2$ are dependent, the joint distribution can be modeled using a copula. A copula is a function that describes the dependence structure between random variables, linking their marginal distributions. Let $F_{S_1}(x)$ and $F_{S_2}(y)$ represent the cumulative distribution functions (CDFs) of $S_1$ and $S_2$, respectively. The joint CDF can be expressed as:
+\begin{equation}
+F_{S_1, S_2}(x, y) = C(F_{S_1}(x), F_{S_2}(y)),
+\end{equation}
+where $C(u, v)$ is the copula function.
+
+The probability $P(S_1 > S_2)$ can then be computed as:
+\begin{equation}
+P(S_1 > S_2) = \int_{-\infty}^\infty \int_{y}^\infty \frac{\partial^2 C(F_{S_1}(x), F_{S_2}(y))}{\partial u \partial v} \, dx \, dy.
+\end{equation}
+
+The steps to compute this are:
+\begin{enumerate}
+    \item Determine the marginal distributions $F_{S_1}(x)$ and $F_{S_2}(y)$ for $S_1$ and $S_2$.
+    \item Select an appropriate copula function $C(u, v)$ based on the dependence structure (e.g., Gaussian, Clayton, or Gumbel copulas).
+    \item Use numerical methods to evaluate the double integral above.
+\end{enumerate}
+
+Copulas are particularly effective when the marginal distributions are non-normal or when the dependence structure is non-linear and cannot be captured by simple correlation measures.
+
+\subsection{Monte Carlo Methods}
+
+If the distributions of $S_1$ and $S_2$ are not explicitly known but sampling from these distributions is possible, a Monte Carlo simulation can be used to estimate $P(S_1 > S_2)$. The steps are as follows:
+\begin{enumerate}
+    \item Generate $N$ independent samples $S_1^{(i)}$ and $S_2^{(i)}$ from the respective distributions of $S_1$ and $S_2$.
+    \item Count the number of instances where $S_1^{(i)} > S_2^{(i)}$. Denote this count by $n$.
+    \item Estimate the probability as:
+    \begin{equation}
+    P(S_1 > S_2) \approx \frac{n}{N},
+    \end{equation}
+    where
+    \begin{equation}
+    n = \sum_{i=1}^N \mathbb{I}(S_1^{(i)} > S_2^{(i)}),
+    \end{equation}
+    and $\mathbb{I}(\cdot)$ is the indicator function, which equals 1 if the condition is true and 0 otherwise.
+\end{enumerate}
+
+Monte Carlo simulation is particularly useful for complex distributions or dependent variables, where analytical integration is impractical. In our case, we have multiple assets with potentially non-normal distributions and complex dependencies, making Monte Carlo methods a valuable tool for estimating $P(S_1 > S_2)$.
+Specifically, we will use Monte Carlo simulation to estimate the probability of one asset outperforming another in our portfolio optimization strategies. And we chose a sample size of $N = 10,000$ to ensure accurate probability estimates.
+
+\subsection{Comparison of Methods}
+
+\begin{itemize}
+    \item \textbf{Numerical Integration:} Provides an exact solution given the PDFs of $S_1$ and $S_2$, but computationally intensive for high-dimensional problems or non-standard distributions.
+    \item \textbf{Copulas:} Allows modeling of complex dependence structures, particularly useful for non-normal distributions or asymmetric dependencies.
+    \item \textbf{Monte Carlo Simulation:} Flexible and practical alternative when sampling is straightforward, though its accuracy depends on the number of samples $N$.
+\end{itemize}
+
+Each method has its strengths and limitations, given the availability of distributional information and computational resources of our case, we chose to use Monte Carlo simulation for estimating $P(S_1 > S_2)$.
+
+
+\subsection{Strategy switching criteria}
+Describe the criteria for switching between portfolio optimization strategies based on the estimated probability $P(S_1 > S_2)$.
+We set a threshold probability $\tau$ such that if $P(S_1 > S_2) > \tau$, the strategy with the higher expected return is selected, and if $P(S_1 > S_2) \leq \tau$, the strategy with the lower volatility is chosen. This threshold ensures that the strategy selection is based on a balance between return and risk, incorporating the estimated probability of one asset outperforming the other.
+\subsection{Position holding logic}
+\subsection{Transaction cost considerations}
 
 \section{Backtesting Framework}
 Describe the backtesting process and how the strategies are evaluated.

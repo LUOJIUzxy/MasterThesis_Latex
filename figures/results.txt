@@ -1,0 +1,128 @@
+Full Correlation Matrix:
+[[1.         0.16139718 0.18299486 0.47938646 0.04062278]
+ [0.16139718 1.         0.59676769 0.47988016 0.09791551]
+ [0.18299486 0.59676769 1.         0.48661879 0.36214786]
+ [0.47938646 0.47988016 0.48661879 1.         0.08849037]
+ [0.04062278 0.09791551 0.36214786 0.08849037 1.        ]]
+ ============================================== Predicted Results: constant =========================================================== 
+Day 1: Optimal weights (constant): [0.2 0.2 0.2 0.2 0.2]
+Day 1: Predicted Portfolio Return (Cumulative): 0.3368%, Predicted Portfolio volatility: 0.4651%
+Day 2: Optimal weights (constant): [0.2 0.2 0.2 0.2 0.2]
+Day 2: Predicted Portfolio Return (Cumulative): 0.8565%, Predicted Portfolio volatility: 0.6592%
+Day 3: Optimal weights (constant): [0.2 0.2 0.2 0.2 0.2]
+Day 3: Predicted Portfolio Return (Cumulative): 1.5925%, Predicted Portfolio volatility: 0.8171%
+Day 4: Optimal weights (constant): [0.2 0.2 0.2 0.2 0.2]
+Day 4: Predicted Portfolio Return (Cumulative): 1.7743%, Predicted Portfolio volatility: 0.9216%
+Day 5: Optimal weights (constant): [0.2 0.2 0.2 0.2 0.2]
+Day 5: Predicted Portfolio Return (Cumulative): 1.8238%, Predicted Portfolio volatility: 1.0039%
+ ============================================== Backtest Results: constant =========================================================== 
+Day 1: Daily Portfolio Net Return = -0.4306%, Transaction Cost = 0.001000%, Portfolio Variance = 0.465139%, Daily Sharpe Ratio = -0.9344
+Day 2: Daily Portfolio Net Return = 0.6243%, Transaction Cost = 0.000000%, Portfolio Variance = 0.659236%, Daily Sharpe Ratio = 0.9409
+Day 3: Daily Portfolio Net Return = 1.3592%, Transaction Cost = 0.000000%, Portfolio Variance = 0.817136%, Daily Sharpe Ratio = 1.6585
+Day 4: Daily Portfolio Net Return = -0.8084%, Transaction Cost = 0.000000%, Portfolio Variance = 0.921584%, Daily Sharpe Ratio = -0.8815
+Day 5: Daily Portfolio Net Return = 0.0112%, Transaction Cost = 0.000000%, Portfolio Variance = 1.003914%, Daily Sharpe Ratio = 0.0072
+Cumulative Return: 0.7431%
+Cumulative Transaction Costs (based on changes in weights): 0.001000%
+Cumulative Portfolio Variance: 3.867009%
+Sharpe Ratio: 0.191130
+ ============================================== Predicted Results: sharpe =========================================================== 
+Day 1: Optimal weights (sharpe): [0.2345759  0.38037835 0.28836465 0.         0.0966811 ]
+Day 1: Predicted Portfolio Return (Cumulative): 0.3356%, Predicted Portfolio volatility: 0.3292%
+Day 2: Optimal weights (sharpe): [0.10438217 0.33998593 0.52714658 0.         0.02848531]
+Day 2: Predicted Portfolio Return (Cumulative): 0.8483%, Predicted Portfolio volatility: 0.3359%
+Day 3: Optimal weights (sharpe): [0.03143064 0.47452563 0.48061604 0.00439402 0.00903366]
+Day 3: Predicted Portfolio Return (Cumulative): 2.3521%, Predicted Portfolio volatility: 0.3928%
+Day 4: Optimal weights (sharpe): [0.05923616 0.46629764 0.46134964 0.00525126 0.0078653 ]
+Day 4: Predicted Portfolio Return (Cumulative): 2.2718%, Predicted Portfolio volatility: 0.4413%
+Day 5: Optimal weights (sharpe): [0.07545933 0.44053375 0.46902129 0.01322254 0.00176309]
+Day 5: Predicted Portfolio Return (Cumulative): 2.3249%, Predicted Portfolio volatility: 0.4890%
+ ============================================== Backtest Results: sharpe =========================================================== 
+Day 1: Daily Portfolio Net Return = -0.3082%, Transaction Cost = 0.001000%, Portfolio Variance = 0.329238%, Daily Sharpe Ratio = -0.9482
+Day 2: Daily Portfolio Net Return = 0.7138%, Transaction Cost = 0.000478%, Portfolio Variance = 0.335911%, Daily Sharpe Ratio = 2.1133
+Day 3: Daily Portfolio Net Return = 1.8698%, Transaction Cost = 0.000278%, Portfolio Variance = 0.392787%, Daily Sharpe Ratio = 4.7502
+Day 4: Daily Portfolio Net Return = -1.2947%, Transaction Cost = 0.000057%, Portfolio Variance = 0.441311%, Daily Sharpe Ratio = -2.9427
+Day 5: Daily Portfolio Net Return = 0.0028%, Transaction Cost = 0.000064%, Portfolio Variance = 0.489048%, Daily Sharpe Ratio = -0.0025
+Cumulative Return: 0.9593%
+Cumulative Transaction Costs (based on changes in weights): 0.001876%
+Cumulative Portfolio Variance: 1.988294%
+Sharpe Ratio: 0.480489
+ ============================================== Predicted Results: max_return =========================================================== 
+Day 1: Optimal weights (max_return): [9.43689571e-16 0.00000000e+00 0.00000000e+00 0.00000000e+00
+ 1.00000000e+00]
+Day 1: Predicted Portfolio Return (Cumulative): 0.9194%, Predicted Portfolio volatility: 1.7596%
+Day 2: Optimal weights (max_return): [1.00000000e+00 8.88178420e-16 0.00000000e+00 2.01227923e-16
+ 8.32667268e-17]
+Day 2: Predicted Portfolio Return (Cumulative): 1.5739%, Predicted Portfolio volatility: 1.4178%
+Day 3: Optimal weights (max_return): [0.00000000e+00 5.55111512e-16 1.00000000e+00 5.47793428e-17
+ 7.83406665e-17]
+Day 3: Predicted Portfolio Return (Cumulative): 2.6369%, Predicted Portfolio volatility: 0.5999%
+Day 4: Optimal weights (max_return): [9.53032439e-01 3.66460334e-17 4.69675608e-02 9.54531593e-16
+ 8.61398626e-16]
+Day 4: Predicted Portfolio Return (Cumulative): 3.0132%, Predicted Portfolio volatility: 2.0000%
+Day 5: Optimal weights (max_return): [0.88565311 0.         0.11434689 0.         0.        ]
+Day 5: Predicted Portfolio Return (Cumulative): 3.5892%, Predicted Portfolio volatility: 2.0000%
+ ============================================== Backtest Results: max_return =========================================================== 
+Day 1: Daily Portfolio Net Return = -0.3036%, Transaction Cost = 0.001000%, Portfolio Variance = 1.759583%, Daily Sharpe Ratio = -0.1748
+Day 2: Daily Portfolio Net Return = 1.3969%, Transaction Cost = 0.002000%, Portfolio Variance = 1.417817%, Daily Sharpe Ratio = 0.9824
+Day 3: Daily Portfolio Net Return = 2.2707%, Transaction Cost = 0.002000%, Portfolio Variance = 0.599949%, Daily Sharpe Ratio = 3.7781
+Day 4: Daily Portfolio Net Return = 0.0597%, Transaction Cost = 0.001906%, Portfolio Variance = 2.000001%, Daily Sharpe Ratio = 0.0279
+Day 5: Daily Portfolio Net Return = 1.0168%, Transaction Cost = 0.000135%, Portfolio Variance = 2.000000%, Daily Sharpe Ratio = 0.5064
+Cumulative Return: 4.4980%
+Cumulative Transaction Costs (based on changes in weights): 0.007041%
+Cumulative Portfolio Variance: 7.777349%
+Sharpe Ratio: 0.577830
+ ============================================== Predicted Results: min_volatility =========================================================== 
+Day 1: Optimal weights (min_volatility): [0.39651783 0.22348341 0.21456806 0.         0.16543069]
+Day 1: Predicted Portfolio Return (Cumulative): 0.5000%, Predicted Portfolio volatility: 0.5109%
+Day 2: Optimal weights (min_volatility): [0.04561591 0.45829655 0.43986891 0.04067727 0.01554137]
+Day 2: Predicted Portfolio Return (Cumulative): 0.7186%, Predicted Portfolio volatility: 0.3074%
+Day 3: Optimal weights (min_volatility): [0.04022112 0.45658837 0.44299098 0.04328796 0.01691157]
+Day 3: Predicted Portfolio Return (Cumulative): 2.2483%, Predicted Portfolio volatility: 0.3839%
+Day 4: Optimal weights (min_volatility): [0.04203484 0.45636221 0.44258122 0.04235216 0.01666957]
+Day 4: Predicted Portfolio Return (Cumulative): 2.1728%, Predicted Portfolio volatility: 0.4315%
+Day 5: Optimal weights (min_volatility): [0.04734915 0.45530763 0.44112873 0.03909489 0.0171196 ]
+Day 5: Predicted Portfolio Return (Cumulative): 2.2006%, Predicted Portfolio volatility: 0.4742%
+ ============================================== Backtest Results: min_volatility =========================================================== 
+Day 1: Daily Portfolio Net Return = -0.2477%, Transaction Cost = 0.001000%, Portfolio Variance = 0.510936%, Daily Sharpe Ratio = -0.4926
+Day 2: Daily Portfolio Net Return = 0.6345%, Transaction Cost = 0.001002%, Portfolio Variance = 0.307385%, Daily Sharpe Ratio = 2.0512
+Day 3: Daily Portfolio Net Return = 1.7690%, Transaction Cost = 0.000014%, Portfolio Variance = 0.383871%, Daily Sharpe Ratio = 4.5980
+Day 4: Daily Portfolio Net Return = -1.2452%, Transaction Cost = 0.000004%, Portfolio Variance = 0.431474%, Daily Sharpe Ratio = -2.8952
+Day 5: Daily Portfolio Net Return = -0.0550%, Transaction Cost = 0.000012%, Portfolio Variance = 0.474230%, Daily Sharpe Ratio = -0.1243
+Cumulative Return: 0.8334%
+Cumulative Transaction Costs (based on changes in weights): 0.002031%
+Cumulative Portfolio Variance: 2.107896%
+Sharpe Ratio: 0.393476
+ ============================================== Predicted Results: dynamic =========================================================== 
+Day 1: Optimal weights (dynamic): [0.00000000e+00 1.94289029e-16 5.96744876e-16 0.00000000e+00
+ 1.00000000e+00]
+Day 1: Predicted Portfolio Return (Cumulative): 0.9194%, Predicted Portfolio volatility: 1.7596%
+Probability A > B:  0.0217
+Probability is less than threshold, keeping the same weights as the previous time point
+Day 2: Optimal weights (dynamic): [0.00000000e+00 1.94289029e-16 5.96744876e-16 0.00000000e+00
+ 1.00000000e+00]
+Day 2: Predicted Portfolio Return (Cumulative): 1.3079%, Predicted Portfolio volatility: 2.4742%
+Probability A > B:  0.0009
+Probability is less than threshold, keeping the same weights as the previous time point
+Day 3: Optimal weights (dynamic): [0.00000000e+00 1.94289029e-16 5.96744876e-16 0.00000000e+00
+ 1.00000000e+00]
+Day 3: Predicted Portfolio Return (Cumulative): 1.2421%, Predicted Portfolio volatility: 3.0009%
+Probability A > B:  0.1033
+Probability is greater than threshold, optimizing for returns
+Day 4: Optimal weights (dynamic): [9.53032426e-01 9.38233418e-16 4.69675745e-02 0.00000000e+00
+ 0.00000000e+00]
+Day 4: Predicted Portfolio Return (Cumulative): 3.0132%, Predicted Portfolio volatility: 2.0000%
+Probability A > B:  0.0958
+Probability is greater than threshold, optimizing for returns
+Day 5: Optimal weights (dynamic): [8.85653109e-01 0.00000000e+00 1.14346891e-01 3.06497178e-16
+ 4.29540572e-16]
+Day 5: Predicted Portfolio Return (Cumulative): 3.5892%, Predicted Portfolio volatility: 2.0000%
+ ============================================== Backtest Results: dynamic =========================================================== 
+Day 1: Daily Portfolio Net Return = -0.3036%, Transaction Cost = 0.001000%, Portfolio Variance = 1.759583%, Daily Sharpe Ratio = -0.1748
+Day 2: Daily Portfolio Net Return = 0.8288%, Transaction Cost = 0.000000%, Portfolio Variance = 2.474155%, Daily Sharpe Ratio = 0.3334
+Day 3: Daily Portfolio Net Return = 3.0158%, Transaction Cost = 0.000000%, Portfolio Variance = 3.000854%, Daily Sharpe Ratio = 1.0037
+Day 4: Daily Portfolio Net Return = 0.0596%, Transaction Cost = 0.002000%, Portfolio Variance = 2.000001%, Daily Sharpe Ratio = 0.0278
+Day 5: Daily Portfolio Net Return = 1.0168%, Transaction Cost = 0.000135%, Portfolio Variance = 2.000000%, Daily Sharpe Ratio = 0.5064
+Cumulative Return: 4.6695%
+Cumulative Transaction Costs (based on changes in weights): 0.003135%
+Cumulative Portfolio Variance: 11.234593%
+Sharpe Ratio: 0.415284

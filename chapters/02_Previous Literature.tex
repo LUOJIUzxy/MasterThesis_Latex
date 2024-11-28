@@ -5,15 +5,15 @@
 
 \section{Theoretical Framework}
 
-This chapter discusses the fundamental theories underpinning the study, focusing on portfolio optimization and Gaussian Process Regression (GPR). Understanding these theories is essential for developing the predictive portfolio optimization framework proposed in this research.
+This chapter discusses the fundamental theories underpinning the study, focusing on portfolio optimization and \ac{GPR}. Understanding these theories is essential for developing the predictive portfolio optimization framework proposed in this research.
 
 \subsection{Portfolio Optimization Theory}
 
-Portfolio optimization is a cornerstone of modern finance, aiming to allocate assets in a way that balances expected returns against risk. The foundational theory in this domain is the \textit{Modern Portfolio Theory} (MPT), introduced by Harry Markowitz in 1952 \cite{markowitz1952portfolio}.
+Portfolio optimization is a cornerstone of modern finance, aiming to allocate assets in a way that balances expected returns against risk. The foundational theory in this domain is the \ac{MPT}, introduced by Harry Markowitz in 1952 \cite{markowitz1952portfolio}.
 
 \subsubsection{Modern Portfolio Theory (MPT)}
 
-MPT posits that investors can construct an optimal portfolio that offers the maximum expected return for a given level of risk or, equivalently, the minimum risk for a given level of expected return. The key assumptions of MPT are:
+\ac{MPT} posits that investors can construct an optimal portfolio that offers the maximum expected return for a given level of risk or, equivalently, the minimum risk for a given level of expected return. The key assumptions of MPT are:
 
 \begin{itemize}
     \item Investors are rational and risk-averse, preferring higher returns and lower risk.
@@ -43,12 +43,12 @@ where $\sigma_{ij}$ is the covariance between asset $i$ and asset $j$. The stand
 
 The set of optimal portfolios that offer the highest expected return for a given level of risk forms the \textit{Efficient Frontier}. Portfolios on the efficient frontier are considered optimal, as no other portfolios offer higher returns for the same risk level.
 
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.6\textwidth]{efficient_frontier.png}
-%     \caption{Efficient Frontier in Mean-Variance Space}
-%     \label{fig:efficient_frontier}
-% \end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/efficient_frontier.png}
+    \caption{Efficient Frontier in Mean-Variance Space}
+    \label{fig:efficient_frontier}
+\end{figure}
 
 \paragraph{Mean-Variance Optimization}
 
@@ -91,7 +91,7 @@ Various strategies exist for portfolio optimization, each with different objecti
     \item \textbf{Dynamic Strategies}: Adjust portfolio allocations based on changing market conditions and predictive insights.
 \end{itemize}
 
-\subsection{Gaussian Process Regression}
+\subsection{Gaussian Process Regression Theory and Applications}
 
 Gaussian Process Regression (GPR) is a non-parametric, Bayesian approach to regression that is particularly powerful for modeling complex, non-linear relationships. GPR provides not only predictions but also uncertainty estimates, which are valuable in risk-sensitive applications like finance.
 
@@ -200,7 +200,7 @@ GPR offers several benefits for financial time-series forecasting:
 
 \begin{itemize}
     \item \textit{Non-parametric Flexibility}: Does not assume a specific functional form, allowing for modeling of complex, non-linear relationships.
-    \item \textit{Uncertainty Quantification}: Provides probabilistic predictions with associated confidence intervals.
+    \item \textit{Uncertainty Quantification}: Provides probabilistic predictions with associated confidence intervals, which are crucial for risk management.
     \item \textit{Bayesian Framework}: Naturally incorporates prior knowledge and updates beliefs with new data.
 \end{itemize}
 
@@ -212,7 +212,9 @@ Despite its advantages, GPR faces challenges in financial applications:
     \item \textit{Computational Complexity}: Involves inverting an $n \times n$ matrix, which can be computationally intensive for large datasets.
     \item \textit{Non-Stationarity}: Financial time-series often exhibit non-stationary behavior, violating assumptions of stationarity in standard GPR.
     \item \textit{Noise Characteristics}: Financial data can be noisy and volatile, affecting model performance.
+    \item \textit{Hyperparameter Tuning}: Selection of kernel functions and hyperparameters significantly impacts model performance and requires careful tuning.
 \end{itemize}
+
 
 \subsection{Integrating Portfolio Optimization and GPR}
 
@@ -265,114 +267,6 @@ Detecting fraudulent activities and anomalies is vital for maintaining the integ
 
 Analyzing news articles, social media, and financial reports using natural language processing (NLP) helps investors gauge market sentiment and its potential impact on asset prices \cite{hagenau2013automated}.
 
-\subsection{Gaussian Process Regression Theory and Applications}
-
-Gaussian Process Regression (GPR) is a non-parametric, probabilistic machine learning method rooted in Bayesian statistics. It is particularly effective for regression tasks where the goal is to predict continuous outputs based on input features.
-
-\subsubsection{Theory of Gaussian Process Regression}
-
-A Gaussian Process (GP) defines a distribution over functions $f(\mathbf{x})$, such that any finite set of function values follows a multivariate Gaussian distribution \cite{rasmussen2006gaussian}. Formally, a GP is specified by a mean function $m(\mathbf{x})$ and a covariance function $k(\mathbf{x}, \mathbf{x}')$:
-
-\begin{equation}
-f(\mathbf{x}) \sim \mathcal{GP}\left( m(\mathbf{x}), k(\mathbf{x}, \mathbf{x}') \right).
-\end{equation}
-
-\paragraph{Mean Function}
-
-The mean function $m(\mathbf{x})$ represents the expected value of the function at input $\mathbf{x}$:
-
-\begin{equation}
-m(\mathbf{x}) = \mathbb{E}[f(\mathbf{x})].
-\end{equation}
-
-\paragraph{Covariance Function}
-
-The covariance function $k(\mathbf{x}, \mathbf{x}')$ defines the similarity between function values at inputs $\mathbf{x}$ and $\mathbf{x}'$:
-
-\begin{equation}
-k(\mathbf{x}, \mathbf{x}') = \mathbb{E}\left[ (f(\mathbf{x}) - m(\mathbf{x}))(f(\mathbf{x}') - m(\mathbf{x}')) \right].
-\end{equation}
-
-\paragraph{Prediction with GPR}
-
-Given a set of training data $\{ (\mathbf{x}_i, y_i) \}_{i=1}^n$, where $y_i = f(\mathbf{x}_i) + \epsilon_i$ and $\epsilon_i \sim \mathcal{N}(0, \sigma_n^2)$ represents Gaussian noise, the goal is to predict the function value at a new input $\mathbf{x}_*$.
-
-The predictive distribution for $f(\mathbf{x}_*)$ is Gaussian with mean and variance:
-
-\begin{equation}
-\mathbb{E}[f(\mathbf{x}_*)] = \mathbf{k}_*^\top (\mathbf{K} + \sigma_n^2 \mathbf{I})^{-1} \mathbf{y},
-\end{equation}
-
-\begin{equation}
-\mathrm{Var}[f(\mathbf{x}_*)] = k(\mathbf{x}_*, \mathbf{x}_*) - \mathbf{k}_*^\top (\mathbf{K} + \sigma_n^2 \mathbf{I})^{-1} \mathbf{k}_*,
-\end{equation}
-
-where:
-
-\begin{itemize}
-    \item $\mathbf{K}$ is the $n \times n$ covariance matrix with entries $K_{ij} = k(\mathbf{x}_i, \mathbf{x}_j)$.
-    \item $\mathbf{k}_*$ is the covariance vector between the test input and training inputs, with entries $k_i = k(\mathbf{x}_i, \mathbf{x}_*)$.
-    \item $\mathbf{y}$ is the vector of training targets.
-    \item $\sigma_n^2$ is the noise variance.
-\end{itemize}
-
-\paragraph{Kernel Functions}
-
-The choice of kernel (covariance function) is central to GPR, as it encodes assumptions about the function being modeled. Common kernels include:
-
-\begin{itemize}
-    \item \textit{Squared Exponential (RBF) Kernel}:
-
-    \begin{equation}
-    k_{\mathrm{SE}}(\mathbf{x}, \mathbf{x}') = \sigma_f^2 \exp\left( -\frac{||\mathbf{x} - \mathbf{x}'||^2}{2 \ell^2} \right),
-    \end{equation}
-
-    where $\sigma_f^2$ is the signal variance and $\ell$ is the length-scale parameter.
-
-    \item \textit{Matérn Kernel}:
-
-    \begin{equation}
-    k_{\mathrm{Mat\acute{e}rn}}(\mathbf{x}, \mathbf{x}') = \sigma_f^2 \frac{2^{1 - \nu}}{\Gamma(\nu)} \left( \frac{\sqrt{2\nu} ||\mathbf{x} - \mathbf{x}'||}{\ell} \right)^\nu K_\nu \left( \frac{\sqrt{2\nu} ||\mathbf{x} - \mathbf{x}'||}{\ell} \right),
-    \end{equation}
-
-    where $\nu$ controls the smoothness, $\Gamma(\nu)$ is the gamma function, and $K_\nu$ is the modified Bessel function of the second kind.
-\end{itemize}
-
-\subsubsection{Applications of GPR in Finance}
-
-GPR has been applied in various financial contexts due to its ability to model complex, non-linear relationships and provide uncertainty estimates.
-
-\paragraph{Time-Series Forecasting}
-
-GPR is used to predict asset prices, volatility, and other financial time-series data. Its non-parametric nature allows it to model trends and seasonality without specifying a fixed functional form \cite{cao2018financial}.
-
-\paragraph{Risk Modeling}
-
-By providing probabilistic predictions, GPR assists in risk assessment by quantifying the uncertainty associated with forecasts. This feature is valuable for estimating Value at Risk (VaR) and Conditional Value at Risk (CVaR) \cite{shen2014gaussian}.
-
-\paragraph{Derivative Pricing}
-
-GPR can approximate complex pricing functions for financial derivatives, where analytical solutions are intractable. It helps in modeling option prices based on underlying asset dynamics \cite{bennell2006gaussian}.
-
-\paragraph{Portfolio Optimization}
-
-Incorporating GPR into portfolio optimization allows for more accurate estimates of expected returns and covariances. The predictive variances from GPR can inform risk assessments and allocation decisions \cite{marcellino2020gaussian}.
-
-\subsubsection{Advantages of GPR in Financial Modeling}
-
-\begin{itemize}
-    \item \textit{Flexibility}: GPR models can capture non-linear relationships without specifying a predetermined functional form.
-    \item \textit{Probabilistic Outputs}: Provides both mean predictions and uncertainty estimates, which are crucial for risk management.
-    \item \textit{Bayesian Framework}: Naturally incorporates prior knowledge and updates beliefs with new data.
-\end{itemize}
-
-\subsubsection{Challenges and Considerations}
-
-\begin{itemize}
-    \item \textit{Scalability}: Computational complexity increases with the cube of the number of training points ($\mathcal{O}(n^3)$), posing challenges for large datasets.
-    \item \textit{Non-Stationarity}: Financial time-series data often exhibit non-stationary behavior, requiring adaptations in the modeling approach.
-    \item \textit{Hyperparameter Tuning}: Selection of kernel functions and hyperparameters significantly impacts model performance and requires careful tuning.
-\end{itemize}
 
 \subsection{Conclusion}
 
