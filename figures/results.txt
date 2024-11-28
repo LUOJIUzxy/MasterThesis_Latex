@@ -1,9 +1,242 @@
+Predicting JPM
+Correlation between Brent_Oil and JPM: -0.0683
+Discarded Brent_Oil for training
+Correlation between DXY and JPM: -0.3454
+Selected DXY for training
+Correlation between SP500 and JPM: 0.4354
+Selected SP500 for training
+Correlation between NasDaq100 and JPM: 0.2674
+Discarded NasDaq100 for training
+(63, 3)
+
 Full Correlation Matrix:
+[[ 1.         -0.41975882 -0.03505832 -0.34543022]
+ [-0.41975882  1.          0.04874198  0.43539555]
+ [-0.03505832  0.04874198  1.         -0.04115428]
+ [-0.34543022  0.43539555 -0.04115428  1.        ]]
+
+Best model:
+╒════════════════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════════╕
+│ name                               │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │       value │
+╞════════════════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════════╡
+│ GPR.kernel.kernels[0].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.12648     │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.kernel.kernels[0].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.443417    │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.kernel.kernels[1].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.12648     │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.kernel.kernels[1].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.694148    │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.likelihood.variance            │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1.01059e-06 │
+╘════════════════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════════╛
+Best loss: 83.8855211842463
+(68, 3)
+f_mean: [0.3672449]
+f_cov: [0.46144112]
+Mean Squared Error Normalized: 0.1079
+Mean: 0.0021938801293585183, Std: 0.012206360750612705
+Mean Squared Error DeNormalized: 0.0000
+------------------------------------------------------------------------------------------------
+Predicting MSFT
+Correlation between Brent_Oil and MSFT: -0.0690
+Discarded Brent_Oil for training
+Correlation between DXY and MSFT: -0.2015
+Discarded DXY for training
+Correlation between SP500 and MSFT: 0.7860
+Selected SP500 for training
+Correlation between NasDaq100 and MSFT: 0.7978
+Selected NasDaq100 for training
+(63, 3)
+
+Full Correlation Matrix:
+[[1.         0.95530789 0.04874198 0.78603684]
+ [0.95530789 1.         0.06770978 0.79777755]
+ [0.04874198 0.06770978 1.         0.0679504 ]
+ [0.78603684 0.79777755 0.0679504  1.        ]]
+
+Best model:
+╒════════════════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═══════════════╕
+│ name                               │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │         value │
+╞════════════════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═══════════════╡
+│ GPR.kernel.kernels[0].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │      1.43373  │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼───────────────┤
+│ GPR.kernel.kernels[0].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │      6.62616  │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼───────────────┤
+│ GPR.kernel.kernels[1].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │      1.43373  │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼───────────────┤
+│ GPR.kernel.kernels[1].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 983270        │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼───────────────┤
+│ GPR.likelihood.variance            │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │      0.356581 │
+╘════════════════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═══════════════╛
+Best loss: 67.37118916708148
+(68, 3)
+f_mean: [-0.06754259]
+f_cov: [0.04758231]
+Mean Squared Error Normalized: 0.3031
+Mean: -6.37590457043764e-05, Std: 0.012891765606570143
+Mean Squared Error DeNormalized: 0.0001
+Predicting ETN
+Correlation between Brent_Oil and ETN: 0.2421
+Discarded Brent_Oil for training
+Correlation between DXY and ETN: -0.1373
+Discarded DXY for training
+Correlation between SP500 and ETN: 0.6721
+Selected SP500 for training
+Correlation between NasDaq100 and ETN: 0.6789
+Selected NasDaq100 for training
+(63, 3)
+
+Full Correlation Matrix:
+[[ 1.          0.95530789  0.04874198  0.67212586]
+ [ 0.95530789  1.          0.06770978  0.67886709]
+ [ 0.04874198  0.06770978  1.         -0.04353878]
+ [ 0.67212586  0.67886709 -0.04353878  1.        ]]
+
+Best model:
+╒════════════════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═══════════════╕
+│ name                               │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │         value │
+╞════════════════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═══════════════╡
+│ GPR.kernel.kernels[0].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │      1.05023  │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼───────────────┤
+│ GPR.kernel.kernels[0].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │      4.22168  │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼───────────────┤
+│ GPR.kernel.kernels[1].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │      1.05023  │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼───────────────┤
+│ GPR.kernel.kernels[1].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 799527        │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼───────────────┤
+│ GPR.likelihood.variance            │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │      0.530244 │
+╘════════════════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═══════════════╛
+Best loss: 76.8694162501895
+(68, 3)
+f_mean: [-0.15805604]
+f_cov: [0.05061404]
+Mean Squared Error Normalized: 0.4697
+Mean: 0.002749076416973915, Std: 0.013710315482570418
+Mean Squared Error DeNormalized: 0.0001
+Predicting HLT
+Correlation between Brent_Oil and HLT: -0.1055
+Discarded Brent_Oil for training
+Correlation between DXY and HLT: -0.3474
+Selected DXY for training
+Correlation between SP500 and HLT: 0.6131
+Selected SP500 for training
+Correlation between NasDaq100 and HLT: 0.5433
+Selected NasDaq100 for training
+(63, 4)
+
+Full Correlation Matrix:
+[[ 1.         -0.41975882 -0.31745954 -0.03505832 -0.34740084]
+ [-0.41975882  1.          0.95530789  0.04874198  0.61307823]
+ [-0.31745954  0.95530789  1.          0.06770978  0.54328196]
+ [-0.03505832  0.04874198  0.06770978  1.         -0.03441359]
+ [-0.34740084  0.61307823  0.54328196 -0.03441359  1.        ]]
+
+Best model:
+╒════════════════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════════╕
+│ name                               │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │       value │
+╞════════════════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════════╡
+│ GPR.kernel.kernels[0].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.995183    │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.kernel.kernels[0].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.129003    │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.kernel.kernels[1].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.995186    │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.kernel.kernels[1].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 2.92721e+06 │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.likelihood.variance            │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1e-06       │
+╘════════════════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════════╛
+Best loss: 79.03739788101355
+(68, 4)
+f_mean: [0.3171806]
+f_cov: [0.74889]
+Mean Squared Error Normalized: 0.1066
+Mean: 0.0005843450371037147, Std: 0.011407299879953535
+Mean Squared Error DeNormalized: 0.0000
+Predicting LLY
+Correlation between Brent_Oil and LLY: 0.1556
+Discarded Brent_Oil for training
+Correlation between DXY and LLY: 0.1021
+Discarded DXY for training
+Correlation between SP500 and LLY: 0.2117
+Discarded SP500 for training
+Correlation between NasDaq100 and LLY: 0.2252
+Discarded NasDaq100 for training
+(63, 1)
+
+Full Correlation Matrix:
+[[ 1.         -0.06019244]
+ [-0.06019244  1.        ]]
+
+Best model:
+╒════════════════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════════╕
+│ name                               │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │       value │
+╞════════════════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════════╡
+│ GPR.kernel.kernels[0].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.992037    │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.kernel.kernels[0].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1           │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.kernel.kernels[1].variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.992037    │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.kernel.kernels[1].lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.00440749  │
+├────────────────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────────┤
+│ GPR.likelihood.variance            │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1.00089e-05 │
+╘════════════════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════════╛
+Best loss: 88.88511502492655
+(68, 1)
+f_mean: [-0.50305006]
+f_cov: [0.65187549]
+Mean Squared Error Normalized: 1.0461
+Mean: 0.0009123033020695311, Std: 0.01806314042556676
+Mean Squared Error DeNormalized: 0.0003
+
+63    763.411504
+64    767.853746
+65    767.920563
+66    765.658861
+67    765.194127
+Name: predicted_mean, dtype: float64
+Mean Squared Error: 93.0672
+
+63    763.411504
+64    767.853746
+65    767.920563
+66    765.658861
+67    765.194127
+Name: predicted_mean, dtype: float64
+Mean Squared Error: 93.0672
+
+63    763.411504
+64    767.853746
+65    767.920563
+66    765.658861
+67    765.194127
+Name: predicted_mean, dtype: float64
+Mean Squared Error: 93.0672
+
+63    763.411504
+64    767.853746
+65    767.920563
+66    765.658861
+67    765.194127
+Name: predicted_mean, dtype: float64
+Mean Squared Error: 93.0672
+
+63    763.411504
+64    767.853746
+65    767.920563
+66    765.658861
+67    765.194127
+Name: predicted_mean, dtype: float64
+Mean Squared Error: 93.0672
+(63, 5)
+
+Full Correlation Matrix of the Portfolio:
 [[1.         0.16139718 0.18299486 0.47938646 0.04062278]
  [0.16139718 1.         0.59676769 0.47988016 0.09791551]
  [0.18299486 0.59676769 1.         0.48661879 0.36214786]
  [0.47938646 0.47988016 0.48661879 1.         0.08849037]
  [0.04062278 0.09791551 0.36214786 0.08849037 1.        ]]
+ 
  ============================================== Predicted Results: constant =========================================================== 
 Day 1: Optimal weights (constant): [0.2 0.2 0.2 0.2 0.2]
 Day 1: Predicted Portfolio Return (Cumulative): 0.3368%, Predicted Portfolio volatility: 0.4651%
