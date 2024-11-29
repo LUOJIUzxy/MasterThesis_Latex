@@ -7,11 +7,24 @@
 
 \subsection{Asset Selection and Justification}
 
-In this study, we selected a diverse set of 10 assets to capture a wide range of market dynamics and enhance the robustness of our predictive models. The assets include foreign exchange (forex) pairs, commodities such as gold, cryptocurrencies like Bitcoin (BTC), and various stocks from different sectors. The inclusion of these assets allows us to model a comprehensive financial market and test the generalizability of our Gaussian Process Regression models across different asset classes.
 
-The justification for selecting these assets is based on their liquidity, volatility, and significance in global financial markets. Forex pairs and commodities like gold are known for their high liquidity and serve as benchmarks for economic stability. Bitcoin represents the rapidly evolving cryptocurrency market, offering unique volatility characteristics. The selected stocks provide exposure to equity markets and contribute to the diversification of the portfolio.
+In constructing the portfolio for this study, we selected five stocks representing five major sectors out of the eleven sectors defined by the Global Industry Classification Standard (GICS): Information Technology, Health Care, Industrials, Consumer Discretionary, and Financials. These sectors were chosen due to their significant contributions to the S\&P 500 Index, collectively accounting for the majority of the index's market capitalization. The selected stocks are as follows: \ac{MSFT} from the Information Technology sector, \ac{LLY} from the Health Care sector, \ac{ETN} from the Industrials sector, \ac{HLT} from the Consumer Discretionary sector, and \ac{JPM} from the Financials sector. And these five individual stocks are selected based on entropy analysis and comparison.
 
+\paragraph{Stock Market Sectors}
+The rationale behind this selection is multifaceted. Firstly, by including stocks from these predominant sectors, the portfolio captures the performance dynamics of the key drivers of the U.S. equity market. This approach ensures that the portfolio is both diversified and representative of broader market movements. Diversification across different sectors helps mitigate unsystematic risk associated with individual industries or companies, allowing the portfolio to benefit from growth opportunities while reducing the impact of sector-specific downturns.
+
+Secondly, focusing on sectors that contribute most significantly to the S\&P 500 enhances the relevance of the study's findings to investors who benchmark their performance against this widely recognized index. The Information Technology sector, for example, encompasses leading companies in innovation and technology, significantly influencing market trends. The Health Care sector includes firms pivotal in advancing medical technology and pharmaceuticals, demonstrating resilience in various economic conditions.
+
+Industrials and Consumer Discretionary sectors represent core components of the economy, reflecting business cycles and consumer spending patterns, respectively. The Financials sector plays a critical role in economic infrastructure, encompassing banking, insurance, and investment services. By selecting assets from these sectors, the portfolio encompasses areas crucial to economic growth and market capitalization.
+
+This strategic selection aligns with the study's objective of developing a predictive portfolio optimization framework applicable to a realistic and impactful set of assets. It allows for testing the effectiveness of the proposed models and strategies in a context that is meaningful to investors and relevant to overall market performance. Moreover, by focusing on sectors that significantly influence the S\&P 500, the study ensures that its results have practical implications for portfolio management and investment decision-making.
+
+\paragraph{Entropy Methods for Time Series Analysis}
 To assess the complexity of the time-series data for these assets, we utilized entropy-based methods. Specifically, we employed the \texttt{OrdianlEntropy} package in Python, which provides time-efficient, ordinal pattern-based entropy algorithms for computing the complexity of one-dimensional time-series. This analysis informed our feature engineering process by highlighting the inherent unpredictability and dynamic behavior of the asset prices.
+
+\subparagraph{Permutation Entropy (PE)}
+Permutation Entropy (PE), introduced by Bandt and Pompe in 2002, is a measure of complexity that quantifies the diversity of ordinal patterns in a time series. It is based on the relative ordering of the values within embedding vectors derived from the time series.
+\subparagraph{Weighted Permutation Entropy (WPE)}
 
 \subsection{Data Sources and Time Period}
 
@@ -21,13 +34,13 @@ To acquire the historical market data necessary for this study, we employed the 
 For U.S.-listed assets, the script utilizes the endpoint format:
 
 \begin{verbatim}
-https://eodhd.com/api/eod/{ticker}.US?period={period}&api_token={api_token}&fmt=json&from={start_date}&to={end_date}
+https://eodhd.com/api/eod/{ticker}.US?period={period}&api_token={api_token}
 \end{verbatim}
 
 where \texttt{\{ticker\}} represents the stock symbol, \texttt{\{period\}} denotes the data frequency, \texttt{\{api\_token\}} is the authentication token, and \texttt{\{start\_date\}} and \texttt{\{end\_date\}} define the data range. For Bitcoin (BTC), which is categorized differently in the API, the script accesses data using the endpoint:
 
 \begin{verbatim}
-https://eodhd.com/api/eod/BTC-USD.CC?period={period}&api_token={api_token}&fmt=json&from={start_date}&to={end_date}
+https://eodhd.com/api/eod/BTC-USD.CC?period={period}&api_token={api_token}
 \end{verbatim}
 
 An API token, securely stored using environment variables to maintain confidentiality, is included in the requests for authentication. The script handles HTTP responses by checking for successful status codes and raising exceptions in case of errors, ensuring robust data retrieval.
