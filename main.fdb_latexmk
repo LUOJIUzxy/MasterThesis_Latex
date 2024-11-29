@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1732880125.07973 "main.bcf" "main.bbl" "main" 1732880634.0051 0
+["biber main"] 1732880125.07973 "main.bcf" "main.bbl" "main" 1732882275.00599 0
   "bibliography.bib" 1731151713.82147 1753 c91c88aa0d8ffcd02aa4a04c5e0bce0d ""
-  "main.bcf" 1732880633.8592 110756 921519ed80fc82f08ac54967701b5b49 "pdflatex"
+  "main.bcf" 1732882274.86637 110756 921519ed80fc82f08ac54967701b5b49 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1732880630.10901 "/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex" "main.pdf" "main" 1732880634.00538 0
+["pdflatex"] 1732882271.14645 "/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex" "main.pdf" "main" 1732882275.00628 0
   "/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex" 1732880144.93434 2977 bb7c6f3f116e35ef38bec08d7bfb97f8 ""
   "/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
@@ -313,21 +313,21 @@
   "/Users/xiyuezhang/Library/TinyTeX/texmf.cnf" 1728789386 637 edd806fb06a89761a6034e1968af9017 ""
   "chapters/01_introduction.tex" 1732549773.23062 25394 681b84a54d292cb1e2eba8f923343671 ""
   "chapters/02_Previous Literature.tex" 1732552913.60575 23078 10bd6f5fb5a5982bfb240ce6a29227ef ""
-  "chapters/03_Methodology.tex" 1732880626.09222 24286 c2a52fb8f00a0cfd5af7fe44461c49f7 ""
+  "chapters/03_Methodology.tex" 1732882264.25814 32110 1ef2ce485be20f2522d169130ed97b4f ""
   "chapters/04_Results&Analysis.tex" 1732638744.56574 2021 a13b3e0e794aad5bf73e7f11fe5c00dc ""
   "chapters/05_Discussion.tex" 1730228484.75515 1266 17ee63cfb3cdb635008b40d4f2f11d01 ""
   "chapters/06_Conclusion.tex" 1730228960.0443 868 6fbc3c79c85352e5b584b4202122534a ""
   "figures/efficient_frontier.png" 1732551549.44138 168938 3e555215d54330621e149dbc16209f37 ""
   "figures/portfolio_comparison.png" 1732551601.69029 278263 f0b71931366736cce1019947e54b9437 ""
   "figures/trx_costs_comparison.png" 1732551585.08703 207615 0334124faf93679cb205938b071f0d86 ""
-  "main.aux" 1732880633.84429 67431 8ace58d31f3cccafd496447e6cf79e70 "pdflatex"
+  "main.aux" 1732882274.85134 68093 1f827a741fbe32e3801ca72a56eb2d01 "pdflatex"
   "main.bbl" 1732880125.76078 10592 1c2b4e26e96816f1c7c7eea57623bc9b "biber main"
-  "main.lof" 1732880633.86011 900 f4a68f14a85cb7d6acd08c921d831cfe "pdflatex"
-  "main.lot" 1732880633.86015 368 f1d3c900adaf339216b550957a4c3533 "pdflatex"
-  "main.out" 1732880631.77572 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.run.xml" 1732880633.85995 2374 9b47e752ad9e3c4a55987fd580c94e14 "pdflatex"
+  "main.lof" 1732882274.86737 900 f85099113ac367570f475abcb5307153 "pdflatex"
+  "main.lot" 1732882274.86742 368 f1d3c900adaf339216b550957a4c3533 "pdflatex"
+  "main.out" 1732882272.83394 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.run.xml" 1732882274.86713 2374 9b47e752ad9e3c4a55987fd580c94e14 "pdflatex"
   "main.tex" 1732880144.93434 2977 bb7c6f3f116e35ef38bec08d7bfb97f8 ""
-  "main.toc" 1732880633.86004 15465 7bedf2685c863eb24a407d171ba2b45f "pdflatex"
+  "main.toc" 1732882274.86722 15920 cfd51ae8e13b7cd33db9f66f1cbb9d6a "pdflatex"
   "pages/abstract.tex" 1728734216 41 8587a8aa0ec76be6aa11be8412b50b4e ""
   "pages/acknowledgments.tex" 1728734216 242 8955d5a2fec3493bcfd4b1fe970e1c8c ""
   "pages/cover.tex" 1728734216 979 52c2f918ec29c92d90a2beca2903f819 ""

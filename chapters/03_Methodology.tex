@@ -24,8 +24,143 @@ To assess the complexity of the time-series data for these assets, we utilized e
 
 \subparagraph{Permutation Entropy (PE)}
 Permutation Entropy (PE), introduced by Bandt and Pompe in 2002, is a measure of complexity that quantifies the diversity of ordinal patterns in a time series. It is based on the relative ordering of the values within embedding vectors derived from the time series.
-\subparagraph{Weighted Permutation Entropy (WPE)}
+Given a time series ${ x_t }_{t=1}^N$, the calculation of PE involves the following steps:
 
+\begin{enumerate} \item \textbf{Embedding the Time Series:}
+Choose an embedding dimension $m$ and time delay $\tau$, and construct embedding vectors:
+\begin{equation}
+    s_i = \left( x_i, x_{i+\tau}, x_{i+2\tau}, \dots, x_{i+(m-1)\tau} \right), \quad i = 1,2,\dots, N - (m -1)\tau.
+\end{equation}
+
+\item \textbf{Forming Ordinal Patterns:}
+
+For each embedding vector $s_i$, determine the permutation $\pi_i$ that sorts its components in ascending order:
+\begin{equation}
+    s_i \rightarrow \left( x_{i+\tau(k_0)} \leq x_{i+\tau(k_1)} \leq \dots \leq x_{i+\tau(k_{m-1})} \right),
+\end{equation}
+where $(k_0, k_1, \dots, k_{m-1})$ represents the indices of the sorted components.
+
+\item \textbf{Calculating Probabilities:}
+
+Count the frequency of each of the $m!$ possible ordinal patterns $\pi_j$, and estimate their probabilities:
+\begin{equation}
+    p(\pi_j) = \frac{\text{Number of times pattern } \pi_j \text{ occurs}}{N - (m -1)\tau}.
+\end{equation}
+
+\item \textbf{Calculating Permutation Entropy:}
+
+Compute the permutation entropy using Shannon's entropy formula:
+\begin{equation}
+    \mathrm{PE} = - \sum_{j=1}^{m!} p(\pi_j) \ln p(\pi_j).
+\end{equation}
+
+Normalize PE by dividing by $\ln(m!)$ to ensure it ranges between 0 and 1:
+\begin{equation}
+    \mathrm{PE}_{\text{norm}} = \frac{\mathrm{PE}}{\ln(m!)}.
+\end{equation}
+\end{enumerate}
+
+\begin{itemize} \item A \textbf{low PE} value indicates that the time series has a predictable or regular structure, with fewer unique ordinal patterns. \item A \textbf{high PE} value suggests that the time series is more complex or random, exhibiting a higher diversity of ordinal patterns. \end{itemize}
+
+
+\subparagraph{Weighted Permutation Entropy (WPE)}
+Weighted Permutation Entropy (WPE) enhances PE by incorporating the amplitude information of the time series. It assigns weights to ordinal patterns based on the values within the embedding vectors, thus accounting for both the order and magnitude of the data.
+The calculation of WPE involves the following steps:
+
+\begin{enumerate} \item \textbf{Embedding and Ordinal Patterns:}
+Follow steps 1 and 2 as in the calculation of PE to obtain the embedding vectors and their corresponding ordinal patterns.
+
+\item \textbf{Assigning Weights:}
+
+For each embedding vector $s_i$, calculate a weight $w_i$ based on the amplitude of its components. A common choice is the variance or absolute differences:
+\begin{equation}
+    w_i = \operatorname{Var}(s_i) = \frac{1}{m} \sum_{k=0}^{m-1} \left( x_{i+\tau k} - \bar{x}_i \right)^2,
+\end{equation}
+where $\bar{x}_i$ is the mean of the components of $s_i$.
+
+\item \textbf{Calculating Weighted Probabilities:}
+
+For each ordinal pattern $\pi_j$, compute the weighted probability:
+\begin{equation}
+    p_w(\pi_j) = \frac{\sum_{s_i \in \pi_j} w_i}{\sum_{i=1}^{N - (m -1)\tau} w_i}.
+\end{equation}
+
+\item \textbf{Calculating Weighted Permutation Entropy:}
+
+Compute WPE using the weighted probabilities:
+\begin{equation}
+    \mathrm{WPE} = - \sum_{j=1}^{m!} p_w(\pi_j) \ln p_w(\pi_j).
+\end{equation}
+
+Normalize WPE similarly to PE:
+\begin{equation}
+    \mathrm{WPE}_{\text{norm}} = \frac{\mathrm{WPE}}{\ln(m!)}.
+\end{equation}
+\end{enumerate}
+\begin{itemize} \item \textbf{WPE} reflects both the diversity of ordinal patterns and the magnitude of fluctuations in the time series. \item It is more sensitive to significant changes in amplitude, making it useful for detecting volatility and abrupt transitions. \end{itemize}
+
+\subparagraph{Dispersion Entropy (DE)}
+Dispersion Entropy (DE), introduced by Rostaghi and Azami in 2016, is an entropy measure that accounts for both the ordering and dispersion of data by mapping the time series into a sequence of classes or symbols.
+To calculate DE, follow these steps:
+
+\begin{enumerate} \item \textbf{Mapping Data to Classes:}
+Define $c$ classes and map each data point $x_t$ to a class label $k_t$ using a mapping function, such as:
+\begin{equation}
+    k_t = \left\lfloor c \cdot \frac{x_t - x_{\min} + \epsilon}{x_{\max} - x_{\min} + 2\epsilon} \right\rfloor + 1, \quad k_t \in \{1, 2, \dots, c\},
+\end{equation}
+where $x_{\min}$ and $x_{\max}$ are the minimum and maximum values of the time series, and $\epsilon$ is a small constant to prevent division by zero.
+
+\item \textbf{Embedding:}
+
+Form embedding vectors of class labels:
+\begin{equation}
+    s_i = \left( k_i, k_{i+\tau}, k_{i+2\tau}, \dots, k_{i+(m-1)\tau} \right).
+\end{equation}
+
+\item \textbf{Creating Dispersion Patterns:}
+
+Each embedding vector $s_i$ represents a dispersion pattern $d_j$, where $j$ indexes the possible patterns.
+
+\item \textbf{Calculating Probabilities:}
+
+Count the frequency of each possible dispersion pattern and estimate their probabilities:
+\begin{equation}
+    p(d_j) = \frac{\text{Number of times pattern } d_j \text{ occurs}}{N - (m -1)\tau}.
+\end{equation}
+
+\item \textbf{Calculating Dispersion Entropy:}
+
+Compute DE using:
+\begin{equation}
+    \mathrm{DE} = - \sum_{j=1}^{c^m} p(d_j) \ln p(d_j).
+\end{equation}
+
+Normalize DE by dividing by $\ln(c^m)$:
+\begin{equation}
+    \mathrm{DE}_{\text{norm}} = \frac{\mathrm{DE}}{\ln(c^m)}.
+\end{equation}
+\end{enumerate}
+
+\begin{itemize} \item \textbf{DE} considers both the frequency and dispersion of data, providing a robust measure of complexity for non-stationary time series. \item It effectively captures changes in amplitude and is less sensitive to noise and outliers. \end{itemize}
+
+\subparagraph{Choosing WPE and DE for Stock Price Analysis}
+Analyzing stock prices requires accounting for both the order and magnitude of price changes due to the following reasons:
+
+\subparagraph{Advantages of WPE}
+
+\begin{itemize} \item \textbf{Amplitude Incorporation:} By weighting ordinal patterns, WPE accounts for the magnitude of price changes, capturing volatility. \item \textbf{Volatility Sensitivity:} It is effective in detecting periods of high market volatility, which are critical for risk management. \item \textbf{Balanced Complexity:} WPE balances computational efficiency with the need for detailed analysis. \end{itemize}
+
+\subparagraph{Advantages of DE}
+
+\begin{itemize} \item \textbf{Non-Stationarity Adaptation:} DE effectively handles non-stationary time series by mapping data into classes. \item \textbf{Noise Robustness:} It is less sensitive to noise and outliers, providing reliable complexity measures in the presence of market anomalies. \item \textbf{Comprehensive Analysis:} DE considers both the frequency and amplitude of patterns, offering a holistic view of market dynamics. \end{itemize}
+\begin{itemize} \item \textbf{Amplitude Sensitivity:} The size of price movements affects returns and risk; thus, methods that incorporate amplitude information are essential. \item \textbf{Volatility Detection:} Financial markets are characterized by varying volatility, which influences investment decisions. \item \textbf{Non-Stationarity Handling:} Stock prices exhibit trends and abrupt changes, necessitating entropy measures that handle non-stationary data effectively. \end{itemize}
+
+\subparagraph{Conclusion}
+Weighted Permutation Entropy and Dispersion Entropy are more suitable than Permutation Entropy for analyzing stock prices because they:
+
+\begin{itemize} \item Capture essential information about both the direction and magnitude of price movements. \item Are better equipped to handle the inherent non-stationarity and volatility of financial time series. \item Provide more informative and sensitive complexity measures that can enhance asset selection and risk assessment strategies. \end{itemize}
+
+By utilizing WPE and DE, analysts and investors can gain deeper insights into market behavior, aiding in the selection of assets across different sectors based on the complexity and predictability of their stock prices.
 \subsection{Data Sources and Time Period}
 
 

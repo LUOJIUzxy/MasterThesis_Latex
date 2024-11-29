@@ -688,6 +688,15 @@ INPUT ./chapters/03_Methodology.tex
 INPUT ./chapters/03_Methodology.tex
 INPUT ./chapters/03_Methodology.tex
 INPUT chapters/03_Methodology.tex
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -715,9 +724,6 @@ INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi10.tf
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
-INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
-INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
