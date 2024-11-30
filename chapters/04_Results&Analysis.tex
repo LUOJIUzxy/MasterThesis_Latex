@@ -43,7 +43,7 @@ Figure~\ref{fig:prediction_comparison} illustrates the predicted values from bot
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{prediction_comparison.png}
+\includegraphics[width=0.8\textwidth]{figures/prediction_comparison.png}
 \caption{Comparison of Predicted Values from GPR and ARIMA Models}
 \label{fig:prediction_comparison}
 \end{figure}
@@ -78,47 +78,17 @@ Lower MSE values indicate better predictive accuracy. The results show that for 
 The comparison highlights the strengths and limitations of both models. GPR excels in capturing short-term fluctuations due to its flexibility and non-parametric nature, making it suitable for short-term forecasting. ARIMA, with its reliance on historical patterns and residuals, may be more stable for medium-term forecasts. Selecting the appropriate model depends on the specific investment horizon and the characteristics of the asset being analyzed.
 
 
-\subsection{Analysis of prediction intervals}
+\subsection{Comparison of iteratively retraining and fixed models}
 
-\subsection{Model robustness and generalization}
 
 \section{Portfolio Optimization Outcomes}
+In this section, we present the results of the portfolio optimization process, including the predicted performance of different strategies, risk metrics, and transaction costs analysis. Compared with the results from backtesting using the real-world data, we evaluate the effectiveness of the strategies in different market conditions.
 
 
-\subsection{Strategy Performance Comparison}
-Return analysis
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/portfolio_comparison.png}
-    \caption{Portfolio Comparison}
-    \label{fig:portfolio_comparison}
-\end{figure}
-
-Risk metrics
-Transaction costs impact
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/trx_costs_comparison.png}
-    \caption{Transaction Costs Comparison}
-    \label{fig:trx_costs_comparison}
-\end{figure}
-
-Strategy switching frequency analysis
-
-
-Comparative Analysis:
-Compare the performance of all strategies, highlighting the strengths and weaknesses of each.
-
-\subsection{Dynamic Strategy Evaluation}
-Probability threshold sensitivity
-Strategy switching effectiveness
-Portfolio turnover analysis
-Risk-adjusted performance metrics
 
 \subsection{Strategy Performance Calculation}
 
-In addition to backtesting, we calculate the expected performance of the portfolio optimization strategies based on the predicted returns and the optimal weights obtained from the optimization process. This involves estimating the cumulative portfolio return and the predicted portfolio volatility, which can later be compared with the actual returns from backtesting to assess the accuracy and effectiveness of the strategies.
+In addition to backtesting, we first calculate the expected performance of the portfolio optimization strategies based on the predicted returns and the optimal weights obtained from the optimization process. This involves estimating the cumulative portfolio return and the predicted portfolio volatility, which can later be compared with the actual returns from backtesting to assess the accuracy and effectiveness of the strategies.
 
 \subsubsection{Portfolio Class Implementation}
 
@@ -229,6 +199,21 @@ The predicted portfolio performance metrics are compared with the actual perform
     \item \textbf{Code Integration}: The \texttt{evaluate\_portfolio} method integrates with the optimizer and strategies seamlessly, ensuring that the performance calculation is consistent with the optimization process.
 \end{itemize}
 
+\begin{table}[htbp]
+\centering
+\caption{Predicted Portfolio Performance v.s. Actual Backtesting Results}
+\label{tab:predicted_vs_actual}
+\begin{tabular}{cccccc}
+\toprule
+ &\textbf{Constant} & \textbf{Max Return} & \textbf{Min Volatility} & \textbf{Max Sharpe} & \textbf{Dynamic} \\
+\midrule
+a&0.9654\%  & 2.1717\% & 3.5259\% & 0.4983\% & 3.6456\% \\
+b&1.8503\% & 1.6336\% & 4.1357\% & 2.1203\% & 2.9314\% \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsubsection{Conclusion}
 
 The strategy performance calculation provides essential insights into the expected performance of the portfolio optimization strategies based on predicted returns and volatilities. By comparing these predictions with actual backtested results, we can evaluate the robustness and reliability of the strategies in different market conditions. This process aids in refining the strategies and improving their practical applicability in portfolio management.
@@ -238,17 +223,84 @@ The strategy performance calculation provides essential insights into the expect
 \section{Backtesting Results}
 Provide detailed results from the backtesting, including cumulative returns, volatility, Sharpe ratios, and transaction costs for each strategy.
 
-\subsection{Transaction Costs impact}
+\subsection{Strategy Performance Comparison}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_constant.png}
+    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_max_return.png}
+    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_min_volatility.png}
+    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_sharpe.png}
+    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_dynamic.png}
+    \caption{Portfolio Allocation Evolution}
+    \label{fig:asset_allocations_evolution}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/portfolio_comparison_final_non.png}
+    \caption{Portfolio Comparison}
+    \label{fig:portfolio_comparison_non_iterative}
+\end{figure}
+
+Return analysis
+
+Transaction costs comparison, which also implies the strategy switching frequency in dynamic strategy.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/trx_costs_comparison_final_non.png}
+    \caption{Transaction Costs Comparison}
+    \label{fig:trx_costs_comparison_non_iterative}
+\end{figure}
+
+
+
+
+Comparative Analysis:
+Compare the performance of all strategies, highlighting the strengths and weaknesses of each.
+
+\subsubsection{Impact of Iteratively Retrained Models on Strategy Performance}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_constant.png}
+    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_max_return.png}
+    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_min_volatility.png}
+    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_sharpe.png}
+    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_dynamic.png}
+    \caption{Portfolio Allocation Evolution of Iteratively Retrained Models}
+    \label{fig:asset_allocations_evolution_iterative}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/portfolio_comparison_final.png}
+    \caption{Portfolio Comparison of Iteratively Retrained Models}
+    \label{fig:portfolio_comparison_iterative}
+\end{figure}
+
+
+Transaction costs comparison, which also implies the strategy switching frequency in dynamic strategy.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/trx_costs_comparison_final.png}
+    \caption{Transaction Costs Comparison of Iteratively Retrained Models}
+    \label{fig:trx_costs_comparison_iterative}
+\end{figure}
+
+From the plots, we are surpringly to see that the iteratively retrained models have only trivial impact on the strategy performance, which even got less cumulative portfolio returns in backtesting. The iterative retraining process helps the models adapt to changing market conditions, which in this case, the optimizer thinks the market is going down, leading to the dynamic strategy to consistently follow Max Return Strategy. The reduced transaction costs in the iterative approach also indicate that the strategies are more stable and require fewer adjustments over time.
+
+We suspect that the iterative retraining process didn't get a better result in the portfolio optimisation process because the prediction model has large fluctuations when predicting short-term results, whereas it would stablize after two or three days. This is a common issue in financial time series prediction, and we will further investigate this in the future work.
+\subsection{Dynamic Strategy Evaluation}
+Probability threshold sensitivity
+Strategy switching effectiveness
+Portfolio turnover analysis
+Risk-adjusted performance metrics
+
 
 \subsection{Compared with Predicted Performance}
 
 
 \subsection{Different market conditions}
-
-
-
-\subsection{Out-of-sample performance}
-
-\subsection{Statistical significance tests}
-
 

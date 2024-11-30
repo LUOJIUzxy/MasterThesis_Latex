@@ -8,9 +8,13 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces GPR Prediction with Missing Data and Outliers}}{33}{figure.caption.149}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Decision Flowchart for the Dynamic Strategy}}{53}{figure.caption.229}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparison of Predicted Values from GPR and ARIMA Models}}{61}{figure.caption.257}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Portfolio Comparison}}{63}{figure.caption.264}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Transaction Costs Comparison}}{64}{figure.caption.265}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparison of Predicted Values from GPR and ARIMA Models}}{60}{figure.caption.255}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Portfolio Allocation Evolution}}{66}{figure.caption.275}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Portfolio Comparison}}{66}{figure.caption.276}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Transaction Costs Comparison}}{67}{figure.caption.277}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Portfolio Allocation Evolution of Iteratively Retrained Models}}{68}{figure.caption.280}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Portfolio Comparison of Iteratively Retrained Models}}{68}{figure.caption.281}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Transaction Costs Comparison of Iteratively Retrained Models}}{69}{figure.caption.282}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

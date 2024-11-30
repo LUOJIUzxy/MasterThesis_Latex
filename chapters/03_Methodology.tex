@@ -8,7 +8,7 @@
 \subsection{Asset Selection and Justification}
 
 
-In constructing the portfolio for this study, we selected five stocks representing five major sectors out of the eleven sectors defined by the Global Industry Classification Standard (GICS): Information Technology, Health Care, Industrials, Consumer Discretionary, and Financials. These sectors were chosen due to their significant contributions to the S\&P 500 Index, collectively accounting for the majority of the index's market capitalization. The selected stocks are as follows: \ac{MSFT} from the Information Technology sector, \ac{LLY} from the Health Care sector, \ac{ETN} from the Industrials sector, \ac{HLT} from the Consumer Discretionary sector, and \ac{JPM} from the Financials sector. And these five individual stocks are selected based on entropy analysis and comparison.
+In constructing the portfolio for this study, we selected five stocks representing five major sectors out of the eleven sectors defined by the Global Industry Classification Standard (GICS): Information Technology, Health Care, Industrials, Consumer Discretionary, and Financials. These sectors were chosen due to their significant contributions to the S\&P 500 Index, collectively accounting for the majority of the index's market capitalization. The selected stocks are as follows: \ac{MSFT} from the Information Technology sector, \ac{JNJ} from the Health Care sector, \ac{BA} from the Industrials sector, \ac{HLT} from the Consumer Discretionary sector, and \ac{JPM} from the Financials sector. And these five individual stocks are selected based on entropy analysis and comparison.
 
 \paragraph{Stock Market Sectors}
 The rationale behind this selection is multifaceted. Firstly, by including stocks from these predominant sectors, the portfolio captures the performance dynamics of the key drivers of the U.S. equity market. This approach ensures that the portfolio is both diversified and representative of broader market movements. Diversification across different sectors helps mitigate unsystematic risk associated with individual industries or companies, allowing the portfolio to benefit from growth opportunities while reducing the impact of sector-specific downturns.
@@ -796,7 +796,7 @@ Let:
 
 \paragraph{Decision Logic}
 
-The strategy proceeds as follows:
+The strategy proceeds as follows and is updated at each time step, for each round the decision flow can be seen in the flowchart below:
 
 \begin{enumerate}
     \item \textbf{Initialization}: For the first time step (\( t = 0 \)), where no previous weights exist, the strategy allocates weights by maximizing returns under a volatility constraint:
@@ -818,7 +818,7 @@ The strategy proceeds as follows:
 
     \item \textbf{Comparison of Expected Returns}:
     \begin{itemize}
-        \item If \( R_A > R_B \) (the expected return is decreasing), it suggests that the current allocation may yield lower returns in the next period. Therefore, the strategy opts to \textbf{maximize returns} by solving:
+        \item If \( R_A > R_B \) (the expected return is increasing), it suggests that the current allocation may yield higher returns in the next period, which indicates a favorable market condition. Therefore, the strategy opts to \textbf{maximize returns} by solving:
 
         \[
         \mathbf{w}_t = \arg\min_{\mathbf{w}} \left( -\boldsymbol{\mu}_B^\top \mathbf{w} + \mathcal{R}(\mathbf{w}) \right)
@@ -826,7 +826,7 @@ The strategy proceeds as follows:
         
         subject to the constraints specified in the maximum return strategy.
 
-        \item If \( R_A \leq R_B \) (the expected return is increasing), the strategy becomes more conservative and chooses to \textbf{minimize volatility} by solving:
+        \item If \( R_A \leq R_B \) (the expected return is decreasing), we adopt a more conservative strategy to avoid potential market risks, which is to choose \textbf{minimize volatility} by solving:
 
         \[
         \mathbf{w}_t = \arg\min_{\mathbf{w}} \left( \sqrt{\mathbf{w}^\top \Sigma_B \mathbf{w}} + \mathcal{R}(\mathbf{w}) \right)
@@ -859,8 +859,9 @@ The strategy proceeds as follows:
 \end{enumerate}
 
 \begin{figure}[htbp]
-% \centering
-\begin{tikzpicture}[scale=0.5, node distance=2.5cm, auto, >=latex']
+\centering
+\scalebox{0.8}{
+\begin{tikzpicture}[scale=0.1, node distance=2.5cm, auto, >=latex']
     % Define block styles
     \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=gray!10]
     \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!10]
@@ -872,10 +873,10 @@ The strategy proceeds as follows:
     \node [decision, below of=start, node distance=2.5cm, align=center] (prev_weights) {Previous Weights \\ Exist ?};
     \node [process, below of=prev_weights, node distance=3cm, align=center] (init_alloc) {Maximize Returns \\ Volatility Constraint};
     \node [process, right of=prev_weights, node distance=6cm, align=center] (calc_exp_returns) {Calculate Expected Returns \\ $R_A = \boldsymbol{\mu}_A^\top \mathbf{w}_{\text{prev}}$ \\ $R_B = \boldsymbol{\mu}_B^\top \mathbf{w}_{\text{prev}}$};
-    \node [decision, below of=calc_exp_returns, node distance=3cm, align=center] (compare_returns) {$R_A > R_B$?};
-    \node [process, below of=compare_returns, node distance=3cm, align=center] (max_returns) {Maximize Returns};
-    \node [process, right of=compare_returns, node distance=5cm, align=center] (min_uncertainty) {Minimize Volatility};
-    \node [process, below of=max_returns, node distance=2cm, align=center] (compute_trx_costs) {Compute Transaction Costs \\ $\Delta R_{\text{realized}} = (R_B - R_A) - \text{TransactionCost}$};
+    \node [decision, below of=calc_exp_returns, node distance=3cm, align=center] (compare_returns) {$R_A < R_B$?};
+    \node [process, right of=compare_returns, node distance=7.5cm, align=center] (max_returns) {Maximize Returns};
+    \node [process, below of=compare_returns, node distance=3cm, align=center] (min_uncertainty) {Minimize Volatility};
+    \node [process, below of=min_uncertainty, node distance=2cm, align=center] (compute_trx_costs) {Compute Transaction Costs \\ $\Delta R_{\text{realized}} = (R_B - R_A) - \text{TransactionCost}$};
     \node [decision, below of=compute_trx_costs, node distance=3cm, align=center] (delta_R_pos) {$\Delta R_{\text{realized}} > 0$?};
     \node [process, below of=delta_R_pos, node distance=3cm, align=center] (adopt_new_weights) {Adopt New Weights \\ $\mathbf{w}_t$};
     \node [process, right of=delta_R_pos, node distance=5cm, align=center] (keep_prev_weights) {Keep Previous Weights \\ $\mathbf{w}_t = \mathbf{w}_{\text{prev}}$};
@@ -887,16 +888,17 @@ The strategy proceeds as follows:
     \draw [arrow] (prev_weights) -- node[above] {Yes} (calc_exp_returns);
     \draw [arrow] (init_alloc) |- (end);
     \draw [arrow] (calc_exp_returns) -- (compare_returns);
-    \draw [arrow] (compare_returns) -- node[left] {Yes} (max_returns);
-    \draw [arrow] (compare_returns) -- node[above] {No} (min_uncertainty);
-    \draw [arrow] (max_returns) -- (compute_trx_costs);
-    \draw [arrow] (min_uncertainty) |- (compute_trx_costs);
+    \draw [arrow] (compare_returns) -- node[left] {No} (min_uncertainty);
+    \draw [arrow] (compare_returns) -- node[above] {Yes} (max_returns);
+    \draw [arrow] (max_returns) |- (end);
+    \draw [arrow] (min_uncertainty) -- (compute_trx_costs);
     \draw [arrow] (compute_trx_costs) -- (delta_R_pos);
     \draw [arrow] (delta_R_pos) -- node[left] {Yes} (adopt_new_weights);
     \draw [arrow] (delta_R_pos) -- node[above] {No} (keep_prev_weights);
     \draw [arrow] (adopt_new_weights) -- (end);
     \draw [arrow] (keep_prev_weights) |- (end);
 \end{tikzpicture}
+}
 \caption{Decision Flowchart for the Dynamic Strategy}
 \end{figure}
 
@@ -904,22 +906,11 @@ The strategy proceeds as follows:
 \paragraph{Rationale}
 
 The strategy's decision criteria are designed to balance the trade-off between expected returns and transaction costs:
+By comparing \( R_A \) and \( R_B \), the strategy assesses whether the expected return is improving or deteriorating.
+ Maximizing returns when the expected return is decreasing attempts to counteract the anticipated decline by seeking higher-return allocations.
+ Minimizing volatility when the expected return is increasing adopts a conservative stance to preserve gains while benefiting from favorable market conditions.
+Incorporating transaction costs ensures that rebalancing decisions are economically justified, preventing unnecessary trading that could erode returns.
 
-\begin{itemize}
-    \item By comparing \( R_A \) and \( R_B \), the strategy assesses whether the expected return is improving or deteriorating.
-    \item Maximizing returns when the expected return is decreasing attempts to counteract the anticipated decline by seeking higher-return allocations.
-    \item Minimizing volatility when the expected return is increasing adopts a conservative stance to preserve gains while benefiting from favorable market conditions.
-    \item Incorporating transaction costs ensures that rebalancing decisions are economically justified, preventing unnecessary trading that could erode returns.
-\end{itemize}
-
-\paragraph{Implementation Notes}
-
-\begin{itemize}
-    \item \textbf{Covariance Matrices}: The covariance matrices \( \Sigma_A \) and \( \Sigma_B \) are used in volatility calculations and are estimated based on predicted volatilities and correlations at times \( t-1 \) and \( t \), respectively.
-    \item \textbf{Regularization Penalty}: The regularization function \( \mathcal{R}(\mathbf{w}) \) includes L1/L2 penalties and transaction costs as detailed in previous sections.
-    \item \textbf{Constraints}: The optimization problems are subject to standard portfolio constraints such as full investment and no short-selling.
-    \item \textbf{Adaptability}: This strategy dynamically adjusts its optimization objective based on market expectations, aiming to enhance returns while controlling risk and costs.
-\end{itemize}
 
 \paragraph{Conclusion}
 

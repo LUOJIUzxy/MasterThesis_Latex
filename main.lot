@@ -4,7 +4,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Mean Squared Error (MSE) Comparison between GPR and ARIMA Models}}{60}{table.caption.254}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Mean Squared Error (MSE) Comparison between GPR and ARIMA Models}}{59}{table.caption.252}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Predicted Portfolio Performance v.s. Actual Backtesting Results}}{65}{table.caption.272}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

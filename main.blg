@@ -1,0 +1,35 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'main.blg'
+[41] biber:340> INFO - === Sun Dec  1, 2024, 00:33:39
+[51] Biber.pm:420> INFO - Reading 'main.bcf'
+[96] Biber.pm:994> INFO - Found 25 citekeys in bib section 0
+[104] Biber.pm:4463> INFO - Processing section 0
+[110] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[110] bibtex.pm:1713> INFO - LaTeX decoding ...
+[114] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[144] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[144] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[144] Biber.pm:4283> INFO - Sorting list 'anyt/global//global/global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[144] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[148] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[149] bbl.pm:779> INFO - Output to main.bbl
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'sharpe1966mutual' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'rasmussen2006gaussian' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'sezer2020financial' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'nevmyvaka2006reinforcement' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'lessmann2015benchmarking' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'phua2010comprehensive' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'hagenau2013automated' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'bellman1957dynamic' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'merton1969lifetime' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'merton1971optimum' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'moody1998performance' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'almahdi2019adaptive' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'primbs2009dynamic' (section 0)
+[149] Biber.pm:131> WARN - I didn't find a database entry for 'garleanu2009dynamic' (section 0)
+[150] Biber.pm:131> WARN - I didn't find a database entry for 'ang2002regime' (section 0)
+[150] Biber.pm:131> WARN - I didn't find a database entry for 'hamilton1989new' (section 0)
+[150] Biber.pm:131> WARN - I didn't find a database entry for 'huang2019building' (section 0)
+[150] Biber.pm:131> WARN - I didn't find a database entry for 'poterba2000portfolio' (section 0)
+[150] Biber.pm:131> WARN - I didn't find a database entry for 'fernandez2018machine' (section 0)
+[150] Biber.pm:133> INFO - WARNINGS: 19

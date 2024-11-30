@@ -1,0 +1,50 @@
+============================================== Predicted Results: dynamic =========================================================== 
+Allocate the first day
+Day 1: Optimal weights (dynamic): [1.00000000e+00 6.69603262e-16 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00]
+Day 1: Predicted Portfolio Return (Cumulative): 0.7599%, Predicted Portfolio volatility: 1.1129%
+mu_A:  [ 0.0075989   0.00098183 -0.00201824 -0.00175489 -0.00375675]
+mu_B:  [ 0.00580639  0.00389456 -0.00011922  0.00229062  0.00079852]
+prev_optimal_weights:  [1.00000000e+00 6.69603262e-16 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00]
+Expected return A is less than expected return B, minimizing uncertainty
+Realized return is less than 0, reverting to previous weights
+Day 2: Optimal weights (dynamic): [1.00000000e+00 6.69603262e-16 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00]
+Day 2: Predicted Portfolio Return (Cumulative): 1.3449%, Predicted Portfolio volatility: 1.5249%
+mu_A:  [ 0.00580639  0.00389456 -0.00011922  0.00229062  0.00079852]
+mu_B:  [ 0.00151414  0.0166108   0.00569111  0.00251213 -0.00255387]
+prev_optimal_weights:  [1.00000000e+00 6.69603262e-16 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00]
+Expected return A is less than expected return B, minimizing uncertainty
+Realized return is less than 0, reverting to previous weights
+Day 3: Optimal weights (dynamic): [1.00000000e+00 6.69603262e-16 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00]
+Day 3: Predicted Portfolio Return (Cumulative): 1.4984%, Predicted Portfolio volatility: 2.0071%
+mu_A:  [ 0.00151414  0.0166108   0.00569111  0.00251213 -0.00255387]
+mu_B:  [ 0.00873085 -0.00117853 -0.00201824  0.00065809 -0.00151263]
+prev_optimal_weights:  [1.00000000e+00 6.69603262e-16 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00]
+Expected return A is greater than expected return B, maximizing returns
+Day 4: Optimal weights (dynamic): [8.83163973e-01 1.16836027e-01 0.00000000e+00 2.07313008e-16
+ 0.00000000e+00]
+Day 4: Predicted Portfolio Return (Cumulative): 2.3439%, Predicted Portfolio volatility: 2.0000%
+mu_A:  [ 0.00873085 -0.00117853 -0.00201824  0.00065809 -0.00151263]
+mu_B:  [ 0.00175137 -0.00131446  0.00651712  0.00343202 -0.00141854]
+prev_optimal_weights:  [8.83163973e-01 1.16836027e-01 0.00000000e+00 2.07313008e-16
+ 0.00000000e+00]
+Expected return A is less than expected return B, minimizing uncertainty
+Realized return is less than 0, reverting to previous weights
+Day 5: Optimal weights (dynamic): [8.83163973e-01 1.16836027e-01 0.00000000e+00 2.07313008e-16
+ 0.00000000e+00]
+Day 5: Predicted Portfolio Return (Cumulative): 2.4866%, Predicted Portfolio volatility: 2.1522%
+ ============================================== Backtest Results: dynamic =========================================================== 
+Day 1: Daily Portfolio Net Return = -0.0211%, Transaction Cost = 0.001000%, Portfolio Variance = 1.112914%, Daily Sharpe Ratio = -0.0225
+Day 2: Daily Portfolio Net Return = 1.3989%, Transaction Cost = 0.000000%, Portfolio Variance = 1.524870%, Daily Sharpe Ratio = 0.9148
+Day 3: Daily Portfolio Net Return = 0.2978%, Transaction Cost = 0.000000%, Portfolio Variance = 2.007108%, Daily Sharpe Ratio = 0.1464
+Day 4: Daily Portfolio Net Return = 0.0994%, Transaction Cost = 0.000234%, Portfolio Variance = 2.000000%, Daily Sharpe Ratio = 0.0477
+Day 5: Daily Portfolio Net Return = 0.9903%, Transaction Cost = 0.000000%, Portfolio Variance = 2.152221%, Daily Sharpe Ratio = 0.4583
+Cumulative Return: 2.7883%
+Cumulative Transaction Costs (based on changes in weights): 0.001234%
+Cumulative Portfolio Variance: 8.797113%
+Sharpe Ratio: 0.316505
