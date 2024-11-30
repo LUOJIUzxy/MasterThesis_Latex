@@ -1,15 +1,16 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Example drawing}}{12}{figure.caption.30}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Example plot}}{12}{figure.caption.31}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Example listing}}{12}{figure.caption.32}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Example listing}}{11}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Efficient Frontier in Mean-Variance Space}}{14}{figure.caption.39}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Efficient Frontier in Mean-Variance Space}}{13}{figure.caption.35}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces GPR Prediction with Missing Data and Outliers}}{33}{figure.caption.149}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Decision Flowchart for the Dynamic Strategy}}{53}{figure.caption.229}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Portfolio Comparison}}{42}{figure.caption.159}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Transaction Costs Comparison}}{43}{figure.caption.160}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparison of Predicted Values from GPR and ARIMA Models}}{61}{figure.caption.257}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Portfolio Comparison}}{63}{figure.caption.264}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Transaction Costs Comparison}}{64}{figure.caption.265}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

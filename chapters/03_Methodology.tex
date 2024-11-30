@@ -186,9 +186,10 @@ Upon receiving a valid response, the JSON data is parsed into a pandas DataFrame
 ../Stocks/{ticker}/{ticker}_us_{period}.csv
 \end{verbatim}
 
-By automating the data fetching and saving process, we ensured consistency and repeatability in data collection of the whole pipeline. This method allowed us to systematically gather historical market data for all selected assets over the specified time periods, providing a reliable dataset for training the Gaussian Process Regression models and conducting backtesting for the portfolio optimization strategies. The use of the EOD Historical Data API ensured that the data was up-to-date and accurate, reflecting real market conditions essential for the validity of our analysis.
-
-Typically, stocks indexes data like S\&P500 and Nasdaq100 is fetched from https://www.nasdaq.com/, are used to represent the overall market performance. In this study, we included the S\&P 500 index as a benchmark for the U.S. equity market. The S\&P 500 index is widely regarded as a barometer for the U.S. stock market and is composed of 500 large-cap companies representing various sectors.
+By automating the data fetching and saving process, we ensured consistency and repeatability in data collection of the whole pipeline. 
+This method allowed us to systematically gather historical market data for all selected assets over the specified time periods, providing a reliable dataset for training the Gaussian Process Regression models and conducting backtesting for the portfolio optimization strategies. 
+The use of the EOD Historical Data API ensured that the data was up-to-date and accurate, reflecting real market conditions essential for the validity of our analysis.
+Also, for future work, the script can be easily adapted to retrieve data for additional assets or extend the time period, enabling further research and analysis in the financial domain.
 
 \subsection{Data Preprocessing and Log Returns}
 Data preprocessing and feature engineering are critical steps in preparing the dataset for modeling. They ensure that the data fed into the Gaussian Process Regression models are clean, consistent, and informative.
@@ -246,6 +247,20 @@ Outliers were identified using the Interquartile Range (IQR) method:
 \end{equation}
 
 where $Q_1$ and $Q_3$ are the first and third quartiles, respectively. Data points lying outside 1.5 times the IQR from the quartiles were considered outliers. We assessed these outliers to determine whether they were due to data errors or genuine market anomalies. Genuine outliers representing significant market movements were retained to preserve the dataset's integrity, while erroneous data points were corrected or removed.
+
+\paragraph{Handling Missing Data with GPR}
+\ac{GPR} is particularly effective in addressing missing data and managing outliers due to its probabilistic framework and ability to model uncertainties. As demonstrated in the figure, GPR leverages the observed data points to predict missing values by constructing a distribution over possible functions that fit the data. 
+As shown in \ref{fig:gpr_missing_outliers} for each prediction, GPR provides both a mean estimate and a confidence interval that quantifies the uncertainty of the prediction. This feature allows it to interpolate missing data seamlessly while considering the underlying patterns and relationships in the time-series.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/predicted_MSFT_with_removed.png}
+    \caption{GPR Prediction with Missing Data and Outliers}
+    \label{fig:gpr_missing_outliers}
+\end{figure}
+
+Furthermore, GPR handles outliers by naturally weighting data points according to their fit within the modeled distribution. Outliers, which deviate significantly from the predicted mean and exhibit higher uncertainty, are less influential in the model's predictions. This property prevents extreme values from distorting the regression output, making GPR robust in noisy and incomplete datasets. The ability to quantify uncertainty not only aids in filling missing data but also provides a valuable tool for identifying potential anomalies in the dataset, as seen in the highlighted regions of the plot. By incorporating these capabilities, GPR ensures that the dataset remains coherent and usable for subsequent analysis, such as predictive modeling and portfolio optimization.
+
 
 \paragraph{Data Splitting and Cross-Validation}
 
@@ -310,40 +325,391 @@ By carefully selecting assets, sourcing reliable data, and meticulously preproce
 
 
 \section{Model Development}
-\subsection{Performance metrics}
-MSE, MAE, RMSE, MAPE
-Sharpe ratio
-\subsection{Baseline models}
-ARIMA model
-\subsection{Hyperparameter tuning}
-\subsection{Model evaluation and comparison}
-\subsection{Portfolio optimization strategies}
-\subsection{Transaction costs and rebalancing}
-\subsection{Strategy selection mechanism}
-\subsection{Implementation details}
+In this section, we outline the development of the predictive framework and evaluation methodology for forecasting asset returns and optimizing portfolio allocations, namely trading strategies. The focus is on the performance metrics used to assess model effectiveness, as well as the selection of a baseline model for comparison with the Gaussian Process Regression (GPR) approach.
+
+\subsection{Baseline Models}
+
+To establish a reference point for the performance of the Gaussian Process Regression model, we selected the ARIMA (AutoRegressive Integrated Moving Average) model as the baseline.
+
+\subsubsection{\ac{ARIMA} Model}
+
+The \ac{ARIMA} model is a widely used time-series forecasting technique that combines autoregressive (AR), differencing (I), and moving average (MA) components. It is defined by three parameters: $p$, $d$, and $q$, where:
+
+\begin{itemize}
+    \item $p$ is the order of the autoregressive term.
+    \item $d$ is the degree of differencing required to achieve stationarity.
+    \item $q$ is the order of the moving average term.
+\end{itemize}
+
+The \ac{ARIMA} model forecasts the value at time $t$ as:
+
+\begin{equation}
+y_t = \phi_1 y_{t-1} + \phi_2 y_{t-2} + \dots + \phi_p y_{t-p} + \epsilon_t + \theta_1 \epsilon_{t-1} + \dots + \theta_q \epsilon_{t-q},
+\end{equation}
+
+where $\phi_i$ are the AR coefficients, $\theta_i$ are the MA coefficients, and $\epsilon_t$ is the white noise term.
+
+\subsubsection{Rationale for Baseline Selection}
+
+The \ac{ARIMA} model serves as an appropriate baseline because it is a well-established method for modeling time-series data and capturing trends and seasonality. While it is linear in nature, ARIMA provides a benchmark for assessing the added value of GPR, which can capture complex non-linear relationships and quantify uncertainty in predictions.
+
+\subsection{Comparative Evaluation}
+
+The performance of the \ac{GPR} model is compared against the \ac{ARIMA} baseline using the \ac{MSE} for predictive accuracy and the Sharpe Ratio for portfolio optimization outcomes. This dual evaluation approach ensures that the models are assessed comprehensively, both in terms of their forecasting ability and their impact on investment decisions. By demonstrating improvements over the \ac{ARIMA} model, the study highlights the effectiveness of \ac{GPR} in dynamic portfolio management.
+
+\subsection{Performance Metrics}
+
+To evaluate the performance of the predictive models and portfolio strategies, we employ the following metrics:
+
+\subsubsection{Mean Squared Error (MSE)}
+
+The Mean Squared Error (MSE) measures the accuracy of the model's predictions compared to the actual observed values. It is calculated as:
+
+\begin{equation}
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2,
+\end{equation}
+
+where $y_i$ represents the actual value, $\hat{y}_i$ is the predicted value, and $n$ is the total number of predictions. A lower MSE indicates better predictive accuracy. This metric is particularly useful for evaluating the performance of GPR and baseline models in forecasting asset returns.
+
+\subsubsection{Sharpe Ratio}
+
+The Sharpe Ratio assesses the risk-adjusted performance of a portfolio, measuring the excess return per unit of risk. It is defined as:
+
+\begin{equation}
+\text{Sharpe Ratio} = \frac{E[R_p] - R_f}{\sigma_p},
+\end{equation}
+
+where $E[R_p]$ is the expected portfolio return, $R_f$ is the risk-free rate, and $\sigma_p$ is the portfolio's standard deviation of returns. A higher Sharpe Ratio indicates a more favorable trade-off between risk and return, making it a crucial metric for evaluating the effectiveness of the portfolio optimization strategies derived from the predicted returns.
+
+\subsection{Multi-Input Gaussian Process Regression Model}
+
+In this study, we developed a multi-input Gaussian Process Regression (GPR) model that incorporates multiple economic factors and time as input dimensions to predict the returns of individual stocks. The model combines features from a diverse set of assets and economic indicators, including Brent Oil prices, the US Dollar Index (DXY), the S\&P 500 Index, the Nasdaq 100 Index, Bitcoin (BTC), and gold prices (XAU/USD). This multi-input framework allows the model to capture intricate relationships between the target stock and broader market dynamics, enhancing its predictive power.
+
+\subsubsection{Input Data and Feature Selection}
+
+The input features for the GPR model were selected based on their correlation with the target stock. For each feature, we calculated the correlation between the feature's historical returns and the target stock's returns. Only features with an absolute correlation exceeding a predefined threshold were included in the model to ensure relevance and reduce noise in the predictions. This approach prioritizes the most influential economic factors while discarding irrelevant or weakly correlated inputs.
+
+The final input matrix was constructed by concatenating the selected features along with time as an additional dimension. By including time, the model accounts for temporal trends and seasonality in the data, further improving its predictive capabilities.
+
+\subsubsection{Composite Kernel for Multi-Dimensional Inputs}
+
+To effectively model the multi-dimensional input space, we employed a composite kernel approach that assigns separate kernels to different input dimensions. Specifically:
+
+\begin{itemize}
+    \item One kernel was applied to the economic factors, allowing the model to learn the specific relationships between the target stock and each factor. This kernel captures the varying scales and complexities of the economic data.
+    \item Another kernel was applied to the time dimension, enabling the model to account for temporal dependencies and trends. 
+\end{itemize}
+
+The composite kernel combines these two components multiplicatively, ensuring that the model can flexibly adjust to different input dimensions and set appropriate length scales for each. This design allows the GPR model to capture the unique characteristics of each feature while modeling their joint effects on the target stock's returns.
+
+\subsubsection{Training and Testing Framework}
+
+The training and testing process involved splitting the data into separate periods. The training set included data from the beginning of the time series up to a specified date, while the testing set encompassed the subsequent period. This split ensured that the model was evaluated on unseen data, simulating real-world forecasting conditions.
+
+To further enhance the model's robustness, the noise variance in the GPR model was either fixed to a small value or optimized as a trainable parameter. This dual approach ensured flexibility in handling data with varying noise levels while preventing overfitting.
+
+\subsubsection{Prediction and Evaluation}
+
+Once the model was trained, it was used to predict the returns of the target stock over the testing period. The predictive mean and variance were computed for each test point, providing both point estimates and uncertainty bounds. The model's performance was evaluated using the Mean Squared Error (MSE), calculated for both normalized and denormalized data, to assess its accuracy in both relative and absolute terms.
+
+By leveraging multi-input GPR with composite kernels, this approach captures the interplay between diverse economic factors, time, and stock returns. The flexibility in kernel design and inclusion of multi-dimensional inputs ensures that the model is both robust and adaptive, providing accurate predictions for individual stock performance in dynamic market environments.
+
+\subsection{Hyperparameter Tuning}
+
+Effective hyperparameter tuning is crucial for optimizing the performance of \ac{GPR} models, as it directly impacts the model's ability to fit the data and generalize to unseen samples. In this study, two distinct approaches were implemented for training \ac{GPR} models, differing in how the likelihood variance (noise variance) was treated during the optimization process. This subsection describes the methodologies and their respective advantages.
+
+\subsubsection{Fixed Likelihood Variance}
+
+In the first approach, the likelihood variance was fixed to a predefined value ($\sigma^2 = 10^{-3}$) and excluded from the training process. By keeping the noise variance constant, the optimization focuses solely on tuning the parameters of the kernel function, ensuring that the model does not overfit to noise in the data. This approach is computationally efficient and is particularly useful when the level of noise in the data is well-understood or consistent across the dataset. The training process involved minimizing the model's negative log marginal likelihood using the Scipy optimizer provided by \texttt{gpflow}:
+
+\begin{equation}
+\text{Negative Log Marginal Likelihood (NLML)} = -\log p(\mathbf{y} | \mathbf{X}, \boldsymbol{\theta}),
+\end{equation}
+
+where $\boldsymbol{\theta}$ represents the trainable kernel parameters.
+
+\subsubsection{Trainable Likelihood Variance}
+
+In the second approach, the likelihood variance was set as a trainable parameter, allowing the model to adaptively learn the optimal noise level from the data. This method is advantageous when the data contains varying levels of noise or when the noise characteristics are not well-understood. To enhance the robustness of this approach, multiple starting values for the likelihood variance were used ($10^{-5}$, $10^{-3}$, $10^{-1}$, $1.0$), ensuring that the optimization process explored a diverse range of initial configurations. For each starting variance, the model was trained using the Scipy optimizer, and the final negative log marginal likelihood was evaluated.
+
+\begin{itemize}
+    \item The model with the lowest final loss was selected as the best-performing model.
+    \item This approach balances the trade-off between model flexibility and the risk of overfitting by optimizing both the kernel parameters and the likelihood variance.
+\end{itemize}
+
+\subsubsection{Comparison of Approaches}
+
+Both approaches were evaluated based on their ability to minimize the negative log marginal likelihood and the predictive performance on the test dataset. The fixed likelihood variance method provided computational simplicity and reduced the risk of overfitting in scenarios with stable noise levels. Conversely, the trainable likelihood variance approach demonstrated higher adaptability, allowing the model to account for varying noise levels and capture the data's inherent uncertainty more effectively.
+
+\subsubsection{Best Model Selection}
+
+The trainable likelihood variance approach, with multiple initializations, identified the model configuration that minimized the negative log marginal likelihood. This model provided a balance between accurately capturing the signal and accounting for noise, making it the preferred choice for the Gaussian Process Regression framework used in this study.
+
 
 \section{Forecasting Approach}
 Describe the iterative forecasting method and how predictions are updated daily.
-\subsection{Multi-input Gaussian Process Regression model}
-\subsection{Kernel functions selection and hyperparameter optimization}
-\subsection{Implementation of rolling window predictions}
-\subsection{Model updating mechanism}
+
+\subsection{Iterative Retraining for Sequential Predictions}
+
+In addition to batch training and prediction, we implemented an iterative retraining approach for the Gaussian Process Regression (GPR) model. This method reflects a real-world scenario where new market data becomes available daily, requiring the model to be updated frequently to make accurate short-term predictions. In this approach, the GPR model is retrained daily using all available data up to the current day, and predictions are made for the next day. This process is repeated iteratively for five consecutive days to generate predictions for a five-day horizon.
+
+\subsubsection{Methodology}
+
+The iterative retraining approach involves the following steps:
+
+\begin{enumerate}
+    \item \textbf{Daily Data Integration:} At the start of each iteration, the most recent daily market data is fetched and added to the training dataset. This includes the latest values of the target stock and selected economic factors.
+    \item \textbf{Training with Updated Data:} The GPR model is retrained using the expanded dataset, incorporating all historical data up to the current day. Both fixed and trainable likelihood variance configurations are evaluated to ensure robust performance.
+    \item \textbf{Prediction for the Next Day:} Using the retrained model, predictions are made for the target stock's return for the next day. The predictive mean and variance are recorded for each iteration.
+    \item \textbf{Iterative Execution:} Steps 1 through 3 are repeated iteratively, with each new day’s data being integrated into the model, until predictions are generated for all five future days.
+\end{enumerate}
+
+\subsubsection{Advantages of Iterative Retraining}
+
+The iterative retraining approach offers several advantages:
+
+\begin{itemize}
+    \item \textbf{Real-Time Adaptation:} By retraining the model daily, it continuously adapts to the latest market conditions, ensuring that predictions remain relevant and responsive to recent trends.
+    \item \textbf{Enhanced Short-Term Accuracy:} The use of updated data allows the model to account for the most recent market dynamics, improving the accuracy of short-term forecasts.
+    \item \textbf{Uncertainty Quantification:} With each iteration, the GPR model provides a predictive mean and variance for the next day, enabling the assessment of uncertainty in the predictions. This is particularly useful for risk-aware decision-making in portfolio management.
+\end{itemize}
+
+\subsubsection{Performance Evaluation}
+
+To evaluate the effectiveness of this approach, the Mean Squared Error (MSE) was calculated for both normalized and denormalized predicted returns across the five days. The iterative predictions were also compared against actual returns to assess the model's ability to track short-term market movements. Additionally, the cumulative performance over the five-day horizon was analyzed to understand the overall impact of daily updates on predictive accuracy.
+
+\subsubsection{Practical Application}
+
+This iterative retraining approach closely mimics real-world trading scenarios where investors rely on daily market updates to make decisions. By retraining the model with the latest data and predicting only one day ahead, this method ensures that the predictions are both timely and aligned with current market conditions. This sequential prediction framework provides a robust foundation for dynamic portfolio management, enabling more accurate and adaptive asset allocation strategies.
+
+
 
 \section{Portfolio Optimization Strategies}
-Explain each portfolio optimization strategy in depth, including mathematical formulations and constraints.
-\subsection{Traditional Strategies}
-Maximum return strategy formulation
-Minimum volatility approach
-Maximum Sharpe ratio optimization
-Constraint specifications and justifications as Baseline models
-\subsection{Dynamic Strategy}
-Probability distribution modeling
 
-\section{Probability Estimation: $P(S_1 > S_2)$}
+\subsection{Traditional Strategies}
+\subsubsection{Maximum Return Strategy Formulation}
+
+The maximum return strategy aims to maximize the expected return of a portfolio while considering risk constraints and incorporating regularization penalties such as L1/L2 norms and transaction costs. The optimization problem is formulated based on the given code snippet and can be expressed mathematically as follows.
+
+Let:
+
+\begin{itemize}
+    \item \( \mathbf{w} \in \mathbb{R}^n \) be the vector of portfolio weights for \( n \) assets.
+    \item \( \boldsymbol{\mu} \in \mathbb{R}^n \) be the vector of expected returns for each asset.
+    \item \( \Sigma \in \mathbb{R}^{n \times n} \) be the covariance matrix of asset returns.
+    \item \( \sigma_{\text{max}} \) be the maximum allowable portfolio volatility.
+    \item \( \mathcal{R}(\mathbf{w}) \) be the regularization penalty function, which may include L1/L2 penalties and transaction costs.
+\end{itemize}
+
+The optimization problem is:
+
+\[
+\begin{aligned}
+\min_{\mathbf{w}} & \quad -\mathbf{w}^\top \boldsymbol{\mu} + \mathcal{R}(\mathbf{w}) \\
+\text{subject to} & \quad \sqrt{\mathbf{w}^\top \Sigma \mathbf{w}} \leq \sigma_{\text{max}} \\
+& \quad \sum_{i=1}^n w_i = 1 \\
+& \quad w_i \geq 0, \quad \forall i \in \{1, \dots, n\}
+\end{aligned}
+\]
+
+\paragraph{Objective Function}
+
+The objective function consists of two components:
+
+\begin{enumerate}
+    \item \textbf{Negative Expected Return}: \( -\mathbf{w}^\top \boldsymbol{\mu} \)
+    \item \textbf{Regularization Penalty}: \( \mathcal{R}(\mathbf{w}) \)
+\end{enumerate}
+
+By minimizing the negative expected return, we effectively maximize the portfolio's expected return. The regularization penalty \( \mathcal{R}(\mathbf{w}) \) accounts for additional considerations such as promoting sparsity (L1 regularization), preventing overfitting (L2 regularization), and minimizing transaction costs.
+
+\paragraph{Constraints}
+
+The constraints ensure that:
+
+\begin{itemize}
+    \item \textbf{Volatility Constraint}: The portfolio's volatility does not exceed \( \sigma_{\text{max}} \):
+
+    \[
+    \sqrt{\mathbf{w}^\top \Sigma \mathbf{w}} \leq \sigma_{\text{max}}
+    \]
+
+    \item \textbf{Full Investment Constraint}: The sum of the portfolio weights equals 1:
+
+    \[
+    \sum_{i=1}^n w_i = 1
+    \]
+
+    \item \textbf{No Short-Selling Constraint}: All portfolio weights are non-negative:
+
+    \[
+    w_i \geq 0, \quad \forall i
+    \]
+\end{itemize}
+
+\paragraph{Regularization Penalty}
+
+The regularization penalty \( \mathcal{R}(\mathbf{w}) \) can be detailed as:
+
+\[
+\mathcal{R}(\mathbf{w}) = \lambda_1 \|\mathbf{w}\|_1 + \lambda_2 \|\mathbf{w}\|_2^2 + \gamma \sum_{i=1}^n |w_i - w_i^{\text{prev}}|
+\]
+
+where:
+
+\begin{itemize}
+    \item \( \|\mathbf{w}\|_1 = \sum_{i=1}^n |w_i| \) is the L1 norm, promoting sparsity in the portfolio weights.
+    \item \( \|\mathbf{w}\|_2^2 = \sum_{i=1}^n w_i^2 \) is the squared L2 norm, preventing extreme weight allocations.
+    \item \( w_i^{\text{prev}} \) is the previous weight of asset \( i \), accounting for transaction costs when adjusting the portfolio.
+    \item \( \lambda_1, \lambda_2, \gamma \geq 0 \) are hyperparameters controlling the influence of each penalty component.
+\end{itemize}
+
+\paragraph{Optimization Method}
+
+The optimization problem is solved using the Sequential Least Squares Programming (SLSQP) algorithm, which is suitable for constrained nonlinear optimization. The method minimizes the objective function while satisfying the specified constraints.
+
+\[
+\text{Result} = \arg\min_{\mathbf{w}} \left( -\mathbf{w}^\top \boldsymbol{\mu} + \mathcal{R}(\mathbf{w}) \right)
+\]
+
+\[
+\text{subject to constraints}
+\]
+
+\paragraph{Implementation Notes}
+
+In our implementation:
+
+\begin{itemize}
+    \item The function \texttt{returns\_objective} computes the objective function.
+    \item The \texttt{maximize\_returns} method sets up the optimization problem, including the volatility constraint and any additional constraints.
+    \item Regularization and transaction costs are incorporated through the \texttt{total\_penalty} function.
+\end{itemize}
+
+By formulating the strategy in this manner, the model seeks the optimal balance between maximizing returns and controlling for risk and costs, resulting in a robust and practical portfolio optimization solution.
+
+
+\subsubsection{Maximum Sharpe Ratio Optimization}
+
+The maximum Sharpe ratio optimization aims to maximize the portfolio's Sharpe ratio, which is a measure of risk-adjusted return. This involves finding the optimal portfolio weights that maximize the expected return minus the risk-free rate, divided by the portfolio's volatility, while also incorporating regularization penalties such as L1/L2 norms and transaction costs.
+
+Let:
+
+\begin{itemize}
+    \item \( \mathbf{w} \in \mathbb{R}^n \) be the vector of portfolio weights for \( n \) assets.
+    \item \( \boldsymbol{\mu} \in \mathbb{R}^n \) be the vector of expected returns for each asset.
+    \item \( \Sigma \in \mathbb{R}^{n \times n} \) be the covariance matrix of asset returns.
+    \item \( r_f \) be the risk-free rate.
+    \item \( \mathcal{R}(\mathbf{w}) \) be the regularization penalty function, which may include L1/L2 penalties and transaction costs.
+\end{itemize}
+
+The Sharpe ratio \( S(\mathbf{w}) \) is defined as:
+
+\[
+S(\mathbf{w}) = \frac{\mathbf{w}^\top \boldsymbol{\mu} - r_f}{\sqrt{\mathbf{w}^\top \Sigma \mathbf{w}}}
+\]
+
+The optimization problem is:
+
+\[
+\begin{aligned}
+\max_{\mathbf{w}} & \quad S(\mathbf{w}) - \mathcal{R}(\mathbf{w}) \\
+\text{subject to} & \quad \sum_{i=1}^n w_i = 1 \\
+& \quad w_i \geq 0, \quad \forall i \in \{1, \dots, n\}
+\end{aligned}
+\]
+
+Since optimization algorithms typically perform minimization, we can reformulate the problem as minimizing the negative Sharpe ratio plus the regularization penalty:
+
+\[
+\begin{aligned}
+\min_{\mathbf{w}} & \quad -\frac{\mathbf{w}^\top \boldsymbol{\mu} - r_f}{\sqrt{\mathbf{w}^\top \Sigma \mathbf{w}}} + \mathcal{R}(\mathbf{w}) \\
+\text{subject to} & \quad \sum_{i=1}^n w_i = 1 \\
+& \quad w_i \geq 0, \quad \forall i
+\end{aligned}
+\]
+
+\paragraph{Objective Function}
+
+The objective function consists of:
+
+\begin{enumerate}
+    \item \textbf{Negative Sharpe Ratio}: \( -\dfrac{\mathbf{w}^\top \boldsymbol{\mu} - r_f}{\sqrt{\mathbf{w}^\top \Sigma \mathbf{w}}} \)
+    \item \textbf{Regularization Penalty}: \( \mathcal{R}(\mathbf{w}) \)
+\end{enumerate}
+
+By minimizing the negative Sharpe ratio, we effectively maximize the Sharpe ratio, thus maximizing the portfolio's risk-adjusted return.
+
+\paragraph{Constraints}
+
+The constraints ensure that:
+
+\begin{itemize}
+    \item \textbf{Full Investment Constraint}: The sum of the portfolio weights equals 1:
+
+    \[
+    \sum_{i=1}^n w_i = 1
+    \]
+
+    \item \textbf{No Short-Selling Constraint}: All portfolio weights are non-negative:
+
+    \[
+    w_i \geq 0, \quad \forall i
+    \]
+\end{itemize}
+
+\paragraph{Regularization Penalty}
+
+The regularization penalty \( \mathcal{R}(\mathbf{w}) \) includes both L1/L2 penalties and transaction costs, and can be expressed as:
+
+\[
+\mathcal{R}(\mathbf{w}) = \lambda_1 \|\mathbf{w}\|_1 + \lambda_2 \|\mathbf{w}\|_2^2 + \gamma \sum_{i=1}^n |w_i - w_i^{\text{prev}}|
+\]
+
+where:
+
+\begin{itemize}
+    \item \( \|\mathbf{w}\|_1 = \sum_{i=1}^n |w_i| \) is the L1 norm, promoting sparsity in the portfolio weights.
+    \item \( \|\mathbf{w}\|_2^2 = \sum_{i=1}^n w_i^2 \) is the squared L2 norm, preventing extreme weight allocations.
+    \item \( w_i^{\text{prev}} \) is the previous weight of asset \( i \), accounting for transaction costs when adjusting the portfolio.
+    \item \( \lambda_1, \lambda_2, \gamma \geq 0 \) are hyperparameters controlling the influence of each penalty component.
+\end{itemize}
+
+\paragraph{Optimization Method}
+
+The optimization problem is solved using the Sequential Least Squares Programming (SLSQP) algorithm, which is suitable for constrained nonlinear optimization. The method minimizes the objective function while satisfying the specified constraints:
+
+\[
+\text{Result} = \arg\min_{\mathbf{w}} \left( -\dfrac{\mathbf{w}^\top \boldsymbol{\mu} - r_f}{\sqrt{\mathbf{w}^\top \Sigma \mathbf{w}}} + \mathcal{R}(\mathbf{w}) \right)
+\]
+
+\[
+\text{subject to constraints}
+\]
+
+\paragraph{Implementation Notes}
+
+In our implementation:
+
+\begin{itemize}
+    \item The function \texttt{objective} computes the negative Sharpe ratio plus regularization penalties.
+    \item The \texttt{optimize\_portfolio} method sets up the optimization problem, including the necessary constraints.
+    \item Regularization and transaction costs are incorporated through the \texttt{total\_penalty} function.
+\end{itemize}
+
+By formulating the strategy in this manner, the model seeks to maximize the portfolio's risk-adjusted return while controlling for risk and costs, resulting in an efficient and practical portfolio optimization solution.
+
+
+\subsection{Dynamic Strategy}
+In this project, we specifically designed a dynamic strategy, that is to decide at each time point which portfolio optimization strategy to use based on the predicted market conditions. The dynamic strategy involves two main components: the regime detection model and the strategy selection mechanism.
+For the regime detection model, we employed a Probability Estimation Model and a Expected Value Comparison Method to identify distinct regimes based on the predicted returns and uncertainties. 
+
+For the strategy selection mechanism, we developed a Decision Rule that determines the optimal portfolio optimization strategy based on the detected regime. The dynamic strategy aims to adapt to changing market conditions and optimize portfolio allocations accordingly, enhancing the robustness and performance of the investment approach.
+\subsubsection{Probability Estimation: $P(S_1 > S_2)$}
 
 When estimating the probability $P(S_1 > S_2)$ for two random variables $S_1$ and $S_2$, the methodology depends on the nature of their distributions and their dependence structure. This section outlines three approaches: numerical integration, Monte Carlo simulation, and the use of copulas for dependent variables.
 
-\subsection{Numerical Integration}
+\paragraph{Numerical Integration}
 
 If the probability density functions (PDFs) of $S_1$ and $S_2$ are known, the probability $P(S_1 > S_2)$ can be expressed as:
 \begin{equation}
@@ -358,7 +724,7 @@ where:
 This double integral represents the joint probability over the region where $S_1 > S_2$, and it requires numerical methods for evaluation when closed-form solutions are unavailable.
 
 
-\subsection{Copulas for Dependence}
+\paragraph{Copulas for Dependence}
 
 Especially, When $S_1$ and $S_2$ are dependent, the joint distribution can be modeled using a copula. A copula is a function that describes the dependence structure between random variables, linking their marginal distributions. Let $F_{S_1}(x)$ and $F_{S_2}(y)$ represent the cumulative distribution functions (CDFs) of $S_1$ and $S_2$, respectively. The joint CDF can be expressed as:
 \begin{equation}
@@ -380,7 +746,7 @@ The steps to compute this are:
 
 Copulas are particularly effective when the marginal distributions are non-normal or when the dependence structure is non-linear and cannot be captured by simple correlation measures.
 
-\subsection{Monte Carlo Methods}
+\paragraph{Monte Carlo Methods}
 
 If the distributions of $S_1$ and $S_2$ are not explicitly known but sampling from these distributions is possible, a Monte Carlo simulation can be used to estimate $P(S_1 > S_2)$. The steps are as follows:
 \begin{enumerate}
@@ -400,7 +766,7 @@ If the distributions of $S_1$ and $S_2$ are not explicitly known but sampling fr
 Monte Carlo simulation is particularly useful for complex distributions or dependent variables, where analytical integration is impractical. In our case, we have multiple assets with potentially non-normal distributions and complex dependencies, making Monte Carlo methods a valuable tool for estimating $P(S_1 > S_2)$.
 Specifically, we will use Monte Carlo simulation to estimate the probability of one asset outperforming another in our portfolio optimization strategies. And we chose a sample size of $N = 10,000$ to ensure accurate probability estimates.
 
-\subsection{Comparison of Methods}
+\paragraph{Comparison of Methods}
 
 \begin{itemize}
     \item \textbf{Numerical Integration:} Provides an exact solution given the PDFs of $S_1$ and $S_2$, but computationally intensive for high-dimensional problems or non-standard distributions.
@@ -411,13 +777,337 @@ Specifically, we will use Monte Carlo simulation to estimate the probability of 
 Each method has its strengths and limitations, given the availability of distributional information and computational resources of our case, we chose to use Monte Carlo simulation for estimating $P(S_1 > S_2)$.
 
 
-\subsection{Strategy switching criteria}
+\paragraph{Strategy switching criteria}
 Describe the criteria for switching between portfolio optimization strategies based on the estimated probability $P(S_1 > S_2)$.
 We set a threshold probability $\tau$ such that if $P(S_1 > S_2) > \tau$, the strategy with the higher expected return is selected, and if $P(S_1 > S_2) \leq \tau$, the strategy with the lower volatility is chosen. This threshold ensures that the strategy selection is based on a balance between return and risk, incorporating the estimated probability of one asset outperforming the other.
-\subsection{Position holding logic}
-\subsection{Transaction cost considerations}
+\subsubsection{Expected Value Comparison}
+The Expected Value Comparison method involves comparing the expected values of two time points distribution to determine the optimal choice. This approach is based on the principle of maximizing the expected return or Sharpe ratio while considering the estimated probabilities of each strategy's performance. The Expected Value Comparison method is particularly useful for dynamic portfolio optimization, where the selection of strategies is based on their expected outcomes under different market conditions.
+
+The dynamic strategy employs a decision-making process based on the comparison of expected portfolio returns using previous and current predictions. The core idea is to adaptively switch between maximizing returns and minimizing volatility (uncertainty) depending on the anticipated changes in the market. The strategy aims to optimize the portfolio by considering not only the expected returns but also transaction costs associated with rebalancing.
+
+Let:
+
+\begin{itemize}
+    \item \( \boldsymbol{\mu}_A \in \mathbb{R}^n \) be the vector of expected returns at time \( t-1 \).
+    \item \( \boldsymbol{\mu}_B \in \mathbb{R}^n \) be the vector of expected returns at time \( t \).
+    \item \( \mathbf{w}_{\text{prev}} \in \mathbb{R}^n \) be the portfolio weights optimized at time \( t-1 \).
+    \item \( \lambda_{\text{tx}} \) be the transaction cost rate.
+\end{itemize}
+
+\paragraph{Decision Logic}
+
+The strategy proceeds as follows:
+
+\begin{enumerate}
+    \item \textbf{Initialization}: For the first time step (\( t = 0 \)), where no previous weights exist, the strategy allocates weights by maximizing returns under a volatility constraint:
+
+    \[
+    \mathbf{w}_0 = \arg\min_{\mathbf{w}} \left( -\boldsymbol{\mu}_B^\top \mathbf{w} + \mathcal{R}(\mathbf{w}) \right)
+    \]
+    
+    subject to the constraints specified in the maximum return strategy.
+
+    \item \textbf{Expected Returns Calculation}: For \( t \geq 1 \), calculate the expected portfolio returns at times \( t-1 \) and \( t \) using the previous optimal weights \( \mathbf{w}_{\text{prev}} \):
+
+    \[
+    R_A = \boldsymbol{\mu}_A^\top \mathbf{w}_{\text{prev}}
+    \]
+    \[
+    R_B = \boldsymbol{\mu}_B^\top \mathbf{w}_{\text{prev}}
+    \]
+
+    \item \textbf{Comparison of Expected Returns}:
+    \begin{itemize}
+        \item If \( R_A > R_B \) (the expected return is decreasing), it suggests that the current allocation may yield lower returns in the next period. Therefore, the strategy opts to \textbf{maximize returns} by solving:
+
+        \[
+        \mathbf{w}_t = \arg\min_{\mathbf{w}} \left( -\boldsymbol{\mu}_B^\top \mathbf{w} + \mathcal{R}(\mathbf{w}) \right)
+        \]
+        
+        subject to the constraints specified in the maximum return strategy.
+
+        \item If \( R_A \leq R_B \) (the expected return is increasing), the strategy becomes more conservative and chooses to \textbf{minimize volatility} by solving:
+
+        \[
+        \mathbf{w}_t = \arg\min_{\mathbf{w}} \left( \sqrt{\mathbf{w}^\top \Sigma_B \mathbf{w}} + \mathcal{R}(\mathbf{w}) \right)
+        \]
+        
+        subject to the constraints specified in the minimum volatility approach, where \( \Sigma_B \) is the covariance matrix at time \( t \).
+    \end{itemize}
+
+    \item \textbf{Transaction Cost Adjustment}: Compute the transaction costs incurred due to rebalancing:
+
+    \[
+    \text{TransactionCost} = \lambda_{\text{tx}} \sum_{i=1}^n |w_{i, t} - w_{i, t-1}|
+    \]
+
+    \item \textbf{Realized Return Calculation}: Calculate the realized change in expected return after accounting for transaction costs:
+
+    \[
+    \Delta R_{\text{realized}} = (R_B - R_A) - \text{TransactionCost}
+    \]
+
+    \item \textbf{Strategy Adjustment}:
+    \begin{itemize}
+        \item If \( \Delta R_{\text{realized}} > 0 \), the expected improvement in return outweighs the transaction costs, and the new weights \( \mathbf{w}_t \) are adopted.
+        \item If \( \Delta R_{\text{realized}} \leq 0 \), the transaction costs negate the benefits of rebalancing, and the strategy \textbf{reverts to the previous weights}:
+
+        \[
+        \mathbf{w}_t = \mathbf{w}_{\text{prev}}
+        \]
+    \end{itemize}
+\end{enumerate}
+
+\begin{figure}[htbp]
+% \centering
+\begin{tikzpicture}[scale=0.5, node distance=2.5cm, auto, >=latex']
+    % Define block styles
+    \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=gray!10]
+    \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!10]
+    \tikzstyle{decision} = [diamond, aspect=2, text centered, draw=black, fill=green!10]
+    \tikzstyle{arrow} = [thick,->,>=stealth]
+
+    % Nodes
+    \node [startstop] (start) {Start};
+    \node [decision, below of=start, node distance=2.5cm, align=center] (prev_weights) {Previous Weights \\ Exist ?};
+    \node [process, below of=prev_weights, node distance=3cm, align=center] (init_alloc) {Maximize Returns \\ Volatility Constraint};
+    \node [process, right of=prev_weights, node distance=6cm, align=center] (calc_exp_returns) {Calculate Expected Returns \\ $R_A = \boldsymbol{\mu}_A^\top \mathbf{w}_{\text{prev}}$ \\ $R_B = \boldsymbol{\mu}_B^\top \mathbf{w}_{\text{prev}}$};
+    \node [decision, below of=calc_exp_returns, node distance=3cm, align=center] (compare_returns) {$R_A > R_B$?};
+    \node [process, below of=compare_returns, node distance=3cm, align=center] (max_returns) {Maximize Returns};
+    \node [process, right of=compare_returns, node distance=5cm, align=center] (min_uncertainty) {Minimize Volatility};
+    \node [process, below of=max_returns, node distance=2cm, align=center] (compute_trx_costs) {Compute Transaction Costs \\ $\Delta R_{\text{realized}} = (R_B - R_A) - \text{TransactionCost}$};
+    \node [decision, below of=compute_trx_costs, node distance=3cm, align=center] (delta_R_pos) {$\Delta R_{\text{realized}} > 0$?};
+    \node [process, below of=delta_R_pos, node distance=3cm, align=center] (adopt_new_weights) {Adopt New Weights \\ $\mathbf{w}_t$};
+    \node [process, right of=delta_R_pos, node distance=5cm, align=center] (keep_prev_weights) {Keep Previous Weights \\ $\mathbf{w}_t = \mathbf{w}_{\text{prev}}$};
+    \node [startstop, below of=adopt_new_weights, node distance=2.5cm, align=center] (end) {End};
+
+    % Paths
+    \draw [arrow] (start) -- (prev_weights);
+    \draw [arrow] (prev_weights) -- node[left] {No} (init_alloc);
+    \draw [arrow] (prev_weights) -- node[above] {Yes} (calc_exp_returns);
+    \draw [arrow] (init_alloc) |- (end);
+    \draw [arrow] (calc_exp_returns) -- (compare_returns);
+    \draw [arrow] (compare_returns) -- node[left] {Yes} (max_returns);
+    \draw [arrow] (compare_returns) -- node[above] {No} (min_uncertainty);
+    \draw [arrow] (max_returns) -- (compute_trx_costs);
+    \draw [arrow] (min_uncertainty) |- (compute_trx_costs);
+    \draw [arrow] (compute_trx_costs) -- (delta_R_pos);
+    \draw [arrow] (delta_R_pos) -- node[left] {Yes} (adopt_new_weights);
+    \draw [arrow] (delta_R_pos) -- node[above] {No} (keep_prev_weights);
+    \draw [arrow] (adopt_new_weights) -- (end);
+    \draw [arrow] (keep_prev_weights) |- (end);
+\end{tikzpicture}
+\caption{Decision Flowchart for the Dynamic Strategy}
+\end{figure}
+
+
+\paragraph{Rationale}
+
+The strategy's decision criteria are designed to balance the trade-off between expected returns and transaction costs:
+
+\begin{itemize}
+    \item By comparing \( R_A \) and \( R_B \), the strategy assesses whether the expected return is improving or deteriorating.
+    \item Maximizing returns when the expected return is decreasing attempts to counteract the anticipated decline by seeking higher-return allocations.
+    \item Minimizing volatility when the expected return is increasing adopts a conservative stance to preserve gains while benefiting from favorable market conditions.
+    \item Incorporating transaction costs ensures that rebalancing decisions are economically justified, preventing unnecessary trading that could erode returns.
+\end{itemize}
+
+\paragraph{Implementation Notes}
+
+\begin{itemize}
+    \item \textbf{Covariance Matrices}: The covariance matrices \( \Sigma_A \) and \( \Sigma_B \) are used in volatility calculations and are estimated based on predicted volatilities and correlations at times \( t-1 \) and \( t \), respectively.
+    \item \textbf{Regularization Penalty}: The regularization function \( \mathcal{R}(\mathbf{w}) \) includes L1/L2 penalties and transaction costs as detailed in previous sections.
+    \item \textbf{Constraints}: The optimization problems are subject to standard portfolio constraints such as full investment and no short-selling.
+    \item \textbf{Adaptability}: This strategy dynamically adjusts its optimization objective based on market expectations, aiming to enhance returns while controlling risk and costs.
+\end{itemize}
+
+\paragraph{Conclusion}
+
+The dynamic strategy effectively combines elements of both the maximum return and minimum volatility strategies, switching between them based on expected changes in returns and considering transaction costs. By doing so, it aims to optimize the portfolio's performance in varying market conditions while maintaining a balance between risk and return.
+
 
 \section{Backtesting Framework}
-Describe the backtesting process and how the strategies are evaluated.
+
+In this section, we describe the backtesting framework used to evaluate the performance of the portfolio optimization strategies. The backtesting process involves simulating the optimized portfolios over historical data to assess their effectiveness in real-world scenarios. The framework utilizes two primary classes, \texttt{Return} and \texttt{Volatility}, to calculate portfolio returns and volatilities, respectively.
+
+\subsection{Overview of the Backtesting Process}
+
+The backtesting process involves the following steps:
+
+\begin{enumerate}
+    \item \textbf{Data Preparation}: Historical asset returns and predicted volatilities are collected for the assets under consideration.
+    \item \textbf{Portfolio Optimization}: The optimization strategies (e.g., maximum Sharpe ratio, maximum return, minimum volatility) are applied to generate optimal portfolio weights.
+    \item \textbf{Return and Volatility Calculation}: The \texttt{Return} and \texttt{Volatility} classes compute the daily portfolio returns, cumulative returns, transaction costs, and portfolio volatilities.
+    \item \textbf{Performance Evaluation}: Key performance metrics such as cumulative return, cumulative transaction costs, portfolio variance, and Sharpe ratio are calculated to evaluate the strategies.
+\end{enumerate}
+
+\subsection{Return Calculation}
+
+\subsubsection{Return Class Implementation}
+
+The \texttt{Return} class is designed to calculate portfolio returns based on asset returns and portfolio weights, accounting for transaction costs. It is initialized with:
+
+\begin{itemize}
+    \item \texttt{asset\_returns}: A NumPy array of asset returns.
+    \item \texttt{weights}: A NumPy array of portfolio weights, where each row corresponds to a specific time period.
+    \item \texttt{transaction\_cost\_rate}: A scalar representing the transaction cost rate (default is 0).
+\end{itemize}
+
+The class provides methods to calculate:
+
+\begin{itemize}
+    \item \textbf{Daily Portfolio Returns}: Computes the net portfolio returns for each day, considering transaction costs.
+    \item \textbf{Cumulative Return}: Calculates the cumulative return of the portfolio over the backtesting period.
+    \item \textbf{Cumulative Transaction Costs}: Sums up the transaction costs incurred over the backtesting period.
+    \item \textbf{Daily Transaction Costs}: Provides the transaction costs for each day.
+\end{itemize}
+
+\paragraph{Daily Portfolio Return Calculation}
+
+The daily portfolio return \( r_{\text{net}, t} \) on day \( t \) is calculated as:
+
+\[
+r_{\text{net}, t} = \mathbf{w}_t^\top \mathbf{r}_t - \text{Transaction Cost}_t
+\]
+
+where:
+
+\begin{itemize}
+    \item \( \mathbf{w}_t \) is the portfolio weight vector at time \( t \).
+    \item \( \mathbf{r}_t \) is the asset return vector at time \( t \).
+    \item \( \text{Transaction Cost}_t \) is the transaction cost incurred on day \( t \), calculated as:
+
+    \[
+    \text{Transaction Cost}_t = \lambda_{\text{tx}} \sum_{i=1}^n |w_{i, t} - w_{i, t-1}|
+    \]
+
+    with \( \lambda_{\text{tx}} \) being the transaction cost rate, and \( w_{i, t} \) being the weight of asset \( i \) at time \( t \).
+\end{itemize}
+
+\paragraph{Cumulative Return Calculation}
+
+The cumulative return over \( T \) days is calculated as:
+
+\[
+\text{Cumulative Return} = \prod_{t=1}^T (1 + r_{\text{net}, t}) - 1
+\]
+
+\subsection{Volatility Calculation}
+
+\subsubsection{Volatility Class Implementation}
+
+The \texttt{Volatility} class calculates the portfolio volatility using predicted asset volatilities and portfolio weights. It is initialized with:
+
+\begin{itemize}
+    \item \texttt{predicted\_volatilities}: A DataFrame of predicted volatilities for each asset.
+    \item \texttt{weights\_df}: A DataFrame of portfolio weights for each time period.
+\end{itemize}
+
+\paragraph{Portfolio Volatility Calculation}
+
+The portfolio volatility \( \sigma_{\text{portfolio}, t} \) at time \( t \) is calculated as:
+
+\[
+\sigma_{\text{portfolio}, t} = \sqrt{\sum_{i=1}^n w_{i, t}^2 \sigma_{i, t}^2}
+\]
+
+where:
+
+\begin{itemize}
+    \item \( w_{i, t} \) is the weight of asset \( i \) at time \( t \).
+    \item \( \sigma_{i, t} \) is the predicted volatility of asset \( i \) at time \( t \).
+\end{itemize}
+
+\subsection{Backtesting Procedure}
+
+The backtesting is implemented in the \texttt{backtest\_portfolio} method, which performs the following steps:
+
+\begin{enumerate}
+    \item \textbf{Initialization}: The method takes historical returns (\texttt{historical\_returns}), predicted volatilities (\texttt{predicted\_volatilities}), and the optimized portfolio weights (\texttt{optimal\_weights}) as inputs.
+    \item \textbf{Return and Volatility Calculators}: Instances of the \texttt{Return} and \texttt{Volatility} classes are created using the historical data and optimized weights.
+    \item \textbf{Daily Calculations}:
+    \begin{itemize}
+        \item \textbf{Portfolio Returns}: The \texttt{calculate\_portfolio\_returns} method computes the daily net portfolio returns and transaction costs.
+        \item \textbf{Portfolio Volatility}: The \texttt{calculate\_portfolio\_volatility} method computes the daily portfolio volatility.
+        \item \textbf{Sharpe Ratio}: The daily Sharpe ratio is calculated as:
+
+        \[
+        \text{Sharpe Ratio}_t = \frac{r_{\text{net}, t} - r_f}{\sigma_{\text{portfolio}, t}}
+        \]
+
+        where \( r_f \) is the risk-free rate.
+    \end{itemize}
+    \item \textbf{Cumulative Metrics}:
+    \begin{itemize}
+        \item \textbf{Cumulative Return}: Calculated using the \texttt{calculate\_cumulative\_return} method.
+        \item \textbf{Cumulative Transaction Costs}: Summed over the backtesting period using the \texttt{calculate\_cumulative\_transaction\_costs} method.
+        \item \textbf{Cumulative Variance}: Sum of daily portfolio variances.
+        \item \textbf{Overall Sharpe Ratio}: Calculated using cumulative return and cumulative variance:
+
+        \[
+        \text{Overall Sharpe Ratio} = \frac{\text{Cumulative Return} - r_f}{\text{Cumulative Variance}}
+        \]
+    \end{itemize}
+    \item \textbf{Results Presentation}: The method prints out daily and cumulative metrics for analysis.
+\end{enumerate}
+
+\subsection{Performance Evaluation}
+
+The strategies are evaluated based on the following key performance metrics:
+
+\begin{itemize}
+    \item \textbf{Cumulative Return}: Indicates the total return generated by the portfolio over the backtesting period.
+    \item \textbf{Cumulative Transaction Costs}: Reflects the total costs incurred due to portfolio rebalancing.
+    \item \textbf{Cumulative Variance}: Measures the total risk taken over the period.
+    \item \textbf{Sharpe Ratio}: Provides a risk-adjusted return metric, indicating how much excess return is received for the extra volatility endured.
+\end{itemize}
+
+\subsubsection{Cumulative Return}
+
+Calculated as:
+
+\[
+\text{Cumulative Return} = \prod_{t=1}^T (1 + r_{\text{net}, t}) - 1
+\]
+
+This metric helps in comparing the total profitability of different strategies over the same period.
+
+\subsubsection{Cumulative Transaction Costs}
+
+Calculated as:
+
+\[
+\text{Cumulative Transaction Costs} = \sum_{t=1}^T \text{Transaction Cost}_t
+\]
+
+This metric is crucial for understanding the impact of trading activity on net returns.
+
+\subsubsection{Sharpe Ratio}
+
+Calculated as:
+
+\[
+\text{Sharpe Ratio} = \frac{\text{Cumulative Return} - r_f}{\sqrt{\sum_{t=1}^T \sigma_{\text{portfolio}, t}^2}}
+\]
+
+A higher Sharpe ratio indicates a more attractive risk-adjusted return.
+
+\subsection{Backtesting Results Interpretation}
+
+By analyzing the cumulative returns, transaction costs, and Sharpe ratios, we can assess the effectiveness of each optimization strategy. Strategies that yield higher cumulative returns with lower transaction costs and higher Sharpe ratios are considered more efficient.
+
+The backtesting framework allows us to simulate real-world trading conditions, including the impact of transaction costs, and provides a comprehensive evaluation of the portfolio optimization strategies.
+
+\subsection{Implementation Notes}
+
+\begin{itemize}
+    \item \textbf{Transaction Costs}: Incorporated in the return calculations to simulate realistic trading scenarios.
+    \item \textbf{Time-Varying Weights}: The framework supports dynamic rebalancing, with portfolio weights potentially changing each day.
+    \item \textbf{Debugging and Logging}: Optional print statements in the code provide detailed insights into the daily performance metrics, aiding in debugging and analysis.
+\end{itemize}
+
+\subsection{Conclusion}
+
+The backtesting framework is a critical component in validating the portfolio optimization strategies. By accurately simulating the investment process over historical data, accounting for transaction costs, and computing relevant performance metrics, the framework provides valuable insights into the potential real-world performance of the strategies under consideration.
 
 

@@ -20,6 +20,7 @@
 \usepackage{listings}
 \usepackage{lstautogobble}
 \usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \usepackage{booktabs}
@@ -29,6 +30,12 @@
 \usepackage[hidelinks]{hyperref} % hidelinks removes colored boxes around references and links
 \usepackage{amsmath}
 \usepackage{amssymb}
+
+% Optional: Define TikZ styles in the preamble
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=gray!10]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!10]
+\tikzstyle{decision} = [diamond, aspect=2, text centered, draw=black, fill=green!10]
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
 \AtBeginDocument{%
 	\hypersetup{
