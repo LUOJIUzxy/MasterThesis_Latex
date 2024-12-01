@@ -2,6 +2,46 @@
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Methodology}\label{chapter:methodology}
+In this section, we present the methodology for developing the predictive framework and portfolio optimization strategies. We outline the data collection and preprocessing steps, the model development process, the evaluation metrics used to assess the performance of the models and the real backtesting process. 
+The methodology encompasses the selection of assets, the application of entropy-based methods for time-series analysis, and the development of Gaussian Process Regression models for return prediction. 
+
+Additionally, we describe the implementation of portfolio optimization strategies, including the construction of trading portfolios and the evaluation of risk-adjusted returns using the Sharpe Ratio. 
+The methodology is designed to provide a comprehensive framework for forecasting asset returns and optimizing portfolio allocations, enabling informed investment decisions and risk management strategies.
+
+First of all, below is the code structure of the project:
+
+\begin{verbatim}
+|-- main.py
+|-- Strategies
+|   |-- Strategy.py
+|   |-- Constant_EqualWeight_Strategy.py
+|   |-- Max_Return_Strategy.py
+|   |-- Min_Volatility_Strategy.py
+|   |-- Max_SharpeRatio_Strategy.py
+|   |-- Dynamic_Strategy.py
+|-- Portfolio
+|   |-- Portfolio.py
+|   |-- Return.py
+|   |-- Volatility.py
+|-- Models
+|   |-- ARIMA.py
+|   |-- GPR_trainer.py
+|-- Optimization
+|   |-- Optimizer.py
+|-- Utils
+|   |-- Data_preprocessing.py
+|   |-- Metrics.py
+|   |-- Visualizer.py
+|-- requirements.txt
+\end{verbatim}
+
+
+\paragraph{Design Principles}
+
+The modular design ensures that each component is self-contained and reusable. For example, new strategies can be added by extending the base class in \texttt{Strategy.py}, and additional predictive models can be integrated into the \texttt{Models/} directory. This structure also facilitates debugging and testing, as each module operates independently.
+
+The inclusion of utility functions in the \texttt{Utils/} directory allows for centralized handling of common tasks like data preprocessing and visualization, improving code maintainability and reducing redundancy.
+
 
 \section{Data Collection and Preprocessing}
 
@@ -167,9 +207,28 @@ Another notable advantage of DE is its amplitude sensitivity. In financial marke
 
 Both WPE and DE offer robust tools for analyzing financial markets, with WPE emphasizing computational balance and volatility capture, while DE focuses on non-stationarity adaptation and comprehensive market understanding. Together, they provide complementary approaches to understanding the complexity of financial time series.
 \subparagraph{Conclusion}
-Weighted Permutation Entropy (WPE) and Dispersion Entropy (DE) prove to be superior tools compared to traditional Permutation Entropy when analyzing stock prices. These methods capture essential information about both the direction and magnitude of price movements, offering a more nuanced understanding of financial time-series data. Their ability to handle the inherent non-stationarity and volatility of financial markets makes them particularly well-suited for detecting patterns and trends that are often overlooked by simpler measures. Furthermore, WPE and DE provide more informative and sensitive complexity measures, enabling analysts to enhance asset selection and refine risk assessment strategies.
+Weighted Permutation Entropy (WPE) and Dispersion Entropy (DE) prove to be superior tools compared to traditional Permutation Entropy when analyzing stock prices. 
+These methods capture essential information about both the direction and magnitude of price movements, offering a more nuanced understanding of financial time-series data. 
+Their ability to handle the inherent non-stationarity and volatility of financial markets makes them particularly well-suited for detecting patterns and trends that are often overlooked by simpler measures. 
+Furthermore, WPE and DE provide more informative and sensitive complexity measures, enabling analysts to enhance asset selection and refine risk assessment strategies.
 
-By utilizing \ac{WPE} and \ac{DE}, analysts and investors can achieve a deeper understanding of market behavior, uncovering the complexity and predictability of stock prices. These insights facilitate more informed decisions in selecting assets across different sectors, ultimately improving portfolio management and investment outcomes.
+\begin{table}[htbp]
+\centering
+\caption{Mean Squared Error (MSE) Comparison between GPR and ARIMA Models, Days include only Market Opening Days}
+\label{tab:mse_comparison}
+\begin{tabular}{c|ccccc}
+\toprule
+ &\textbf{MSFT} & \textbf{JNJ} & \textbf{BA} & \textbf{HLT} & \textbf{JPM} \\
+\midrule
+\ac{PE}  & 0.67909 & 0.52547 & 0.52344 & 0.68303 & 0.50430  \\
+\ac{WPE} & 0.12027 & 0.23113 & 0.21192 & 0.12082 & 0.23113  \\
+\ac{DE} & 0.94164 & 0.93484 & 0.92995 & 0.97267 & 0.93663 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+By utilizing \ac{WPE} and \ac{DE}, analysts and investors can achieve a deeper understanding of market behavior, uncovering the complexity and predictability of stock prices. 
+These insights facilitate more informed decisions in selecting assets across different sectors, ultimately improving portfolio management and investment outcomes.
 \subsection{Data Sources and Time Period}
 
 
@@ -322,7 +381,7 @@ By using the Gaussian filter denoising method, we effectively reduced the impact
 The filtered data retained essential market movements while reducing random fluctuations, allowing the Gaussian Process Regression models to focus on meaningful signals.
 
 
-\subsection{Summary}
+\subsubsection{Summary}
 
 By carefully selecting assets, sourcing reliable data, and meticulously preprocessing the dataset, we established a solid foundation for our predictive modeling. The combination of normalization, outlier treatment, strategic data splitting, and denoising ensured that the inputs to our models were of high quality. These steps are crucial for enhancing the performance of the Gaussian Process Regression models and, ultimately, for developing effective portfolio optimization strategies.
 
@@ -405,7 +464,10 @@ where $E[R_p]$ is the expected portfolio return, $R_f$ is the risk-free rate, an
 
 
 \subsection{Multi-Input Gaussian Process Regression Model}
-Unlike the Single-Input Gaussian Process Regression (GPR) model, which is designed to predict the returns of individual stocks based on historical time-series data, with only one input dimension, that is, time. 
+Unlike the Single-Input Gaussian Process Regression (GPR) model, which is designed to predict the returns of individual stocks based on historical time-series data, with only one input dimension - time, multi-input \ac{GPR} extends the model to incorporate multiple economic factors and asset prices as input dimensions.
+This extension allows the model to capture complex relationships between the target stock and broader market dynamics, enhancing its predictive power and robustness. For example, in Figure \ref{fig:2d_comparison}, we visualize the relationships between the returns of Apple Inc. (AAPL) and two input features: the US Dollar Index (DXY) and the Gold Spot Price (XAU/USD). 
+The scatter plots illustrate the interactions between the target stock's returns and the selected economic factors, highlighting the potential predictive value of multi-input GPR modeling.
+
 In this study, we developed a multi-input Gaussian Process Regression (GPR) model that incorporates multiple economic factors and time as input dimensions to predict the returns of individual stocks. 
 
 The model combines features from a diverse set of assets and economic indicators, including Brent Oil prices, the US Dollar Index (DXY), the S\&P 500 Index, the Nasdaq 100 Index, Bitcoin (BTC), and gold prices (XAU/USD). This multi-input framework allows the model to capture intricate relationships between the target stock and broader market dynamics, enhancing its predictive power. Some examples of visualizations of two input features are shown in the figures below:
@@ -509,7 +571,9 @@ Below Figure~\ref{fig:variance_fixed_1e-1} and Figure~\ref{fig:variance_fixed_1}
 
 \subsubsection{Trainable Likelihood Variance}
 
-In the second approach, the likelihood variance was set as a trainable parameter, allowing the model to adaptively learn the optimal noise level from the data. This method is advantageous when the data contains varying levels of noise or when the noise characteristics are not well-understood. To enhance the robustness of this approach, multiple starting values for the likelihood variance were used ($10^{-5}$, $10^{-3}$, $10^{-1}$, $1.0$), ensuring that the optimization process explored a diverse range of initial configurations. For each starting variance, the model was trained using the Scipy optimizer, and the final negative log marginal likelihood was evaluated.
+In the second approach, the likelihood variance was set as a trainable parameter, allowing the model to adaptively learn the optimal noise level from the data. 
+This method is advantageous when the data contains varying levels of noise or when the noise characteristics are not well-understood. 
+To enhance the robustness of this approach, multiple starting values for the likelihood variance were used ($10^{-5}$, $10^{-3}$, $10^{-1}$, $1.0$) as can be seen from Figure~\ref{fig:model_training}, ensuring that the optimization process explored a diverse range of initial configurations. For each starting variance, the model was trained using the Scipy optimizer, and the final negative log marginal likelihood was evaluated.
 
 \begin{itemize}
     \item The model with the lowest final loss was selected as the best-performing model.
@@ -543,6 +607,12 @@ Both approaches were evaluated based on their ability to minimize the negative l
 
 The trainable likelihood variance approach, with multiple initializations, identified the model configuration that minimized the negative log marginal likelihood. This model provided a balance between accurately capturing the signal and accounting for noise, making it the preferred choice for the Gaussian Process Regression framework used in this study.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/best_model.jpg}
+    \caption{Best Model Selected with Trainable Likelihood Variance}
+    \label{fig:best_model}
+\end{figure}
 
 \section{Forecasting Approach}
 Describe the iterative forecasting method and how predictions are updated daily.
@@ -564,13 +634,17 @@ The iterative retraining approach involves the following steps:
 
 \subsubsection{Advantages of Iterative Retraining}
 
-The iterative retraining approach offers several advantages:
+The iterative retraining approach offers a dynamic and adaptive mechanism for maintaining the accuracy and relevance of predictive models in the fast-paced environment of financial markets. 
+By retraining the model on a daily basis, it ensures real-time adaptation to the latest market conditions. 
+This continuous updating process allows the model to incorporate the most recent trends and data patterns, which is crucial for capturing rapid changes in market dynamics and maintaining prediction reliability.
 
-\begin{itemize}
-    \item \textbf{Real-Time Adaptation:} By retraining the model daily, it continuously adapts to the latest market conditions, ensuring that predictions remain relevant and responsive to recent trends.
-    \item \textbf{Enhanced Short-Term Accuracy:} The use of updated data allows the model to account for the most recent market dynamics, improving the accuracy of short-term forecasts.
-    \item \textbf{Uncertainty Quantification:} With each iteration, the GPR model provides a predictive mean and variance for the next day, enabling the assessment of uncertainty in the predictions. This is particularly useful for risk-aware decision-making in portfolio management.
-\end{itemize}
+Another significant advantage of iterative retraining is its ability to enhance short-term accuracy. 
+By utilizing updated data, the model remains closely aligned with the current state of the market, improving its predictive performance for near-term forecasts. 
+This is particularly valuable in financial applications, where short-term predictions often drive critical investment decisions.
+
+Moreover, iterative retraining leverages the inherent capabilities of Gaussian Process Regression (GPR) to provide both predictive means and variances with each iteration. This feature allows for effective uncertainty quantification, enabling decision-makers to assess the confidence in each prediction. By incorporating this information into risk-aware portfolio management strategies, iterative retraining supports more informed and balanced investment decisions, particularly in volatile or uncertain market environments.
+
+
 
 \subsubsection{Performance Evaluation}
 
@@ -1173,20 +1247,5 @@ A higher Sharpe ratio indicates a more attractive risk-adjusted return.
 By analyzing the cumulative returns, transaction costs, and Sharpe ratios, we can assess the effectiveness of each optimization strategy. Strategies that yield higher cumulative returns with lower transaction costs and higher Sharpe ratios are considered more efficient.
 
 The backtesting framework allows us to simulate real-world trading conditions, including the impact of transaction costs, and provides a comprehensive evaluation of the portfolio optimization strategies.
-
-\subsection{Implementation Notes}
-
-The implementation of the portfolio management framework includes several critical features designed to ensure its practical applicability and robustness in simulating real-world scenarios.
-
-One key aspect is the incorporation of transaction costs into the return calculations. This feature provides a more realistic representation of trading activities by accounting for the costs incurred during portfolio rebalancing. By explicitly modeling transaction costs, the framework allows for a better understanding of their impact on net portfolio returns and helps to identify strategies that minimize unnecessary trading expenses.
-
-Another important feature is the support for time-varying portfolio weights. The framework is designed to handle dynamic rebalancing, enabling portfolio weights to change on a daily basis or at other specified intervals. This flexibility allows for the simulation of dynamic strategies that respond to evolving market conditions, such as those driven by Gaussian Process Regression (GPR) predictions or other models. The ability to adapt portfolio weights over time ensures that the framework remains relevant for testing and implementing advanced, data-driven investment strategies.
-
-Finally, the framework includes debugging and logging capabilities to facilitate detailed performance analysis. Optional print statements can be enabled within the code to provide real-time insights into daily performance metrics, including returns, transaction costs, and portfolio weights. These debugging tools are particularly valuable during the development and testing phases, as they help identify potential issues and ensure the framework operates as intended.
-
-Together, these features make the framework a powerful tool for analyzing and optimizing portfolio strategies, bridging the gap between theoretical models and practical implementation.
-\subsubsection{Conclusion}
-
-The backtesting framework is a critical component in validating the portfolio optimization strategies. By accurately simulating the investment process over historical data, accounting for transaction costs, and computing relevant performance metrics, the framework provides valuable insights into the potential real-world performance of the strategies under consideration.
 
 

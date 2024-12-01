@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 22:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 23:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1039,7 +1039,11 @@ Package csquotes Info: ... found 'babel' package.
 LaTeX Font Info:    Trying to load font information for T1+pplx on input line 24.
  (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pplx.fd
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `tab:mse_comparison' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -1336,7 +1340,7 @@ chapter 2.
 
 
 ]
-<figures/efficient_frontier.png, id=288, 730.8906pt x 441.8106pt>
+<figures/efficient_frontier.png, id=280, 730.8906pt x 441.8106pt>
 File: figures/efficient_frontier.png Graphic file (type png)
 <use figures/efficient_frontier.png>
 Package pdftex.def Info: figures/efficient_frontier.png  used on input line 48.
@@ -1365,12 +1369,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 204.
-<figures/future_predictions_MSFT.png, id=356, 875.4306pt x 441.8106pt>
+<figures/future_predictions_MSFT.png, id=348, 875.4306pt x 441.8106pt>
 File: figures/future_predictions_MSFT.png Graphic file (type png)
 <use figures/future_predictions_MSFT.png>
 Package pdftex.def Info: figures/future_predictions_MSFT.png  used on input line 216.
 (pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
-<figures/future_predictions_HLT.png, id=357, 875.4306pt x 441.8106pt>
+<figures/future_predictions_HLT.png, id=349, 875.4306pt x 441.8106pt>
 File: figures/future_predictions_HLT.png Graphic file (type png)
 <use figures/future_predictions_HLT.png>
 Package pdftex.def Info: figures/future_predictions_HLT.png  used on input line 223.
@@ -1382,12 +1386,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 [12{/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./figures/future_predictions_MSFT.png>]
-<figures/future_predictions_HLT_return.png, id=389, 875.4306pt x 441.8106pt>
+<figures/future_predictions_HLT_return.png, id=381, 875.4306pt x 441.8106pt>
 File: figures/future_predictions_HLT_return.png Graphic file (type png)
 <use figures/future_predictions_HLT_return.png>
 Package pdftex.def Info: figures/future_predictions_HLT_return.png  used on input line 236.
 (pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
-<figures/future_predictions_MSFT_return.png, id=390, 875.4306pt x 441.8106pt>
+<figures/future_predictions_MSFT_return.png, id=382, 875.4306pt x 441.8106pt>
 File: figures/future_predictions_MSFT_return.png Graphic file (type png)
 <use figures/future_predictions_MSFT_return.png>
 Package pdftex.def Info: figures/future_predictions_MSFT_return.png  used on input line 243.
@@ -1415,93 +1419,414 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [18]
 
-[19]
+[19]) (./chapters/03_Methodology.tex
 
-[20]) (./chapters/03_Methodology.tex
+[20]
 
 [21]
 chapter 3.
-Package acronym Info: Label `acro:MSFT' newly defined as it shall be overridden
-although it is yet undefined on input line 13.
-Package acronym Info: Label `acro:JNJ' newly defined as it shall be overridden
-although it is yet undefined on input line 13.
-Package acronym Info: Label `acro:BA' newly defined as it shall be overridden
-although it is yet undefined on input line 13.
-Package acronym Info: Label `acro:HLT' newly defined as it shall be overridden
-although it is yet undefined on input line 13.
-Package acronym Info: Label `acro:JPM' newly defined as it shall be overridden
-although it is yet undefined on input line 13.
-<figures/Sector-SP.jpg, id=541, 770.88pt x 355.3275pt>
-File: figures/Sector-SP.jpg Graphic file (type jpg)
-<use figures/Sector-SP.jpg>
-Package pdftex.def Info: figures/Sector-SP.jpg  used on input line 17.
-(pdftex.def)             Requested size: 418.25555pt x 192.79027pt.
 
 
 [22
 
 
- <./figures/Sector-SP.jpg>]
+]
+Package acronym Info: Label `acro:MSFT' newly defined as it shall be overridden
+although it is yet undefined on input line 53.
+Package acronym Info: Label `acro:JNJ' newly defined as it shall be overridden
+although it is yet undefined on input line 53.
+Package acronym Info: Label `acro:BA' newly defined as it shall be overridden
+although it is yet undefined on input line 53.
+Package acronym Info: Label `acro:HLT' newly defined as it shall be overridden
+although it is yet undefined on input line 53.
+Package acronym Info: Label `acro:JPM' newly defined as it shall be overridden
+although it is yet undefined on input line 53.
+<figures/Sector-SP.jpg, id=537, 770.88pt x 355.3275pt>
+File: figures/Sector-SP.jpg Graphic file (type jpg)
+<use figures/Sector-SP.jpg>
+Package pdftex.def Info: figures/Sector-SP.jpg  used on input line 57.
+(pdftex.def)             Requested size: 418.25555pt x 192.79027pt.
+
 
 [23]
+
+[24 <./figures/Sector-SP.jpg>]
 Package acronym Info: Label `acro:PE' newly defined as it shall be overridden
-although it is yet undefined on input line 66.
-Package acronym Info: Label `acro:WPE' newly defined as it shall be overridden
-although it is yet undefined on input line 77.
+although it is yet undefined on input line 106.
 
-
-[24]
 
 [25]
+Package acronym Info: Label `acro:WPE' newly defined as it shall be overridden
+although it is yet undefined on input line 117.
+
 
 [26]
 
 [27]
-Package acronym Info: Label `acro:DE' newly defined as it shall be overridden
-although it is yet undefined on input line 172.
 
-Overfull \hbox (12.89946pt too wide) in paragraph at lines 182--182
+[28]
+Package acronym Info: Label `acro:DE' newly defined as it shall be overridden
+although it is yet undefined on input line 225.
+
+Overfull \hbox (12.89946pt too wide) in paragraph at lines 241--241
 []\T1/lmtt/m/n/10.95 https://eodhd.com/api/eod/{ticker}.US?period={period}&api_token={api_token}[] 
  []
 
 
-Overfull \hbox (7.15073pt too wide) in paragraph at lines 188--188
+
+[29]
+Overfull \hbox (7.15073pt too wide) in paragraph at lines 247--247
 []\T1/lmtt/m/n/10.95 https://eodhd.com/api/eod/BTC-USD.CC?period={period}&api_token={api_token}[] 
  []
 
 
 
-[28]
-
-[29]
-
 [30]
-<figures/predicted_MSFT_with_removed.png, id=669, 875.4306pt x 441.8106pt>
+
+[31]
+<figures/predicted_MSFT_with_removed.png, id=667, 875.4306pt x 441.8106pt>
 File: figures/predicted_MSFT_with_removed.png Graphic file (type png)
 <use figures/predicted_MSFT_with_removed.png>
-Package pdftex.def Info: figures/predicted_MSFT_with_removed.png  used on input line 260.
+Package pdftex.def Info: figures/predicted_MSFT_with_removed.png  used on input line 319.
 (pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
 
 
-[31 <./figures/predicted_MSFT_with_removed.png>]
-
 [32]
-Overfull \hbox (50.10371pt too wide) in paragraph at lines 318--319
+
+[33 <./figures/predicted_MSFT_with_removed.png>]
+
+[34]
+Overfull \hbox (50.10371pt too wide) in paragraph at lines 377--378
 []\T1/pplx/m/n/10.95 (-20) In this code, \T1/lmtt/m/n/10.95 df['close'] \T1/pplx/m/n/10.95 (-20) rep-re-sents the orig-i-nal clos-ing price data, and \T1/lmtt/m/n/10.95 df['filtered_close']
  []
 
 
 
-[33]
-
-[34]
-Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
-although it is yet undefined on input line 362.
-
-
 [35]
-<figures/2d_AAPL.png, id=727, 722.7pt x 493.1223pt>
+Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
+although it is yet undefined on input line 421.
+
+
+[36]
+<figures/2d_AAPL.png, id=728, 722.7pt x 493.1223pt>
 File: figures/2d_AAPL.png Graphic file (type png)
 <use figures/2d_AAPL.png>
-Package pdftex.def Info: figures/2d_AAPL.png  used on input line 391.
-(pdftex.def)             Requested size: 188
+Package pdftex.def Info: figures/2d_AAPL.png  used on input line 450.
+(pdftex.def)             Requested size: 188.21371pt x 128.41945pt.
+<figures/2d_gold.png, id=729, 725.109pt x 495.2904pt>
+File: figures/2d_gold.png Graphic file (type png)
+<use figures/2d_gold.png>
+Package pdftex.def Info: figures/2d_gold.png  used on input line 457.
+(pdftex.def)             Requested size: 188.21371pt x 128.56085pt.
+
+
+[37]
+
+[38 <./figures/2d_AAPL.png> <./figures/2d_gold.png>]
+
+[39]
+
+[40]
+<figures/variance=1e1.png, id=797, 867.24pt x 433.62pt>
+File: figures/variance=1e1.png Graphic file (type png)
+<use figures/variance=1e1.png>
+Package pdftex.def Info: figures/variance=1e1.png  used on input line 556.
+(pdftex.def)             Requested size: 188.21371pt x 94.10648pt.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 557.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 557.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 557.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 557.
+<figures/variance=1.png, id=798, 867.24pt x 433.62pt>
+File: figures/variance=1.png Graphic file (type png)
+<use figures/variance=1.png>
+Package pdftex.def Info: figures/variance=1.png  used on input line 563.
+(pdftex.def)             Requested size: 188.21371pt x 94.10648pt.
+
+
+[41 <./figures/variance=1e1.png> <./figures/variance=1.png>]
+<figures/model_training.jpg, id=815, 965.6075pt x 732.7375pt>
+File: figures/model_training.jpg Graphic file (type jpg)
+<use figures/model_training.jpg>
+Package pdftex.def Info: figures/model_training.jpg  used on input line 587.
+(pdftex.def)             Requested size: 200.76086pt x 152.33649pt.
+<figures/model_train2.jpg, id=816, 961.5925pt x 741.77126pt>
+File: figures/model_train2.jpg Graphic file (type jpg)
+<use figures/model_train2.jpg>
+Package pdftex.def Info: figures/model_train2.jpg  used on input line 594.
+(pdftex.def)             Requested size: 200.76086pt x 154.85976pt.
+<figures/best_model.jpg, id=817, 952.55875pt x 352.31625pt>
+File: figures/best_model.jpg Graphic file (type jpg)
+<use figures/best_model.jpg>
+Package pdftex.def Info: figures/best_model.jpg  used on input line 612.
+(pdftex.def)             Requested size: 418.25555pt x 154.69707pt.
+
+
+[42 <./figures/model_training.jpg> <./figures/model_train2.jpg>]
+
+[43 <./figures/best_model.jpg>]
+
+[44]
+
+[45]
+
+[46]
+
+[47]
+
+[48]
+
+[49]
+
+[50]
+
+[51]
+
+[52]
+
+[53]
+
+[54]
+
+[55]
+
+[56]
+
+[57]
+Overfull \hbox (1.53954pt too wide) in paragraph at lines 1181--1182
+\T1/pplx/m/n/10.95 (-20) dicted volatil-i-ties (\T1/lmtt/m/n/10.95 predicted_volatilities\T1/pplx/m/n/10.95 (-20) ), and the op-ti-mized port-fo-lio weights
+ []
+
+
+
+[58]
+
+[59]) (./chapters/04_Results&Analysis.tex
+
+[60]
+chapter 4.
+
+
+[61
+
+
+]
+<figures/prediction_comparison.png, id=1023, 730.8906pt x 441.8106pt>
+File: figures/prediction_comparison.png Graphic file (type png)
+<use figures/prediction_comparison.png>
+Package pdftex.def Info: figures/prediction_comparison.png  used on input line 45.
+(pdftex.def)             Requested size: 334.60571pt x 202.26456pt.
+
+
+[62 <./figures/prediction_comparison.png>]
+File: figures/future_predictions_HLT_return.png Graphic file (type png)
+<use figures/future_predictions_HLT_return.png>
+Package pdftex.def Info: figures/future_predictions_HLT_return.png  used on input line 64.
+(pdftex.def)             Requested size: 334.60571pt x 168.86728pt.
+
+
+[63]
+
+[64]
+
+[65]
+
+[66]
+Overfull \hbox (9.1211pt too wide) in paragraph at lines 198--210
+ [][] 
+ []
+
+
+
+[67]
+<figures/asset_allocations_constant.png, id=1077, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_constant.png Graphic file (type png)
+<use figures/asset_allocations_constant.png>
+Package pdftex.def Info: figures/asset_allocations_constant.png  used on input line 228.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+<figures/asset_allocations_max_return.png, id=1078, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_max_return.png Graphic file (type png)
+<use figures/asset_allocations_max_return.png>
+Package pdftex.def Info: figures/asset_allocations_max_return.png  used on input line 229.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+<figures/asset_allocations_min_volatility.png, id=1079, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_min_volatility.png Graphic file (type png)
+<use figures/asset_allocations_min_volatility.png>
+Package pdftex.def Info: figures/asset_allocations_min_volatility.png  used on input line 230.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+<figures/asset_allocations_sharpe.png, id=1080, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_sharpe.png Graphic file (type png)
+<use figures/asset_allocations_sharpe.png>
+Package pdftex.def Info: figures/asset_allocations_sharpe.png  used on input line 231.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+<figures/asset_allocations_dynamic.png, id=1081, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_dynamic.png Graphic file (type png)
+<use figures/asset_allocations_dynamic.png>
+Package pdftex.def Info: figures/asset_allocations_dynamic.png  used on input line 232.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+
+
+[68]
+
+[69 <./figures/asset_allocations_constant.png> <./figures/asset_allocations_max_return.png> <./figures/asset_allocations_min_volatility.png> <./figures/asset_allocations_sharpe.png> <./figures/asset_allocations_dynamic.png>]
+<figures/portfolio_comparison_final_non.png, id=1096, 730.8906pt x 514.0806pt>
+File: figures/portfolio_comparison_final_non.png Graphic file (type png)
+<use figures/portfolio_comparison_final_non.png>
+Package pdftex.def Info: figures/portfolio_comparison_final_non.png  used on input line 241.
+(pdftex.def)             Requested size: 334.60571pt x 235.35037pt.
+<figures/trx_costs_comparison_final_non.png, id=1097, 730.8906pt x 514.0806pt>
+File: figures/trx_costs_comparison_final_non.png Graphic file (type png)
+<use figures/trx_costs_comparison_final_non.png>
+Package pdftex.def Info: figures/trx_costs_comparison_final_non.png  used on input line 253.
+(pdftex.def)             Requested size: 334.60571pt x 235.35037pt.
+
+
+[70 <./figures/portfolio_comparison_final_non.png>]
+<figures/iterative/asset_allocations_constant.png, id=1108, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_constant.png Graphic file (type png)
+<use figures/iterative/asset_allocations_constant.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_constant.png  used on input line 269.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+<figures/iterative/asset_allocations_max_return.png, id=1109, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_max_return.png Graphic file (type png)
+<use figures/iterative/asset_allocations_max_return.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_max_return.png  used on input line 270.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+<figures/iterative/asset_allocations_min_volatility.png, id=1110, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_min_volatility.png Graphic file (type png)
+<use figures/iterative/asset_allocations_min_volatility.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_min_volatility.png  used on input line 271.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+<figures/iterative/asset_allocations_sharpe.png, id=1111, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_sharpe.png Graphic file (type png)
+<use figures/iterative/asset_allocations_sharpe.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_sharpe.png  used on input line 272.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+<figures/iterative/asset_allocations_dynamic.png, id=1112, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_dynamic.png Graphic file (type png)
+<use figures/iterative/asset_allocations_dynamic.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_dynamic.png  used on input line 273.
+(pdftex.def)             Requested size: 334.60571pt x 65.48592pt.
+<figures/portfolio_comparison_final.png, id=1113, 730.8906pt x 514.0806pt>
+File: figures/portfolio_comparison_final.png Graphic file (type png)
+<use figures/portfolio_comparison_final.png>
+Package pdftex.def Info: figures/portfolio_comparison_final.png  used on input line 279.
+(pdftex.def)             Requested size: 334.60571pt x 235.35037pt.
+<figures/trx_costs_comparison_final.png, id=1114, 730.8906pt x 514.0806pt>
+File: figures/trx_costs_comparison_final.png Graphic file (type png)
+<use figures/trx_costs_comparison_final.png>
+Package pdftex.def Info: figures/trx_costs_comparison_final.png  used on input line 287.
+(pdftex.def)             Requested size: 334.60571pt x 235.35037pt.
+
+
+[71 <./figures/trx_costs_comparison_final_non.png>]
+
+[72 <./figures/iterative/asset_allocations_constant.png> <./figures/iterative/asset_allocations_max_return.png> <./figures/iterative/asset_allocations_min_volatility.png> <./figures/iterative/asset_allocations_sharpe.png> <./figures/iterative/asset_allocations_dynamic.png>]
+
+[73 <./figures/portfolio_comparison_final.png> <./figures/trx_costs_comparison_final.png>]) (./chapters/05_Discussion.tex
+
+[74]
+chapter 5.
+
+
+[75
+
+
+]
+
+[76]
+
+[77]
+
+[78]
+
+[79]
+
+[80])
+
+[81]
+
+[82]
+chapter without number
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 61.
+(/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+[83
+
+
+]
+Package tocbasic Info: character protrusion at lof deactivated on input line 92.
+ (./main.lof)
+\tf@lof=\write7
+\openout7 = `main.lof'.
+
+
+
+[84
+
+
+]
+Package tocbasic Info: character protrusion at lot deactivated on input line 93.
+ (./main.lot)
+\tf@lot=\write8
+\openout8 = `main.lot'.
+
+
+
+[85
+
+
+]
+chapter without number
+
+
+[86
+
+
+]
+
+[87]
+No complaints by nag.
+
+
+[88] (./main.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-09-10>
+ ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 53088 strings out of 475496
+ 1180651 string characters out of 5775029
+ 2306452 words of memory out of 5000000
+ 73748 multiletter control sequences out of 15000+600000
+ 651205 words of font info for 524 fonts, out of 8000000 for 9000
+ 38 hyphenation exceptions out of 8191
+ 111i,13n,124p,10966b,3126s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmb.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmbi.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (96 pages, 7295256 bytes).
+PDF statistics:
+ 1677 PDF objects out of 1728 (max. 8388607)
+ 1474 compressed objects within 15 object streams
+ 617 named destinations out of 1000 (max. 500000)
+ 115902 words of extra memory for PDF output out of 128383 (max. 10000000)
+
