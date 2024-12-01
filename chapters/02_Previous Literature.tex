@@ -72,7 +72,7 @@ where:
 \end{itemize}
 \subsubsection{Risk-Return Trade-off and the Sharpe Ratio}
 
-Investors seek to maximize returns while minimizing risk. The \textit{Sharpe Ratio}, introduced by William F. Sharpe \cite{sharpe1966mutual}, measures the risk-adjusted return of a portfolio:
+Investors seek to maximize returns while minimizing risk. The \textit{Sharpe Ratio}, introduced by William F. Sharpe \cite{sharpe1964capital}, measures the risk-adjusted return of a portfolio:
 
 \begin{equation}
     S = \frac{E[R_p] - R_f}{\sigma_p},
@@ -226,10 +226,10 @@ These confidence intervals represent the uncertainty associated with the predict
 \end{figure}
 
 \subsubsection{Challenges in Applying GPR to Finance}
-Despite its strengths, \ac{GPR} encounters several challenges when applied to the financial domain. A significant limitation is its computational complexity, particularly the need to invert an $n \times n$ matrix, which becomes increasingly burdensome as dataset size grows. This issue can limit the scalability of \ac{GPR} in large-scale applications. 
-Another obstacle is the non-stationarity of financial time-series data, which often violates the assumptions of standard \ac{GPR} implementations. Markets frequently exhibit regime changes and trends that challenge the ability of traditional models to capture shifting dynamics effectively. 
-Additionally, financial datasets are characterized by high noise levels and volatility, which can adversely impact the performance and stability of \ac{GPR} models. 
-Finally, the selection and tuning of kernel functions and hyperparameters play a pivotal role in \ac{GPR}'s effectiveness. This process is not only technically demanding but also requires a nuanced understanding of the data and the underlying financial context.
+Despite its strengths, \ac{GPR} encounters several challenges when applied to the financial domain. A significant limitation is its computational complexity, particularly the need to invert an $n \times n$ matrix, which becomes increasingly burdensome as dataset size grows \cite{williams2006gaussian, quinonero2005unifying}. This issue can limit the scalability of \ac{GPR} in large-scale applications.
+Another obstacle is the non-stationarity of financial time-series data, which often violates the assumptions of standard \ac{GPR} implementations. Markets frequently exhibit regime changes and trends that challenge the ability of traditional models to capture shifting dynamics effectively \cite{tsay2010analysis, hamilton1994time}.
+Additionally, financial datasets are characterized by high noise levels and volatility, which can adversely impact the performance and stability of \ac{GPR} models \cite{cont2001empirical}.
+Finally, the selection and tuning of kernel functions and hyperparameters play a pivotal role in \ac{GPR}'s effectiveness. This process is not only technically demanding but also requires a nuanced understanding of the data and the underlying financial context \cite{rasmussen2006gaussian, duvenaud2014automatic}.
 
 \begin{figure}[htbp]
     \centering
@@ -253,7 +253,11 @@ These confidence intervals represent the uncertainty associated with the predict
 
 Combining portfolio optimization with GPR-based forecasting aims to leverage accurate predictions of asset returns and associated uncertainties to make informed allocation decisions. The integration involves:
 
-The integration of GPR into portfolio optimization represents a powerful approach to improving asset allocation by leveraging predictive insights. GPR can forecast expected returns and volatilities for individual assets, providing the foundational inputs for optimization models. By incorporating these predictions, portfolio weights can be determined in a manner that aligns with both the expected performance and the associated risks of the assets. Furthermore, GPR's ability to quantify uncertainty enhances the optimization process by allowing confidence intervals to inform allocation decisions. This ensures that portfolios are not only optimized based on point estimates but are also adjusted to account for the inherent unpredictability of financial markets. Such integration bridges the gap between theoretical advancements in predictive modeling and practical applications in portfolio management, offering a robust framework for informed and adaptive investment strategies.
+The integration of GPR into portfolio optimization represents a powerful approach to improving asset allocation by leveraging predictive insights. 
+GPR can forecast expected returns and volatilities for individual assets, providing the foundational inputs for optimization models \cite{deisenroth2015gaussian, cont2001empirical}. 
+By incorporating these predictions, portfolio weights can be determined in a manner that aligns with both the expected performance and the associated risks of the assets. Furthermore, GPR's ability to quantify uncertainty enhances the optimization process by allowing confidence intervals to inform allocation decisions \cite{asmussen2007stochastic}. 
+This ensures that portfolios are not only optimized based on point estimates but are also adjusted to account for the inherent unpredictability of financial markets. 
+Such integration bridges the gap between theoretical advancements in predictive modeling and practical applications in portfolio management, offering a robust framework for informed and adaptive investment strategies \cite{markowitz1952portfolio}.
 \paragraph{Dynamic Portfolio Optimization}
 
 Dynamic optimization involves updating the portfolio allocation as new information becomes available. By retraining the GPR models with new data and adjusting the portfolio accordingly, the strategy adapts to changing market conditions, potentially enhancing performance.
@@ -275,8 +279,7 @@ Predicting future asset prices and market trends is a fundamental objective in f
 
 \subsubsection{Algorithmic Trading}
 
-Machine learning algorithms facilitate the development of automated trading systems that execute trades based on predefined strategies and real-time data analysis. Techniques like reinforcement learning enable the optimization of trading strategies through continuous learning from market interactions \cite{nevmyvaka2006reinforcement}.
-
+Machine learning algorithms facilitate the development of automated trading systems that execute trades based on predefined strategies and real-time data analysis. Techniques like reinforcement learning enable the optimization of trading strategies through continuous learning from market interactions \cite{nevmyvaka2006reinforcement, deng2016deep}.
 \subsubsection{Risk Management}
 
 Accurate risk assessment is crucial for financial institutions. Machine learning models help in predicting credit risk, market risk, and operational risk by analyzing historical data and identifying factors that contribute to potential losses \cite{lessmann2015benchmarking}.
@@ -291,8 +294,7 @@ Detecting fraudulent activities and anomalies is vital for maintaining the integ
 
 \subsubsection{Sentiment Analysis and Natural Language Processing}
 
-Analyzing news articles, social media, and financial reports using natural language processing (NLP) helps investors gauge market sentiment and its potential impact on asset prices \cite{hagenau2013automated}.
-
+Analyzing news articles, social media, and financial reports using natural language processing (NLP) helps investors gauge market sentiment and its potential impact on asset prices \cite{hagenau2013automated, loughran2011liability}.
 
 \subsection{Conclusion}
 
@@ -335,9 +337,8 @@ RL algorithms, such as Q-learning and policy gradients, have been used to develo
 
 Scenario analysis involves evaluating portfolio performance under different hypothetical future states of the world. Model Predictive Control (MPC) uses forecasts to optimize current decisions while considering future trajectories, adjusting strategies as new information becomes available \cite{primbs2009dynamic}.
 
-\paragraph{Advantages of MPC}
 
-MPC allows for the incorporation of predictive models (e.g., GPR forecasts) into the optimization process, enabling the portfolio to adapt dynamically to anticipated market changes.
+MPC allows for the incorporation of predictive models (e.g., \ac{GPR} forecasts) into the optimization process, enabling the portfolio to adapt dynamically to anticipated market changes.
 
 \subsection{Transaction Costs and Portfolio Rebalancing}
 

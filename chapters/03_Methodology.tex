@@ -14,8 +14,8 @@ The selected stocks are as follows: \ac{MSFT} from the Information Technology se
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/sector_SP.png}
-    \caption{S\&P 500 Sector Weightings(Source: \cite{S&P500SectorWeights}) }
+    \includegraphics[width=1.0\textwidth]{figures/Sector-SP.jpg}
+    \caption{S\&P 500 Sector Weightings(Source: \cite{SP500SectorWeights2024}) }
     \label{fig:sector_sp}
 \end{figure}
 
@@ -29,7 +29,7 @@ Industrials and Consumer Discretionary sectors represent core components of the 
 This strategic selection aligns with the study's objective of developing a predictive portfolio optimization framework applicable to a realistic and impactful set of assets. It allows for testing the effectiveness of the proposed models and strategies in a context that is meaningful to investors and relevant to overall market performance. Moreover, by focusing on sectors that significantly influence the S\&P 500, the study ensures that its results have practical implications for portfolio management and investment decision-making.
 
 \paragraph{Entropy Methods for Time Series Analysis}
-To assess the complexity of the time-series data for these assets, we utilized entropy-based methods. Specifically, we employed the \texttt{OrdianlEntropy} package in Python, which provides time-efficient, ordinal pattern-based entropy algorithms for computing the complexity of one-dimensional time-series. This analysis informed our feature engineering process by highlighting the inherent unpredictability and dynamic behavior of the asset prices.
+To assess the complexity of the time-series data for these assets, we utilized entropy-based methods. Specifically, we employed the \texttt{OrdianlEntropy} package in Python \cite{OrdinalEntroPy}, which provides time-efficient, ordinal pattern-based entropy algorithms for computing the complexity of one-dimensional time-series. This analysis informed our feature engineering process by highlighting the inherent unpredictability and dynamic behavior of the asset prices.
 
 \subparagraph{Permutation Entropy (PE)}
 Permutation Entropy (PE), introduced by Bandt and Pompe in 2002, is a measure of complexity that quantifies the diversity of ordinal patterns in a time series. It is based on the relative ordering of the values within embedding vectors derived from the time series.
@@ -357,11 +357,10 @@ where $\phi_i$ are the AR coefficients, $\theta_i$ are the MA coefficients, and 
 
 The \ac{ARIMA} model serves as an appropriate baseline because it is a well-established method for modeling time-series data and capturing trends and seasonality. While it is linear in nature, ARIMA provides a benchmark for assessing the added value of GPR, which can capture complex non-linear relationships and quantify uncertainty in predictions.
 
-\subsection{Comparative Evaluation}
+\subsection{Comparative Evaluation and Performance Metrics}
 
 The performance of the \ac{GPR} model is compared against the \ac{ARIMA} baseline using the \ac{MSE} for predictive accuracy and the Sharpe Ratio for portfolio optimization outcomes. This dual evaluation approach ensures that the models are assessed comprehensively, both in terms of their forecasting ability and their impact on investment decisions. By demonstrating improvements over the \ac{ARIMA} model, the study highlights the effectiveness of \ac{GPR} in dynamic portfolio management.
 
-\subsection{Performance Metrics}
 
 To evaluate the performance of the predictive models and portfolio strategies, we employ the following metrics:
 
@@ -385,7 +384,24 @@ The Sharpe Ratio assesses the risk-adjusted performance of a portfolio, measurin
 
 where $E[R_p]$ is the expected portfolio return, $R_f$ is the risk-free rate, and $\sigma_p$ is the portfolio's standard deviation of returns. A higher Sharpe Ratio indicates a more favorable trade-off between risk and return, making it a crucial metric for evaluating the effectiveness of the portfolio optimization strategies derived from the predicted returns.
 
-\subsection{Single-Input Gaussian Process Regression Model}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/2d_AAPL.png}
+        \caption{US Dollar Price \& Time vs. AAPL Returns}
+        \label{fig:2d_aapl}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/2d_gold.png}
+        \caption{Gold Spot Price \& Time vs. AAPL Returns}
+        \label{fig:2d_gold}
+    \end{subfigure}
+    \caption{Comparisons of Price and Time with AAPL Returns for Different Assets.}
+    \label{fig:2d_comparison}
+\end{figure}
 
 
 \subsection{Multi-Input Gaussian Process Regression Model}
@@ -393,19 +409,7 @@ Unlike the Single-Input Gaussian Process Regression (GPR) model, which is design
 In this study, we developed a multi-input Gaussian Process Regression (GPR) model that incorporates multiple economic factors and time as input dimensions to predict the returns of individual stocks. 
 
 The model combines features from a diverse set of assets and economic indicators, including Brent Oil prices, the US Dollar Index (DXY), the S\&P 500 Index, the Nasdaq 100 Index, Bitcoin (BTC), and gold prices (XAU/USD). This multi-input framework allows the model to capture intricate relationships between the target stock and broader market dynamics, enhancing its predictive power. Some examples of visualizations of two input features are shown in the figures below:
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/2d_AAPL.png}
-    \caption{US Dollar Price & Time vs. AAPL Returns}
-    \label{fig:2d_aapl}
-\end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/2d_gold.png}
-    \caption{Gold Spot Price & Time vs. AAPL Returns}
-    \label{fig:2d_gold}
-\end{figure}
 \subsubsection{Input Data and Feature Selection}
 
 The input features for the GPR model were selected based on their correlation with the target stock. For each feature, we calculated the correlation between the feature's historical returns and the target stock's returns. Only features with an absolute correlation exceeding a predefined threshold were included in the model to ensure relevance and reduce noise in the predictions. This approach prioritizes the most influential economic factors while discarding irrelevant or weakly correlated inputs.
@@ -414,28 +418,32 @@ The final input matrix was constructed by concatenating the selected features al
 
 Below is an example of Auto-select Assets correlation > threshold 0.30
 
-\begin{lstlisting}[language=shell]
+\begin{lstlisting}[language=Python]
 Full Correlation Matrix:
-[[ 1.          0.50222172  0.67685479  0.49680488 -0.62550917]
- [ 0.50222172  1.          0.78625395  0.83010455 -0.50745736]
- [ 0.67685479  0.78625395  1.          0.92642172 -0.57928874]
- [ 0.49680488  0.83010455  0.92642172  1.         -0.38304662]
- [-0.62550917 -0.50745736 -0.57928874 -0.38304662  1.        ]]
-Correlation between X1 and Y: -0.6255
-Correlation between X2 and Y: -0.5075
-Correlation between X3 and Y: -0.5793
-Correlation between X4 and Y: -0.3830
-╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
-│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
-╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
-│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.19246 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 7.23499 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ False       │ ()      │ float64 │ 1e-05   │
-╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
-Mean Squared Error: 0.0000
-
+[[ 1.          0.46706671  0.50222172  0.24712746 -0.0620827   0.67685479
+   0.49680488 -0.62550917]
+ [ 0.46706671  1.          0.36688963 -0.28276416 -0.54027736  0.64799578
+   0.70426379 -0.17388135]
+ [ 0.50222172  0.36688963  1.          0.57943381  0.11520806  0.78625395
+   0.83010455 -0.50745736]
+ [ 0.24712746 -0.28276416  0.57943381  1.          0.85438818  0.26459202
+   0.2470917  -0.1514256 ]
+ [-0.0620827  -0.54027736  0.11520806  0.85438818  1.         -0.16046186
+  -0.1921287   0.16807068]
+ [ 0.67685479  0.64799578  0.78625395  0.26459202 -0.16046186  1.
+   0.92642172 -0.57928874]
+ [ 0.49680488  0.70426379  0.83010455  0.2470917  -0.1921287   0.92642172
+   1.         -0.38304662]
+ [-0.62550917 -0.17388135 -0.50745736 -0.1514256   0.16807068 -0.57928874
+  -0.38304662  1.        ]]
+Correlation between X1 and Y: -0.6255  # Selected Brent_Oil for training
+Correlation between X2 and Y: -0.1739  # Selected DXY for training
+Correlation between X3 and Y: -0.5075  # Selected BAC for training
+Correlation between X4 and Y: -0.1514  # Selected SP500 for training
+Correlation between X5 and Y: 0.1681   # Selected NasDaq100 for training
+Correlation between X6 and Y: -0.5793  # Selected XAU_USD for training
+Correlation between X7 and Y: -0.3830  # time
+Mean Squared Error: 2.7350
 \end{lstlisting}
 
 \subsubsection{Composite Kernel for Multi-Dimensional Inputs}
@@ -447,7 +455,10 @@ To effectively model the multi-dimensional input space, we employed a composite 
     \item Another kernel was applied to the time dimension, enabling the model to account for temporal dependencies and trends. 
 \end{itemize}
 
-The composite kernel combines these two components multiplicatively, ensuring that the model can flexibly adjust to different input dimensions and set appropriate length scales for each. This design allows the GPR model to capture the unique characteristics of each feature while modeling their joint effects on the target stock's returns.
+The composite kernel combines these two components multiplicatively, ensuring that the model can flexibly adjust to different input dimensions and set appropriate length scales for each. 
+
+Note that it is better to avoid any kernel length-scale to be too high, because it would either imply that this input kernel has no contribution to the final predictions at all, or the input data is too noisy.
+whereas this design allows the GPR model to capture the unique characteristics of each feature while modeling their joint effects on the target stock's returns.
 
 \subsubsection{Training and Testing Framework}
 
@@ -475,6 +486,27 @@ In the first approach, the likelihood variance was fixed to a predefined value (
 
 where $\boldsymbol{\theta}$ represents the trainable kernel parameters.
 
+Below Figure~\ref{fig:variance_fixed_1e-1} and Figure~\ref{fig:variance_fixed_1} are predictions of AAPL price with fixed likelihood variance ($\sigma^2 = 1e-1$) and ($\sigma^2 = 1$):
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/variance=1e1.png}
+        \caption{Fixed Likelihood Variance ($\sigma^2 = 1e-1$)}
+        \label{fig:variance_fixed_1e-1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/variance=1.png}
+        \caption{Fixed Likelihood Variance ($\sigma^2 = 1$)}
+        \label{fig:variance_fixed_1}
+    \end{subfigure}
+    \caption{Predictions with Fixed Likelihood Variance for Different Values of $\sigma^2$.}
+    \label{fig:variance_fixed_comparison}
+\end{figure}
+
+
 \subsubsection{Trainable Likelihood Variance}
 
 In the second approach, the likelihood variance was set as a trainable parameter, allowing the model to adaptively learn the optimal noise level from the data. This method is advantageous when the data contains varying levels of noise or when the noise characteristics are not well-understood. To enhance the robustness of this approach, multiple starting values for the likelihood variance were used ($10^{-5}$, $10^{-3}$, $10^{-1}$, $1.0$), ensuring that the optimization process explored a diverse range of initial configurations. For each starting variance, the model was trained using the Scipy optimizer, and the final negative log marginal likelihood was evaluated.
@@ -483,6 +515,25 @@ In the second approach, the likelihood variance was set as a trainable parameter
     \item The model with the lowest final loss was selected as the best-performing model.
     \item This approach balances the trade-off between model flexibility and the risk of overfitting by optimizing both the kernel parameters and the likelihood variance.
 \end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/model_training.jpg}
+        \caption{Model Training (1e-5, 1e-3)}
+        \label{fig:model_training1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/model_train2.jpg}
+        \caption{Model Training (1e-1, 1.0)}
+        \label{fig:model_training2}
+    \end{subfigure}
+    \caption{Model Training with Trainable Likelihood Variance}
+    \label{fig:model_training}
+\end{figure}
 
 \subsubsection{Comparison of Approaches}
 
@@ -979,26 +1030,19 @@ The backtesting process involves the following steps:
     \item \textbf{Performance Evaluation}: Key performance metrics such as cumulative return, cumulative transaction costs, portfolio variance, and Sharpe ratio are calculated to evaluate the strategies.
 \end{enumerate}
 
-\subsection{Return Calculation}
+\subsection{Return and Volatility Calculation}
 
 \subsubsection{Return Class Implementation}
 
-The \texttt{Return} class is designed to calculate portfolio returns based on asset returns and portfolio weights, accounting for transaction costs. It is initialized with:
+The \texttt{Return} class is designed to calculate portfolio returns based on asset returns and portfolio weights, accounting for transaction costs. 
+It is initialized with three main parameters. 
+The first parameter, \texttt{asset\_returns}, is a NumPy array containing the returns of the assets in the portfolio. 
+The second parameter, \texttt{weights}, is a NumPy array representing the portfolio weights, where each row corresponds to a specific time period, reflecting how the allocation changes over time. 
+The third parameter, \texttt{transaction\_cost\_rate}, is a scalar that represents the transaction cost rate, with a default value of zero if not specified.
 
-\begin{itemize}
-    \item \texttt{asset\_returns}: A NumPy array of asset returns.
-    \item \texttt{weights}: A NumPy array of portfolio weights, where each row corresponds to a specific time period.
-    \item \texttt{transaction\_cost\_rate}: A scalar representing the transaction cost rate (default is 0).
-\end{itemize}
+The class provides methods to perform several essential calculations for portfolio analysis. One of the primary methods computes the \textbf{daily portfolio returns}, calculating the net returns for each day while considering transaction costs. This allows for an accurate assessment of the portfolio's performance on a daily basis, factoring in the costs associated with trading. Additionally, the class includes a method to calculate the \textbf{cumulative return} of the portfolio over the backtesting period, providing a comprehensive view of the overall performance from start to finish.
 
-The class provides methods to calculate:
-
-\begin{itemize}
-    \item \textbf{Daily Portfolio Returns}: Computes the net portfolio returns for each day, considering transaction costs.
-    \item \textbf{Cumulative Return}: Calculates the cumulative return of the portfolio over the backtesting period.
-    \item \textbf{Cumulative Transaction Costs}: Sums up the transaction costs incurred over the backtesting period.
-    \item \textbf{Daily Transaction Costs}: Provides the transaction costs for each day.
-\end{itemize}
+Furthermore, the class can compute the \textbf{cumulative transaction costs}, summing up all the transaction costs incurred throughout the backtesting period. This calculation is crucial for understanding the impact of trading activities on the portfolio's net returns. The class also offers a method to determine the \textbf{daily transaction costs}, providing detailed insights into the costs associated with each day's transactions. By accounting for these costs, investors can make more informed decisions about trading frequency and strategy adjustments.
 
 \paragraph{Daily Portfolio Return Calculation}
 
@@ -1030,17 +1074,16 @@ The cumulative return over \( T \) days is calculated as:
 \text{Cumulative Return} = \prod_{t=1}^T (1 + r_{\text{net}, t}) - 1
 \]
 
-\subsection{Volatility Calculation}
 
 \subsubsection{Volatility Class Implementation}
 
-The \texttt{Volatility} class calculates the portfolio volatility using predicted asset volatilities and portfolio weights. It is initialized with:
+The \texttt{Volatility} class is designed to calculate the overall portfolio volatility by leveraging the predicted volatilities of individual assets and their respective portfolio weights. It provides a framework for quantifying the risk associated with the portfolio's allocation at each time period.
 
-\begin{itemize}
-    \item \texttt{predicted\_volatilities}: A DataFrame of predicted volatilities for each asset.
-    \item \texttt{weights\_df}: A DataFrame of portfolio weights for each time period.
-\end{itemize}
+The class is initialized with two key inputs. The first input, \texttt{predicted\_volatilities}, is a DataFrame containing the predicted volatilities for each asset over time. These predictions are typically derived from models that forecast asset-level risk and serve as a critical component in understanding the risk dynamics of the portfolio. The second input, \texttt{weights\_df}, is a DataFrame representing the portfolio weights over the same time periods. Each row in this DataFrame corresponds to a specific time period, with columns reflecting the weights allocated to each asset.
 
+Using these inputs, the \texttt{Volatility} class computes the portfolio volatility by combining the predicted volatilities of individual assets with their respective weights. The computation typically involves calculating a weighted sum of asset volatilities, accounting for their proportional contributions to the portfolio. This method ensures that the portfolio's risk is accurately quantified based on its allocation and the inherent risks of the underlying assets.
+
+By providing a clear and systematic approach to risk calculation, the \texttt{Volatility} class enables portfolio managers to assess and manage the risk exposure of their portfolios more effectively. It is particularly valuable for dynamic portfolios where weights and asset volatilities fluctuate over time, as it provides a real-time understanding of how these changes impact overall portfolio risk.
 \paragraph{Portfolio Volatility Calculation}
 
 The portfolio volatility \( \sigma_{\text{portfolio}, t} \) at time \( t \) is calculated as:
@@ -1089,7 +1132,7 @@ The backtesting is implemented in the \texttt{backtest\_portfolio} method, which
     \item \textbf{Results Presentation}: The method prints out daily and cumulative metrics for analysis.
 \end{enumerate}
 
-\subsection{Performance Evaluation}
+\subsubsection{Performance Evaluation}
 
 The strategies are evaluated based on the following key performance metrics:
 
@@ -1100,9 +1143,8 @@ The strategies are evaluated based on the following key performance metrics:
     \item \textbf{Sharpe Ratio}: Provides a risk-adjusted return metric, indicating how much excess return is received for the extra volatility endured.
 \end{itemize}
 
-\subsubsection{Cumulative Return}
 
-Calculated as:
+Cumulative Rerturn is calculated as:
 
 \[
 \text{Cumulative Return} = \prod_{t=1}^T (1 + r_{\text{net}, t}) - 1
@@ -1110,9 +1152,7 @@ Calculated as:
 
 This metric helps in comparing the total profitability of different strategies over the same period.
 
-\subsubsection{Cumulative Transaction Costs}
-
-Calculated as:
+Cumulative Transaction Costs is calculated as:
 
 \[
 \text{Cumulative Transaction Costs} = \sum_{t=1}^T \text{Transaction Cost}_t
@@ -1120,9 +1160,7 @@ Calculated as:
 
 This metric is crucial for understanding the impact of trading activity on net returns.
 
-\subsubsection{Sharpe Ratio}
-
-Calculated as:
+Sharpe Ratio is calculated as:
 
 \[
 \text{Sharpe Ratio} = \frac{\text{Cumulative Return} - r_f}{\sqrt{\sum_{t=1}^T \sigma_{\text{portfolio}, t}^2}}
@@ -1130,7 +1168,7 @@ Calculated as:
 
 A higher Sharpe ratio indicates a more attractive risk-adjusted return.
 
-\subsection{Backtesting Results Interpretation}
+\subsubsection{Backtesting Results Interpretation}
 
 By analyzing the cumulative returns, transaction costs, and Sharpe ratios, we can assess the effectiveness of each optimization strategy. Strategies that yield higher cumulative returns with lower transaction costs and higher Sharpe ratios are considered more efficient.
 
@@ -1138,13 +1176,16 @@ The backtesting framework allows us to simulate real-world trading conditions, i
 
 \subsection{Implementation Notes}
 
-\begin{itemize}
-    \item \textbf{Transaction Costs}: Incorporated in the return calculations to simulate realistic trading scenarios.
-    \item \textbf{Time-Varying Weights}: The framework supports dynamic rebalancing, with portfolio weights potentially changing each day.
-    \item \textbf{Debugging and Logging}: Optional print statements in the code provide detailed insights into the daily performance metrics, aiding in debugging and analysis.
-\end{itemize}
+The implementation of the portfolio management framework includes several critical features designed to ensure its practical applicability and robustness in simulating real-world scenarios.
 
-\subsection{Conclusion}
+One key aspect is the incorporation of transaction costs into the return calculations. This feature provides a more realistic representation of trading activities by accounting for the costs incurred during portfolio rebalancing. By explicitly modeling transaction costs, the framework allows for a better understanding of their impact on net portfolio returns and helps to identify strategies that minimize unnecessary trading expenses.
+
+Another important feature is the support for time-varying portfolio weights. The framework is designed to handle dynamic rebalancing, enabling portfolio weights to change on a daily basis or at other specified intervals. This flexibility allows for the simulation of dynamic strategies that respond to evolving market conditions, such as those driven by Gaussian Process Regression (GPR) predictions or other models. The ability to adapt portfolio weights over time ensures that the framework remains relevant for testing and implementing advanced, data-driven investment strategies.
+
+Finally, the framework includes debugging and logging capabilities to facilitate detailed performance analysis. Optional print statements can be enabled within the code to provide real-time insights into daily performance metrics, including returns, transaction costs, and portfolio weights. These debugging tools are particularly valuable during the development and testing phases, as they help identify potential issues and ensure the framework operates as intended.
+
+Together, these features make the framework a powerful tool for analyzing and optimizing portfolio strategies, bridging the gap between theoretical models and practical implementation.
+\subsubsection{Conclusion}
 
 The backtesting framework is a critical component in validating the portfolio optimization strategies. By accurately simulating the investment process over historical data, accounting for transaction costs, and computing relevant performance metrics, the framework provides valuable insights into the potential real-world performance of the strategies under consideration.
 

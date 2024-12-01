@@ -1,0 +1,29 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Efficient Frontier in Mean-Variance Space}}{8}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces GPR Price Predictions with Confidence Intervals MSFT}}{12}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces GPR Price Predictions with Confidence Intervals HLT}}{13}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces GPR Return Predictions with Confidence Intervals HLT}}{13}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces GPR Return Predictions with Confidence Intervals MSFT}}{14}{figure.caption.52}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces S\&P 500 Sector Weightings(Source: \blx@tocontentsinit {0}\cite {SP500SectorWeights2024}) }}{22}{figure.caption.104}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces GPR Prediction with Missing Data and Outliers}}{31}{figure.caption.138}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Comparisons of Price and Time with AAPL Returns for Different Assets.}}{36}{figure.caption.154}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Predictions with Fixed Likelihood Variance for Different Values of $\sigma ^2$.}}{40}{figure.caption.165}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Model Training with Trainable Likelihood Variance}}{40}{figure.caption.168}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Decision Flowchart for the Dynamic Strategy}}{53}{figure.caption.221}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparison of Predicted Values from GPR and ARIMA Models}}{61}{figure.caption.247}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces GPR Predictions Result for Future 5 Days Daily Return, MSFT}}{62}{figure.caption.250}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Portfolio Allocation Evolution}}{68}{figure.caption.266}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Portfolio Comparison}}{69}{figure.caption.269}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Transaction Costs Comparison}}{70}{figure.caption.270}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Portfolio Allocation Evolution of Iteratively Retrained Models}}{71}{figure.caption.275}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Portfolio Comparison of Iteratively Retrained Models}}{72}{figure.caption.276}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Transaction Costs Comparison of Iteratively Retrained Models}}{72}{figure.caption.277}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

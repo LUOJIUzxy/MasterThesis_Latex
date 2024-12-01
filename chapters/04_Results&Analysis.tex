@@ -59,12 +59,18 @@ The fluctuation in performance across different forecast horizons indicates that
 
 Lower MSE values indicate better predictive accuracy. The results show that for short-term predictions (up to 10 days), the GPR model significantly outperforms the ARIMA model. However, as the forecast horizon extends, the performance gap narrows, and ARIMA performs better at certain points.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/future_predictions_MSFT_return.png}
+\caption{GPR Predictions Result for Future 5 Days Daily Return, MSFT}
+\label{fig:future_predictions_MSFT_return}
+\end{figure}
+
+
 \subsubsection{Conclusion}
 
 The comparison highlights the strengths and limitations of both models. GPR excels in capturing short-term fluctuations due to its flexibility and non-parametric nature, making it suitable for short-term forecasting. ARIMA, with its reliance on historical patterns and residuals, may be more stable for medium-term forecasts. Selecting the appropriate model depends on the specific investment horizon and the characteristics of the asset being analyzed.
 
-
-\subsection{Comparison of iteratively retraining and fixed models}
 
 
 \section{Portfolio Optimization Outcomes}
@@ -72,7 +78,7 @@ In this section, we present the results of the portfolio optimization process, i
 
 
 
-\subsection{Strategy Performance Calculation}
+\subsection{Predicted Performance Calculation}
 
 In addition to backtesting, we first calculate the expected performance of the portfolio optimization strategies based on the predicted returns and the optimal weights obtained from the optimization process. This involves estimating the cumulative portfolio return and the predicted portfolio volatility, which can later be compared with the actual returns from backtesting to assess the accuracy and effectiveness of the strategies.
 
@@ -219,11 +225,11 @@ Conversely, the Minimum Volatility Strategy demonstrated remarkable stability, m
 The Maximum Sharpe Ratio Strategy balanced these considerations, achieving superior risk-adjusted returns. By optimizing the trade-off between expected returns and portfolio volatility, it provided a robust middle ground, outperforming both extremes in a majority of market conditions. This strategy particularly excelled in volatile markets, leveraging its adaptive allocation to maximize efficiency.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_constant.png}
-    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_max_return.png}
-    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_min_volatility.png}
-    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_sharpe.png}
-    \includegraphics[width=0.6\textwidth]{figures/asset_allocations_dynamic.png}
+    \includegraphics[width=0.8\textwidth]{figures/asset_allocations_constant.png}
+    \includegraphics[width=0.8\textwidth]{figures/asset_allocations_max_return.png}
+    \includegraphics[width=0.8\textwidth]{figures/asset_allocations_min_volatility.png}
+    \includegraphics[width=0.8\textwidth]{figures/asset_allocations_sharpe.png}
+    \includegraphics[width=0.8\textwidth]{figures/asset_allocations_dynamic.png}
     \caption{Portfolio Allocation Evolution}
     \label{fig:asset_allocations_evolution}
 \end{figure}
@@ -232,7 +238,7 @@ The Dynamic Strategy emerged as the most innovative approach, integrating Gaussi
 The backtesting results revealed that the Dynamic Strategy achieved a total return of 2.9314\% over the testing period, outperforming the benchmark by 1.8503\%. Its volatility was comparable to the Minimum Volatility Strategy, with a standard deviation of 1.701796\%, demonstrating its effectiveness in managing risk. The Maximum Sharpe Ratio Strategy, standing at W, underscored its superior risk-adjusted performance relative to other strategies.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/portfolio_comparison_final_non.png}
+    \includegraphics[width=0.8\textwidth]{figures/portfolio_comparison_final_non.png}
     \caption{Portfolio Comparison}
     \label{fig:portfolio_comparison_non_iterative}
 \end{figure}
@@ -245,7 +251,7 @@ The Dynamic Strategy's probabilistic rebalancing approach resulted in transactio
 This efficiency further enhanced its net performance, making it a practical choice for active portfolio management.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/trx_costs_comparison_final_non.png}
+    \includegraphics[width=0.8\textwidth]{figures/trx_costs_comparison_final_non.png}
     \caption{Transaction Costs Comparison}
     \label{fig:trx_costs_comparison_non_iterative}
 \end{figure}
@@ -261,17 +267,17 @@ Other than directly predicting future five days' returns, we also investigate th
  We compare the performance of the iteratively retrained models with the fixed models to evaluate the effectiveness of this approach in enhancing the strategies' adaptability and robustness.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_constant.png}
-    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_max_return.png}
-    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_min_volatility.png}
-    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_sharpe.png}
-    \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_dynamic.png}
+    \includegraphics[width=0.8\textwidth]{figures/iterative/asset_allocations_constant.png}
+    \includegraphics[width=0.8\textwidth]{figures/iterative/asset_allocations_max_return.png}
+    \includegraphics[width=0.8\textwidth]{figures/iterative/asset_allocations_min_volatility.png}
+    \includegraphics[width=0.8\textwidth]{figures/iterative/asset_allocations_sharpe.png}
+    \includegraphics[width=0.8\textwidth]{figures/iterative/asset_allocations_dynamic.png}
     \caption{Portfolio Allocation Evolution of Iteratively Retrained Models}
     \label{fig:asset_allocations_evolution_iterative}
 \end{figure}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/portfolio_comparison_final.png}
+    \includegraphics[width=0.8\textwidth]{figures/portfolio_comparison_final.png}
     \caption{Portfolio Comparison of Iteratively Retrained Models}
     \label{fig:portfolio_comparison_iterative}
 \end{figure}
@@ -279,14 +285,19 @@ Other than directly predicting future five days' returns, we also investigate th
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/trx_costs_comparison_final.png}
+    \includegraphics[width=0.8\textwidth]{figures/trx_costs_comparison_final.png}
     \caption{Transaction Costs Comparison of Iteratively Retrained Models}
     \label{fig:trx_costs_comparison_iterative}
 \end{figure}
 
-From the plots, we are surpringly to see that the iteratively retrained models have only trivial impact on the strategy performance, which even got less cumulative portfolio returns in backtesting. The iterative retraining process helps the models adapt to changing market conditions, which in this case, the optimizer thinks the market is going down, leading to the dynamic strategy to consistently follow Max Return Strategy. The reduced transaction costs in the iterative approach also indicate that the strategies are more stable and require fewer adjustments over time.
+From the plots, we are not surpringly to see that the iteratively retrained models help the strategies adapt to changing market conditions, leading to more dynamic asset allocations(3.0015\% compared to 2.9293\%) and improved performance. 
+The Dynamic Strategy, in particular, benefited from the iterative retraining process, achieving a total return of 3.6456\% and transaction costs of 0.001094\%T. The iterative approach enhanced the strategy's adaptability and robustness, enabling it to capitalize on emerging trends and adjust to evolving market dynamics effectively.
 
-We suspect that the iterative retraining process didn't get a better result in the portfolio optimisation process because the prediction model has large fluctuations when predicting short-term results, whereas it would stablize after two or three days. This is a common issue in financial time series prediction, and we will further investigate this in the future work.
+As \ac{GPR} models are known for their flexibility and adaptability to short-term changing market conditions, the iterative retraining process can further enhance their predictive accuracy and robustness. By updating the models with new data and retraining them periodically, the strategies can better capture evolving trends and adjust their asset allocations accordingly. 
+This iterative approach is particularly beneficial for dynamic strategies that rely on accurate forecasts to optimize their portfolios effectively.
+
+Although, the performance of Dynamic Strategy seems to be really hard to exceed Max Return Strategy in portofolio cumulative return in backtesting, we suspect that since we only predict the return of the next five days, it is hard to beat over the greedy strategy like Mak Return.
+However, Dynamic strategy may have a better performance in the long run.
 
 
 
