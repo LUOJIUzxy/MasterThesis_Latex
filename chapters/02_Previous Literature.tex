@@ -197,10 +197,18 @@ where:
 \paragraph{Risk Measurement by GPR in Financial Modeling}
 
 Specifically, compared to other \ac{ML} methods, \ac{GPR} provides a natural framework for uncertainty quantification, delivering probabilistic predictions accompanied by confidence intervals. 
-These intervals are particularly valuable in risk-sensitive environments, as they enable a deeper understanding of prediction reliability. Figure
+
+These intervals are particularly valuable in risk-sensitive environments, as they enable a deeper understanding of prediction reliability, the implementation is simple as below: 
+
+\begin{lstlisting}[language=Python]
+if isFiltered:
+    f_lower = f_mean - 1.96 * f_cov
+    f_upper = f_mean + 1.96 * f_cov
+\end{lstlisting}
+
 The Bayesian foundation of GPR further enhances its utility, as it can naturally incorporate prior knowledge and refine its predictions as new data becomes available. This adaptability makes GPR well-suited to the dynamic and evolving nature of financial data.
 
-In Figure \ref{fig:gpr_predictions_MSFT_price}, and Figure \ref{fig:gpr_predictions_HLT_price}, we can see that the GPR model provides predictions for future stock prices along with confidence intervals. 
+In Figure~\ref{fig:gpr_predictions_MSFT_price}, and Figure~\ref{fig:gpr_predictions_HLT_price}, we can see that the GPR model provides predictions for future stock prices along with confidence intervals. 
 These confidence intervals represent the uncertainty associated with the predictions and can guide investors in assessing the reliability of the forecasts. By incorporating uncertainty estimates, GPR enables a more nuanced understanding of the potential outcomes, allowing investors to make informed decisions based on both the expected returns and the associated risks.
 
 \begin{figure}[h]
@@ -239,7 +247,7 @@ Finally, the selection and tuning of kernel functions and hyperparameters play a
 
 Thus, other than predicting daily open/close prices, GPR can be used to predict the future daily returns of a stock. This can be done by training the model on historical data and then using it to predict future returns. The model can provide not only the expected return but also the uncertainty associated with the prediction. This uncertainty can be used to make more informed investment decisions, especially in risk-sensitive environments like finance.
 
-From Figure \ref{fig:gpr_predictions_HLT} and Figure \ref{fig:gpr_predictions_MSFT}, compared with above images we can see that the predictions for stock returns by GPR model along with confidence intervals. When predicting returns, the model can capture the non-linear relationships between input features and target returns better in time-series forecasting. Therefore, the model is much more sure about the predictions, and the confidence intervals are intensively narrower.
+From Figure~\ref{fig:gpr_predictions_HLT} and Figure~\ref{fig:gpr_predictions_MSFT}, compared with above images we can see that the predictions for stock returns by GPR model along with confidence intervals. When predicting returns, the model can capture the non-linear relationships between input features and target returns better in time-series forecasting. Therefore, the model is much more sure about the predictions, and the confidence intervals are intensively narrower.
 These confidence intervals represent the uncertainty associated with the predictions and can guide investors in assessing the reliability of the forecasts. By incorporating uncertainty estimates, GPR enables a more nuanced understanding of the potential outcomes, allowing investors to make informed decisions based on both the expected returns and the associated risks.
 \subsection{Integrating Portfolio Optimization and \ac{GPR}}
 

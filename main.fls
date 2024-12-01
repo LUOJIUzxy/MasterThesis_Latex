@@ -629,6 +629,14 @@ INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx10.tf
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/vf/public/mathpazo/zplmb7t.vf
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT ./figures/future_predictions_MSFT.png
 INPUT ./figures/future_predictions_MSFT.png
 INPUT ./figures/future_predictions_MSFT.png
@@ -639,6 +647,7 @@ INPUT ./figures/future_predictions_HLT.png
 INPUT ./figures/future_predictions_HLT.png
 INPUT ./figures/future_predictions_HLT.png
 INPUT ./figures/future_predictions_HLT.png
+INPUT /Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT ./figures/future_predictions_HLT_return.png
 INPUT ./figures/future_predictions_HLT_return.png
 INPUT ./figures/future_predictions_HLT_return.png
@@ -649,3 +658,13 @@ INPUT ./figures/future_predictions_MSFT_return.png
 INPUT ./figures/future_predictions_MSFT_return.png
 INPUT ./figures/future_predictions_MSFT_return.png
 INPUT ./figures/future_predictions_MSFT_return.png
+INPUT ./chapters/03_Methodology.tex
+INPUT ./chapters/03_Methodology.tex
+INPUT ./chapters/03_Methodology.tex
+INPUT ./chapters/03_Methodology.tex
+INPUT chapters/03_Methodology.tex
+INPUT ./figures/sector_SP.png
+INPUT ./figures/sector_SP.png
+INPUT ./figures/sector_SP.png
+INPUT ./figures/sector_SP.png
+INPUT ./figures/sector_SP.png

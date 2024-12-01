@@ -8,12 +8,14 @@
 \subsection{Asset Selection and Justification}
 
 
-In constructing the portfolio for this study, we selected five stocks representing five major sectors out of the eleven sectors defined by the Global Industry Classification Standard (GICS): Information Technology, Health Care, Industrials, Consumer Discretionary, and Financials. These sectors were chosen due to their significant contributions to the S\&P 500 Index, collectively accounting for the majority of the index's market capitalization. The selected stocks are as follows: \ac{MSFT} from the Information Technology sector, \ac{JNJ} from the Health Care sector, \ac{BA} from the Industrials sector, \ac{HLT} from the Consumer Discretionary sector, and \ac{JPM} from the Financials sector. And these five individual stocks are selected based on entropy analysis and comparison.
+In constructing the portfolio for this study, we selected five stocks representing five major sectors out of the eleven sectors defined by the Global Industry Classification Standard (GICS): Information Technology, Health Care, Industrials, Consumer Discretionary, and Financials. These sectors were chosen due to their significant contributions to the S\&P 500 Index, collectively accounting for the majority of the index's market capitalization as shown in Figure~\ref{fig:sector_sp}.
+
+The selected stocks are as follows: \ac{MSFT} from the Information Technology sector, \ac{JNJ} from the Health Care sector, \ac{BA} from the Industrials sector, \ac{HLT} from the Consumer Discretionary sector, and \ac{JPM} from the Financials sector. And these five individual stocks are selected based on entropy analysis and comparison.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/Sector-SP.png}
-    \caption{S\&P 500 Sector Weightings}
+    \includegraphics[width=0.6\textwidth]{figures/sector_SP.png}
+    \caption{S\&P 500 Sector Weightings(Source: \cite{S&P500SectorWeights}) }
     \label{fig:sector_sp}
 \end{figure}
 
@@ -153,12 +155,11 @@ Normalize DE by dividing by $\ln(c^m)$:
 \subparagraph{Choosing WPE and DE for Stock Price Analysis}
 Analyzing stock prices requires accounting for both the order and magnitude of price changes due to the following reasons:
 
-\subparagraph{Advantages of WPE}
+
 
 Weighted Permutation Entropy (WPE) offers distinct benefits in the analysis of financial time series by effectively incorporating the amplitude of price changes into its computation. By weighting ordinal patterns, WPE not only captures the direction of changes but also accounts for their magnitude, making it particularly adept at identifying periods of heightened market volatility. This sensitivity to volatility is crucial for risk management, as it allows analysts to detect significant shifts in market behavior that could impact investment decisions. Furthermore, WPE strikes a balance between computational efficiency and analytical depth. It provides detailed insights into the complexity of financial data without requiring excessive computational resources, making it a practical tool for real-time and large-scale applications.
 
 
-\subparagraph{Advantages of DE}
 
 Dispersion Entropy (DE) excels in handling the complexities of non-stationary financial time series, which often exhibit trends, abrupt changes, and varying volatility. By mapping data into discrete classes, DE adapts effectively to non-stationarity, ensuring robust analysis across different market conditions. Its design also makes it less sensitive to noise and outliers, a significant advantage in the inherently noisy financial domain, where anomalies can skew traditional measures. DE provides a comprehensive view of market dynamics by considering both the frequency and amplitude of patterns, capturing subtle shifts in market behavior.
 
@@ -228,12 +229,6 @@ where $S_t$ is the asset price at time $t$. This additive property simplifies th
 
 Log returns are scale-invariant, meaning they standardize returns across assets regardless of their price levels. Whether an asset is priced at \$1 or \$1,000, the log return brings their percentage changes onto a consistent scale. This normalization simplifies comparisons across assets with vastly different price levels and reduces the need for additional data scaling or normalization procedures. It ensures that no single asset disproportionately influences the model due to its absolute price, allowing for a more balanced and equitable analysis within the portfolio.
 
-\subparagraph{Conclusion}
-
-By incorporating log returns into our modeling framework, we leverage their theoretical compatibility with financial models, enhance stability against market volatility, benefit from their time-additive properties, and achieve scale normalization across diverse assets. These advantages contribute to the robustness and accuracy of our Gaussian Process Regression models and improve the effectiveness of our dynamic portfolio optimization strategies.
-
-
-
 \paragraph{Data Normalization and Scaling}
 
 To bring all features onto a similar scale and improve the numerical stability of the models, we applied data normalization techniques. Specifically, we used min-max scaling to normalize the historical return features and the time index:
@@ -292,6 +287,7 @@ To handle any missing values that may arise at the edges due to insufficient dat
 
 This sliding window denoising process effectively smooths the data by averaging over the local neighborhood of each data point, reducing random noise while preserving significant trends and patterns. By enhancing the signal-to-noise ratio in the time-series, this approach improves the quality of the input data for the Gaussian Process Regression models, leading to better predictive performance and more reliable portfolio optimization decisions.
 
+In this project, we experimented on window size = 1, 3, 5, 10, and eventually applied sliding window size at 3 for data pre-processing in the end-to-end pipeline.
 \paragraph{Gaussian Filter Denoising Method}
 
 To further enhance the quality of the time-series data and reduce high-frequency noise, we employed the Gaussian filter denoising method. The Gaussian filter is a convolutional filter that applies a Gaussian kernel to smooth data by averaging neighboring points with weights determined by the Gaussian function. This technique preserves significant trends and patterns while effectively attenuating random fluctuations and noise.
@@ -389,15 +385,58 @@ The Sharpe Ratio assesses the risk-adjusted performance of a portfolio, measurin
 
 where $E[R_p]$ is the expected portfolio return, $R_f$ is the risk-free rate, and $\sigma_p$ is the portfolio's standard deviation of returns. A higher Sharpe Ratio indicates a more favorable trade-off between risk and return, making it a crucial metric for evaluating the effectiveness of the portfolio optimization strategies derived from the predicted returns.
 
+\subsection{Single-Input Gaussian Process Regression Model}
+
+
 \subsection{Multi-Input Gaussian Process Regression Model}
+Unlike the Single-Input Gaussian Process Regression (GPR) model, which is designed to predict the returns of individual stocks based on historical time-series data, with only one input dimension, that is, time. 
+In this study, we developed a multi-input Gaussian Process Regression (GPR) model that incorporates multiple economic factors and time as input dimensions to predict the returns of individual stocks. 
 
-In this study, we developed a multi-input Gaussian Process Regression (GPR) model that incorporates multiple economic factors and time as input dimensions to predict the returns of individual stocks. The model combines features from a diverse set of assets and economic indicators, including Brent Oil prices, the US Dollar Index (DXY), the S\&P 500 Index, the Nasdaq 100 Index, Bitcoin (BTC), and gold prices (XAU/USD). This multi-input framework allows the model to capture intricate relationships between the target stock and broader market dynamics, enhancing its predictive power.
+The model combines features from a diverse set of assets and economic indicators, including Brent Oil prices, the US Dollar Index (DXY), the S\&P 500 Index, the Nasdaq 100 Index, Bitcoin (BTC), and gold prices (XAU/USD). This multi-input framework allows the model to capture intricate relationships between the target stock and broader market dynamics, enhancing its predictive power. Some examples of visualizations of two input features are shown in the figures below:
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/2d_AAPL.png}
+    \caption{US Dollar Price & Time vs. AAPL Returns}
+    \label{fig:2d_aapl}
+\end{figure}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/2d_gold.png}
+    \caption{Gold Spot Price & Time vs. AAPL Returns}
+    \label{fig:2d_gold}
+\end{figure}
 \subsubsection{Input Data and Feature Selection}
 
 The input features for the GPR model were selected based on their correlation with the target stock. For each feature, we calculated the correlation between the feature's historical returns and the target stock's returns. Only features with an absolute correlation exceeding a predefined threshold were included in the model to ensure relevance and reduce noise in the predictions. This approach prioritizes the most influential economic factors while discarding irrelevant or weakly correlated inputs.
 
 The final input matrix was constructed by concatenating the selected features along with time as an additional dimension. By including time, the model accounts for temporal trends and seasonality in the data, further improving its predictive capabilities.
+
+Below is an example of Auto-select Assets correlation > threshold 0.30
+
+\begin{lstlisting}[language=shell]
+Full Correlation Matrix:
+[[ 1.          0.50222172  0.67685479  0.49680488 -0.62550917]
+ [ 0.50222172  1.          0.78625395  0.83010455 -0.50745736]
+ [ 0.67685479  0.78625395  1.          0.92642172 -0.57928874]
+ [ 0.49680488  0.83010455  0.92642172  1.         -0.38304662]
+ [-0.62550917 -0.50745736 -0.57928874 -0.38304662  1.        ]]
+Correlation between X1 and Y: -0.6255
+Correlation between X2 and Y: -0.5075
+Correlation between X3 and Y: -0.5793
+Correlation between X4 and Y: -0.3830
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.19246 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 7.23499 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ False       │ ()      │ float64 │ 1e-05   │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Mean Squared Error: 0.0000
+
+\end{lstlisting}
 
 \subsubsection{Composite Kernel for Multi-Dimensional Inputs}
 

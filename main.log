@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 17:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1436,3 +1436,248 @@ Package acronym Warning: Acronym `MPT' is not defined on input line 16.
 File: figures/efficient_frontier.png Graphic file (type png)
 <use figures/efficient_frontier.png>
 Package pdftex.def Info: figures/efficient_frontier.png  used on input line 48.
+(pdftex.def)             Requested size: 250.95587pt x 151.69673pt.
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 68.
+ (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+)
+
+[8 <./figures/efficient_frontier.png>]
+
+LaTeX Warning: Citation 'sharpe1966mutual' on page 9 undefined on input line 75.
+
+
+LaTeX Warning: Citation 'rasmussen2006gaussian' on page 9 undefined on input line 100.
+
+
+
+[9]
+
+[10]
+
+Package acronym Warning: Acronym `ML' is not defined on input line 199.
+
+
+Package acronym Warning: Acronym `GPR' is not defined on input line 199.
+
+
+
+[11] (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 203.
+ (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 204.
+
+
+LaTeX Warning: Reference `fig:gpr_predictions_MSFT_price' on page 12 undefined on input line 211.
+
+
+LaTeX Warning: Reference `fig:gpr_predictions_HLT_price' on page 12 undefined on input line 211.
+
+<figures/future_predictions_MSFT.png, id=165, 875.4306pt x 441.8106pt>
+File: figures/future_predictions_MSFT.png Graphic file (type png)
+<use figures/future_predictions_MSFT.png>
+Package pdftex.def Info: figures/future_predictions_MSFT.png  used on input line 216.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+<figures/future_predictions_HLT.png, id=166, 875.4306pt x 441.8106pt>
+File: figures/future_predictions_HLT.png Graphic file (type png)
+<use figures/future_predictions_HLT.png>
+Package pdftex.def Info: figures/future_predictions_HLT.png  used on input line 223.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package acronym Warning: Acronym `GPR' is not defined on input line 229.
+
+
+Package acronym Warning: Acronym `GPR' is not defined on input line 229.
+
+
+Package acronym Warning: Acronym `GPR' is not defined on input line 230.
+
+
+Package acronym Warning: Acronym `GPR' is not defined on input line 231.
+
+
+Package acronym Warning: Acronym `GPR' is not defined on input line 232.
+
+
+
+[12{/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./figures/future_predictions_MSFT.png>]
+<figures/future_predictions_HLT_return.png, id=183, 875.4306pt x 441.8106pt>
+File: figures/future_predictions_HLT_return.png Graphic file (type png)
+<use figures/future_predictions_HLT_return.png>
+Package pdftex.def Info: figures/future_predictions_HLT_return.png  used on input line 236.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+<figures/future_predictions_MSFT_return.png, id=184, 875.4306pt x 441.8106pt>
+File: figures/future_predictions_MSFT_return.png Graphic file (type png)
+<use figures/future_predictions_MSFT_return.png>
+Package pdftex.def Info: figures/future_predictions_MSFT_return.png  used on input line 243.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:gpr_predictions_HLT' on page 13 undefined on input line 250.
+
+
+LaTeX Warning: Reference `fig:gpr_predictions_MSFT' on page 13 undefined on input line 250.
+
+
+
+[13 <./figures/future_predictions_HLT.png> <./figures/future_predictions_HLT_return.png>]
+
+Package acronym Warning: Acronym `GPR' is not defined on input line 252.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ac' on input line 252.
+
+
+
+[14 <./figures/future_predictions_MSFT_return.png>]
+
+LaTeX Warning: Citation 'sezer2020financial' on page 15 undefined on input line 274.
+
+
+LaTeX Warning: Citation 'nevmyvaka2006reinforcement' on page 15 undefined on input line 278.
+
+
+LaTeX Warning: Citation 'lessmann2015benchmarking' on page 15 undefined on input line 282.
+
+
+Overfull \hbox (23.93924pt too wide) in paragraph at lines 282--283
+\T1/pplx/m/n/10.95 (-20) data and iden-ti-fy-ing fac-tors that con-tribute to po-ten-tial losses [[]]. 
+ []
+
+
+
+[15]
+
+LaTeX Warning: Citation 'heaton2017deep' on page 16 undefined on input line 286.
+
+
+LaTeX Warning: Citation 'phua2010comprehensive' on page 16 undefined on input line 290.
+
+
+LaTeX Warning: Citation 'hagenau2013automated' on page 16 undefined on input line 294.
+
+
+
+[16]
+
+LaTeX Warning: Citation 'bellman1957dynamic' on page 17 undefined on input line 312.
+
+
+LaTeX Warning: Citation 'merton1969lifetime' on page 17 undefined on input line 320.
+
+
+LaTeX Warning: Citation 'merton1971optimum' on page 17 undefined on input line 324.
+
+
+LaTeX Warning: Citation 'moody1998performance' on page 17 undefined on input line 328.
+
+
+LaTeX Warning: Citation 'almahdi2019adaptive' on page 17 undefined on input line 332.
+
+
+
+[17]
+
+LaTeX Warning: Citation 'primbs2009dynamic' on page 18 undefined on input line 336.
+
+
+LaTeX Warning: Citation 'garleanu2009dynamic' on page 18 undefined on input line 358.
+
+
+
+[18]
+
+LaTeX Warning: Citation 'ang2002regime' on page 19 undefined on input line 378.
+
+
+Overfull \hbox (26.1626pt too wide) in paragraph at lines 378--379
+\T1/pplx/m/n/10.95 (-20) vestors can switch to strate-gies that are bet-ter suited to pre-vail-ing con-di-tions [[]]. 
+ []
+
+
+LaTeX Warning: Citation 'hamilton1989new' on page 19 undefined on input line 382.
+
+
+
+[19]
+
+LaTeX Warning: Citation 'huang2019building' on page 20 undefined on input line 386.
+
+
+LaTeX Warning: Citation 'poterba2000portfolio' on page 20 undefined on input line 390.
+
+
+Package acronym Warning: Acronym `GPR' is not defined on input line 399.
+
+
+
+[20]
+
+LaTeX Warning: Citation 'fernandez2018machine' on page 21 undefined on input line 406.
+
+) (./chapters/03_Methodology.tex
+
+[21]
+chapter 3.
+
+LaTeX Warning: Reference `fig:sector_sp' on page 22 undefined on input line 11.
+
+Package acronym Info: Label `acro:MSFT' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+
+Package acronym Warning: Acronym `MSFT' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `MSFT' is not defined on input line 13.
+
+Package acronym Info: Label `acro:JNJ' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+
+Package acronym Warning: Acronym `JNJ' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `JNJ' is not defined on input line 13.
+
+Package acronym Info: Label `acro:BA' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+
+Package acronym Warning: Acronym `BA' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `BA' is not defined on input line 13.
+
+Package acronym Info: Label `acro:HLT' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+
+Package acronym Warning: Acronym `HLT' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `HLT' is not defined on input line 13.
+
+Package acronym Info: Label `acro:JPM' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+
+Package acronym Warning: Acronym `JPM' is not defined on input line 13.
+
+
+Package acronym Warning: Acronym `JPM' is not defined on input line 13.
+
+
+!pdfTeX error: pdflatex (file ./figures/sector_SP.png): libpng: internal error
+ ==> Fatal error occurred, no output PDF file produced!
