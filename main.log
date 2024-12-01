@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 01:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 12:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1418,7 +1418,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 38.
 ]
 
 LaTeX Font Info:    Font shape `T1/pplx/m/sl' in size <10.95> not available
-(Font)              Font shape `T1/pplx/m/it' tried instead on input line 194.
+(Font)              Font shape `T1/pplx/m/it' tried instead on input line 193.
 [6])
 \tf@toc=\write6
 \openout6 = `main.toc'.
@@ -1426,48 +1426,44 @@ LaTeX Font Info:    Font shape `T1/pplx/m/sl' in size <10.95> not available
 
 
 [7] (./chapters/01_introduction.tex
+chapter 1.
+Package acronym Info: Label `acro:MPT' newly defined as it shall be overridden
+although it is yet undefined on input line 7.
+Package acronym Info: Label `acro:CAPM' newly defined as it shall be overridden
+although it is yet undefined on input line 7.
+Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
+although it is yet undefined on input line 9.
+
 
 [1
 
-]
-chapter 1.
-
-
-[2
 
 
 ]
-Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
-although it is yet undefined on input line 29.
 
+[2]
 
 [3]
-LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 44.
+Package acronym Info: Label `acro:ARIMA' newly defined as it shall be overridden
+although it is yet undefined on input line 47.
+LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 65.
  (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 )
 
 [4]
-Package acronym Info: Label `acro:ARIMA' newly defined as it shall be overridden
-although it is yet undefined on input line 70.
 
+[5]) (./chapters/02_Previous Literature.tex
 
-[5]
-Package acronym Info: Label `acro:MPT' newly defined as it shall be overridden
-although it is yet undefined on input line 112.
-
-
-[6]) (./chapters/02_Previous Literature.tex
-
-[7]
+[6]
 chapter 2.
 
 
-[8
+[7
 
 
 ]
-<figures/efficient_frontier.png, id=291, 730.8906pt x 441.8106pt>
+<figures/efficient_frontier.png, id=301, 730.8906pt x 441.8106pt>
 File: figures/efficient_frontier.png Graphic file (type png)
 <use figures/efficient_frontier.png>
 Package pdftex.def Info: figures/efficient_frontier.png  used on input line 48.
@@ -1477,97 +1473,105 @@ LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 6
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
 
-[9 <./figures/efficient_frontier.png>]
+[8 <./figures/efficient_frontier.png>]
 
-LaTeX Warning: Citation 'sharpe1966mutual' on page 10 undefined on input line 75.
-
-
-LaTeX Warning: Citation 'rasmussen2006gaussian' on page 10 undefined on input line 100.
+LaTeX Warning: Citation 'sharpe1966mutual' on page 9 undefined on input line 75.
 
 
+LaTeX Warning: Citation 'rasmussen2006gaussian' on page 9 undefined on input line 100.
+
+
+
+[9]
 
 [10]
 
 [11]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ac' on input line 207.
+
+
+
 [12]
+
+LaTeX Warning: Citation 'sezer2020financial' on page 13 undefined on input line 231.
+
+
+LaTeX Warning: Citation 'nevmyvaka2006reinforcement' on page 13 undefined on input line 235.
+
+
 
 [13]
 
-LaTeX Warning: Citation 'sezer2020financial' on page 14 undefined on input line 248.
+LaTeX Warning: Citation 'lessmann2015benchmarking' on page 14 undefined on input line 239.
 
 
-LaTeX Warning: Citation 'nevmyvaka2006reinforcement' on page 14 undefined on input line 252.
-
-
-LaTeX Warning: Citation 'lessmann2015benchmarking' on page 14 undefined on input line 256.
-
-
-Overfull \hbox (23.93924pt too wide) in paragraph at lines 256--257
+Overfull \hbox (23.93924pt too wide) in paragraph at lines 239--240
 \T1/pplx/m/n/10.95 (-20) data and iden-ti-fy-ing fac-tors that con-tribute to po-ten-tial losses [[]]. 
  []
+
+
+LaTeX Warning: Citation 'phua2010comprehensive' on page 14 undefined on input line 247.
+
+
+LaTeX Warning: Citation 'hagenau2013automated' on page 14 undefined on input line 251.
 
 
 
 [14]
 
-LaTeX Warning: Citation 'phua2010comprehensive' on page 15 undefined on input line 264.
+LaTeX Warning: Citation 'bellman1957dynamic' on page 15 undefined on input line 269.
 
 
-LaTeX Warning: Citation 'hagenau2013automated' on page 15 undefined on input line 268.
+LaTeX Warning: Citation 'merton1969lifetime' on page 15 undefined on input line 277.
+
+
+LaTeX Warning: Citation 'merton1971optimum' on page 15 undefined on input line 281.
+
+
+LaTeX Warning: Citation 'moody1998performance' on page 15 undefined on input line 285.
 
 
 
 [15]
 
-LaTeX Warning: Citation 'bellman1957dynamic' on page 16 undefined on input line 286.
+LaTeX Warning: Citation 'almahdi2019adaptive' on page 16 undefined on input line 289.
 
 
-LaTeX Warning: Citation 'merton1969lifetime' on page 16 undefined on input line 294.
+LaTeX Warning: Citation 'primbs2009dynamic' on page 16 undefined on input line 293.
 
 
-LaTeX Warning: Citation 'merton1971optimum' on page 16 undefined on input line 298.
-
-
-LaTeX Warning: Citation 'moody1998performance' on page 16 undefined on input line 302.
+LaTeX Warning: Citation 'garleanu2009dynamic' on page 16 undefined on input line 315.
 
 
 
 [16]
 
-LaTeX Warning: Citation 'almahdi2019adaptive' on page 17 undefined on input line 306.
+LaTeX Warning: Citation 'ang2002regime' on page 17 undefined on input line 335.
 
 
-LaTeX Warning: Citation 'primbs2009dynamic' on page 17 undefined on input line 310.
-
-
-LaTeX Warning: Citation 'garleanu2009dynamic' on page 17 undefined on input line 332.
+Overfull \hbox (26.1626pt too wide) in paragraph at lines 335--336
+\T1/pplx/m/n/10.95 (-20) vestors can switch to strate-gies that are bet-ter suited to pre-vail-ing con-di-tions [[]]. 
+ []
 
 
 
 [17]
 
-LaTeX Warning: Citation 'ang2002regime' on page 18 undefined on input line 350.
+LaTeX Warning: Citation 'hamilton1989new' on page 18 undefined on input line 339.
 
 
-Overfull \hbox (26.1626pt too wide) in paragraph at lines 350--351
-\T1/pplx/m/n/10.95 (-20) vestors can switch to strate-gies that are bet-ter suited to pre-vail-ing con-di-tions [[]]. 
- []
+LaTeX Warning: Citation 'huang2019building' on page 18 undefined on input line 343.
 
 
-LaTeX Warning: Citation 'hamilton1989new' on page 18 undefined on input line 354.
-
-
-LaTeX Warning: Citation 'huang2019building' on page 18 undefined on input line 358.
-
-
-LaTeX Warning: Citation 'poterba2000portfolio' on page 18 undefined on input line 362.
+LaTeX Warning: Citation 'poterba2000portfolio' on page 18 undefined on input line 347.
 
 
 
 [18]
 
-LaTeX Warning: Citation 'fernandez2018machine' on page 19 undefined on input line 376.
+LaTeX Warning: Citation 'fernandez2018machine' on page 19 undefined on input line 363.
 
 ) (./chapters/03_Methodology.tex
 
@@ -1600,20 +1604,28 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 [21{/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
+Package acronym Info: Label `acro:PE' newly defined as it shall be overridden
+although it is yet undefined on input line 57.
+Package acronym Info: Label `acro:WPE' newly defined as it shall be overridden
+although it is yet undefined on input line 68.
+
 
 [22]
 
 [23]
 
 [24]
-Overfull \hbox (12.89946pt too wide) in paragraph at lines 173--173
+Package acronym Info: Label `acro:DE' newly defined as it shall be overridden
+although it is yet undefined on input line 164.
+
+
+[25]
+Overfull \hbox (12.89946pt too wide) in paragraph at lines 174--174
 []\T1/lmtt/m/n/10.95 https://eodhd.com/api/eod/{ticker}.US?period={period}&api_token={api_token}[] 
  []
 
 
-
-[25]
-Overfull \hbox (7.15073pt too wide) in paragraph at lines 179--179
+Overfull \hbox (7.15073pt too wide) in paragraph at lines 180--180
 []\T1/lmtt/m/n/10.95 https://eodhd.com/api/eod/BTC-USD.CC?period={period}&api_token={api_token}[] 
  []
 
@@ -1622,14 +1634,14 @@ Overfull \hbox (7.15073pt too wide) in paragraph at lines 179--179
 [26]
 
 [27]
-<figures/predicted_MSFT_with_removed.png, id=546, 875.4306pt x 441.8106pt>
-File: figures/predicted_MSFT_with_removed.png Graphic file (type png)
-<use figures/predicted_MSFT_with_removed.png>
-Package pdftex.def Info: figures/predicted_MSFT_with_removed.png  used on input line 257.
-(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
-
 
 [28]
+<figures/predicted_MSFT_with_removed.png, id=588, 875.4306pt x 441.8106pt>
+File: figures/predicted_MSFT_with_removed.png Graphic file (type png)
+<use figures/predicted_MSFT_with_removed.png>
+Package pdftex.def Info: figures/predicted_MSFT_with_removed.png  used on input line 258.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+
 
 [29 <./figures/predicted_MSFT_with_removed.png>]
 
@@ -1637,20 +1649,20 @@ Package pdftex.def Info: figures/predicted_MSFT_with_removed.png  used on input 
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 310.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 311.
 
-Overfull \hbox (50.10371pt too wide) in paragraph at lines 314--315
+Overfull \hbox (50.10371pt too wide) in paragraph at lines 315--316
 []\T1/pplx/m/n/10.95 (-20) In this code, \T1/lmtt/m/n/10.95 df['close'] \T1/pplx/m/n/10.95 (-20) rep-re-sents the orig-i-nal clos-ing price data, and \T1/lmtt/m/n/10.95 df['filtered_close']
  []
 
 
 
 [31]
-Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
-although it is yet undefined on input line 358.
-
 
 [32]
+Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
+although it is yet undefined on input line 359.
+
 
 [33]
 
@@ -1689,7 +1701,7 @@ although it is yet undefined on input line 358.
 [50]
 
 [51]
-Overfull \hbox (1.53954pt too wide) in paragraph at lines 1017--1018
+Overfull \hbox (1.53954pt too wide) in paragraph at lines 1018--1019
 \T1/pplx/m/n/10.95 (-20) dicted volatil-i-ties (\T1/lmtt/m/n/10.95 predicted_volatilities\T1/pplx/m/n/10.95 (-20) ), and the op-ti-mized port-fo-lio weights
  []
 
@@ -1707,10 +1719,10 @@ chapter 4.
 
 
 ]
-<figures/prediction_comparison.png, id=840, 730.8906pt x 441.8106pt>
+<figures/prediction_comparison.png, id=878, 730.8906pt x 441.8106pt>
 File: figures/prediction_comparison.png Graphic file (type png)
 <use figures/prediction_comparison.png>
-Package pdftex.def Info: figures/prediction_comparison.png  used on input line 46.
+Package pdftex.def Info: figures/prediction_comparison.png  used on input line 45.
 (pdftex.def)             Requested size: 334.60571pt x 202.26456pt.
 
 
@@ -1723,96 +1735,96 @@ Package pdftex.def Info: figures/prediction_comparison.png  used on input line 4
 [59]
 
 [60]
-Overfull \hbox (9.1211pt too wide) in paragraph at lines 206--218
+Overfull \hbox (9.1211pt too wide) in paragraph at lines 192--204
  [][] 
  []
 
 
 
 [61]
-<figures/asset_allocations_constant.png, id=895, 1518.8745pt x 297.2706pt>
+<figures/asset_allocations_constant.png, id=931, 1518.8745pt x 297.2706pt>
 File: figures/asset_allocations_constant.png Graphic file (type png)
 <use figures/asset_allocations_constant.png>
-Package pdftex.def Info: figures/asset_allocations_constant.png  used on input line 236.
+Package pdftex.def Info: figures/asset_allocations_constant.png  used on input line 222.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-<figures/asset_allocations_max_return.png, id=896, 1518.8745pt x 297.2706pt>
+<figures/asset_allocations_max_return.png, id=932, 1518.8745pt x 297.2706pt>
 File: figures/asset_allocations_max_return.png Graphic file (type png)
 <use figures/asset_allocations_max_return.png>
-Package pdftex.def Info: figures/asset_allocations_max_return.png  used on input line 237.
+Package pdftex.def Info: figures/asset_allocations_max_return.png  used on input line 223.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-<figures/asset_allocations_min_volatility.png, id=897, 1518.8745pt x 297.2706pt>
+<figures/asset_allocations_min_volatility.png, id=933, 1518.8745pt x 297.2706pt>
 File: figures/asset_allocations_min_volatility.png Graphic file (type png)
 <use figures/asset_allocations_min_volatility.png>
-Package pdftex.def Info: figures/asset_allocations_min_volatility.png  used on input line 238.
+Package pdftex.def Info: figures/asset_allocations_min_volatility.png  used on input line 224.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-<figures/asset_allocations_sharpe.png, id=898, 1518.8745pt x 297.2706pt>
+<figures/asset_allocations_sharpe.png, id=934, 1518.8745pt x 297.2706pt>
 File: figures/asset_allocations_sharpe.png Graphic file (type png)
 <use figures/asset_allocations_sharpe.png>
-Package pdftex.def Info: figures/asset_allocations_sharpe.png  used on input line 239.
+Package pdftex.def Info: figures/asset_allocations_sharpe.png  used on input line 225.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-<figures/asset_allocations_dynamic.png, id=899, 1518.8745pt x 297.2706pt>
+<figures/asset_allocations_dynamic.png, id=935, 1518.8745pt x 297.2706pt>
 File: figures/asset_allocations_dynamic.png Graphic file (type png)
 <use figures/asset_allocations_dynamic.png>
-Package pdftex.def Info: figures/asset_allocations_dynamic.png  used on input line 240.
+Package pdftex.def Info: figures/asset_allocations_dynamic.png  used on input line 226.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-
-
-[62 <./figures/asset_allocations_constant.png> <./figures/asset_allocations_max_return.png> <./figures/asset_allocations_min_volatility.png> <./figures/asset_allocations_sharpe.png> <./figures/asset_allocations_dynamic.png>]
-<figures/portfolio_comparison_final_non.png, id=910, 730.8906pt x 514.0806pt>
+<figures/portfolio_comparison_final_non.png, id=936, 730.8906pt x 514.0806pt>
 File: figures/portfolio_comparison_final_non.png Graphic file (type png)
 <use figures/portfolio_comparison_final_non.png>
-Package pdftex.def Info: figures/portfolio_comparison_final_non.png  used on input line 249.
+Package pdftex.def Info: figures/portfolio_comparison_final_non.png  used on input line 235.
 (pdftex.def)             Requested size: 250.95587pt x 176.51082pt.
-<figures/trx_costs_comparison_final_non.png, id=911, 730.8906pt x 514.0806pt>
+<figures/trx_costs_comparison_final_non.png, id=937, 730.8906pt x 514.0806pt>
 File: figures/trx_costs_comparison_final_non.png Graphic file (type png)
 <use figures/trx_costs_comparison_final_non.png>
-Package pdftex.def Info: figures/trx_costs_comparison_final_non.png  used on input line 262.
+Package pdftex.def Info: figures/trx_costs_comparison_final_non.png  used on input line 248.
 (pdftex.def)             Requested size: 250.95587pt x 176.51082pt.
 
 
-[63 <./figures/portfolio_comparison_final_non.png>]
-<figures/iterative/asset_allocations_constant.png, id=920, 1518.8745pt x 297.2706pt>
+[62]
+
+[63 <./figures/asset_allocations_constant.png> <./figures/asset_allocations_max_return.png> <./figures/asset_allocations_min_volatility.png> <./figures/asset_allocations_sharpe.png> <./figures/asset_allocations_dynamic.png> <./figures/portfolio_comparison_final_non.png>]
+<figures/iterative/asset_allocations_constant.png, id=956, 1518.8745pt x 297.2706pt>
 File: figures/iterative/asset_allocations_constant.png Graphic file (type png)
 <use figures/iterative/asset_allocations_constant.png>
-Package pdftex.def Info: figures/iterative/asset_allocations_constant.png  used on input line 278.
+Package pdftex.def Info: figures/iterative/asset_allocations_constant.png  used on input line 264.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-<figures/iterative/asset_allocations_max_return.png, id=921, 1518.8745pt x 297.2706pt>
+<figures/iterative/asset_allocations_max_return.png, id=957, 1518.8745pt x 297.2706pt>
 File: figures/iterative/asset_allocations_max_return.png Graphic file (type png)
 <use figures/iterative/asset_allocations_max_return.png>
-Package pdftex.def Info: figures/iterative/asset_allocations_max_return.png  used on input line 279.
+Package pdftex.def Info: figures/iterative/asset_allocations_max_return.png  used on input line 265.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-<figures/iterative/asset_allocations_min_volatility.png, id=922, 1518.8745pt x 297.2706pt>
+<figures/iterative/asset_allocations_min_volatility.png, id=958, 1518.8745pt x 297.2706pt>
 File: figures/iterative/asset_allocations_min_volatility.png Graphic file (type png)
 <use figures/iterative/asset_allocations_min_volatility.png>
-Package pdftex.def Info: figures/iterative/asset_allocations_min_volatility.png  used on input line 280.
+Package pdftex.def Info: figures/iterative/asset_allocations_min_volatility.png  used on input line 266.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-<figures/iterative/asset_allocations_sharpe.png, id=923, 1518.8745pt x 297.2706pt>
+<figures/iterative/asset_allocations_sharpe.png, id=959, 1518.8745pt x 297.2706pt>
 File: figures/iterative/asset_allocations_sharpe.png Graphic file (type png)
 <use figures/iterative/asset_allocations_sharpe.png>
-Package pdftex.def Info: figures/iterative/asset_allocations_sharpe.png  used on input line 281.
+Package pdftex.def Info: figures/iterative/asset_allocations_sharpe.png  used on input line 267.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-<figures/iterative/asset_allocations_dynamic.png, id=924, 1518.8745pt x 297.2706pt>
+<figures/iterative/asset_allocations_dynamic.png, id=960, 1518.8745pt x 297.2706pt>
 File: figures/iterative/asset_allocations_dynamic.png Graphic file (type png)
 <use figures/iterative/asset_allocations_dynamic.png>
-Package pdftex.def Info: figures/iterative/asset_allocations_dynamic.png  used on input line 282.
+Package pdftex.def Info: figures/iterative/asset_allocations_dynamic.png  used on input line 268.
 (pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
-<figures/portfolio_comparison_final.png, id=925, 730.8906pt x 514.0806pt>
+<figures/portfolio_comparison_final.png, id=961, 730.8906pt x 514.0806pt>
 File: figures/portfolio_comparison_final.png Graphic file (type png)
 <use figures/portfolio_comparison_final.png>
-Package pdftex.def Info: figures/portfolio_comparison_final.png  used on input line 288.
-(pdftex.def)             Requested size: 250.95587pt x 176.51082pt.
-<figures/trx_costs_comparison_final.png, id=926, 730.8906pt x 514.0806pt>
-File: figures/trx_costs_comparison_final.png Graphic file (type png)
-<use figures/trx_costs_comparison_final.png>
-Package pdftex.def Info: figures/trx_costs_comparison_final.png  used on input line 296.
+Package pdftex.def Info: figures/portfolio_comparison_final.png  used on input line 274.
 (pdftex.def)             Requested size: 250.95587pt x 176.51082pt.
 
 
 [64 <./figures/trx_costs_comparison_final_non.png>]
+<figures/trx_costs_comparison_final.png, id=972, 730.8906pt x 514.0806pt>
+File: figures/trx_costs_comparison_final.png Graphic file (type png)
+<use figures/trx_costs_comparison_final.png>
+Package pdftex.def Info: figures/trx_costs_comparison_final.png  used on input line 282.
+(pdftex.def)             Requested size: 250.95587pt x 176.51082pt.
+) (./chapters/05_Discussion.tex
 
-[65 <./figures/iterative/asset_allocations_constant.png> <./figures/iterative/asset_allocations_max_return.png> <./figures/iterative/asset_allocations_min_volatility.png> <./figures/iterative/asset_allocations_sharpe.png> <./figures/iterative/asset_allocations_dynamic.png> <./figures/portfolio_comparison_final.png>]) (./chapters/05_Discussion.tex
+[65 <./figures/iterative/asset_allocations_constant.png> <./figures/iterative/asset_allocations_max_return.png> <./figures/iterative/asset_allocations_min_volatility.png> <./figures/iterative/asset_allocations_sharpe.png> <./figures/iterative/asset_allocations_dynamic.png>]
 
-[66 <./figures/trx_costs_comparison_final.png>]
+[66 <./figures/portfolio_comparison_final.png> <./figures/trx_costs_comparison_final.png>]
 chapter 5.
 
 
@@ -1845,7 +1857,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 ]
-Package tocbasic Info: character protrusion at lof deactivated on input line 87.
+Package tocbasic Info: character protrusion at lof deactivated on input line 91.
  (./main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
@@ -1856,7 +1868,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 87.
 
 
 ]
-Package tocbasic Info: character protrusion at lot deactivated on input line 88.
+Package tocbasic Info: character protrusion at lot deactivated on input line 92.
  (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
@@ -1886,18 +1898,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52610 strings out of 475496
- 1167427 string characters out of 5775029
- 2271637 words of memory out of 5000000
- 73357 multiletter control sequences out of 15000+600000
- 639647 words of font info for 499 fonts, out of 8000000 for 9000
+ 52612 strings out of 475496
+ 1167473 string characters out of 5775029
+ 2272030 words of memory out of 5000000
+ 73381 multiletter control sequences out of 15000+600000
+ 638246 words of font info for 478 fonts, out of 8000000 for 9000
  38 hyphenation exceptions out of 8191
  111i,13n,124p,10966b,2437s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmb.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmbi.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (84 pages, 3456200 bytes).
+Output written on main.pdf (84 pages, 3465380 bytes).
 PDF statistics:
- 1456 PDF objects out of 1728 (max. 8388607)
- 1293 compressed objects within 13 object streams
- 544 named destinations out of 1000 (max. 500000)
+ 1503 PDF objects out of 1728 (max. 8388607)
+ 1339 compressed objects within 14 object streams
+ 550 named destinations out of 1000 (max. 500000)
  99034 words of extra memory for PDF output out of 106986 (max. 10000000)
 

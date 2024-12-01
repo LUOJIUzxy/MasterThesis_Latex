@@ -6,13 +6,12 @@
 
 \subsection{Comparison with Benchmark Models}
 
-In this section, we compare the performance of our Gaussian Process Regression (GPR) models with a benchmark model, specifically the Autoregressive Integrated Moving Average (ARIMA) model. The comparison is based on the Mean Squared Error (MSE) of predictions over different forecast horizons.
+This section evaluates the performance of the Gaussian Process Regression (GPR) models against a benchmark model, the Autoregressive Integrated Moving Average (ARIMA) model, using the Mean Squared Error (MSE) as the primary metric. The comparison is conducted across various forecast horizons to assess the models' predictive accuracy under different temporal conditions.
 
-\begin{itemize}
-    \item \textbf{ARIMA Model}: A traditional time series forecasting model that uses past values and past errors to predict future values.
-    \item \textbf{Market Efficiency}: Assumes that markets are efficient and all investors have access to the same information.
-    \item \textbf{Normal Distribution of Asset Returns}: Assumes that asset returns are normally distributed and can be described by their mean (expected return) and variance (risk).
-\end{itemize}
+The \ac{ARIMA} model serves as a traditional approach to time-series forecasting, leveraging past values and error terms to predict future outcomes. Its design is rooted in the assumption that markets are efficient, meaning that all available information is already reflected in current prices. Additionally, the ARIMA framework operates under the premise that asset returns follow a normal distribution, which simplifies the modeling process by representing returns through their mean (expected return) and variance (risk).
+
+While \ac{ARIMA} provides a solid baseline due to its widespread use and mathematical tractability, it has limitations in capturing the non-linear and non-stationary dynamics often present in financial markets. 
+This comparison highlights the advantages of GPR in addressing these complexities by leveraging its non-parametric flexibility, uncertainty quantification, and ability to model non-linear relationships. The results reveal how GPR's advanced capabilities translate into improved forecasting accuracy, particularly in the presence of irregular market patterns and varying volatility, offering insights into its potential as a superior tool for predictive financial modeling.
 
 \paragraph{Comparison with ARIMA}
 
@@ -20,7 +19,7 @@ We evaluated the predictive performance of the GPR and ARIMA models over differe
 
 \begin{table}[htbp]
 \centering
-\caption{Mean Squared Error (MSE) Comparison between GPR and ARIMA Models}
+\caption{Mean Squared Error (MSE) Comparison between GPR and ARIMA Models, Days include only Market Opening Days}
 \label{tab:mse_comparison}
 \begin{tabular}{cccc}
 \toprule
@@ -35,41 +34,28 @@ We evaluated the predictive performance of the GPR and ARIMA models over differe
 \end{tabular}
 \end{table}
 
-As shown in Table~\ref{tab:mse_comparison}, the GPR model outperforms the ARIMA model for shorter forecast horizons (5 and 10 days), exhibiting lower MSE values. However, for medium forecast horizons (13 and 20 days), the ARIMA model shows better performance. For the longest horizon (26 days), the GPR model again demonstrates a lower MSE compared to ARIMA.
+As shown in Table~\ref{tab:mse_comparison}, the GPR model outperforms the \ac{ARIMA} model for shorter forecast horizons (5 and 10 days), exhibiting lower MSE values. However, for medium forecast horizons (13 and 20 days), the ARIMA model shows better performance. For the longest horizon (26 days), the GPR model again demonstrates a lower MSE compared to ARIMA.
 
 \paragraph{Visual Comparison}
 
-Figure~\ref{fig:prediction_comparison} illustrates the predicted values from both GPR and ARIMA models against the actual values over the forecast horizons.
+Figure~\ref{fig:prediction_comparison} illustrates the predicted values from both \ac{GPR} and \ac{ARIMA} models in comparison to the actual values across various forecast horizons.
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/prediction_comparison.png}
 \caption{Comparison of Predicted Values from GPR and ARIMA Models}
 \label{fig:prediction_comparison}
 \end{figure}
 
-\noindent In the figure, the actual values are plotted alongside the predictions from both models. The visual comparison allows us to observe the accuracy of each model over different time horizons.
+\noindent In the plot, the actual values are represented by a solid green line, while the predictions from the GPR and ARIMA models are shown using an orange dashed line and a blue dashed-dotted line, respectively. This visual representation highlights the relative performance of each model.
+The \ac{GPR} model consistently tracks the actual values more closely across the forecast horizons, particularly capturing upward trends and market fluctuations with greater precision. The ARIMA model, while providing a general trend approximation, exhibits a lag in its predictions and a smoother trajectory that fails to capture the sharp movements in the data. Notably, as the forecast horizon extends, the divergence between the GPR predictions and the ARIMA predictions becomes more pronounced, emphasizing GPR’s superior adaptability to dynamic changes in the data.
 
+This visual comparison highlights the predictive accuracy of the GPR model over ARIMA, particularly in volatile or non-linear conditions, and reinforces its suitability for complex financial forecasting tasks.
 \subsubsection{Discussion}
 
 The GPR model, with its non-parametric nature and ability to capture complex patterns, performs better for shorter forecast horizons. This suggests that GPR can effectively model short-term dependencies in the data. On the other hand, the ARIMA model, being a parametric model that relies on past values and errors, shows better performance for medium-term forecasts.
 
 The fluctuation in performance across different forecast horizons indicates that no single model consistently outperforms the other. Therefore, the choice of model may depend on the specific forecasting requirements, such as the desired forecast horizon and the nature of the asset's return dynamics.
-
-\subsubsection{MSE Analysis}
-
-The Mean Squared Error (MSE) is calculated as:
-
-\[
-\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-\]
-
-where:
-\begin{itemize}
-    \item \( y_i \) is the actual value.
-    \item \( \hat{y}_i \) is the predicted value.
-    \item \( n \) is the number of observations.
-\end{itemize}
 
 Lower MSE values indicate better predictive accuracy. The results show that for short-term predictions (up to 10 days), the GPR model significantly outperforms the ARIMA model. However, as the forecast horizon extends, the performance gap narrows, and ARIMA performs better at certain points.
 

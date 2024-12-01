@@ -54,7 +54,7 @@ Compute the permutation entropy using Shannon's entropy formula:
     \mathrm{PE} = - \sum_{j=1}^{m!} p(\pi_j) \ln p(\pi_j).
 \end{equation}
 
-Normalize PE by dividing by $\ln(m!)$ to ensure it ranges between 0 and 1:
+Normalize \ac{PE} by dividing by $\ln(m!)$ to ensure it ranges between 0 and 1:
 \begin{equation}
     \mathrm{PE}_{\text{norm}} = \frac{\mathrm{PE}}{\ln(m!)}.
 \end{equation}
@@ -65,7 +65,7 @@ Normalize PE by dividing by $\ln(m!)$ to ensure it ranges between 0 and 1:
 
 \subparagraph{Weighted Permutation Entropy (WPE)}
 Weighted Permutation Entropy (WPE) enhances PE by incorporating the amplitude information of the time series. It assigns weights to ordinal patterns based on the values within the embedding vectors, thus accounting for both the order and magnitude of the data.
-The calculation of WPE involves the following steps:
+The calculation of \ac{WPE} involves the following steps:
 
 \begin{enumerate} \item \textbf{Embedding and Ordinal Patterns:}
 Follow steps 1 and 2 as in the calculation of PE to obtain the embedding vectors and their corresponding ordinal patterns.
@@ -87,7 +87,7 @@ For each ordinal pattern $\pi_j$, compute the weighted probability:
 
 \item \textbf{Calculating Weighted Permutation Entropy:}
 
-Compute WPE using the weighted probabilities:
+Compute \ac{WPE} using the weighted probabilities:
 \begin{equation}
     \mathrm{WPE} = - \sum_{j=1}^{m!} p_w(\pi_j) \ln p_w(\pi_j).
 \end{equation}
@@ -148,19 +148,20 @@ Analyzing stock prices requires accounting for both the order and magnitude of p
 
 \subparagraph{Advantages of WPE}
 
-\begin{itemize} \item \textbf{Amplitude Incorporation:} By weighting ordinal patterns, WPE accounts for the magnitude of price changes, capturing volatility. \item \textbf{Volatility Sensitivity:} It is effective in detecting periods of high market volatility, which are critical for risk management. \item \textbf{Balanced Complexity:} WPE balances computational efficiency with the need for detailed analysis. \end{itemize}
+Weighted Permutation Entropy (WPE) offers distinct benefits in the analysis of financial time series by effectively incorporating the amplitude of price changes into its computation. By weighting ordinal patterns, WPE not only captures the direction of changes but also accounts for their magnitude, making it particularly adept at identifying periods of heightened market volatility. This sensitivity to volatility is crucial for risk management, as it allows analysts to detect significant shifts in market behavior that could impact investment decisions. Furthermore, WPE strikes a balance between computational efficiency and analytical depth. It provides detailed insights into the complexity of financial data without requiring excessive computational resources, making it a practical tool for real-time and large-scale applications.
+
 
 \subparagraph{Advantages of DE}
 
-\begin{itemize} \item \textbf{Non-Stationarity Adaptation:} DE effectively handles non-stationary time series by mapping data into classes. \item \textbf{Noise Robustness:} It is less sensitive to noise and outliers, providing reliable complexity measures in the presence of market anomalies. \item \textbf{Comprehensive Analysis:} DE considers both the frequency and amplitude of patterns, offering a holistic view of market dynamics. \end{itemize}
-\begin{itemize} \item \textbf{Amplitude Sensitivity:} The size of price movements affects returns and risk; thus, methods that incorporate amplitude information are essential. \item \textbf{Volatility Detection:} Financial markets are characterized by varying volatility, which influences investment decisions. \item \textbf{Non-Stationarity Handling:} Stock prices exhibit trends and abrupt changes, necessitating entropy measures that handle non-stationary data effectively. \end{itemize}
+Dispersion Entropy (DE) excels in handling the complexities of non-stationary financial time series, which often exhibit trends, abrupt changes, and varying volatility. By mapping data into discrete classes, DE adapts effectively to non-stationarity, ensuring robust analysis across different market conditions. Its design also makes it less sensitive to noise and outliers, a significant advantage in the inherently noisy financial domain, where anomalies can skew traditional measures. DE provides a comprehensive view of market dynamics by considering both the frequency and amplitude of patterns, capturing subtle shifts in market behavior.
 
+Another notable advantage of DE is its amplitude sensitivity. In financial markets, the size of price movements has a direct impact on returns and risks, and methods like DE that incorporate this information provide a richer understanding of market dynamics. Additionally, DE is particularly effective at detecting varying levels of volatility, which play a critical role in shaping investment strategies. Its ability to seamlessly handle the non-stationarity of stock prices, which often undergo regime changes and unpredictable trends, further solidifies its value in financial analysis.
+
+Both WPE and DE offer robust tools for analyzing financial markets, with WPE emphasizing computational balance and volatility capture, while DE focuses on non-stationarity adaptation and comprehensive market understanding. Together, they provide complementary approaches to understanding the complexity of financial time series.
 \subparagraph{Conclusion}
-Weighted Permutation Entropy and Dispersion Entropy are more suitable than Permutation Entropy for analyzing stock prices because they:
+Weighted Permutation Entropy (WPE) and Dispersion Entropy (DE) prove to be superior tools compared to traditional Permutation Entropy when analyzing stock prices. These methods capture essential information about both the direction and magnitude of price movements, offering a more nuanced understanding of financial time-series data. Their ability to handle the inherent non-stationarity and volatility of financial markets makes them particularly well-suited for detecting patterns and trends that are often overlooked by simpler measures. Furthermore, WPE and DE provide more informative and sensitive complexity measures, enabling analysts to enhance asset selection and refine risk assessment strategies.
 
-\begin{itemize} \item Capture essential information about both the direction and magnitude of price movements. \item Are better equipped to handle the inherent non-stationarity and volatility of financial time series. \item Provide more informative and sensitive complexity measures that can enhance asset selection and risk assessment strategies. \end{itemize}
-
-By utilizing WPE and DE, analysts and investors can gain deeper insights into market behavior, aiding in the selection of assets across different sectors based on the complexity and predictability of their stock prices.
+By utilizing \ac{WPE} and \ac{DE}, analysts and investors can achieve a deeper understanding of market behavior, uncovering the complexity and predictability of stock prices. These insights facilitate more informed decisions in selecting assets across different sectors, ultimately improving portfolio management and investment outcomes.
 \subsection{Data Sources and Time Period}
 
 

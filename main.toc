@@ -1,186 +1,185 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Acknowledgments}{iii}{Doc-Start}%
 \contentsline {chapter}{\nonumberline \bbl@ensure@english {Abstract}}{iv}{chapter*.1}%
-\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Background and Motivation}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Research Objectives}{3}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Role of machine learning in financial forecasting}{3}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Challenges in time-series forecasting and traditional portfolio optimization methods}{3}{subsection.1.2.2}%
-\contentsline {paragraph}{\nonumberline Parameter Estimation Challenges in Modern Portfolio Theory}{4}{paragraph*.6}%
-\contentsline {paragraph}{\nonumberline Limitations of Traditional Forecasting Methods}{5}{paragraph*.8}%
-\contentsline {paragraph}{\nonumberline Advantages of Gaussian Process Regression}{5}{paragraph*.11}%
-\contentsline {paragraph}{\nonumberline Addressing Traditional Limitations}{6}{paragraph*.13}%
-\contentsline {paragraph}{\nonumberline Implications for Portfolio Optimization}{7}{paragraph*.16}%
-\contentsline {section}{\numberline {1.3}Thesis Structure}{7}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Previous Literature}{8}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Theoretical Framework}{8}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Portfolio Optimization Theory}{8}{subsection.2.1.1}%
-\contentsline {subsubsection}{\nonumberline Modern Portfolio Theory (MPT)}{8}{subsubsection*.18}%
-\contentsline {paragraph}{\nonumberline Expected Return and Risk}{8}{paragraph*.20}%
-\contentsline {paragraph}{\nonumberline Efficient Frontier}{9}{paragraph*.22}%
-\contentsline {paragraph}{\nonumberline Mean-Variance Optimization}{9}{paragraph*.25}%
-\contentsline {subsubsection}{\nonumberline Risk-Return Trade-off and the Sharpe Ratio}{10}{subsubsection*.27}%
-\contentsline {subsubsection}{\nonumberline Portfolio Optimization Strategies}{10}{subsubsection*.29}%
-\contentsline {subsection}{\numberline {2.1.2}Gaussian Process Regression Theory and Applications}{10}{subsection.2.1.2}%
-\contentsline {subsubsection}{\nonumberline Gaussian Processes}{11}{subsubsection*.31}%
-\contentsline {paragraph}{\nonumberline Mean Function}{11}{paragraph*.33}%
-\contentsline {paragraph}{\nonumberline Covariance Function}{11}{paragraph*.35}%
-\contentsline {subsubsection}{\nonumberline Gaussian Process Regression for Time-Series Forecasting}{11}{subsubsection*.37}%
-\contentsline {paragraph}{\nonumberline Predictive Distribution}{11}{paragraph*.39}%
-\contentsline {subsubsection}{\nonumberline Covariance Functions (Kernels)}{12}{subsubsection*.41}%
-\contentsline {subsubsection}{\nonumberline Gaussian Process Regression for Time-Series Forecasting}{12}{subsubsection*.43}%
-\contentsline {paragraph}{\nonumberline Advantages of GPR in Financial Modeling}{13}{paragraph*.45}%
-\contentsline {subsubsection}{\nonumberline Challenges in Applying GPR to Finance}{13}{subsubsection*.47}%
-\contentsline {subsection}{\numberline {2.1.3}Integrating Portfolio Optimization and GPR}{13}{subsection.2.1.3}%
-\contentsline {paragraph}{\nonumberline Dynamic Portfolio Optimization}{14}{paragraph*.49}%
-\contentsline {subsection}{\numberline {2.1.4}Conclusion}{14}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Risk measures and portfolio optimization}{14}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Machine Learning in Financial Markets}{14}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Overview of Machine Learning Applications in Finance}{14}{subsection.2.3.1}%
-\contentsline {subsubsection}{\nonumberline Time-Series Forecasting}{14}{subsubsection*.51}%
-\contentsline {subsubsection}{\nonumberline Algorithmic Trading}{14}{subsubsection*.53}%
-\contentsline {subsubsection}{\nonumberline Risk Management}{15}{subsubsection*.55}%
-\contentsline {subsubsection}{\nonumberline Portfolio Optimization}{15}{subsubsection*.57}%
-\contentsline {subsubsection}{\nonumberline Fraud Detection and Anomaly Detection}{15}{subsubsection*.59}%
-\contentsline {subsubsection}{\nonumberline Sentiment Analysis and Natural Language Processing}{15}{subsubsection*.61}%
-\contentsline {subsection}{\numberline {2.3.2}Conclusion}{15}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background and Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Research Objectives}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Role of machine learning in financial forecasting}{2}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Challenges in time-series forecasting and traditional portfolio optimization methods}{2}{subsection.1.2.2}%
+\contentsline {paragraph}{\nonumberline Parameter Estimation Challenges in Modern Portfolio Theory}{3}{paragraph*.8}%
+\contentsline {paragraph}{\nonumberline Limitations of Traditional Forecasting Methods}{4}{paragraph*.10}%
+\contentsline {paragraph}{\nonumberline Advantages of Gaussian Process Regression}{4}{paragraph*.13}%
+\contentsline {paragraph}{\nonumberline Addressing Traditional Limitations}{5}{paragraph*.15}%
+\contentsline {paragraph}{\nonumberline Implications for Portfolio Optimization}{6}{paragraph*.17}%
+\contentsline {section}{\numberline {1.3}Thesis Structure}{6}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Previous Literature}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Theoretical Framework}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Portfolio Optimization Theory}{7}{subsection.2.1.1}%
+\contentsline {subsubsection}{\nonumberline Modern Portfolio Theory (MPT)}{7}{subsubsection*.19}%
+\contentsline {paragraph}{\nonumberline Expected Return and Risk}{7}{paragraph*.21}%
+\contentsline {paragraph}{\nonumberline Efficient Frontier}{8}{paragraph*.23}%
+\contentsline {paragraph}{\nonumberline Mean-Variance Optimization}{8}{paragraph*.26}%
+\contentsline {subsubsection}{\nonumberline Risk-Return Trade-off and the Sharpe Ratio}{9}{subsubsection*.28}%
+\contentsline {subsubsection}{\nonumberline Portfolio Optimization Strategies}{9}{subsubsection*.30}%
+\contentsline {subsection}{\numberline {2.1.2}Gaussian Process Regression Theory and Applications}{9}{subsection.2.1.2}%
+\contentsline {subsubsection}{\nonumberline Gaussian Processes}{10}{subsubsection*.32}%
+\contentsline {paragraph}{\nonumberline Mean Function}{10}{paragraph*.34}%
+\contentsline {paragraph}{\nonumberline Covariance Function}{10}{paragraph*.36}%
+\contentsline {subsubsection}{\nonumberline Gaussian Process Regression for Time-Series Forecasting}{10}{subsubsection*.38}%
+\contentsline {paragraph}{\nonumberline Predictive Distribution}{10}{paragraph*.40}%
+\contentsline {subsubsection}{\nonumberline Covariance Functions (Kernels)}{11}{subsubsection*.42}%
+\contentsline {subsubsection}{\nonumberline Gaussian Process Regression for Time-Series Forecasting}{11}{subsubsection*.44}%
+\contentsline {paragraph}{\nonumberline Advantages of GPR in Financial Modeling}{12}{paragraph*.46}%
+\contentsline {subsubsection}{\nonumberline Challenges in Applying GPR to Finance}{12}{subsubsection*.48}%
+\contentsline {subsection}{\numberline {2.1.3}Integrating Portfolio Optimization and \ac {GPR}}{12}{subsection.2.1.3}%
+\contentsline {paragraph}{\nonumberline Dynamic Portfolio Optimization}{13}{paragraph*.50}%
+\contentsline {subsection}{\numberline {2.1.4}Conclusion}{13}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Risk measures and portfolio optimization}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Machine Learning in Financial Markets}{13}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Overview of Machine Learning Applications in Finance}{13}{subsection.2.3.1}%
+\contentsline {subsubsection}{\nonumberline Time-Series Forecasting}{13}{subsubsection*.52}%
+\contentsline {subsubsection}{\nonumberline Algorithmic Trading}{14}{subsubsection*.54}%
+\contentsline {subsubsection}{\nonumberline Risk Management}{14}{subsubsection*.56}%
+\contentsline {subsubsection}{\nonumberline Portfolio Optimization}{14}{subsubsection*.58}%
+\contentsline {subsubsection}{\nonumberline Fraud Detection and Anomaly Detection}{14}{subsubsection*.60}%
+\contentsline {subsubsection}{\nonumberline Sentiment Analysis and Natural Language Processing}{14}{subsubsection*.62}%
+\contentsline {subsection}{\numberline {2.3.2}Conclusion}{14}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2.4}Dynamic Portfolio Management}{15}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Review of Dynamic Optimization Strategies}{16}{subsection.2.4.1}%
-\contentsline {subsubsection}{\nonumberline Dynamic Programming}{16}{subsubsection*.63}%
-\contentsline {paragraph}{\nonumberline Bellman's Principle of Optimality}{16}{paragraph*.65}%
-\contentsline {subsubsection}{\nonumberline Stochastic Control Theory}{16}{subsubsection*.67}%
-\contentsline {paragraph}{\nonumberline Merton's Portfolio Problem}{16}{paragraph*.69}%
-\contentsline {subsubsection}{\nonumberline Reinforcement Learning}{17}{subsubsection*.71}%
-\contentsline {paragraph}{\nonumberline Applications in Portfolio Management}{17}{paragraph*.73}%
-\contentsline {subsubsection}{\nonumberline Scenario Analysis and Model Predictive Control}{17}{subsubsection*.75}%
-\contentsline {paragraph}{\nonumberline Advantages of MPC}{17}{paragraph*.77}%
-\contentsline {subsection}{\numberline {2.4.2}Transaction Costs and Portfolio Rebalancing}{17}{subsection.2.4.2}%
-\contentsline {subsubsection}{\nonumberline Types of Transaction Costs}{17}{subsubsection*.79}%
-\contentsline {subsubsection}{\nonumberline Impact on Portfolio Performance}{18}{subsubsection*.81}%
-\contentsline {subsubsection}{\nonumberline Optimal Rebalancing Frequency}{18}{subsubsection*.83}%
-\contentsline {subsection}{\numberline {2.4.3}Existing Approaches to Strategy Switching}{18}{subsection.2.4.3}%
-\contentsline {subsubsection}{\nonumberline Regime-Switching Models}{18}{subsubsection*.85}%
-\contentsline {paragraph}{\nonumberline Markov Switching Models}{18}{paragraph*.87}%
-\contentsline {subsubsection}{\nonumberline Meta-Learning and Ensemble Methods}{18}{subsubsection*.89}%
-\contentsline {paragraph}{\nonumberline Performance-Based Selection}{19}{paragraph*.91}%
-\contentsline {subsubsection}{\nonumberline Rule-Based Switching}{19}{subsubsection*.93}%
-\contentsline {subsubsection}{\nonumberline Machine Learning-Based Switching}{19}{subsubsection*.95}%
+\contentsline {subsection}{\numberline {2.4.1}Review of Dynamic Optimization Strategies}{15}{subsection.2.4.1}%
+\contentsline {subsubsection}{\nonumberline Dynamic Programming}{15}{subsubsection*.64}%
+\contentsline {paragraph}{\nonumberline Bellman's Principle of Optimality}{15}{paragraph*.66}%
+\contentsline {subsubsection}{\nonumberline Stochastic Control Theory}{15}{subsubsection*.68}%
+\contentsline {paragraph}{\nonumberline Merton's Portfolio Problem}{15}{paragraph*.70}%
+\contentsline {subsubsection}{\nonumberline Reinforcement Learning}{16}{subsubsection*.72}%
+\contentsline {paragraph}{\nonumberline Applications in Portfolio Management}{16}{paragraph*.74}%
+\contentsline {subsubsection}{\nonumberline Scenario Analysis and Model Predictive Control}{16}{subsubsection*.76}%
+\contentsline {paragraph}{\nonumberline Advantages of MPC}{16}{paragraph*.78}%
+\contentsline {subsection}{\numberline {2.4.2}Transaction Costs and Portfolio Rebalancing}{16}{subsection.2.4.2}%
+\contentsline {subsubsection}{\nonumberline Types of Transaction Costs}{16}{subsubsection*.80}%
+\contentsline {subsubsection}{\nonumberline Impact on Portfolio Performance}{17}{subsubsection*.82}%
+\contentsline {subsubsection}{\nonumberline Optimal Rebalancing Frequency}{17}{subsubsection*.84}%
+\contentsline {subsection}{\numberline {2.4.3}Existing Approaches to Strategy Switching}{17}{subsection.2.4.3}%
+\contentsline {subsubsection}{\nonumberline Regime-Switching Models}{18}{subsubsection*.86}%
+\contentsline {paragraph}{\nonumberline Markov Switching Models}{18}{paragraph*.88}%
+\contentsline {subsubsection}{\nonumberline Meta-Learning and Ensemble Methods}{18}{subsubsection*.90}%
+\contentsline {paragraph}{\nonumberline Performance-Based Selection}{18}{paragraph*.92}%
+\contentsline {subsubsection}{\nonumberline Rule-Based Switching}{18}{subsubsection*.94}%
+\contentsline {subsubsection}{\nonumberline Machine Learning-Based Switching}{19}{subsubsection*.96}%
 \contentsline {subsection}{\numberline {2.4.4}Conclusion}{19}{subsection.2.4.4}%
 \contentsline {chapter}{\numberline {3}Methodology}{20}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Data Collection and Preprocessing}{20}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Asset Selection and Justification}{20}{subsection.3.1.1}%
-\contentsline {paragraph}{\nonumberline Stock Market Sectors}{20}{paragraph*.102}%
-\contentsline {paragraph}{\nonumberline Entropy Methods for Time Series Analysis}{21}{paragraph*.104}%
-\contentsline {subparagraph}{\nonumberline Permutation Entropy (PE)}{21}{subparagraph*.106}%
-\contentsline {subparagraph}{\nonumberline Weighted Permutation Entropy (WPE)}{22}{subparagraph*.108}%
-\contentsline {subparagraph}{\nonumberline Dispersion Entropy (DE)}{23}{subparagraph*.110}%
-\contentsline {subparagraph}{\nonumberline Choosing WPE and DE for Stock Price Analysis}{24}{subparagraph*.112}%
-\contentsline {subparagraph}{\nonumberline Advantages of WPE}{24}{subparagraph*.114}%
-\contentsline {subparagraph}{\nonumberline Advantages of DE}{25}{subparagraph*.116}%
-\contentsline {subparagraph}{\nonumberline Conclusion}{25}{subparagraph*.118}%
-\contentsline {subsection}{\numberline {3.1.2}Data Sources and Time Period}{25}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Data Preprocessing and Log Returns}{26}{subsection.3.1.3}%
-\contentsline {paragraph}{\nonumberline Use of Log Returns}{26}{paragraph*.120}%
-\contentsline {subparagraph}{\nonumberline Theoretical Foundation in Finance}{27}{subparagraph*.122}%
-\contentsline {subparagraph}{\nonumberline Stability Over Time}{27}{subparagraph*.124}%
-\contentsline {subparagraph}{\nonumberline Time Consistency (Additivity)}{27}{subparagraph*.126}%
-\contentsline {subparagraph}{\nonumberline Normalization of Price Scale}{27}{subparagraph*.128}%
-\contentsline {subparagraph}{\nonumberline Conclusion}{27}{subparagraph*.130}%
-\contentsline {paragraph}{\nonumberline Data Normalization and Scaling}{28}{paragraph*.132}%
-\contentsline {paragraph}{\nonumberline Treatment of Missing Data and Outliers}{28}{paragraph*.134}%
-\contentsline {paragraph}{\nonumberline Handling Missing Data with GPR}{28}{paragraph*.136}%
-\contentsline {paragraph}{\nonumberline Data Splitting and Cross-Validation}{29}{paragraph*.139}%
-\contentsline {paragraph}{\nonumberline Sliding Window Approach}{29}{paragraph*.141}%
-\contentsline {paragraph}{\nonumberline Gaussian Filter Denoising Method}{30}{paragraph*.143}%
-\contentsline {subsection}{\numberline {3.1.4}Summary}{31}{subsection.3.1.4}%
+\contentsline {paragraph}{\nonumberline Stock Market Sectors}{20}{paragraph*.103}%
+\contentsline {paragraph}{\nonumberline Entropy Methods for Time Series Analysis}{21}{paragraph*.105}%
+\contentsline {subparagraph}{\nonumberline Permutation Entropy (PE)}{21}{subparagraph*.107}%
+\contentsline {subparagraph}{\nonumberline Weighted Permutation Entropy (WPE)}{22}{subparagraph*.110}%
+\contentsline {subparagraph}{\nonumberline Dispersion Entropy (DE)}{23}{subparagraph*.113}%
+\contentsline {subparagraph}{\nonumberline Choosing WPE and DE for Stock Price Analysis}{24}{subparagraph*.115}%
+\contentsline {subparagraph}{\nonumberline Advantages of WPE}{24}{subparagraph*.117}%
+\contentsline {subparagraph}{\nonumberline Advantages of DE}{25}{subparagraph*.119}%
+\contentsline {subparagraph}{\nonumberline Conclusion}{25}{subparagraph*.121}%
+\contentsline {subsection}{\numberline {3.1.2}Data Sources and Time Period}{26}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Data Preprocessing and Log Returns}{27}{subsection.3.1.3}%
+\contentsline {paragraph}{\nonumberline Use of Log Returns}{27}{paragraph*.124}%
+\contentsline {subparagraph}{\nonumberline Theoretical Foundation in Finance}{27}{subparagraph*.126}%
+\contentsline {subparagraph}{\nonumberline Stability Over Time}{27}{subparagraph*.128}%
+\contentsline {subparagraph}{\nonumberline Time Consistency (Additivity)}{27}{subparagraph*.130}%
+\contentsline {subparagraph}{\nonumberline Normalization of Price Scale}{28}{subparagraph*.132}%
+\contentsline {subparagraph}{\nonumberline Conclusion}{28}{subparagraph*.134}%
+\contentsline {paragraph}{\nonumberline Data Normalization and Scaling}{28}{paragraph*.136}%
+\contentsline {paragraph}{\nonumberline Treatment of Missing Data and Outliers}{28}{paragraph*.138}%
+\contentsline {paragraph}{\nonumberline Handling Missing Data with GPR}{29}{paragraph*.140}%
+\contentsline {paragraph}{\nonumberline Data Splitting and Cross-Validation}{29}{paragraph*.143}%
+\contentsline {paragraph}{\nonumberline Sliding Window Approach}{30}{paragraph*.145}%
+\contentsline {paragraph}{\nonumberline Gaussian Filter Denoising Method}{30}{paragraph*.147}%
+\contentsline {subsection}{\numberline {3.1.4}Summary}{32}{subsection.3.1.4}%
 \contentsline {section}{\numberline {3.2}Model Development}{32}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Baseline Models}{32}{subsection.3.2.1}%
-\contentsline {subsubsection}{\nonumberline \ac {ARIMA} Model}{32}{subsubsection*.145}%
-\contentsline {subsubsection}{\nonumberline Rationale for Baseline Selection}{32}{subsubsection*.147}%
+\contentsline {subsubsection}{\nonumberline \ac {ARIMA} Model}{32}{subsubsection*.149}%
+\contentsline {subsubsection}{\nonumberline Rationale for Baseline Selection}{33}{subsubsection*.151}%
 \contentsline {subsection}{\numberline {3.2.2}Comparative Evaluation}{33}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Performance Metrics}{33}{subsection.3.2.3}%
-\contentsline {subsubsection}{\nonumberline Mean Squared Error (MSE)}{33}{subsubsection*.150}%
-\contentsline {subsubsection}{\nonumberline Sharpe Ratio}{33}{subsubsection*.152}%
+\contentsline {subsubsection}{\nonumberline Mean Squared Error (MSE)}{33}{subsubsection*.154}%
+\contentsline {subsubsection}{\nonumberline Sharpe Ratio}{33}{subsubsection*.156}%
 \contentsline {subsection}{\numberline {3.2.4}Multi-Input Gaussian Process Regression Model}{34}{subsection.3.2.4}%
-\contentsline {subsubsection}{\nonumberline Input Data and Feature Selection}{34}{subsubsection*.154}%
-\contentsline {subsubsection}{\nonumberline Composite Kernel for Multi-Dimensional Inputs}{34}{subsubsection*.156}%
-\contentsline {subsubsection}{\nonumberline Training and Testing Framework}{35}{subsubsection*.158}%
-\contentsline {subsubsection}{\nonumberline Prediction and Evaluation}{35}{subsubsection*.160}%
+\contentsline {subsubsection}{\nonumberline Input Data and Feature Selection}{34}{subsubsection*.158}%
+\contentsline {subsubsection}{\nonumberline Composite Kernel for Multi-Dimensional Inputs}{34}{subsubsection*.160}%
+\contentsline {subsubsection}{\nonumberline Training and Testing Framework}{35}{subsubsection*.162}%
+\contentsline {subsubsection}{\nonumberline Prediction and Evaluation}{35}{subsubsection*.164}%
 \contentsline {subsection}{\numberline {3.2.5}Hyperparameter Tuning}{35}{subsection.3.2.5}%
-\contentsline {subsubsection}{\nonumberline Fixed Likelihood Variance}{35}{subsubsection*.162}%
-\contentsline {subsubsection}{\nonumberline Trainable Likelihood Variance}{36}{subsubsection*.164}%
-\contentsline {subsubsection}{\nonumberline Comparison of Approaches}{36}{subsubsection*.166}%
-\contentsline {subsubsection}{\nonumberline Best Model Selection}{36}{subsubsection*.168}%
+\contentsline {subsubsection}{\nonumberline Fixed Likelihood Variance}{36}{subsubsection*.166}%
+\contentsline {subsubsection}{\nonumberline Trainable Likelihood Variance}{36}{subsubsection*.168}%
+\contentsline {subsubsection}{\nonumberline Comparison of Approaches}{36}{subsubsection*.170}%
+\contentsline {subsubsection}{\nonumberline Best Model Selection}{37}{subsubsection*.172}%
 \contentsline {section}{\numberline {3.3}Forecasting Approach}{37}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Iterative Retraining for Sequential Predictions}{37}{subsection.3.3.1}%
-\contentsline {subsubsection}{\nonumberline Methodology}{37}{subsubsection*.170}%
-\contentsline {subsubsection}{\nonumberline Advantages of Iterative Retraining}{37}{subsubsection*.172}%
-\contentsline {subsubsection}{\nonumberline Performance Evaluation}{38}{subsubsection*.174}%
-\contentsline {subsubsection}{\nonumberline Practical Application}{38}{subsubsection*.176}%
-\contentsline {section}{\numberline {3.4}Portfolio Optimization Strategies}{38}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Traditional Strategies}{38}{subsection.3.4.1}%
-\contentsline {subsubsection}{\nonumberline Maximum Return Strategy Formulation}{38}{subsubsection*.178}%
-\contentsline {paragraph}{\nonumberline Objective Function}{39}{paragraph*.180}%
-\contentsline {paragraph}{\nonumberline Constraints}{39}{paragraph*.182}%
-\contentsline {paragraph}{\nonumberline Regularization Penalty}{40}{paragraph*.184}%
-\contentsline {paragraph}{\nonumberline Optimization Method}{40}{paragraph*.186}%
-\contentsline {paragraph}{\nonumberline Implementation Notes}{40}{paragraph*.188}%
-\contentsline {subsubsection}{\nonumberline Maximum Sharpe Ratio Optimization}{41}{subsubsection*.190}%
-\contentsline {paragraph}{\nonumberline Objective Function}{42}{paragraph*.192}%
-\contentsline {paragraph}{\nonumberline Constraints}{42}{paragraph*.194}%
-\contentsline {paragraph}{\nonumberline Regularization Penalty}{42}{paragraph*.196}%
-\contentsline {paragraph}{\nonumberline Optimization Method}{43}{paragraph*.198}%
-\contentsline {paragraph}{\nonumberline Implementation Notes}{43}{paragraph*.200}%
-\contentsline {subsection}{\numberline {3.4.2}Dynamic Strategy}{43}{subsection.3.4.2}%
-\contentsline {subsubsection}{\nonumberline Probability Estimation: $P(S_1 > S_2)$}{44}{subsubsection*.202}%
-\contentsline {paragraph}{\nonumberline Numerical Integration}{44}{paragraph*.204}%
-\contentsline {paragraph}{\nonumberline Copulas for Dependence}{44}{paragraph*.206}%
-\contentsline {paragraph}{\nonumberline Monte Carlo Methods}{45}{paragraph*.208}%
-\contentsline {paragraph}{\nonumberline Comparison of Methods}{45}{paragraph*.210}%
-\contentsline {paragraph}{\nonumberline Strategy switching criteria}{46}{paragraph*.212}%
-\contentsline {subsubsection}{\nonumberline Expected Value Comparison}{46}{subsubsection*.214}%
-\contentsline {paragraph}{\nonumberline Decision Logic}{47}{paragraph*.216}%
-\contentsline {paragraph}{\nonumberline Rationale}{48}{paragraph*.219}%
-\contentsline {paragraph}{\nonumberline Conclusion}{48}{paragraph*.221}%
-\contentsline {section}{\numberline {3.5}Backtesting Framework}{48}{section.3.5}%
+\contentsline {subsubsection}{\nonumberline Methodology}{37}{subsubsection*.174}%
+\contentsline {subsubsection}{\nonumberline Advantages of Iterative Retraining}{38}{subsubsection*.176}%
+\contentsline {subsubsection}{\nonumberline Performance Evaluation}{38}{subsubsection*.178}%
+\contentsline {subsubsection}{\nonumberline Practical Application}{38}{subsubsection*.180}%
+\contentsline {section}{\numberline {3.4}Portfolio Optimization Strategies}{39}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Traditional Strategies}{39}{subsection.3.4.1}%
+\contentsline {subsubsection}{\nonumberline Maximum Return Strategy Formulation}{39}{subsubsection*.182}%
+\contentsline {paragraph}{\nonumberline Objective Function}{39}{paragraph*.184}%
+\contentsline {paragraph}{\nonumberline Constraints}{40}{paragraph*.186}%
+\contentsline {paragraph}{\nonumberline Regularization Penalty}{40}{paragraph*.188}%
+\contentsline {paragraph}{\nonumberline Optimization Method}{40}{paragraph*.190}%
+\contentsline {paragraph}{\nonumberline Implementation Notes}{41}{paragraph*.192}%
+\contentsline {subsubsection}{\nonumberline Maximum Sharpe Ratio Optimization}{41}{subsubsection*.194}%
+\contentsline {paragraph}{\nonumberline Objective Function}{42}{paragraph*.196}%
+\contentsline {paragraph}{\nonumberline Constraints}{42}{paragraph*.198}%
+\contentsline {paragraph}{\nonumberline Regularization Penalty}{43}{paragraph*.200}%
+\contentsline {paragraph}{\nonumberline Optimization Method}{43}{paragraph*.202}%
+\contentsline {paragraph}{\nonumberline Implementation Notes}{43}{paragraph*.204}%
+\contentsline {subsection}{\numberline {3.4.2}Dynamic Strategy}{44}{subsection.3.4.2}%
+\contentsline {subsubsection}{\nonumberline Probability Estimation: $P(S_1 > S_2)$}{44}{subsubsection*.206}%
+\contentsline {paragraph}{\nonumberline Numerical Integration}{44}{paragraph*.208}%
+\contentsline {paragraph}{\nonumberline Copulas for Dependence}{44}{paragraph*.210}%
+\contentsline {paragraph}{\nonumberline Monte Carlo Methods}{45}{paragraph*.212}%
+\contentsline {paragraph}{\nonumberline Comparison of Methods}{46}{paragraph*.214}%
+\contentsline {paragraph}{\nonumberline Strategy switching criteria}{46}{paragraph*.216}%
+\contentsline {subsubsection}{\nonumberline Expected Value Comparison}{46}{subsubsection*.218}%
+\contentsline {paragraph}{\nonumberline Decision Logic}{47}{paragraph*.220}%
+\contentsline {paragraph}{\nonumberline Rationale}{48}{paragraph*.223}%
+\contentsline {paragraph}{\nonumberline Conclusion}{48}{paragraph*.225}%
+\contentsline {section}{\numberline {3.5}Backtesting Framework}{50}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Overview of the Backtesting Process}{50}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Return Calculation}{50}{subsection.3.5.2}%
-\contentsline {subsubsection}{\nonumberline Return Class Implementation}{50}{subsubsection*.223}%
-\contentsline {paragraph}{\nonumberline Daily Portfolio Return Calculation}{51}{paragraph*.225}%
-\contentsline {paragraph}{\nonumberline Cumulative Return Calculation}{51}{paragraph*.227}%
+\contentsline {subsubsection}{\nonumberline Return Class Implementation}{50}{subsubsection*.227}%
+\contentsline {paragraph}{\nonumberline Daily Portfolio Return Calculation}{51}{paragraph*.229}%
+\contentsline {paragraph}{\nonumberline Cumulative Return Calculation}{51}{paragraph*.231}%
 \contentsline {subsection}{\numberline {3.5.3}Volatility Calculation}{51}{subsection.3.5.3}%
-\contentsline {subsubsection}{\nonumberline Volatility Class Implementation}{51}{subsubsection*.229}%
-\contentsline {paragraph}{\nonumberline Portfolio Volatility Calculation}{51}{paragraph*.231}%
+\contentsline {subsubsection}{\nonumberline Volatility Class Implementation}{51}{subsubsection*.233}%
+\contentsline {paragraph}{\nonumberline Portfolio Volatility Calculation}{52}{paragraph*.235}%
 \contentsline {subsection}{\numberline {3.5.4}Backtesting Procedure}{52}{subsection.3.5.4}%
 \contentsline {subsection}{\numberline {3.5.5}Performance Evaluation}{53}{subsection.3.5.5}%
-\contentsline {subsubsection}{\nonumberline Cumulative Return}{53}{subsubsection*.233}%
-\contentsline {subsubsection}{\nonumberline Cumulative Transaction Costs}{53}{subsubsection*.235}%
-\contentsline {subsubsection}{\nonumberline Sharpe Ratio}{53}{subsubsection*.237}%
+\contentsline {subsubsection}{\nonumberline Cumulative Return}{53}{subsubsection*.237}%
+\contentsline {subsubsection}{\nonumberline Cumulative Transaction Costs}{53}{subsubsection*.239}%
+\contentsline {subsubsection}{\nonumberline Sharpe Ratio}{54}{subsubsection*.241}%
 \contentsline {subsection}{\numberline {3.5.6}Backtesting Results Interpretation}{54}{subsection.3.5.6}%
 \contentsline {subsection}{\numberline {3.5.7}Implementation Notes}{54}{subsection.3.5.7}%
 \contentsline {subsection}{\numberline {3.5.8}Conclusion}{54}{subsection.3.5.8}%
 \contentsline {chapter}{\numberline {4}Results and Analysis}{55}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Model Performance Analysis}{55}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Comparison with Benchmark Models}{55}{subsection.4.1.1}%
-\contentsline {paragraph}{\nonumberline Comparison with ARIMA}{55}{paragraph*.239}%
-\contentsline {paragraph}{\nonumberline Visual Comparison}{56}{paragraph*.242}%
-\contentsline {subsubsection}{\nonumberline Discussion}{56}{subsubsection*.245}%
-\contentsline {subsubsection}{\nonumberline MSE Analysis}{57}{subsubsection*.247}%
-\contentsline {subsubsection}{\nonumberline Conclusion}{57}{subsubsection*.249}%
+\contentsline {paragraph}{\nonumberline Comparison with ARIMA}{55}{paragraph*.243}%
+\contentsline {paragraph}{\nonumberline Visual Comparison}{56}{paragraph*.246}%
+\contentsline {subsubsection}{\nonumberline Discussion}{57}{subsubsection*.249}%
+\contentsline {subsubsection}{\nonumberline Conclusion}{57}{subsubsection*.251}%
 \contentsline {subsection}{\numberline {4.1.2}Comparison of iteratively retraining and fixed models}{57}{subsection.4.1.2}%
 \contentsline {section}{\numberline {4.2}Portfolio Optimization Outcomes}{57}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Strategy Performance Calculation}{58}{subsection.4.2.1}%
-\contentsline {subsubsection}{\nonumberline Portfolio Class Implementation}{58}{subsubsection*.251}%
-\contentsline {subsubsection}{\nonumberline Optimal Weights Calculation}{58}{subsubsection*.253}%
-\contentsline {subsubsection}{\nonumberline Strategy Evaluation Method}{58}{subsubsection*.255}%
-\contentsline {subsubsection}{\nonumberline Comparison with Backtesting Results}{60}{subsubsection*.257}%
-\contentsline {subsubsection}{\nonumberline Implementation Notes}{60}{subsubsection*.259}%
-\contentsline {subsubsection}{\nonumberline Conclusion}{61}{subsubsection*.262}%
+\contentsline {subsubsection}{\nonumberline Portfolio Class Implementation}{58}{subsubsection*.253}%
+\contentsline {subsubsection}{\nonumberline Optimal Weights Calculation}{58}{subsubsection*.255}%
+\contentsline {subsubsection}{\nonumberline Strategy Evaluation Method}{59}{subsubsection*.257}%
+\contentsline {subsubsection}{\nonumberline Comparison with Backtesting Results}{60}{subsubsection*.259}%
+\contentsline {subsubsection}{\nonumberline Implementation Notes}{60}{subsubsection*.261}%
+\contentsline {subsubsection}{\nonumberline Conclusion}{61}{subsubsection*.264}%
 \contentsline {section}{\numberline {4.3}Backtesting Results}{61}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Strategy Performance Comparison}{61}{subsection.4.3.1}%
-\contentsline {paragraph}{\nonumberline Quantitative Insights}{63}{paragraph*.265}%
-\contentsline {paragraph}{\nonumberline Implications of Results}{64}{paragraph*.269}%
-\contentsline {subsubsection}{\nonumberline Impact of Iteratively Retrained Models on Strategy Performance}{64}{subsubsection*.271}%
+\contentsline {subsection}{\numberline {4.3.1}Strategy Performance Comparison}{62}{subsection.4.3.1}%
+\contentsline {paragraph}{\nonumberline Quantitative Insights}{62}{paragraph*.267}%
+\contentsline {paragraph}{\nonumberline Implications of Results}{64}{paragraph*.271}%
+\contentsline {subsubsection}{\nonumberline Impact of Iteratively Retrained Models on Strategy Performance}{64}{subsubsection*.273}%
 \contentsline {chapter}{\numberline {5}Discussion}{67}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Interpretation of Results}{67}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Key findings and insights}{67}{subsection.5.1.1}%
@@ -198,8 +197,8 @@
 \contentsline {subsection}{\numberline {5.4.2}Additional Strategy Considerations}{70}{subsection.5.4.2}%
 \contentsline {subsection}{\numberline {5.4.3}Alternative Applications}{71}{subsection.5.4.3}%
 \contentsline {subsection}{\numberline {5.4.4}Scalability Considerations}{71}{subsection.5.4.4}%
-\contentsline {chapter}{\nonumberline Abbreviations}{73}{chapter*.275}%
-\contentsline {chapter}{\nonumberline \bbl@ensure@english {List of Figures}}{74}{chapter*.276}%
-\contentsline {chapter}{\nonumberline \bbl@ensure@english {List of Tables}}{75}{chapter*.277}%
-\contentsline {chapter}{\nonumberline Bibliography}{76}{chapter*.278}%
+\contentsline {chapter}{\nonumberline Abbreviations}{73}{chapter*.277}%
+\contentsline {chapter}{\nonumberline \bbl@ensure@english {List of Figures}}{74}{chapter*.278}%
+\contentsline {chapter}{\nonumberline \bbl@ensure@english {List of Tables}}{75}{chapter*.279}%
+\contentsline {chapter}{\nonumberline Bibliography}{76}{chapter*.280}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

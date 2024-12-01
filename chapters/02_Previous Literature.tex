@@ -196,36 +196,19 @@ where:
 
 \paragraph{Advantages of GPR in Financial Modeling}
 
-GPR offers several benefits for financial time-series forecasting:
-
-\begin{itemize}
-    \item \textit{Non-parametric Flexibility}: Does not assume a specific functional form, allowing for modeling of complex, non-linear relationships.
-    \item \textit{Uncertainty Quantification}: Provides probabilistic predictions with associated confidence intervals, which are crucial for risk management.
-    \item \textit{Bayesian Framework}: Naturally incorporates prior knowledge and updates beliefs with new data.
-\end{itemize}
+Gaussian Process Regression (GPR) offers numerous benefits for financial time-series forecasting, making it a compelling choice for portfolio optimization applications. Its non-parametric nature allows it to model complex, non-linear relationships without assuming a specific functional form, a critical advantage given the inherent intricacies of financial markets. Additionally, GPR provides a natural framework for uncertainty quantification, delivering probabilistic predictions accompanied by confidence intervals. These intervals are particularly valuable in risk-sensitive environments, as they enable a deeper understanding of prediction reliability. The Bayesian foundation of GPR further enhances its utility, as it can naturally incorporate prior knowledge and refine its predictions as new data becomes available. This adaptability makes GPR well-suited to the dynamic and evolving nature of financial data.
 
 \subsubsection{Challenges in Applying GPR to Finance}
+Despite its strengths, \ac{GPR} encounters several challenges when applied to the financial domain. A significant limitation is its computational complexity, particularly the need to invert an $n \times n$ matrix, which becomes increasingly burdensome as dataset size grows. This issue can limit the scalability of \ac{GPR} in large-scale applications. 
+Another obstacle is the non-stationarity of financial time-series data, which often violates the assumptions of standard \ac{GPR} implementations. Markets frequently exhibit regime changes and trends that challenge the ability of traditional models to capture shifting dynamics effectively. 
+Additionally, financial datasets are characterized by high noise levels and volatility, which can adversely impact the performance and stability of \ac{GPR} models. 
+Finally, the selection and tuning of kernel functions and hyperparameters play a pivotal role in \ac{GPR}'s effectiveness. This process is not only technically demanding but also requires a nuanced understanding of the data and the underlying financial context.
 
-Despite its advantages, GPR faces challenges in financial applications:
-
-\begin{itemize}
-    \item \textit{Computational Complexity}: Involves inverting an $n \times n$ matrix, which can be computationally intensive for large datasets.
-    \item \textit{Non-Stationarity}: Financial time-series often exhibit non-stationary behavior, violating assumptions of stationarity in standard GPR.
-    \item \textit{Noise Characteristics}: Financial data can be noisy and volatile, affecting model performance.
-    \item \textit{Hyperparameter Tuning}: Selection of kernel functions and hyperparameters significantly impacts model performance and requires careful tuning.
-\end{itemize}
-
-
-\subsection{Integrating Portfolio Optimization and GPR}
+\subsection{Integrating Portfolio Optimization and \ac{GPR}}
 
 Combining portfolio optimization with GPR-based forecasting aims to leverage accurate predictions of asset returns and associated uncertainties to make informed allocation decisions. The integration involves:
 
-\begin{itemize}
-    \item Using GPR to predict expected returns and volatilities for assets.
-    \item Incorporating these predictions into the optimization models to determine optimal portfolio weights.
-    \item Adjusting for uncertainties by considering the confidence intervals provided by GPR in the optimization process.
-\end{itemize}
-
+The integration of GPR into portfolio optimization represents a powerful approach to improving asset allocation by leveraging predictive insights. GPR can forecast expected returns and volatilities for individual assets, providing the foundational inputs for optimization models. By incorporating these predictions, portfolio weights can be determined in a manner that aligns with both the expected performance and the associated risks of the assets. Furthermore, GPR's ability to quantify uncertainty enhances the optimization process by allowing confidence intervals to inform allocation decisions. This ensures that portfolios are not only optimized based on point estimates but are also adjusted to account for the inherent unpredictability of financial markets. Such integration bridges the gap between theoretical advancements in predictive modeling and practical applications in portfolio management, offering a robust framework for informed and adaptive investment strategies.
 \paragraph{Dynamic Portfolio Optimization}
 
 Dynamic optimization involves updating the portfolio allocation as new information becomes available. By retraining the GPR models with new data and adjusting the portfolio accordingly, the strategy adapts to changing market conditions, potentially enhancing performance.
@@ -333,13 +316,15 @@ High transaction costs can negate the benefits of frequent rebalancing. Incorpor
 
 \subsubsection{Optimal Rebalancing Frequency}
 
-Determining the optimal frequency of portfolio rebalancing involves a trade-off between maintaining the desired asset allocation and minimizing transaction costs. Strategies to address this include:
+Determining the optimal frequency of portfolio rebalancing is a delicate balancing act that requires careful consideration of the trade-off between preserving the intended asset allocation and minimizing transaction costs. Rebalancing too frequently can erode returns due to excessive transaction costs, while infrequent rebalancing may lead to significant deviations from the desired allocation, increasing the portfolio’s risk.
 
-\begin{itemize}
-    \item \textit{Threshold-Based Rebalancing}: Rebalancing only when asset weights deviate beyond predefined thresholds.
-    \item \textit{Periodic Rebalancing}: Adjusting the portfolio at regular intervals (e.g., monthly, quarterly).
-    \item \textit{Cost-Aware Optimization}: Incorporating transaction costs directly into the optimization problem to balance expected returns against costs.
-\end{itemize}
+One approach to addressing this challenge is threshold-based rebalancing, where adjustments are made only when asset weights deviate beyond predetermined limits. This method ensures that the portfolio remains aligned with the target allocation without incurring unnecessary trading costs. By focusing on deviations that materially impact the portfolio's risk-return profile, threshold-based rebalancing strikes an effective balance between precision and cost-efficiency.
+
+Periodic rebalancing offers another practical solution, where the portfolio is adjusted at regular intervals, such as monthly or quarterly. This approach simplifies the rebalancing process by creating a fixed schedule, making it easier to implement and plan. However, it may not always respond to sudden market changes, potentially allowing deviations to persist longer than desired in volatile conditions.
+
+A more sophisticated method involves cost-aware optimization, which explicitly incorporates transaction costs into the portfolio optimization process. By modeling these costs alongside expected returns and risks, this approach dynamically adjusts the rebalancing frequency and magnitude to maximize the portfolio’s net performance. This strategy ensures that rebalancing decisions are not only effective but also economically justified, providing a more comprehensive solution to the rebalancing dilemma.
+
+Together, these approaches highlight the importance of tailoring rebalancing strategies to the specific objectives and constraints of the portfolio, ensuring an optimal balance between maintaining allocation discipline and controlling costs.
 
 \subsection{Existing Approaches to Strategy Switching}
 
@@ -362,14 +347,16 @@ Meta-learning approaches involve training a higher-level model to select the bes
 Strategies can be evaluated based on historical or real-time performance metrics, such as Sharpe ratios or drawdowns, with the best-performing strategy selected for implementation \cite{poterba2000portfolio}.
 
 \subsubsection{Rule-Based Switching}
+Rule-based switching systems employ predefined criteria or indicators to dictate when and how portfolio strategies should be adjusted. These systems offer a structured approach to dynamic portfolio management, enabling timely responses to evolving market conditions while maintaining a clear decision-making framework.
 
-Rule-based systems use predefined criteria or indicators to trigger strategy changes. Examples include:
+One common method involves the use of technical indicators. These indicators, such as moving averages, momentum signals, or relative strength indexes, are widely utilized in financial analysis to identify trends and potential reversals. For instance, a portfolio might shift to a more defensive strategy if a moving average crossover signals a downward trend in the market. Similarly, momentum indicators can prompt a reallocation toward outperforming assets, capitalizing on short-term trends.
 
-\begin{itemize}
-    \item \textit{Technical Indicators}: Switching strategies based on signals from moving averages, momentum indicators, or relative strength indexes.
-    \item \textit{Economic Indicators}: Adjusting strategies in response to macroeconomic data releases or changes in interest rates.
-    \item \textit{Forecast Confidence}: Modifying the strategy based on the confidence level of predictive models, such as forecast variances from GPR.
-\end{itemize}
+Economic indicators also play a critical role in rule-based switching. Changes in macroeconomic conditions, such as shifts in interest rates or the release of key economic data like GDP growth or employment reports, can significantly impact market dynamics. A rule-based system might adjust portfolio strategies to align with these macroeconomic signals, such as increasing bond exposure during periods of rising interest rates or reallocating to growth stocks in anticipation of strong economic performance.
+
+Another powerful criterion for rule-based switching is forecast confidence. This approach leverages the confidence level of predictive models, such as the variance estimates provided by Gaussian Process Regression (GPR), to guide strategy adjustments. For example, when \ac{GPR} forecasts indicate high confidence in a specific market movement, the system can allocate more aggressively toward assets expected to benefit from that trend. Conversely, during periods of high uncertainty, the system might adopt a more conservative stance to mitigate risk.
+
+Rule-based switching provides a disciplined yet flexible framework for dynamic portfolio management, allowing investors to adapt to changing conditions while minimizing emotional biases in decision-making. By integrating technical, economic, and predictive indicators, such systems can enhance both responsiveness and effectiveness in achieving portfolio objectives.
+
 
 \subsubsection{Machine Learning-Based Switching}
 

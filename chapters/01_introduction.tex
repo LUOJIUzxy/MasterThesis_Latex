@@ -1,25 +1,25 @@
-!TeX root = ../main.tex
+
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Introduction}\label{chapter:introduction}
 
 \section{Background and Motivation}
-Portfolio optimization has been a cornerstone of financial decision-making since its formal introduction in the mid-20th century. The seminal work of Harry Markowitz in 1952 laid the foundation for Modern Portfolio Theory (MPT), which introduced the concepts of mean-variance optimization and the efficient frontier. This work transformed the way investors approached asset allocation by providing a rigorous mathematical framework to balance risk and return. Over the decades, MPT evolved through the development of models such as the Capital Asset Pricing Model (CAPM), single-index models, and risk-parity approaches. These models addressed various practical challenges, such as the estimation of covariance matrices and the inclusion of downside risk measures.
+Portfolio optimization has been a cornerstone of financial decision-making since its formal introduction in the mid-20th century. The seminal work of Harry Markowitz in 1952 laid the foundation for \ac{MPT}, which introduced the concepts of mean-variance optimization and the efficient frontier. This work transformed the way investors approached asset allocation by providing a rigorous mathematical framework to balance risk and return. Over the decades, \ac{MPT} evolved through the development of models such as the \ac{CAPM}, single-index models, and risk-parity approaches. These models addressed various practical challenges, such as the estimation of covariance matrices and the inclusion of downside risk measures.
 
-However, traditional portfolio optimization methods often rely on strong assumptions, such as the normality of asset returns and the stability of their relationships over time. In reality, financial markets are highly complex, characterized by non-linear interactions, non-stationary behaviors, and abrupt regime changes. The limitations of classical methods in capturing these dynamics have spurred the integration of advanced computational techniques, including machine learning (ML), into the field of portfolio management.
+However, traditional portfolio optimization methods often rely on strong assumptions, such as the normality of asset returns and the stability of their relationships over time. In reality, financial markets are highly complex, characterized by non-linear interactions, non-stationary behaviors, and abrupt regime changes. The limitations of classical methods in capturing these dynamics have spurred the integration of advanced computational techniques, including \ac{ML}, into the field of portfolio management.
 
 Machine learning, with its ability to model non-linear patterns and process large datasets, has emerged as a powerful tool for financial forecasting. Gaussian Process Regression (GPR), a Bayesian non-parametric approach, has gained attention for its probabilistic nature and flexibility in modeling uncertainty. These attributes make GPR particularly well-suited for predicting asset returns and volatilities, critical inputs for portfolio optimization.
 
-Despite the advancements in ML and the promise of techniques like GPR, significant challenges remain. Accurately forecasting asset returns is notoriously difficult due to the inherent volatility and unpredictability of financial markets. Traditional methods of estimating parameters, such as volatility and correlations, often fall short during periods of market stress, where accurate predictions are most needed. This study aims to bridge these gaps by integrating GPR into a dynamic portfolio optimization framework, leveraging its predictive strengths to enhance decision-making in uncertain and rapidly changing markets.
+Despite the advancements in \ac{ML} and the promise of techniques like \ac{GPR}, significant challenges remain. Accurately forecasting asset returns is notoriously difficult due to the inherent volatility and unpredictability of financial markets. Traditional methods of estimating parameters, such as volatility and correlations, often fall short during periods of market stress, where accurate predictions are most needed. This study aims to bridge these gaps by integrating \ac{GPR} into a dynamic portfolio optimization framework, leveraging its predictive strengths to enhance decision-making in uncertain and rapidly changing markets.
 
 \section{Research Objectives}
 The primary objective of this research is to develop and evaluate a portfolio optimization framework that combines the predictive capabilities of GPR with strategic asset allocation. The study focuses on improving investment performance by addressing the shortcomings of traditional methods and integrating probabilistic predictions into decision-making. Specifically, the research aims to:
 
-Construct GPR models capable of forecasting the returns and volatilities of selected assets with a high degree of accuracy. The models will be updated iteratively to incorporate new data and adapt to market changes dynamically.
+Construct \ac{GPR} models capable of forecasting the returns and volatilities of selected assets with a high degree of accuracy. The models will be updated iteratively to incorporate new data and adapt to market changes dynamically.
 
-Design portfolio optimization strategies that utilize GPR outputs, including traditional approaches like Maximum Return, Minimum Volatility, and Maximum Sharpe Ratio, as well as a novel Dynamic Strategy. The latter incorporates GPR’s probabilistic forecasts to determine optimal reallocation decisions based on threshold probabilities.
+Design portfolio optimization strategies that utilize \ac{GPR} outputs, including traditional approaches like Maximum Return, Minimum Volatility, and Maximum Sharpe Ratio, as well as a novel Dynamic Strategy. The latter incorporates \ac{GPR}'s probabilistic forecasts to determine optimal reallocation decisions based on threshold probabilities.
 
-Implement a comprehensive backtesting framework to evaluate the strategies’ performance over historical market data, accounting for transaction costs and realistic market conditions.
+Implement a comprehensive backtesting framework to evaluate the strategies' performance over historical market data, accounting for transaction costs and realistic market conditions.
 
 Demonstrate the practical applicability of the Dynamic Strategy by analyzing its risk-return trade-offs, adaptability, and cost efficiency compared to traditional strategies.
 
@@ -35,36 +35,13 @@ Moreover, traditional portfolio optimization methods, while theoretically elegan
 This section examines these challenges and introduces how \ac{GPR} provides a novel approach to addressing them.
 
 \paragraph{Parameter Estimation Challenges in Modern Portfolio Theory}
-Modern Portfolio Theory (MPT), despite its theoretical elegance, relies heavily on accurate estimation of key parameters:
-The practical implementation of MPT is fundamentally constrained by the difficulty in estimating volatility, arguably the most critical parameter in portfolio optimization. Traditional approaches to volatility estimation rely heavily on historical data, assuming that past patterns will persist into the future. However, financial markets are dynamic systems characterized by regime changes, varying volatility clusters, and complex interdependencies that make such assumptions problematic. Historical volatility estimates are inherently backward-looking and highly sensitive to the chosen estimation window, leading to potentially misleading inputs for portfolio optimization.
+Modern Portfolio Theory (MPT), while foundational in the field of finance, is critically dependent on the accurate estimation of several key parameters, making its practical application challenging. Among these, volatility estimation stands out as the most pivotal yet problematic aspect of portfolio optimization. Traditional methods for estimating volatility typically rely on historical data under the assumption that past patterns will persist into the future. However, this assumption is often flawed, as financial markets are inherently dynamic and subject to frequent regime changes, fluctuating volatility clusters, and intricate interdependencies. These characteristics render historical volatility estimates backward-looking and overly sensitive to the chosen estimation window, potentially resulting in misleading inputs for portfolio construction. Furthermore, the presence of heteroskedasticity in financial time series complicates volatility estimation, as periods of stable and erratic market behavior frequently alternate.
 
-Moreover, the challenge extends beyond simple volatility estimation. The correlation structure between assets, another crucial input for MPT, exhibits time-varying properties that are difficult to capture using conventional methods. During periods of market stress, these correlations often shift dramatically, invalidating historical estimates precisely when accurate risk assessment is most critical. The dimensionality of this problem grows quadratically with the number of assets, making it particularly challenging for large, diversified portfolios.
+The challenges of parameter estimation in \ac{MPT} extend beyond volatility. Expected returns, another critical input, are notoriously difficult to predict with accuracy. They are highly sensitive to estimation errors, which can significantly skew portfolio outcomes. Additionally, expected returns exhibit a time-varying nature, influenced by changing market regimes and economic conditions. This variability further complicates reliable estimation and introduces additional layers of uncertainty into the optimization process.
 
-\begin{itemize}
-    \item \textbf{Volatility Estimation}
-    \begin{itemize}
-        \item Historical volatility may not reflect future risk
-        \item Sample estimates are sensitive to the chosen time window
-        \item Regime changes can invalidate historical estimates
-        \item Heteroskedasticity in financial time series complicates estimation
-    \end{itemize}
+Another significant hurdle in MPT is accurately capturing the correlation structure among assets. Correlations are dynamic and often shift dramatically during periods of market stress, precisely when understanding interdependencies is most crucial. Relying on static historical correlations can lead to underestimation of risks and suboptimal diversification. Moreover, as the number of assets in a portfolio increases, the complexity of estimating a stable and meaningful correlation matrix grows quadratically, creating what is commonly referred to as the "curse of dimensionality." This issue is compounded by computational challenges in managing high-dimensional datasets, further straining the practical applicability of MPT.
 
-    \item \textbf{Expected Returns}
-    \begin{itemize}
-        \item Notoriously difficult to estimate accurately
-        \item High sensitivity to estimation errors
-        \item Time-varying nature of expected returns
-        \item Impact of market regimes on return distributions
-    \end{itemize}
-
-    \item \textbf{Correlation Structure}
-    \begin{itemize}
-        \item Dynamic nature of asset correlations
-        \item Curse of dimensionality in large portfolios
-        \item Instability during market stress periods
-        \item Computational challenges in high dimensions
-    \end{itemize}
-\end{itemize}
+These challenges collectively highlight the limitations of traditional approaches in addressing the dynamic and complex nature of financial markets. Volatility, expected returns, and correlation structures, while central to the theoretical framework of MPT, require sophisticated methods and adaptive modeling techniques to ensure their reliability and relevance in real-world applications. Addressing these limitations is critical for advancing portfolio optimization practices and improving their alignment with the realities of modern financial systems.
 
 \paragraph{Limitations of Traditional Forecasting Methods}
 Traditional forecasting approaches in finance have predominantly relied on methods that provide point estimates, failing to capture the inherent uncertainty in financial predictions. These methods often make strong assumptions about the underlying data distribution and struggle to adapt to the non-linear, non-stationary nature of financial time series. \ac{ARIMA} models, exponential smoothing, and other classical approaches, while mathematically tractable, often fall short in capturing the complex dynamics of financial markets.
