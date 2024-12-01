@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 21:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 22:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1123,26 +1123,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl
-./main.bbl:415: Illegal parameter number in definition of \NewValue.
-<to be read again> 
-                   o
-l.415 ...pdji/en/indices/equity/sp-500/#overview}}
-                                                  
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-./main.bbl:419: Illegal parameter number in definition of \abx@field@howpublished.
-<to be read again> 
-                   o
-l.419     \endentry
-                   
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-)
+ (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
  (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -1383,4 +1364,144 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 204.
+<figures/future_predictions_MSFT.png, id=356, 875.4306pt x 441.8106pt>
+File: figures/future_predictions_MSFT.png Graphic file (type png)
+<use figures/future_predictions_MSFT.png>
+Package pdftex.def Info: figures/future_predictions_MSFT.png  used on input line 216.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+<figures/future_predictions_HLT.png, id=357, 875.4306pt x 441.8106pt>
+File: figures/future_predictions_HLT.png Graphic file (type png)
+<use figures/future_predictions_HLT.png>
+Package pdftex.def Info: figures/future_predictions_HLT.png  used on input line 223.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[12{/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./figures/future_predictions_MSFT.png>]
+<figures/future_predictions_HLT_return.png, id=389, 875.4306pt x 441.8106pt>
+File: figures/future_predictions_HLT_return.png Graphic file (type png)
+<use figures/future_predictions_HLT_return.png>
+Package pdftex.def Info: figures/future_predictions_HLT_return.png  used on input line 236.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+<figures/future_predictions_MSFT_return.png, id=390, 875.4306pt x 441.8106pt>
+File: figures/future_predictions_MSFT_return.png Graphic file (type png)
+<use figures/future_predictions_MSFT_return.png>
+Package pdftex.def Info: figures/future_predictions_MSFT_return.png  used on input line 243.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[13 <./figures/future_predictions_HLT.png> <./figures/future_predictions_HLT_return.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ac' on input line 252.
+
+
+
+[14 <./figures/future_predictions_MSFT_return.png>]
+
+[15]
+
+[16]
+
+[17]
+
+[18]
+
+[19]
+
+[20]) (./chapters/03_Methodology.tex
+
+[21]
+chapter 3.
+Package acronym Info: Label `acro:MSFT' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+Package acronym Info: Label `acro:JNJ' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+Package acronym Info: Label `acro:BA' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+Package acronym Info: Label `acro:HLT' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+Package acronym Info: Label `acro:JPM' newly defined as it shall be overridden
+although it is yet undefined on input line 13.
+<figures/Sector-SP.jpg, id=541, 770.88pt x 355.3275pt>
+File: figures/Sector-SP.jpg Graphic file (type jpg)
+<use figures/Sector-SP.jpg>
+Package pdftex.def Info: figures/Sector-SP.jpg  used on input line 17.
+(pdftex.def)             Requested size: 418.25555pt x 192.79027pt.
+
+
+[22
+
+
+ <./figures/Sector-SP.jpg>]
+
+[23]
+Package acronym Info: Label `acro:PE' newly defined as it shall be overridden
+although it is yet undefined on input line 66.
+Package acronym Info: Label `acro:WPE' newly defined as it shall be overridden
+although it is yet undefined on input line 77.
+
+
+[24]
+
+[25]
+
+[26]
+
+[27]
+Package acronym Info: Label `acro:DE' newly defined as it shall be overridden
+although it is yet undefined on input line 172.
+
+Overfull \hbox (12.89946pt too wide) in paragraph at lines 182--182
+[]\T1/lmtt/m/n/10.95 https://eodhd.com/api/eod/{ticker}.US?period={period}&api_token={api_token}[] 
+ []
+
+
+Overfull \hbox (7.15073pt too wide) in paragraph at lines 188--188
+[]\T1/lmtt/m/n/10.95 https://eodhd.com/api/eod/BTC-USD.CC?period={period}&api_token={api_token}[] 
+ []
+
+
+
+[28]
+
+[29]
+
+[30]
+<figures/predicted_MSFT_with_removed.png, id=669, 875.4306pt x 441.8106pt>
+File: figures/predicted_MSFT_with_removed.png Graphic file (type png)
+<use figures/predicted_MSFT_with_removed.png>
+Package pdftex.def Info: figures/predicted_MSFT_with_removed.png  used on input line 260.
+(pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
+
+
+[31 <./figures/predicted_MSFT_with_removed.png>]
+
+[32]
+Overfull \hbox (50.10371pt too wide) in paragraph at lines 318--319
+[]\T1/pplx/m/n/10.95 (-20) In this code, \T1/lmtt/m/n/10.95 df['close'] \T1/pplx/m/n/10.95 (-20) rep-re-sents the orig-i-nal clos-ing price data, and \T1/lmtt/m/n/10.95 df['filtered_close']
+ []
+
+
+
+[33]
+
+[34]
+Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
+although it is yet undefined on input line 362.
+
+
+[35]
+<figures/2d_AAPL.png, id=727, 722.7pt x 493.1223pt>
+File: figures/2d_AAPL.png Graphic file (type png)
+<use figures/2d_AAPL.png>
+Package pdftex.def Info: figures/2d_AAPL.png  used on input line 391.
+(pdftex.def)             Requested size: 188

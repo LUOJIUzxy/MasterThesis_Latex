@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1733086057.88082 "main.bcf" "main.bbl" "main" 1733086370.82508 0
-  "bibliography.bib" 1733086057.65287 10817 28f69e436ab68874eafa9c3b1df884e7 ""
-  "main.bcf" 1733086370.6769 111352 3ed11683af4f037f601e532f8bf65ab0 "pdflatex"
+["biber main"] 1733086776.71166 "main.bcf" "main.bbl" "main" 1733086777.35894 0
+  "bibliography.bib" 1733086772.69267 10807 7cd4e8b0764508442e38d31c16c8b39e ""
+  "main.bcf" 1733086776.56397 111352 3ed11683af4f037f601e532f8bf65ab0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1733086355.99827 "/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex" "main.pdf" "main" 1733086370.82121 2
+["pdflatex"] 1733086761.22865 "/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex" "main.pdf" "main" 1733086777.35897 0
   "/Users/xiyuezhang/Documents/Projects/master-thesis/main.tex" 1733070168.53305 3170 5a7df08709196a661f7ccb9bca95bb42 ""
   "/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
@@ -323,7 +323,7 @@
   "/Users/xiyuezhang/Library/TinyTeX/texmf.cnf" 1728789386 637 edd806fb06a89761a6034e1968af9017 ""
   "chapters/01_introduction.tex" 1733083012.18187 14466 79a71f2664f9edde96b733a85be46555 ""
   "chapters/02_Previous Literature.tex" 1733085266.64252 30565 9d54c9b956c95c3a58d941eb44b7ae88 ""
-  "chapters/03_Methodology.tex" 1733086355.08751 83208 5bfdb1e94efe69c0f902c192169289a2 ""
+  "chapters/03_Methodology.tex" 1733086395.8628 83216 c6c89d0d6000f87f4bf8468328087713 ""
   "chapters/04_Results&Analysis.tex" 1733078482.46432 23057 b06e720e999cc154b440aa58eff7e974 ""
   "chapters/05_Discussion.tex" 1733075207.02 18051 1fb842070fe2a1d38197f358e35750be ""
   "figures/2d_AAPL.png" 1733069359.11049 834347 b98e08fc25e1ea88b58e7678fad8812f ""
@@ -354,14 +354,14 @@
   "figures/trx_costs_comparison_final_non.png" 1733077077.018 228508 3f27fd58c293436f895b63afe8304a34 ""
   "figures/variance=1.png" 1733071943.69361 71372 36abcff7e55a5f29cb2af906aad79f28 ""
   "figures/variance=1e1.png" 1733071922.36199 81327 f20b46873a216d93435301b9e47cff18 ""
-  "main.aux" 1733086370.66316 73028 d5b62e9363eeb83675a56ae0336b9913 "pdflatex"
-  "main.bbl" 1733086058.48858 51374 cf75c6d0aed3ed8bd971665fa2409921 "biber main"
-  "main.lof" 1733086370.67774 2817 c964a8994d55754b4f8ab023446fbbf5 "pdflatex"
-  "main.lot" 1733086370.67779 583 8982bf25aef1c4476d5dc11e10c28892 "pdflatex"
-  "main.out" 1733086357.68376 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.run.xml" 1733086370.67762 2368 dd29ca5b917e0982c9181defe920256a "pdflatex"
+  "main.aux" 1733086776.55022 72394 e4e13711c6ae0e714e513ffee1b8012f "pdflatex"
+  "main.bbl" 1733086777.3448 51365 c390210b98560b151468206a52a68d5a "biber main"
+  "main.lof" 1733086776.56488 2817 fbbe9f03322b6ebf748e3a4ec8dd3956 "pdflatex"
+  "main.lot" 1733086776.56491 583 4d8c7bfac3d732c0b54ba0e0dfe5e44d "pdflatex"
+  "main.out" 1733086762.94631 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.run.xml" 1733086776.56475 2368 dd29ca5b917e0982c9181defe920256a "pdflatex"
   "main.tex" 1733070168.53305 3170 5a7df08709196a661f7ccb9bca95bb42 ""
-  "main.toc" 1733086370.6777 18029 a2fbd479b544fc024393a0c4c27d8c64 "pdflatex"
+  "main.toc" 1733086776.56483 18029 baabbd46c58476727f2c898ac4ca4c36 "pdflatex"
   "pages/abstract.tex" 1733012596.66603 1839 dfff93732e36f7b979fec775978e4bee ""
   "pages/acknowledgments.tex" 1728734216 242 8955d5a2fec3493bcfd4b1fe970e1c8c ""
   "pages/cover.tex" 1728734216 979 52c2f918ec29c92d90a2beca2903f819 ""

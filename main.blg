@@ -1,20 +1,20 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'main.blg'
-[37] biber:340> INFO - === Sun Dec  1, 2024, 21:53:54
+[39] biber:340> INFO - === Sun Dec  1, 2024, 21:59:37
 [48] Biber.pm:420> INFO - Reading 'main.bcf'
-[92] Biber.pm:994> INFO - Found 33 citekeys in bib section 0
-[100] Biber.pm:4463> INFO - Processing section 0
-[105] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[106] bibtex.pm:1713> INFO - LaTeX decoding ...
-[126] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[235] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[235] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[235] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[235] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[251] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[268] bbl.pm:779> INFO - Output to main.bbl
-[271] Biber.pm:131> WARN - Duplicate entry key: 'cont2001empirical' in file 'bibliography.bib', skipping ...
-[271] Biber.pm:131> WARN - Duplicate entry key: 'cont2001empirical' in file 'bibliography.bib', skipping ...
-[271] Biber.pm:131> WARN - Duplicate entry key: 'markowitz1952portfolio' in file 'bibliography.bib', skipping ...
-[271] Biber.pm:131> WARN - Duplicate entry key: 'huang2019building' in file 'bibliography.bib', skipping ...
-[271] Biber.pm:133> INFO - WARNINGS: 4
+[93] Biber.pm:994> INFO - Found 33 citekeys in bib section 0
+[102] Biber.pm:4463> INFO - Processing section 0
+[108] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[110] bibtex.pm:1713> INFO - LaTeX decoding ...
+[129] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[240] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[240] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[240] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[241] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[257] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[265] bbl.pm:779> INFO - Output to main.bbl
+[265] Biber.pm:131> WARN - Duplicate entry key: 'cont2001empirical' in file 'bibliography.bib', skipping ...
+[265] Biber.pm:131> WARN - Duplicate entry key: 'cont2001empirical' in file 'bibliography.bib', skipping ...
+[265] Biber.pm:131> WARN - Duplicate entry key: 'markowitz1952portfolio' in file 'bibliography.bib', skipping ...
+[265] Biber.pm:131> WARN - Duplicate entry key: 'huang2019building' in file 'bibliography.bib', skipping ...
+[265] Biber.pm:133> INFO - WARNINGS: 4

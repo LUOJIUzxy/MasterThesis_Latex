@@ -391,32 +391,6 @@
       \field{pages}{579\bibrangedash 626}
       \range{pages}{48}
     \endentry
-    \entry{SP500SectorWeights2024}{misc}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=5672178a9fd97d2388150c72681071ac}{%
-           family={Global},
-           familyi={G\bibinitperiod},
-           given={SP},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{5672178a9fd97d2388150c72681071ac}
-      \strng{fullhash}{5672178a9fd97d2388150c72681071ac}
-      \strng{fullhashraw}{5672178a9fd97d2388150c72681071ac}
-      \strng{bibnamehash}{5672178a9fd97d2388150c72681071ac}
-      \strng{authorbibnamehash}{5672178a9fd97d2388150c72681071ac}
-      \strng{authornamehash}{5672178a9fd97d2388150c72681071ac}
-      \strng{authorfullhash}{5672178a9fd97d2388150c72681071ac}
-      \strng{authorfullhashraw}{5672178a9fd97d2388150c72681071ac}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.spglobal.com/spdji/en/indices/equity/sp-500/#overview}}
-      \field{note}{Accessed: 2024-12-01}
-      \field{title}{SP 500 Fact Sheet}
-      \field{year}{2024}
-    \endentry
     \entry{hagenau2013automated}{article}{}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=24294ed2127a900ea76f3964bc36dd4c}{%
@@ -1122,6 +1096,29 @@
       \field{labeltitlesource}{title}
       \field{title}{Gaussian Processes for Machine Learning}
       \field{year}{2006}
+    \endentry
+    \entry{SP500SectorWeights2024}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0db2f078e2a2beeafc6dc7d36b41478b}{%
+           family={{S\&P Global}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0db2f078e2a2beeafc6dc7d36b41478b}
+      \strng{fullhash}{0db2f078e2a2beeafc6dc7d36b41478b}
+      \strng{fullhashraw}{0db2f078e2a2beeafc6dc7d36b41478b}
+      \strng{bibnamehash}{0db2f078e2a2beeafc6dc7d36b41478b}
+      \strng{authorbibnamehash}{0db2f078e2a2beeafc6dc7d36b41478b}
+      \strng{authornamehash}{0db2f078e2a2beeafc6dc7d36b41478b}
+      \strng{authorfullhash}{0db2f078e2a2beeafc6dc7d36b41478b}
+      \strng{authorfullhashraw}{0db2f078e2a2beeafc6dc7d36b41478b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.spglobal.com/spdji/en/indices/equity/sp-500/}}
+      \field{note}{Accessed: 2024-12-01}
+      \field{title}{{S\&P 500 Fact Sheet}}
+      \field{year}{2024}
     \endentry
     \entry{sezer2020financial}{article}{}{}
       \name{author}{3}{}{%
