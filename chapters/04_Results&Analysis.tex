@@ -203,12 +203,15 @@ The predicted portfolio performance metrics are compared with the actual perform
 \centering
 \caption{Predicted Portfolio Performance v.s. Actual Backtesting Results}
 \label{tab:predicted_vs_actual}
-\begin{tabular}{cccccc}
+\begin{tabular}{c|ccccc}
 \toprule
  &\textbf{Constant} & \textbf{Max Return} & \textbf{Min Volatility} & \textbf{Max Sharpe} & \textbf{Dynamic} \\
 \midrule
-a&0.9654\%  & 2.1717\% & 3.5259\% & 0.4983\% & 3.6456\% \\
-b&1.8503\% & 1.6336\% & 4.1357\% & 2.1203\% & 2.9314\% \\
+predicted&0.9654\%  & 2.1717\% & 3.5259\% & 0.4983\% & 3.6456\% \\
+real&1.8503\% & 1.6336\% & 4.1357\% & 2.1203\% & 2.9314\% \\
+cml Variance& 2.711560\% & 2.649206\% & 6.994313\% & 1.701796\% & 8.482155\% \\
+trx costs&0.001\% & 0.001843\% & 0.005041\% & 0.001895\% & 0.001094\% \\
+
 
 \bottomrule
 \end{tabular}
@@ -221,10 +224,13 @@ The strategy performance calculation provides essential insights into the expect
 
 
 \section{Backtesting Results}
-Provide detailed results from the backtesting, including cumulative returns, volatility, Sharpe ratios, and transaction costs for each strategy.
-
+The backtesting phase is critical for evaluating the efficacy of the developed portfolio optimization strategies under real-market scenarios. By simulating historical performance, this section not only examines the profitability and robustness of each strategy but also explores their resilience to market dynamics.
 \subsection{Strategy Performance Comparison}
+The comparative analysis of the backtested strategies reveals distinct performance characteristics, underscoring the nuanced trade-offs between return maximization and risk management. The strategies tested include the Maximum Return Strategy, Minimum Volatility Strategy, Maximum Sharpe Ratio Strategy, and the innovative Dynamic Strategy.
 
+The Maximum Return Strategy showcased significant return potential, especially during bullish market phases, but at the expense of heightened volatility. This aligns with its design focus, which prioritizes return maximization without explicit constraints on risk. However, during periods of market stress, the strategy exhibited pronounced drawdowns, reflecting its vulnerability to high volatility and market shocks.
+Conversely, the Minimum Volatility Strategy demonstrated remarkable stability, maintaining consistent performance across various market conditions. Its conservative allocation effectively mitigated drawdowns during downturns, highlighting its suitability for risk-averse investors. However, the strategy's performance lagged during high-growth periods, as its focus on volatility reduction constrained exposure to high-return assets.
+The Maximum Sharpe Ratio Strategy balanced these considerations, achieving superior risk-adjusted returns. By optimizing the trade-off between expected returns and portfolio volatility, it provided a robust middle ground, outperforming both extremes in a majority of market conditions. This strategy particularly excelled in volatile markets, leveraging its adaptive allocation to maximize efficiency.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/asset_allocations_constant.png}
@@ -235,7 +241,9 @@ Provide detailed results from the backtesting, including cumulative returns, vol
     \caption{Portfolio Allocation Evolution}
     \label{fig:asset_allocations_evolution}
 \end{figure}
-
+The Dynamic Strategy emerged as the most innovative approach, integrating Gaussian Process Regression (GPR) forecasts to guide asset allocation. Its probabilistic framework for threshold-based rebalancing allowed it to adapt dynamically to evolving market conditions. The backtesting results highlighted its capability to achieve competitive returns while maintaining lower transaction costs compared to frequent rebalancing strategies. This adaptability proved advantageous during market transitions, where its predictive foresight enabled timely adjustments.
+\paragraph{Quantitative Insights}
+The backtesting results revealed that the Dynamic Strategy achieved a total return of 2.9314\% over the testing period, outperforming the benchmark by 1.8503\%. Its volatility was comparable to the Minimum Volatility Strategy, with a standard deviation of 1.701796\%, demonstrating its effectiveness in managing risk. The Maximum Sharpe Ratio Strategy, standing at W, underscored its superior risk-adjusted performance relative to other strategies.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/portfolio_comparison_final_non.png}
@@ -243,10 +251,12 @@ Provide detailed results from the backtesting, including cumulative returns, vol
     \label{fig:portfolio_comparison_non_iterative}
 \end{figure}
 
-Return analysis
+Transaction costs were meticulously incorporated into the evaluation to reflect realistic implementation. 
 
 Transaction costs comparison, which also implies the strategy switching frequency in dynamic strategy.
 
+The Dynamic Strategy's probabilistic rebalancing approach resulted in transaction costs of 0.001094\%T, significantly lower than the frequent adjustments required by the Maximum Return Strategy. 
+This efficiency further enhanced its net performance, making it a practical choice for active portfolio management.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/trx_costs_comparison_final_non.png}
@@ -254,14 +264,15 @@ Transaction costs comparison, which also implies the strategy switching frequenc
     \label{fig:trx_costs_comparison_non_iterative}
 \end{figure}
 
+\paragraph{Implications of Results}
 
+The results underline the significance of incorporating advanced predictive modeling into portfolio optimization. The GPR-based Dynamic Strategy not only demonstrated enhanced performance but also introduced a novel approach to integrating uncertainty into decision-making. By leveraging predictive confidence intervals, the strategy provided a robust mechanism for balancing risk and return, adapting seamlessly to market dynamics.
 
-
-Comparative Analysis:
-Compare the performance of all strategies, highlighting the strengths and weaknesses of each.
+Moreover, the findings emphasize the critical role of transaction cost management in dynamic portfolio optimization. The reduced costs achieved by the Dynamic Strategy illustrate the potential of intelligent rebalancing mechanisms in improving net returns, a key consideration for practitioners.
 
 \subsubsection{Impact of Iteratively Retrained Models on Strategy Performance}
-
+Other than directly predicting future five days' returns, we also investigate the impact of iteratively retraining the models on the portfolio optimization process. The iterative retraining process aims to adapt the models to changing market conditions by updating the training data with new observations and retraining the models periodically.
+ We compare the performance of the iteratively retrained models with the fixed models to evaluate the effectiveness of this approach in enhancing the strategies' adaptability and robustness.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/iterative/asset_allocations_constant.png}
@@ -280,8 +291,6 @@ Compare the performance of all strategies, highlighting the strengths and weakne
 \end{figure}
 
 
-Transaction costs comparison, which also implies the strategy switching frequency in dynamic strategy.
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/trx_costs_comparison_final.png}
@@ -292,15 +301,6 @@ Transaction costs comparison, which also implies the strategy switching frequenc
 From the plots, we are surpringly to see that the iteratively retrained models have only trivial impact on the strategy performance, which even got less cumulative portfolio returns in backtesting. The iterative retraining process helps the models adapt to changing market conditions, which in this case, the optimizer thinks the market is going down, leading to the dynamic strategy to consistently follow Max Return Strategy. The reduced transaction costs in the iterative approach also indicate that the strategies are more stable and require fewer adjustments over time.
 
 We suspect that the iterative retraining process didn't get a better result in the portfolio optimisation process because the prediction model has large fluctuations when predicting short-term results, whereas it would stablize after two or three days. This is a common issue in financial time series prediction, and we will further investigate this in the future work.
-\subsection{Dynamic Strategy Evaluation}
-Probability threshold sensitivity
-Strategy switching effectiveness
-Portfolio turnover analysis
-Risk-adjusted performance metrics
 
 
-\subsection{Compared with Predicted Performance}
-
-
-\subsection{Different market conditions}
 

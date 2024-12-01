@@ -1,158 +1,29 @@
-% !TeX root = ../main.tex
+!TeX root = ../main.tex
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Introduction}\label{chapter:introduction}
 
 \section{Background and Motivation}
+Portfolio optimization has been a cornerstone of financial decision-making since its formal introduction in the mid-20th century. The seminal work of Harry Markowitz in 1952 laid the foundation for Modern Portfolio Theory (MPT), which introduced the concepts of mean-variance optimization and the efficient frontier. This work transformed the way investors approached asset allocation by providing a rigorous mathematical framework to balance risk and return. Over the decades, MPT evolved through the development of models such as the Capital Asset Pricing Model (CAPM), single-index models, and risk-parity approaches. These models addressed various practical challenges, such as the estimation of covariance matrices and the inclusion of downside risk measures.
 
+However, traditional portfolio optimization methods often rely on strong assumptions, such as the normality of asset returns and the stability of their relationships over time. In reality, financial markets are highly complex, characterized by non-linear interactions, non-stationary behaviors, and abrupt regime changes. The limitations of classical methods in capturing these dynamics have spurred the integration of advanced computational techniques, including machine learning (ML), into the field of portfolio management.
 
-\subsection{Evolution of portfolio optimization techniques}
-The field of portfolio optimization has undergone significant transformations since its inception in the mid-20th century, evolving from simple diversification principles to sophisticated mathematical models incorporating machine learning and artificial intelligence. 
-This evolution reflects both the advancing computational capabilities and our deepening understanding of financial markets' complexity.
+Machine learning, with its ability to model non-linear patterns and process large datasets, has emerged as a powerful tool for financial forecasting. Gaussian Process Regression (GPR), a Bayesian non-parametric approach, has gained attention for its probabilistic nature and flexibility in modeling uncertainty. These attributes make GPR particularly well-suited for predicting asset returns and volatilities, critical inputs for portfolio optimization.
 
+Despite the advancements in ML and the promise of techniques like GPR, significant challenges remain. Accurately forecasting asset returns is notoriously difficult due to the inherent volatility and unpredictability of financial markets. Traditional methods of estimating parameters, such as volatility and correlations, often fall short during periods of market stress, where accurate predictions are most needed. This study aims to bridge these gaps by integrating GPR into a dynamic portfolio optimization framework, leveraging its predictive strengths to enhance decision-making in uncertain and rapidly changing markets.
 
-\paragraph{Classical Foundations (1950s-1960s)}
-The modern era of portfolio optimization began with \parencite{markowitz1952portfolio}'s seminal paper ``Portfolio Selection,'' which laid the groundwork for \ac{MPT}. Markowitz introduced several revolutionary concepts:
+\section{Research Objectives}
+The primary objective of this research is to develop and evaluate a portfolio optimization framework that combines the predictive capabilities of GPR with strategic asset allocation. The study focuses on improving investment performance by addressing the shortcomings of traditional methods and integrating probabilistic predictions into decision-making. Specifically, the research aims to:
 
-\begin{itemize}
-    \item The mathematical formalization of diversification
-    \item The mean-variance optimization framework
-    \item The efficient frontier of optimal portfolios
-    \item The fundamental relationship between risk and return
-\end{itemize}
+Construct GPR models capable of forecasting the returns and volatilities of selected assets with a high degree of accuracy. The models will be updated iteratively to incorporate new data and adapt to market changes dynamically.
 
-This work established the first rigorous mathematical framework for portfolio selection, earning Markowitz the Nobel Prize in Economics and fundamentally changing how practitioners approached portfolio management.
+Design portfolio optimization strategies that utilize GPR outputs, including traditional approaches like Maximum Return, Minimum Volatility, and Maximum Sharpe Ratio, as well as a novel Dynamic Strategy. The latter incorporates GPR’s probabilistic forecasts to determine optimal reallocation decisions based on threshold probabilities.
 
-\paragraph{Early Developments (1960s-1980s)}
-Building upon Markowitz's foundation, several crucial developments emerged:
+Implement a comprehensive backtesting framework to evaluate the strategies’ performance over historical market data, accounting for transaction costs and realistic market conditions.
 
-\begin{enumerate}
-    \item \textbf{Capital Asset Pricing Model (CAPM)}
-    \begin{itemize}
-        \item Developed by \parencite{sharpe1964capital}, \parencite{lintner1965security}, and \parencite{mossin1966equilibrium}
-        \item Introduced systematic and unsystematic risk concepts
-        \item Established the theoretical framework for asset pricing
-        \item Created the foundation for risk-adjusted performance measures
-    \end{itemize}
+Demonstrate the practical applicability of the Dynamic Strategy by analyzing its risk-return trade-offs, adaptability, and cost efficiency compared to traditional strategies.
 
-    \item \textbf{Single-Index Models}
-    \begin{itemize}
-        \item Simplified the estimation of covariance matrices
-        \item Reduced computational complexity
-        \item Introduced market beta as a risk measure
-        \item Enhanced practical applicability of portfolio optimization
-    \end{itemize}
-\end{enumerate}
-
-\paragraph{Advanced Optimization Era (1980s-2000s)}
-The advent of increased computational power led to more sophisticated approaches:
-
-\begin{enumerate}
-    \item \textbf{Black-Litterman Model (1990s)}
-    \begin{itemize}
-        \item Incorporated investor views into the optimization process
-        \item Addressed estimation error issues in mean-variance optimization
-        \item Introduced Bayesian methods to portfolio optimization
-        \item Provided more stable and intuitive portfolio allocations
-    \end{itemize}
-
-    \item \textbf{Risk-Based Portfolio Optimization}
-    \begin{itemize}
-        \item Development of risk parity strategies \parencite{qian2005risk}
-        \item Introduction of alternative risk measures (VaR, CVaR)
-        \item Focus on downside risk management
-        \item Enhanced robustness to estimation errors
-    \end{itemize}
-\end{enumerate}
-
-\paragraph{Modern Approaches (2000s-Present)}
-Recent developments have focused on addressing classical methods' limitations:
-
-\begin{enumerate}
-    \item \textbf{Robust Optimization}
-    \begin{itemize}
-        \item Accounts for parameter uncertainty
-        \item Provides protection against worst-case scenarios
-        \item Incorporates estimation error in the optimization process
-        \item Yields more stable portfolio allocations
-    \end{itemize}
-
-    \item \textbf{Dynamic Portfolio Optimization}
-    \begin{itemize}
-        \item Considers time-varying investment opportunities
-        \item Incorporates transaction costs
-        \item Accounts for changing market conditions
-        \item Enables adaptive portfolio management
-    \end{itemize}
-
-    \item \textbf{Machine Learning Integration}
-    \begin{itemize}
-        \item Neural networks for return prediction \parencite{heaton2017deep}
-        \item Support vector machines for risk assessment
-        \item Reinforcement learning for portfolio management
-        \item \ac{GP} for uncertainty quantification
-    \end{itemize}
-\end{enumerate}
-
-\paragraph{Current Challenges and Future Directions}
-Modern portfolio optimization faces several challenges:
-
-\begin{enumerate}
-    \item \textbf{Data Quality and Quantity}
-    \begin{itemize}
-        \item High-dimensional data processing
-        \item Non-stationary market conditions
-        \item Alternative data integration
-        \item Real-time data processing requirements
-    \end{itemize}
-
-    \item \textbf{Model Complexity}
-    \begin{itemize}
-        \item Balance between model sophistication and robustness
-        \item Computational efficiency
-        \item Interpretability of results
-        \item Parameter stability
-    \end{itemize}
-
-    \item \textbf{Implementation Challenges}
-    \begin{itemize}
-        \item Transaction costs
-        \item Market impact
-        \item Regulatory constraints
-        \item Operational considerations
-    \end{itemize}
-\end{enumerate}
-
-The field continues to evolve with emerging technologies and methodologies:
-
-\begin{enumerate}
-    \item \textbf{Artificial Intelligence Applications}
-    \begin{itemize}
-        \item Deep learning for market prediction
-        \item Natural language processing for sentiment analysis
-        \item Alternative data processing
-        \item Automated portfolio rebalancing
-    \end{itemize}
-
-    \item \textbf{Advanced Risk Management}
-    \begin{itemize}
-        \item Tail risk hedging
-        \item Dynamic risk allocation
-        \item Scenario analysis
-        \item Real-time risk monitoring
-    \end{itemize}
-
-    \item \textbf{Sustainability Integration}
-    \begin{itemize}
-        \item ESG factors in optimization
-        \item Climate risk consideration
-        \item Impact investing metrics
-        \item Sustainable portfolio construction
-    \end{itemize}
-\end{enumerate}
-
-This evolution of portfolio optimization techniques sets the stage for our research, which builds upon these foundations while incorporating modern machine learning approaches, specifically Gaussian Process Regression, to address current challenges in portfolio optimization.
-
+Through these objectives, the study seeks to contribute to the field of predictive portfolio optimization by presenting a robust and practical approach to integrating advanced forecasting methods into asset management.
 
 \subsection{Role of machine learning in financial forecasting}
 \ac{ML} has gained significant traction in financial markets due to its ability to analyze vast amounts of data and identify complex patterns that traditional models may overlook.
@@ -202,31 +73,11 @@ A fundamental limitation of these traditional approaches is their rigidity in ha
 
 Conventional approaches to financial time-series forecasting exhibit several limitations:
 
-\begin{enumerate}
-    \item \textbf{Point Estimates}
-    \begin{itemize}
-        \item Traditional methods often provide single-point forecasts
-        \item Lack of uncertainty quantification
-        \item Limited ability to capture prediction confidence
-        \item Insufficient information for risk management
-    \end{itemize}
+Traditional methods often provide single-point forecasts, which lack uncertainty quantification and have limited ability to capture prediction confidence. This results in insufficient information for risk management.
 
-    \item \textbf{Model Rigidity}
-    \begin{itemize}
-        \item Assumption of specific probability distributions
-        \item Difficulty in capturing non-linear relationships
-        \item Limited adaptation to changing market conditions
-        \item Oversimplification of complex market dynamics
-    \end{itemize}
+Model rigidity is another issue, as it involves the assumption of specific probability distributions, difficulty in capturing non-linear relationships, limited adaptation to changing market conditions, and oversimplification of complex market dynamics.
 
-    \item \textbf{Data Requirements}
-    \begin{itemize}
-        \item Need for large historical datasets
-        \item Sensitivity to outliers and noise
-        \item Challenge of incorporating multiple data sources
-        \item Difficulty in handling missing data
-    \end{itemize}
-\end{enumerate}
+Data requirements pose additional challenges, including the need for large historical datasets, sensitivity to outliers and noise, the challenge of incorporating multiple data sources, and difficulty in handling missing data.
 
 \paragraph{Advantages of Gaussian Process Regression}
 Our research proposes \ac{GPR} as a solution to these challenges, offering several key advantages:
@@ -283,91 +134,9 @@ Furthermore, \ac{GPR}'s non-parametric nature frees it from restrictive assumpti
 The \ac{GPR} framework transforms the traditional portfolio optimization problem by:
 The integration of \ac{GPR} into portfolio optimization transforms the traditional \ac{MPT} framework by providing more reliable and dynamic parameter estimates. By directly modeling the uncertainty in our predictions, we can make more informed portfolio allocation decisions that account for both expected returns and our confidence in those expectations. This approach naturally leads to more robust portfolios that adapt to changing market conditions while maintaining a principled approach to risk management.
 
-The significance of this advancement cannot be overstated. By addressing one of the fundamental criticisms of \ac{MPT} – the difficulty of accurately estimating volatility – our \ac{GPR}-based approach bridges the gap between theoretical elegance and practical applicability. This enhancement makes \ac{MPT} more reliable and useful for real-world portfolio management, where accurate risk assessment is crucial for maintaining stable, long-term investment performance.
+The significance of this advancement cannot be overstated. By addressing one of the fundamental criticisms of \ac{MPT} - the difficulty of accurately estimating volatility - our \ac{GPR}-based approach bridges the gap between theoretical elegance and practical applicability. This enhancement makes \ac{MPT} more reliable and useful for real-world portfolio management, where accurate risk assessment is crucial for maintaining stable, long-term investment performance.
 
 
-\section{Research Objectives}
-The primary objective of this study is to develop a predictive portfolio optimization framework that leverages Gaussian Process Regression (GPR) for time-series forecasting in financial markets. 
-By integrating advanced predictive modeling with strategic asset allocation, the study aims to enhance investment performance through informed decision-making. 
-The specific objectives are as follows:
 
-\begin{enumerate}
-    \item \textbf{Develop and Validate \ac{GPR} Models for Asset Return Prediction}
-    \begin{itemize}
-        \item \emph{Model Construction:} Build individual GPR models to forecast future returns of selected assets, including forex, gold, Bitcoin, and various stocks.
-        \item \emph{Feature Engineering:} Utilize historical one-month returns and time as input features to capture both market dynamics and temporal patterns.
-        \item \emph{Model Updating:} Implement an iterative training process where models are updated daily with new market data to ensure predictions remain current and adaptive.
-    \end{itemize}
-    
-    \item \textbf{Integrate \ac{GPR} Predictions into Portfolio Optimization Strategies}
-    \begin{itemize}
-        \item \emph{Expected Returns and Volatilities:} Extract predicted returns and associated volatilities from the GPR models for use in portfolio construction.
-        \item \emph{Strategy Formulation:} Design multiple optimization strategies---Maximum Return, Minimum Volatility, Maximum Sharpe Ratio, and a Dynamic Strategy---based on the \ac{GPR} outputs.
-    \end{itemize}
-    
-    \item \textbf{Develop a Dynamic Portfolio Optimization Strategy}
-    \begin{itemize}
-        \item \emph{Probabilistic Assessment:} Calculate the probability distribution of next-day cumulative portfolio returns using the predicted normal distribution of asset returns.
-        \item \emph{Threshold-Based Decision Making:} Establish a threshold probability to decide when to reallocate the portfolio for maximizing returns versus holding the current positions.
-        \item \emph{Adaptive Allocation:} Enable the portfolio to adapt dynamically to changing market conditions by selectively applying the Maximum Return Strategy based on probabilistic forecasts.
-    \end{itemize}
-    
-    \item \textbf{Evaluate and Compare the Performance of Optimization Strategies}
-    \begin{itemize}
-        \item \emph{Backtesting Framework:} Conduct backtesting over a historical period using real market data to assess the strategies' performance.
-        \item \emph{Incorporation of Transaction Costs:} Include realistic transaction fees in the evaluation to account for the costs associated with portfolio rebalancing.
-        \item \emph{Performance Metrics:} Measure total returns, portfolio volatility, Sharpe ratios, and transaction costs to provide a comprehensive performance analysis.
-    \end{itemize}
-    
-    \item \textbf{Demonstrate the Effectiveness of the Dynamic Strategy}
-    \begin{itemize}
-        \item \emph{Performance Analysis:} Analyze the results to determine if the Dynamic Strategy achieves higher returns and lower transaction costs compared to traditional strategies.
-        \item \emph{Risk Management:} Assess how the Dynamic Strategy balances the trade-off between pursuing higher returns and minimizing risks and costs.
-        \item \emph{Statistical Significance:} Use statistical methods to verify the significance of the observed performance differences among the strategies.
-    \end{itemize}
-    
-    \item \textbf{Contribute to the Field of Predictive Portfolio Optimization}
-    \begin{itemize}
-        \item \emph{Innovative Approach:} Present a novel integration of GPR-based forecasting with adaptive portfolio optimization strategies.
-        \item \emph{Practical Implications:} Provide insights and recommendations for practitioners on implementing dynamic, data-driven approaches in portfolio management.
-        \item \emph{Foundation for Future Research:} Establish a basis for further exploration into advanced predictive models and adaptive strategies in financial optimization.
-    \end{itemize}
-\end{enumerate}
-
-By achieving these objectives, the study seeks to demonstrate that incorporating sophisticated predictive models like \ac{GPR} into portfolio optimization can significantly enhance investment outcomes. The findings aim to contribute valuable knowledge to the field of quantitative finance, particularly in the areas of time-series forecasting and dynamic asset allocation.
-
-\subsection{Research Contributions}
-
-This study makes several significant contributions to the field of predictive portfolio optimization and quantitative finance. The key research contributions are outlined below:
-
-\begin{enumerate}
-    \item \textbf{Novel Integration of Gaussian Process Regression with Dynamic Portfolio Optimization}
-
-    This research presents a unique integration of \ac{GPR} models with dynamic portfolio optimization strategies. By employing \ac{GPR} for time-series forecasting, we capture complex, non-linear relationships in financial data, enhancing the accuracy of return predictions. The integration facilitates a more responsive and informed portfolio allocation process, adapting to market changes in real-time.
-
-    \item \textbf{Probabilistic Approach to Strategy Selection}
-
-    We introduce a probabilistic framework for strategy selection within the portfolio optimization process. By calculating the probability distribution of future cumulative returns, the Dynamic Strategy makes informed decisions on whether to reallocate the portfolio based on a predefined threshold. This approach incorporates uncertainty and risk directly into the decision-making process, allowing for a more nuanced and adaptive investment strategy.
-
-    \item \textbf{Practical Implementation Considering Transaction Costs}
-
-    The study emphasizes practical applicability by incorporating realistic transaction costs into the optimization and backtesting processes. By accounting for these costs, we provide a more accurate assessment of the strategies' net performance. This consideration is crucial for real-world portfolio management, where transaction fees can significantly impact returns, especially in high-frequency trading environments.
-
-    \item \textbf{Comparative Analysis of Different Optimization Strategies}
-
-    We conduct a comprehensive comparative analysis of multiple portfolio optimization strategies, including Maximum Return, Minimum Volatility, Maximum Sharpe Ratio, and the proposed Dynamic Strategy. By evaluating these strategies under the same conditions and performance metrics, we provide valuable insights into their relative effectiveness. This analysis helps identify the strengths and limitations of each approach, guiding practitioners in selecting appropriate strategies based on their investment goals and risk tolerance.
-
-\end{enumerate}
-
-These contributions collectively advance the understanding of how advanced predictive models and adaptive strategies can be effectively combined to enhance portfolio performance. The novel methodologies and findings offer practical benefits for portfolio managers and lay the groundwork for future research in predictive asset allocation.
-
-
-\begin{figure}[htpb]
-  \centering
-  \begin{tabular}{c}
-  \begin{lstlisting}[language=SQL]
-    SELECT * FROM tbl WHERE tbl.str = "str"
-  \end{lstlisting}
-  \end{tabular}
-  \caption[Example listing]{An example for a source code listing.}
-\end{figure}
+\section{Thesis Structure}
+The thesis is organized as follows: Chapter 2 reviews the relevant literature, covering portfolio optimization theories, Gaussian Process Regression, and the integration of machine learning in finance. Chapter 3 outlines the methodology, detailing the data collection, model development, and strategy design processes. Chapter 4 presents the results of the backtesting framework, comparing the performance of the proposed strategies. Chapter 5 discusses the implications of the findings, addressing practical applications and limitations. Finally, Chapter 6 concludes with a summary of key insights and suggestions for future research.

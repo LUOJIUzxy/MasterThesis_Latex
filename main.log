@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 00:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 DEC 2024 01:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1397,6 +1397,8 @@ Package scrkbase Info: You've told me to use the font selection of the element
 
 ]) (./pages/abstract.tex
 chapter without number
+Package acronym Info: Label `acro:GPR' newly defined as it shall be overridden
+although it is yet undefined on input line 3.
 )
 
 [4
@@ -1416,7 +1418,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 38.
 ]
 
 LaTeX Font Info:    Font shape `T1/pplx/m/sl' in size <10.95> not available
-(Font)              Font shape `T1/pplx/m/it' tried instead on input line 196.
+(Font)              Font shape `T1/pplx/m/it' tried instead on input line 194.
 [6])
 \tf@toc=\write6
 \openout6 = `main.toc'.
@@ -1424,71 +1426,48 @@ LaTeX Font Info:    Font shape `T1/pplx/m/sl' in size <10.95> not available
 
 
 [7] (./chapters/01_introduction.tex
-chapter 1.
-Package acronym Info: Label `acro:MPT' newly defined as it shall be overridden
-although it is yet undefined on input line 15.
-LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 18.
-(/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pplx.fd
-File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
-)
 
 [1
 
+]
+chapter 1.
+
+
+[2
 
 
 ]
-
-[2]
-Package acronym Info: Label `acro:GP' newly defined as it shall be overridden
-although it is yet undefined on input line 93.
+Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
+although it is yet undefined on input line 29.
 
 
 [3]
-Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
-although it is yet undefined on input line 158.
-Package acronym Info: Label `acro:GPR' newly defined as it shall be overridden
-although it is yet undefined on input line 159.
-
+LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 44.
+ (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pplx.fd
+File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
+)
 
 [4]
 Package acronym Info: Label `acro:ARIMA' newly defined as it shall be overridden
-although it is yet undefined on input line 199.
+although it is yet undefined on input line 70.
 
 
 [5]
+Package acronym Info: Label `acro:MPT' newly defined as it shall be overridden
+although it is yet undefined on input line 112.
 
-[6]
+
+[6]) (./chapters/02_Previous Literature.tex
 
 [7]
-
-[8]
-
-[9]
-
-[10] (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 368.
- (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 369.
-) (./chapters/02_Previous Literature.tex
-
-[11{/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
 chapter 2.
 
 
-[12
+[8
 
 
 ]
-<figures/efficient_frontier.png, id=387, 730.8906pt x 441.8106pt>
+<figures/efficient_frontier.png, id=291, 730.8906pt x 441.8106pt>
 File: figures/efficient_frontier.png Graphic file (type png)
 <use figures/efficient_frontier.png>
 Package pdftex.def Info: figures/efficient_frontier.png  used on input line 48.
@@ -1498,30 +1477,30 @@ LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 6
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
 
-[13 <./figures/efficient_frontier.png>]
+[9 <./figures/efficient_frontier.png>]
 
-LaTeX Warning: Citation 'sharpe1966mutual' on page 14 undefined on input line 75.
-
-
-LaTeX Warning: Citation 'rasmussen2006gaussian' on page 14 undefined on input line 100.
+LaTeX Warning: Citation 'sharpe1966mutual' on page 10 undefined on input line 75.
 
 
-
-[14]
-
-[15]
-
-[16]
-
-[17]
-
-LaTeX Warning: Citation 'sezer2020financial' on page 18 undefined on input line 248.
+LaTeX Warning: Citation 'rasmussen2006gaussian' on page 10 undefined on input line 100.
 
 
-LaTeX Warning: Citation 'nevmyvaka2006reinforcement' on page 18 undefined on input line 252.
+
+[10]
+
+[11]
+
+[12]
+
+[13]
+
+LaTeX Warning: Citation 'sezer2020financial' on page 14 undefined on input line 248.
 
 
-LaTeX Warning: Citation 'lessmann2015benchmarking' on page 18 undefined on input line 256.
+LaTeX Warning: Citation 'nevmyvaka2006reinforcement' on page 14 undefined on input line 252.
+
+
+LaTeX Warning: Citation 'lessmann2015benchmarking' on page 14 undefined on input line 256.
 
 
 Overfull \hbox (23.93924pt too wide) in paragraph at lines 256--257
@@ -1530,45 +1509,45 @@ Overfull \hbox (23.93924pt too wide) in paragraph at lines 256--257
 
 
 
-[18]
+[14]
 
-LaTeX Warning: Citation 'phua2010comprehensive' on page 19 undefined on input line 264.
-
-
-LaTeX Warning: Citation 'hagenau2013automated' on page 19 undefined on input line 268.
+LaTeX Warning: Citation 'phua2010comprehensive' on page 15 undefined on input line 264.
 
 
-
-[19]
-
-LaTeX Warning: Citation 'bellman1957dynamic' on page 20 undefined on input line 286.
-
-
-LaTeX Warning: Citation 'merton1969lifetime' on page 20 undefined on input line 294.
-
-
-LaTeX Warning: Citation 'merton1971optimum' on page 20 undefined on input line 298.
-
-
-LaTeX Warning: Citation 'moody1998performance' on page 20 undefined on input line 302.
+LaTeX Warning: Citation 'hagenau2013automated' on page 15 undefined on input line 268.
 
 
 
-[20]
+[15]
 
-LaTeX Warning: Citation 'almahdi2019adaptive' on page 21 undefined on input line 306.
-
-
-LaTeX Warning: Citation 'primbs2009dynamic' on page 21 undefined on input line 310.
+LaTeX Warning: Citation 'bellman1957dynamic' on page 16 undefined on input line 286.
 
 
-LaTeX Warning: Citation 'garleanu2009dynamic' on page 21 undefined on input line 332.
+LaTeX Warning: Citation 'merton1969lifetime' on page 16 undefined on input line 294.
+
+
+LaTeX Warning: Citation 'merton1971optimum' on page 16 undefined on input line 298.
+
+
+LaTeX Warning: Citation 'moody1998performance' on page 16 undefined on input line 302.
 
 
 
-[21]
+[16]
 
-LaTeX Warning: Citation 'ang2002regime' on page 22 undefined on input line 350.
+LaTeX Warning: Citation 'almahdi2019adaptive' on page 17 undefined on input line 306.
+
+
+LaTeX Warning: Citation 'primbs2009dynamic' on page 17 undefined on input line 310.
+
+
+LaTeX Warning: Citation 'garleanu2009dynamic' on page 17 undefined on input line 332.
+
+
+
+[17]
+
+LaTeX Warning: Citation 'ang2002regime' on page 18 undefined on input line 350.
 
 
 Overfull \hbox (26.1626pt too wide) in paragraph at lines 350--351
@@ -1576,23 +1555,23 @@ Overfull \hbox (26.1626pt too wide) in paragraph at lines 350--351
  []
 
 
-LaTeX Warning: Citation 'hamilton1989new' on page 22 undefined on input line 354.
+LaTeX Warning: Citation 'hamilton1989new' on page 18 undefined on input line 354.
 
 
-LaTeX Warning: Citation 'huang2019building' on page 22 undefined on input line 358.
+LaTeX Warning: Citation 'huang2019building' on page 18 undefined on input line 358.
 
 
-LaTeX Warning: Citation 'poterba2000portfolio' on page 22 undefined on input line 362.
+LaTeX Warning: Citation 'poterba2000portfolio' on page 18 undefined on input line 362.
 
 
 
-[22]
+[18]
 
-LaTeX Warning: Citation 'fernandez2018machine' on page 23 undefined on input line 376.
+LaTeX Warning: Citation 'fernandez2018machine' on page 19 undefined on input line 376.
 
 ) (./chapters/03_Methodology.tex
 
-[23]
+[19]
 chapter 3.
 Package acronym Info: Label `acro:MSFT' newly defined as it shall be overridden
 although it is yet undefined on input line 11.
@@ -1606,58 +1585,78 @@ Package acronym Info: Label `acro:JPM' newly defined as it shall be overridden
 although it is yet undefined on input line 11.
 
 
-[24
+[20
 
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 23.
+ (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
-[25]
 
-[26]
+[21{/Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
 
-[27]
+[22]
 
-[28]
+[23]
+
+[24]
 Overfull \hbox (12.89946pt too wide) in paragraph at lines 173--173
 []\T1/lmtt/m/n/10.95 https://eodhd.com/api/eod/{ticker}.US?period={period}&api_token={api_token}[] 
  []
 
 
 
-[29]
+[25]
 Overfull \hbox (7.15073pt too wide) in paragraph at lines 179--179
 []\T1/lmtt/m/n/10.95 https://eodhd.com/api/eod/BTC-USD.CC?period={period}&api_token={api_token}[] 
  []
 
 
 
-[30]
+[26]
 
-[31]
-<figures/predicted_MSFT_with_removed.png, id=639, 875.4306pt x 441.8106pt>
+[27]
+<figures/predicted_MSFT_with_removed.png, id=546, 875.4306pt x 441.8106pt>
 File: figures/predicted_MSFT_with_removed.png Graphic file (type png)
 <use figures/predicted_MSFT_with_removed.png>
 Package pdftex.def Info: figures/predicted_MSFT_with_removed.png  used on input line 257.
 (pdftex.def)             Requested size: 250.95587pt x 126.65215pt.
 
 
-[32]
+[28]
 
-[33 <./figures/predicted_MSFT_with_removed.png>]
+[29 <./figures/predicted_MSFT_with_removed.png>]
 
-[34] (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
+[30] (/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 310.
+
 Overfull \hbox (50.10371pt too wide) in paragraph at lines 314--315
 []\T1/pplx/m/n/10.95 (-20) In this code, \T1/lmtt/m/n/10.95 df['close'] \T1/pplx/m/n/10.95 (-20) rep-re-sents the orig-i-nal clos-ing price data, and \T1/lmtt/m/n/10.95 df['filtered_close']
  []
 
 
 
-[35]
+[31]
 Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
 although it is yet undefined on input line 358.
 
+
+[32]
+
+[33]
+
+[34]
+
+[35]
 
 [36]
 
@@ -1690,211 +1689,215 @@ although it is yet undefined on input line 358.
 [50]
 
 [51]
-
-[52]
-
-[53]
-
-[54]
-
-[55]
 Overfull \hbox (1.53954pt too wide) in paragraph at lines 1017--1018
 \T1/pplx/m/n/10.95 (-20) dicted volatil-i-ties (\T1/lmtt/m/n/10.95 predicted_volatilities\T1/pplx/m/n/10.95 (-20) ), and the op-ti-mized port-fo-lio weights
  []
 
 
 
-[56]
+[52]
 
-[57]) (./chapters/04_Results&Analysis.tex
+[53]) (./chapters/04_Results&Analysis.tex
 
-[58]
+[54]
 chapter 4.
 
 
-[59
+[55
 
 
 ]
-<figures/prediction_comparison.png, id=933, 730.8906pt x 441.8106pt>
+<figures/prediction_comparison.png, id=840, 730.8906pt x 441.8106pt>
 File: figures/prediction_comparison.png Graphic file (type png)
 <use figures/prediction_comparison.png>
 Package pdftex.def Info: figures/prediction_comparison.png  used on input line 46.
 (pdftex.def)             Requested size: 334.60571pt x 202.26456pt.
 
 
-[60 <./figures/prediction_comparison.png>]
+[56 <./figures/prediction_comparison.png>]
+
+[57]
+
+[58]
+
+[59]
+
+[60]
+Overfull \hbox (9.1211pt too wide) in paragraph at lines 206--218
+ [][] 
+ []
+
+
 
 [61]
+<figures/asset_allocations_constant.png, id=895, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_constant.png Graphic file (type png)
+<use figures/asset_allocations_constant.png>
+Package pdftex.def Info: figures/asset_allocations_constant.png  used on input line 236.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
+<figures/asset_allocations_max_return.png, id=896, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_max_return.png Graphic file (type png)
+<use figures/asset_allocations_max_return.png>
+Package pdftex.def Info: figures/asset_allocations_max_return.png  used on input line 237.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
+<figures/asset_allocations_min_volatility.png, id=897, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_min_volatility.png Graphic file (type png)
+<use figures/asset_allocations_min_volatility.png>
+Package pdftex.def Info: figures/asset_allocations_min_volatility.png  used on input line 238.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
+<figures/asset_allocations_sharpe.png, id=898, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_sharpe.png Graphic file (type png)
+<use figures/asset_allocations_sharpe.png>
+Package pdftex.def Info: figures/asset_allocations_sharpe.png  used on input line 239.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
+<figures/asset_allocations_dynamic.png, id=899, 1518.8745pt x 297.2706pt>
+File: figures/asset_allocations_dynamic.png Graphic file (type png)
+<use figures/asset_allocations_dynamic.png>
+Package pdftex.def Info: figures/asset_allocations_dynamic.png  used on input line 240.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
 
-[62]
 
-[63]
+[62 <./figures/asset_allocations_constant.png> <./figures/asset_allocations_max_return.png> <./figures/asset_allocations_min_volatility.png> <./figures/asset_allocations_sharpe.png> <./figures/asset_allocations_dynamic.png>]
+<figures/portfolio_comparison_final_non.png, id=910, 730.8906pt x 514.0806pt>
+File: figures/portfolio_comparison_final_non.png Graphic file (type png)
+<use figures/portfolio_comparison_final_non.png>
+Package pdftex.def Info: figures/portfolio_comparison_final_non.png  used on input line 249.
+(pdftex.def)             Requested size: 250.95587pt x 176.51082pt.
+<figures/trx_costs_comparison_final_non.png, id=911, 730.8906pt x 514.0806pt>
+File: figures/trx_costs_comparison_final_non.png Graphic file (type png)
+<use figures/trx_costs_comparison_final_non.png>
+Package pdftex.def Info: figures/trx_costs_comparison_final_non.png  used on input line 262.
+(pdftex.def)             Requested size: 250.95587pt x 176.51082pt.
 
-[64]
-./chapters/04_Results&Analysis.tex:208: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.208 ...f{Min Volatility} & \textbf{Max Sharpe} &
-                                                   \textbf \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
 
-./chapters/04_Results&Analysis.tex:208: Missing } inserted.
-<inserted text> 
-                }
-l.208 ...ility} & \textbf{Max Sharpe} & \textbf \\
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+[63 <./figures/portfolio_comparison_final_non.png>]
+<figures/iterative/asset_allocations_constant.png, id=920, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_constant.png Graphic file (type png)
+<use figures/iterative/asset_allocations_constant.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_constant.png  used on input line 278.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
+<figures/iterative/asset_allocations_max_return.png, id=921, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_max_return.png Graphic file (type png)
+<use figures/iterative/asset_allocations_max_return.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_max_return.png  used on input line 279.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
+<figures/iterative/asset_allocations_min_volatility.png, id=922, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_min_volatility.png Graphic file (type png)
+<use figures/iterative/asset_allocations_min_volatility.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_min_volatility.png  used on input line 280.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
+<figures/iterative/asset_allocations_sharpe.png, id=923, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_sharpe.png Graphic file (type png)
+<use figures/iterative/asset_allocations_sharpe.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_sharpe.png  used on input line 281.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
+<figures/iterative/asset_allocations_dynamic.png, id=924, 1518.8745pt x 297.2706pt>
+File: figures/iterative/asset_allocations_dynamic.png Graphic file (type png)
+<use figures/iterative/asset_allocations_dynamic.png>
+Package pdftex.def Info: figures/iterative/asset_allocations_dynamic.png  used on input line 282.
+(pdftex.def)             Requested size: 250.95587pt x 49.11557pt.
+<figures/portfolio_comparison_final.png, id=925, 730.8906pt x 514.0806pt>
+File: figures/portfolio_comparison_final.png Graphic file (type png)
+<use figures/portfolio_comparison_final.png>
+Package pdftex.def Info: figures/portfolio_comparison_final.png  used on input line 288.
+(pdftex.def)             Requested size: 250.95587pt x 176.51082pt.
+<figures/trx_costs_comparison_final.png, id=926, 730.8906pt x 514.0806pt>
+File: figures/trx_costs_comparison_final.png Graphic file (type png)
+<use figures/trx_costs_comparison_final.png>
+Package pdftex.def Info: figures/trx_costs_comparison_final.png  used on input line 296.
+(pdftex.def)             Requested size: 250.95587pt x 176.51082pt.
 
-./chapters/04_Results&Analysis.tex:209: Misplaced \noalign.
-\midrule ->\noalign 
-                    {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global \@...
-l.209 \midrule
-              
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
 
-./chapters/04_Results&Analysis.tex:210: Misplaced alignment tab character &.
-l.210 5  &
-           34.8847 & 15.8594 & GPR \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[64 <./figures/trx_costs_comparison_final_non.png>]
 
-./chapters/04_Results&Analysis.tex:210: Misplaced alignment tab character &.
-l.210 5  & 34.8847 &
-                     15.8594 & GPR \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[65 <./figures/iterative/asset_allocations_constant.png> <./figures/iterative/asset_allocations_max_return.png> <./figures/iterative/asset_allocations_min_volatility.png> <./figures/iterative/asset_allocations_sharpe.png> <./figures/iterative/asset_allocations_dynamic.png> <./figures/portfolio_comparison_final.png>]) (./chapters/05_Discussion.tex
 
-./chapters/04_Results&Analysis.tex:210: Misplaced alignment tab character &.
-l.210 5  & 34.8847 & 15.8594 &
-                               GPR \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[66 <./figures/trx_costs_comparison_final.png>]
+chapter 5.
 
-./chapters/04_Results&Analysis.tex:211: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{}\fi \cr 
-                                  
-l.211 1
-       0 & 45.7229 & 39.1529 & GPR \\
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-./chapters/04_Results&Analysis.tex:211: Misplaced alignment tab character &.
-l.211 10 &
-           45.7229 & 39.1529 & GPR \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[67
 
-./chapters/04_Results&Analysis.tex:211: Misplaced alignment tab character &.
-l.211 10 & 45.7229 &
-                     39.1529 & GPR \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-./chapters/04_Results&Analysis.tex:211: Misplaced alignment tab character &.
-l.211 10 & 45.7229 & 39.1529 &
-                               GPR \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+]
 
-./chapters/04_Results&Analysis.tex:212: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{}\fi \cr 
-                                  
-l.212 1
-       3 & 47.0780 & 58.2299 & ARIMA \\
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[68]
 
-./chapters/04_Results&Analysis.tex:212: Misplaced alignment tab character &.
-l.212 13 &
-           47.0780 & 58.2299 & ARIMA \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[69]
 
-./chapters/04_Results&Analysis.tex:212: Misplaced alignment tab character &.
-l.212 13 & 47.0780 &
-                     58.2299 & ARIMA \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[70]
 
-./chapters/04_Results&Analysis.tex:212: Misplaced alignment tab character &.
-l.212 13 & 47.0780 & 58.2299 &
-                               ARIMA \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[71])
 
-./chapters/04_Results&Analysis.tex:213: Misplaced \cr.
-\reserved@c ->\ifnum 0=`{}\fi \cr 
-                                  
-l.213 2
-       0 & 78.4795 & 98.9632 & ARIMA \\
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[72]
+chapter without number
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 60.
+(/Users/xiyuezhang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
-./chapters/04_Results&Analysis.tex:213: Misplaced alignment tab character &.
-l.213 20 &
-           78.4795 & 98.9632 & ARIMA \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-./chapters/04_Results&Analysis.tex:213: Misplaced alignment tab character &.
-l.213 20 & 78.4795 &
-                     98.9632 & ARIMA \\
-I can't figure out why you would want to use a tab mark
-here. If you just
+[73
+
+
+]
+Package tocbasic Info: character protrusion at lof deactivated on input line 87.
+ (./main.lof)
+\tf@lof=\write7
+\openout7 = `main.lof'.
+
+
+
+[74
+
+
+]
+Package tocbasic Info: character protrusion at lot deactivated on input line 88.
+ (./main.lot)
+\tf@lot=\write8
+\openout8 = `main.lot'.
+
+
+
+[75
+
+
+]
+chapter without number
+No complaints by nag.
+
+
+[76
+
+
+] (./main.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-09-10>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 52610 strings out of 475496
+ 1167427 string characters out of 5775029
+ 2271637 words of memory out of 5000000
+ 73357 multiletter control sequences out of 15000+600000
+ 639647 words of font info for 499 fonts, out of 8000000 for 9000
+ 38 hyphenation exceptions out of 8191
+ 111i,13n,124p,10966b,2437s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmb.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmbi.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/xiyuezhang/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (84 pages, 3456200 bytes).
+PDF statistics:
+ 1456 PDF objects out of 1728 (max. 8388607)
+ 1293 compressed objects within 13 object streams
+ 544 named destinations out of 1000 (max. 500000)
+ 99034 words of extra memory for PDF output out of 106986 (max. 10000000)
+
