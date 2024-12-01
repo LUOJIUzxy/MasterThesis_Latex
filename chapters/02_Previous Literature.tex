@@ -194,9 +194,28 @@ where:
     \item $\mathbf{y}$ is the vector of training targets.
 \end{itemize}
 
-\paragraph{Advantages of GPR in Financial Modeling}
+\paragraph{Risk Measurement by GPR in Financial Modeling}
 
-Gaussian Process Regression (GPR) offers numerous benefits for financial time-series forecasting, making it a compelling choice for portfolio optimization applications. Its non-parametric nature allows it to model complex, non-linear relationships without assuming a specific functional form, a critical advantage given the inherent intricacies of financial markets. Additionally, GPR provides a natural framework for uncertainty quantification, delivering probabilistic predictions accompanied by confidence intervals. These intervals are particularly valuable in risk-sensitive environments, as they enable a deeper understanding of prediction reliability. The Bayesian foundation of GPR further enhances its utility, as it can naturally incorporate prior knowledge and refine its predictions as new data becomes available. This adaptability makes GPR well-suited to the dynamic and evolving nature of financial data.
+Specifically, compared to other \ac{ML} methods, \ac{GPR} provides a natural framework for uncertainty quantification, delivering probabilistic predictions accompanied by confidence intervals. 
+These intervals are particularly valuable in risk-sensitive environments, as they enable a deeper understanding of prediction reliability. Figure
+The Bayesian foundation of GPR further enhances its utility, as it can naturally incorporate prior knowledge and refine its predictions as new data becomes available. This adaptability makes GPR well-suited to the dynamic and evolving nature of financial data.
+
+In Figure \ref{fig:gpr_predictions_MSFT_price}, and Figure \ref{fig:gpr_predictions_HLT_price}, we can see that the GPR model provides predictions for future stock prices along with confidence intervals. 
+These confidence intervals represent the uncertainty associated with the predictions and can guide investors in assessing the reliability of the forecasts. By incorporating uncertainty estimates, GPR enables a more nuanced understanding of the potential outcomes, allowing investors to make informed decisions based on both the expected returns and the associated risks.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/future_predictions_MSFT.png}
+    \caption{GPR Price Predictions with Confidence Intervals MSFT}
+    \label{fig:gpr_predictions_MSFT_price}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/future_predictions_HLT.png}
+    \caption{GPR Price Predictions with Confidence Intervals HLT}
+    \label{fig:gpr_predictions_HLT_price}
+\end{figure}
 
 \subsubsection{Challenges in Applying GPR to Finance}
 Despite its strengths, \ac{GPR} encounters several challenges when applied to the financial domain. A significant limitation is its computational complexity, particularly the need to invert an $n \times n$ matrix, which becomes increasingly burdensome as dataset size grows. This issue can limit the scalability of \ac{GPR} in large-scale applications. 
@@ -204,6 +223,24 @@ Another obstacle is the non-stationarity of financial time-series data, which of
 Additionally, financial datasets are characterized by high noise levels and volatility, which can adversely impact the performance and stability of \ac{GPR} models. 
 Finally, the selection and tuning of kernel functions and hyperparameters play a pivotal role in \ac{GPR}'s effectiveness. This process is not only technically demanding but also requires a nuanced understanding of the data and the underlying financial context.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/future_predictions_HLT_return.png}
+    \caption{GPR Return Predictions with Confidence Intervals HLT}
+    \label{fig:gpr_predictions_HLT}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/future_predictions_MSFT_return.png}
+    \caption{GPR Return Predictions with Confidence Intervals MSFT}
+    \label{fig:gpr_predictions_MSFT}
+\end{figure}
+
+Thus, other than predicting daily open/close prices, GPR can be used to predict the future daily returns of a stock. This can be done by training the model on historical data and then using it to predict future returns. The model can provide not only the expected return but also the uncertainty associated with the prediction. This uncertainty can be used to make more informed investment decisions, especially in risk-sensitive environments like finance.
+
+From Figure \ref{fig:gpr_predictions_HLT} and Figure \ref{fig:gpr_predictions_MSFT}, compared with above images we can see that the predictions for stock returns by GPR model along with confidence intervals. When predicting returns, the model can capture the non-linear relationships between input features and target returns better in time-series forecasting. Therefore, the model is much more sure about the predictions, and the confidence intervals are intensively narrower.
+These confidence intervals represent the uncertainty associated with the predictions and can guide investors in assessing the reliability of the forecasts. By incorporating uncertainty estimates, GPR enables a more nuanced understanding of the potential outcomes, allowing investors to make informed decisions based on both the expected returns and the associated risks.
 \subsection{Integrating Portfolio Optimization and \ac{GPR}}
 
 Combining portfolio optimization with GPR-based forecasting aims to leverage accurate predictions of asset returns and associated uncertainties to make informed allocation decisions. The integration involves:
@@ -217,8 +254,6 @@ Dynamic optimization involves updating the portfolio allocation as new informati
 
 The theoretical foundation provided by portfolio optimization theory and Gaussian Process Regression is critical for developing the predictive portfolio optimization framework. Understanding the principles, advantages, and limitations of these theories allows for effective integration and application in financial modeling and asset allocation.
 
-
-\section{Risk measures and portfolio optimization}
 
 \section{Machine Learning in Financial Markets}
 
