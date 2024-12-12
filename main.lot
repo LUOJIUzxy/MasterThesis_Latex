@@ -2,11 +2,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Types of Transaction Costs}}{18}{table.caption.83}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Mean Squared Error (MSE) Comparison between GPR and ARIMA Models, Days include only Market Opening Days}}{29}{table.caption.123}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Entropy Comparison for Selected Stocks}}{29}{table.caption.124}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Mean Squared Error (MSE) Comparison between GPR and ARIMA Models, Days include only Market Opening Days}}{62}{table.caption.248}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Predicted Portfolio Performance v.s. Actual Backtesting Results}}{67}{table.caption.267}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Mean Squared Error (MSE) Comparison between GPR and ARIMA Models, Days include only Market Opening Days}}{66}{table.caption.262}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Predicted Portfolio Performance v.s. Actual Backtesting Results}}{71}{table.caption.281}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

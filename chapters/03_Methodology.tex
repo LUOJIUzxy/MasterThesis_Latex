@@ -214,7 +214,7 @@ Furthermore, WPE and DE provide more informative and sensitive complexity measur
 
 \begin{table}[htbp]
 \centering
-\caption{Mean Squared Error (MSE) Comparison between GPR and ARIMA Models, Days include only Market Opening Days}
+\caption{Entropy Comparison for Selected Stocks}
 \label{tab:mse_comparison}
 \begin{tabular}{c|ccccc}
 \toprule
@@ -474,9 +474,43 @@ The model combines features from a diverse set of assets and economic indicators
 
 \subsubsection{Input Data and Feature Selection}
 
-The input features for the GPR model were selected based on their correlation with the target stock. For each feature, we calculated the correlation between the feature's historical returns and the target stock's returns. Only features with an absolute correlation exceeding a predefined threshold were included in the model to ensure relevance and reduce noise in the predictions. This approach prioritizes the most influential economic factors while discarding irrelevant or weakly correlated inputs.
+As shown in \ref{fig:feature_selection}, the input features for the GPR model were selected based on their correlation with the target stock. For each feature, we calculated the correlation between the feature's historical returns and the target stock's returns. Only features with an absolute correlation exceeding a predefined threshold were included in the model to ensure relevance and reduce noise in the predictions. This approach prioritizes the most influential economic factors while discarding irrelevant or weakly correlated inputs.
 
 The final input matrix was constructed by concatenating the selected features along with time as an additional dimension. By including time, the model accounts for temporal trends and seasonality in the data, further improving its predictive capabilities.
+
+
+\begin{figure}[htbp]
+\centering
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=2.5cm, auto, >=latex']
+    % Define block styles
+    \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=gray!10]
+    \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!10]
+    \tikzstyle{decision} = [diamond, aspect=2, text centered, draw=black, fill=green!10]
+    \tikzstyle{arrow} = [thick,->,>=stealth]
+
+    % Nodes
+    \node [startstop] (start) {Start};
+    \node [process, below of=start, node distance=2.5cm, align=center] (calc_corr) {Calculate Correlation \\ Between Features \\ and Target Stock};
+    \node [decision, below of=calc_corr, node distance=3cm, align=center] (check_corr) {Correlation \\ Above Threshold?};
+    \node [process, right of=check_corr, node distance=5cm, align=center] (include_feature) {Include Feature};
+    \node [process, left of=check_corr, node distance=5cm, align=center] (discard_feature) {Discard Feature};
+    \node [process, below of=check_corr, node distance=3.5cm, align=center] (build_matrix) {Construct Input Matrix \\ with Selected Features \\ and Time Dimension};
+    \node [startstop, below of=build_matrix, node distance=3cm, align=center] (end) {End};
+
+    % Paths
+    \draw [arrow] (start) -- (calc_corr);
+    \draw [arrow] (calc_corr) -- (check_corr);
+    \draw [arrow] (check_corr.east) -- node[above] {Yes} (include_feature.west);
+    \draw [arrow] (check_corr.west) -- node[above] {No} (discard_feature.east);
+    \draw [arrow] (include_feature.south) |- (build_matrix.east);
+    \draw [arrow] (discard_feature.south) |- (build_matrix.west);
+    \draw [arrow] (build_matrix) -- (end);
+\end{tikzpicture}
+}
+\caption{Flowchart for Feature Selection in the GPR Model}
+\label{fig:feature_selection}
+\end{figure}
 
 Below is an example of Auto-select Assets correlation > threshold 0.30
 
@@ -677,12 +711,14 @@ The optimization problem is:
 
 \[
 \begin{aligned}
-\min_{\mathbf{w}} & \quad -\mathbf{w}^\top \boldsymbol{\mu} + \mathcal{R}(\mathbf{w}) \\
-\text{subject to} & \quad \sqrt{\mathbf{w}^\top \Sigma \mathbf{w}} \leq \sigma_{\text{max}} \\
-& \quad \sum_{i=1}^n w_i = 1 \\
-& \quad w_i \geq 0, \quad \forall i \in \{1, \dots, n\}
+    & \max_{\mathbf{w}} \quad \mathbf{w}^\top \boldsymbol{\mu} - \text{TC}(\mathbf{w}) \\
+    \text{subject to} \quad 
+    & \sqrt{\mathbf{w}^\top \Sigma \mathbf{w}} \leq \sigma_{\text{min}}, \\
+    & \sum_{i=1}^n w_i = 1, \\
+    & w_i \geq 0, \quad \forall i \in \{1, \dots, n\},
 \end{aligned}
 \]
+
 
 \paragraph{Objective Function}
 
@@ -759,6 +795,111 @@ In our implementation:
 \end{itemize}
 
 By formulating the strategy in this manner, the model seeks the optimal balance between maximizing returns and controlling for risk and costs, resulting in a robust and practical portfolio optimization solution.
+
+
+\subsubsection{Minimum Variance Strategy Formulation}
+
+The minimum variance strategy aims to construct a portfolio that minimizes overall risk while adhering to certain investment constraints. This strategy is particularly suitable for risk-averse investors, as it focuses on reducing portfolio volatility without necessarily maximizing returns. The optimization problem is formulated based on the given code snippet and can be expressed mathematically as follows.
+
+Let:
+
+\begin{itemize}
+    \item \( \mathbf{w} \in \mathbb{R}^n \) be the vector of portfolio weights for \( n \) assets.
+    \item \( \Sigma \in \mathbb{R}^{n \times n} \) be the covariance matrix of asset returns.
+    \item \( \boldsymbol{\mu} \in \mathbb{R}^n \) be the vector of expected returns for each asset.
+    \item \( \mathcal{R}(\mathbf{w}) \) be the regularization penalty function, which may include L1/L2 penalties and transaction costs.
+    \item \( R_{\text{min}} \) be the minimum required portfolio return.
+\end{itemize}
+
+The optimization problem is:
+
+\[
+\begin{aligned}
+    & \min_{\mathbf{w}} \quad \mathbf{w}^\top \Sigma \mathbf{w} + \mathcal{R}(\mathbf{w}) \\
+    \text{subject to} \quad 
+    & \mathbf{w}^\top \boldsymbol{\mu} \geq R_{\text{min}}, \\
+    & \sum_{i=1}^n w_i = 1, \\
+    & w_i \geq 0, \quad \forall i \in \{1, \dots, n\}.
+\end{aligned}
+\]
+
+\paragraph{Objective Function}
+
+The objective function consists of two components:
+
+\begin{enumerate}
+    \item \textbf{Portfolio Variance}: \( \mathbf{w}^\top \Sigma \mathbf{w} \), which represents the total risk of the portfolio based on the covariance matrix of asset returns.
+    \item \textbf{Regularization Penalty}: \( \mathcal{R}(\mathbf{w}) \), which accounts for practical considerations such as sparsity (L1 regularization), preventing extreme weights (L2 regularization), and minimizing transaction costs.
+\end{enumerate}
+
+By minimizing the portfolio variance, the strategy ensures that the overall risk is reduced while satisfying the required constraints.
+
+\paragraph{Constraints}
+
+The constraints ensure that:
+
+\begin{itemize}
+    \item \textbf{Return Constraint}: The portfolio's expected return meets or exceeds the minimum required return \( R_{\text{min}} \):
+
+    \[
+    \mathbf{w}^\top \boldsymbol{\mu} \geq R_{\text{min}}
+    \]
+
+    \item \textbf{Full Investment Constraint}: The sum of the portfolio weights equals 1:
+
+    \[
+    \sum_{i=1}^n w_i = 1
+    \]
+
+    \item \textbf{No Short-Selling Constraint}: All portfolio weights are non-negative:
+
+    \[
+    w_i \geq 0, \quad \forall i
+    \]
+\end{itemize}
+
+\paragraph{Regularization Penalty}
+
+The regularization penalty \( \mathcal{R}(\mathbf{w}) \) can be detailed as:
+
+\[
+\mathcal{R}(\mathbf{w}) = \lambda_1 \|\mathbf{w}\|_1 + \lambda_2 \|\mathbf{w}\|_2^2 + \gamma \sum_{i=1}^n |w_i - w_i^{\text{prev}}|
+\]
+
+where:
+
+\begin{itemize}
+    \item \( \|\mathbf{w}\|_1 = \sum_{i=1}^n |w_i| \) is the L1 norm, encouraging sparse portfolio weights.
+    \item \( \|\mathbf{w}\|_2^2 = \sum_{i=1}^n w_i^2 \) is the squared L2 norm, discouraging extreme weight allocations.
+    \item \( w_i^{\text{prev}} \) is the previous weight of asset \( i \), accounting for transaction costs in rebalancing.
+    \item \( \lambda_1, \lambda_2, \gamma \geq 0 \) are hyperparameters controlling the influence of each penalty term.
+\end{itemize}
+
+\paragraph{Optimization Method}
+
+The optimization problem is solved using the Sequential Least Squares Programming (SLSQP) algorithm, which efficiently handles nonlinear objectives and constraints. The solver minimizes the portfolio variance while ensuring that the constraints are satisfied:
+
+\[
+\text{Result} = \arg\min_{\mathbf{w}} \left( \mathbf{w}^\top \Sigma \mathbf{w} + \mathcal{R}(\mathbf{w}) \right)
+\]
+
+\[
+\text{subject to constraints}
+\]
+
+\paragraph{Implementation Notes}
+
+In our implementation:
+
+\begin{itemize}
+    \item The function \texttt{variance\_objective} computes the portfolio variance.
+    \item The \texttt{minimize\_volatility} method sets up the optimization problem, including return and full-investment constraints.
+    \item Regularization penalties are incorporated through the \texttt{total\_penalty} function, ensuring practical applicability.
+\end{itemize}
+
+By formulating the strategy in this manner, the model achieves an optimal balance between minimizing portfolio risk and satisfying practical constraints, making it an effective tool for risk-averse portfolio optimization.
+
+
 
 
 \subsubsection{Maximum Sharpe Ratio Optimization}
@@ -870,6 +1011,7 @@ In our implementation:
 \end{itemize}
 
 By formulating the strategy in this manner, the model seeks to maximize the portfolio's risk-adjusted return while controlling for risk and costs, resulting in an efficient and practical portfolio optimization solution.
+
 
 
 \subsection{Dynamic Strategy}

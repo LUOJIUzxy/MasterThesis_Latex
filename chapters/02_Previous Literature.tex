@@ -119,7 +119,9 @@ The covariance function $k(\mathbf{x}, \mathbf{x}')$ defines the covariance betw
     k(\mathbf{x}, \mathbf{x}') = E\left[ (f(\mathbf{x}) - m(\mathbf{x}))(f(\mathbf{x}') - m(\mathbf{x}')) \right].
 \end{equation}
 
-Common choices for the covariance function include the squared exponential kernel and the Matérn kernel.
+Common choices for the covariance function include the squared exponential kernel and the Matérn kernel. 
+In our context, the exponential kernel is often used for its smoothness and flexibility in capturing complex patterns, and based on our experiments, it has shown promising results in financial time-series forecasting.
+So we will use the exponential kernel in our GPR model.
 
 \subsubsection{Gaussian Process Regression for Time-Series Forecasting}
 
@@ -170,7 +172,15 @@ The choice of kernel function $k(\mathbf{x}, \mathbf{x}')$ is critical in GPR as
 
     where $\nu$ controls the smoothness, $\Gamma$ is the gamma function, and $K_\nu$ is the modified Bessel function.
 
+    \item \textit{Exponential Kernel}:
+
+    \begin{equation}
+        k_{\text{Exp}}(\mathbf{x}, \mathbf{x}') = \sigma_f^2 \exp\left( -\frac{||\mathbf{x} - \mathbf{x}'||}{\ell} \right),
+    \end{equation}
+
+    where $\sigma_f^2$ is the signal variance and $\ell$ is the length-scale parameter. This kernel is often used for modeling non-smooth functions.
 \end{itemize}
+
 
 \subsubsection{Gaussian Process Regression for Time-Series Forecasting}
 
@@ -226,7 +236,7 @@ These confidence intervals represent the uncertainty associated with the predict
 \end{figure}
 
 \subsubsection{Challenges in Applying GPR to Finance}
-Despite its strengths, \ac{GPR} encounters several challenges when applied to the financial domain. A significant limitation is its computational complexity, particularly the need to invert an $n \times n$ matrix, which becomes increasingly burdensome as dataset size grows \cite{williams2006gaussian, quinonero2005unifying}. This issue can limit the scalability of \ac{GPR} in large-scale applications.
+Despite its strengths, \ac{GPR} encounters several challenges when applied to the financial domain. A significant limitation is its computational complexity, particularly the need to invert an $n \times n$ matrix, which becomes increasingly burdensome as dataset size grows \cite{rasmussen2006gaussian, quinonero2005unifying}. This issue can limit the scalability of \ac{GPR} in large-scale applications.
 Another obstacle is the non-stationarity of financial time-series data, which often violates the assumptions of standard \ac{GPR} implementations. Markets frequently exhibit regime changes and trends that challenge the ability of traditional models to capture shifting dynamics effectively \cite{tsay2010analysis, hamilton1994time}.
 Additionally, financial datasets are characterized by high noise levels and volatility, which can adversely impact the performance and stability of \ac{GPR} models \cite{cont2001empirical}.
 Finally, the selection and tuning of kernel functions and hyperparameters play a pivotal role in \ac{GPR}'s effectiveness. This process is not only technically demanding but also requires a nuanced understanding of the data and the underlying financial context \cite{rasmussen2006gaussian, duvenaud2014automatic}.
@@ -340,11 +350,27 @@ Transaction costs play a significant role in dynamic portfolio management, as fr
 
 Transaction costs can be broadly categorized into:
 
-\begin{itemize}
-    \item \textit{Fixed Costs}: Costs that are constant per transaction, such as brokerage fees.
-    \item \textit{Variable Costs}: Costs that depend on the transaction size, including bid-ask spreads and market impact.
-    \item \textit{Slippage}: The difference between the expected transaction price and the actual execution price.
-\end{itemize}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\textbf{Types} & \textbf{Description} \\ \hline
+Fixed Costs & Costs that are constant per transaction, \\
+            & such as brokerage fees. \\ \hline
+Variable Costs & Costs that depend on the \\
+               & transaction size. \\ \hline
+Slippage & The difference between the expected \\
+         & and actual transaction price. \\ \hline
+\end{tabular}
+\caption{Types of Transaction Costs}
+\label{tab:transaction_costs}
+\end{table}
+
+
+  
+
+
+
 
 \subsubsection{Impact on Portfolio Performance}
 

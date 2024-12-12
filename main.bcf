@@ -2376,7 +2376,7 @@
     <bcf:citekey order="1" intorder="1">markowitz1952portfolio</bcf:citekey>
     <bcf:citekey order="2" intorder="1">sharpe1964capital</bcf:citekey>
     <bcf:citekey order="3" intorder="1">rasmussen2006gaussian</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">williams2006gaussian</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">rasmussen2006gaussian</bcf:citekey>
     <bcf:citekey order="4" intorder="2">quinonero2005unifying</bcf:citekey>
     <bcf:citekey order="5" intorder="1">tsay2010analysis</bcf:citekey>
     <bcf:citekey order="5" intorder="2">hamilton1994time</bcf:citekey>
@@ -2410,6 +2410,8 @@
     <bcf:citekey order="29" intorder="1">SP500SectorWeights2024</bcf:citekey>
     <bcf:citekey order="30" intorder="1">SP500SectorWeights2024</bcf:citekey>
     <bcf:citekey order="31" intorder="1">OrdinalEntroPy</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">en13205509</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">Doe2021</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

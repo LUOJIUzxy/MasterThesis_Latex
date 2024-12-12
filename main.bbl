@@ -281,6 +281,40 @@
       \field{pages}{653\bibrangedash 664}
       \range{pages}{12}
     \endentry
+    \entry{Doe2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=bd051a2f7a5f377e3a62581b0e0f8577}{%
+           family={Doe},
+           familyi={D\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=055f6811649a97bc3a36ff4b2581f441}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Jane},
+           giveni={J\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{e1b5f23a74b38d2054d581dade5a98ef}
+      \strng{fullhash}{e1b5f23a74b38d2054d581dade5a98ef}
+      \strng{fullhashraw}{e1b5f23a74b38d2054d581dade5a98ef}
+      \strng{bibnamehash}{e1b5f23a74b38d2054d581dade5a98ef}
+      \strng{authorbibnamehash}{e1b5f23a74b38d2054d581dade5a98ef}
+      \strng{authornamehash}{e1b5f23a74b38d2054d581dade5a98ef}
+      \strng{authorfullhash}{e1b5f23a74b38d2054d581dade5a98ef}
+      \strng{authorfullhashraw}{e1b5f23a74b38d2054d581dade5a98ef}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Financial Technology}
+      \field{title}{Edge Computing for Financial Applications: A Review}
+      \field{volume}{12}
+      \field{year}{2021}
+      \field{pages}{123\bibrangedash 145}
+      \range{pages}{23}
+    \endentry
     \entry{duvenaud2014automatic}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -663,6 +697,56 @@
       \field{pages}{606\bibrangedash 621}
       \range{pages}{16}
     \endentry
+    \entry{en13205509}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b933d09ff1d8cf49aff2175386222e56}{%
+           family={Lubbe},
+           familyi={L\bibinitperiod},
+           given={Foster},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fe299d4156950707fd25ad46aad94cf1}{%
+           family={Maritz},
+           familyi={M\bibinitperiod},
+           given={Jacques},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f7724d50ec57f818f0f9d1c92097f94d}{%
+           family={Harms},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{21c9f1824375d41e5ce205b1051feb74}
+      \strng{fullhash}{21c9f1824375d41e5ce205b1051feb74}
+      \strng{fullhashraw}{21c9f1824375d41e5ce205b1051feb74}
+      \strng{bibnamehash}{21c9f1824375d41e5ce205b1051feb74}
+      \strng{authorbibnamehash}{21c9f1824375d41e5ce205b1051feb74}
+      \strng{authornamehash}{21c9f1824375d41e5ce205b1051feb74}
+      \strng{authorfullhash}{21c9f1824375d41e5ce205b1051feb74}
+      \strng{authorfullhashraw}{21c9f1824375d41e5ce205b1051feb74}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The proliferation of solar power systems could cause instability within existing power grids due to the variable nature of solar power. A well-defined statistical model is important for managing the supply-and-demand dynamics of a power system that contains a significant variable renewable energy component. It is furthermore important to consider the inherent uncertainty in the data when modeling such a complex power system. Gaussian process regression has the potential to address both of these concerns: the probabilistic modeling of solar radiation data could assist in managing the variability of solar power, as well as provide a mechanism to deal with uncertainty. In this paper, solar radiation data was obtained from the Southern African Universities Radiometric Network and used to train a Gaussian process regression model which was developed especially for this purpose. Attention was given to constructing an appropriate Gaussian process kernel. It was found that a carefully constructed kernel allowed for the successful interpolation of global horizontal irradiance data, with a root-mean-squared error of 82.2W/m2. Gaps in the data, due to possible meter failure, were also bridged by the Gaussian process with a root-mean-squared error of 94.1 W/m2 and accompanying confidence intervals. A root-mean-squared error of 151.1 W/m2 was found when forecasting the global horizontal irradiance with a forecasting horizon of five days. These results, achieved in modeling solar radiation data using Gaussian process regression, could open new avenues in the development of probabilistic renewable energy management systems. Such systems could aid smart grid operators and support energy trading platforms, by allowing for better-informed decisions that incorporate the inherent uncertainty of stochastic power systems.}
+      \field{issn}{1996-1073}
+      \field{journaltitle}{Energies}
+      \field{number}{20}
+      \field{title}{Evaluating the Potential of Gaussian Process Regression for Solar Radiation Forecasting: A Case Study}
+      \field{volume}{13}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.3390/en13205509
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1996-1073/13/20/5509
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1996-1073/13/20/5509
+      \endverb
+    \endentry
     \entry{markowitz1952portfolio}{article}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=bdfa1c8585b5a4ae901315043a00f2f2}{%
@@ -851,12 +935,12 @@
            given={Vincent},
            giveni={V\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=4c7b13d0b3b5245d85a35e893fe6e08c}{%
+        {{un=1,uniquepart=given,hash=4c7b13d0b3b5245d85a35e893fe6e08c}{%
            family={Smith},
            familyi={S\bibinitperiod},
            given={Kate},
            giveni={K\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
         {{un=0,uniquepart=base,hash=17fb7fc24ea8f02adc7d82c34d65b3ad}{%
            family={Gayler},
            familyi={G\bibinitperiod},
@@ -1052,44 +1136,6 @@
       \strng{authornamehash}{f0ccf4a09a3a6a91719405724e3ae5da}
       \strng{authorfullhash}{f0ccf4a09a3a6a91719405724e3ae5da}
       \strng{authorfullhashraw}{f0ccf4a09a3a6a91719405724e3ae5da}
-      \field{extraname}{1}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Gaussian Processes for Machine Learning}
-      \field{year}{2006}
-    \endentry
-    \entry{williams2006gaussian}{book}{}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=58d90ed7b7348c7a5a9b4a2a8f46df7b}{%
-           family={Rasmussen},
-           familyi={R\bibinitperiod},
-           given={Carl\bibnamedelima Edward},
-           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=d34fdfcbfcb5412397b946351370db22}{%
-           family={Williams},
-           familyi={W\bibinitperiod},
-           given={Christopher\bibnamedelimb K.\bibnamedelimi I.},
-           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim I\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {Cambridge, MA, USA}%
-      }
-      \list{publisher}{1}{%
-        {MIT Press}%
-      }
-      \strng{namehash}{f0ccf4a09a3a6a91719405724e3ae5da}
-      \strng{fullhash}{f0ccf4a09a3a6a91719405724e3ae5da}
-      \strng{fullhashraw}{f0ccf4a09a3a6a91719405724e3ae5da}
-      \strng{bibnamehash}{f0ccf4a09a3a6a91719405724e3ae5da}
-      \strng{authorbibnamehash}{f0ccf4a09a3a6a91719405724e3ae5da}
-      \strng{authornamehash}{f0ccf4a09a3a6a91719405724e3ae5da}
-      \strng{authorfullhash}{f0ccf4a09a3a6a91719405724e3ae5da}
-      \strng{authorfullhashraw}{f0ccf4a09a3a6a91719405724e3ae5da}
-      \field{extraname}{2}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}

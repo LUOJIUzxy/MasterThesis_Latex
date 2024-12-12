@@ -43,15 +43,73 @@ The strategy's dynamic nature raises considerations regarding market impact, par
 \section{Future Research Directions}
 
 \subsection{Model Improvements}
-While the Gaussian Process Regression (GPR) model has demonstrated robust predictive capabilities, there are several areas where its performance and applicability in financial markets could be enhanced. One significant opportunity lies in kernel optimization and design. By exploring custom kernel functions tailored specifically for financial time-series data, it would be possible to better capture the unique characteristics of market dynamics. For example, kernels designed to explicitly model long-range dependencies or volatility clustering could provide more accurate predictions. Additionally, multi-kernel approaches that combine different kernel types might offer greater flexibility, enabling the model to simultaneously account for short-term fluctuations and long-term trends.
+While the Gaussian Process Regression (GPR) model has demonstrated robust predictive capabilities, there are several areas where its performance and applicability in financial markets could be enhanced. 
+One significant opportunity lies in kernel optimization and design, espeically given the circumestance that we eventually only chose to use Exponential Kernels as it performed the best out of all the standard common kernels.
+By exploring custom kernel functions tailored specifically for financial time-series data, it would be possible to better capture the unique characteristics of market dynamics. 
+For example, kernels designed to explicitly model long-range dependencies or volatility clustering could provide more accurate predictions. 
+Additionally, multi-kernel approaches that combine different kernel types might offer greater flexibility, enabling the model to simultaneously account for short-term fluctuations and long-term trends.
 
-Another promising avenue for improvement is the incorporation of multi-output predictions. Extending GPR to forecast multiple correlated outputs—such as returns of assets within the same sector—could deepen the model’s ability to understand and leverage interdependencies between assets. This approach could be facilitated by employing multi-task learning frameworks, which enable the simultaneous prediction of related outputs.
+Another promising avenue for improvement is the incorporation of multi-output predictions. 
+Extending GPR to forecast multiple correlated outputs—such as returns of assets within the same sector—could deepen the model's ability to understand and leverage interdependencies between assets. 
+This approach could be facilitated by employing multi-task learning frameworks, which enable the simultaneous prediction of related outputs.
 
-Integrating macroeconomic indicators into the GPR framework is another enhancement that could significantly improve its forecasting accuracy. Variables such as GDP growth, inflation rates, or central bank policy signals provide valuable contextual information that influences market trends. By including these indicators, the model could generate predictions that are not only more accurate but also more responsive to broader economic conditions.
+Integrating macroeconomic indicators into the GPR framework is another enhancement that could significantly improve its forecasting accuracy. 
+Variables such as GDP growth, inflation rates, or central bank policy signals provide valuable contextual information that influences market trends. 
+By including these indicators, the model could generate predictions that are not only more accurate but also more responsive to broader economic conditions.
 
-Addressing non-stationarity in financial time-series data is also critical for improving GPR's applicability. Financial markets are characterized by trends, regime changes, and abrupt shifts, all of which violate the assumption of stationarity in standard GPR implementations. Techniques such as change-point detection, which segments the data into stationary intervals, or the incorporation of non-stationary covariance structures, could help the model better adapt to these complexities.
+Addressing non-stationarity in financial time-series data is also critical for improving GPR's applicability. 
+Financial markets are characterized by trends, regime changes, and abrupt shifts, all of which violate the assumption of stationarity in standard GPR implementations. 
+Techniques such as change-point detection, which segments the data into stationary intervals, or the incorporation of non-stationary covariance structures, could help the model better adapt to these complexities.
 
-Finally, computational efficiency remains a key area for enhancement, particularly for real-time applications and large portfolios. GPR’s computational complexity, which grows with the size of the dataset, can be mitigated using methods such as sparse Gaussian Process approximations, inducing points, or scalable variants like stochastic variational GPs. These techniques could enable the model to handle larger datasets and deliver faster predictions, making it more practical for real-world financial decision-making. By addressing these areas, GPR can be further refined to meet the demands of complex and dynamic financial environments.
+
+Finally, computational efficiency remains a key area for enhancement, particularly for real-time applications and large portfolios. 
+GPR's computational complexity, which grows with the size of the dataset, can be mitigated using methods such as sparse Gaussian Process approximations, inducing points, or scalable variants like stochastic variational GPs. 
+These techniques could enable the model to handle larger datasets and deliver faster predictions, making it more practical for real-world financial decision-making. 
+By addressing these areas, GPR can be further refined to meet the demands of complex and dynamic financial environments.
+
+\subsubsection{Composite \ac{GPR} Model for Multi-Scale Forecasting}
+Specifically, we proposed a composite Gaussian Process Regression (GPR) model that effectively integrates short-term (daily), mid-term (weekly), and long-term (monthly) stock price data to improve predictive accuracy. 
+The integration of multiple time scales captures unique patterns and trends from different temporal resolutions, providing a holistic view of market dynamics. 
+By combining these diverse data sources, the model leverages the strengths of each time scale, enhancing its adaptability and robustness.
+
+The optimization objective is formulated as:
+\[
+\min_{\alpha, \beta} \quad L(\alpha, \beta) = \text{MSE}\left(Y, \hat{f}_{\text{combined}}\right) + \lambda \left( |\alpha| + |\beta| \right)
+\]
+
+where:
+\begin{itemize}
+    \item $L(\alpha, \beta)$: The loss function, which balances the mean squared error (MSE) of predictions with an $L_1$-regularization term to prevent overfitting.
+    \item $\hat{f}_{\text{combined}}$: The combined predictive output derived from weighted contributions of daily, weekly, and monthly data.
+    \item $\lambda$: A regularization parameter that controls the penalty for large weights, encouraging sparsity in the contributions from different time scales.
+\end{itemize}
+
+The combined forecast is given by:
+
+\[
+\hat{f}_{\text{combined}} = \alpha \cdot f_{\text{mean,daily}} + \beta \cdot f_{\text{mean,weekly}} + (1 - \alpha - \beta) \cdot f_{\text{mean,monthly}}
+\]
+
+where:
+\begin{itemize}
+    \item $f_{\text{mean,daily}}$: The mean prediction from the daily GPR model.
+    \item $f_{\text{mean,weekly}}$: The mean prediction from the weekly GPR model.
+    \item $f_{\text{mean,monthly}}$: The mean prediction from the monthly GPR model.
+    \item $\alpha, \beta$: Weights assigned to daily and weekly data, respectively. The remaining weight, $1 - \alpha - \beta$, is allocated to the monthly data.
+\end{itemize}
+
+\subsubsection*{Constraints}
+To ensure stability and interpretability of the model, the following constraints are imposed on the weights:
+
+\[
+\begin{cases}
+0 \leq \alpha \leq 1 \\
+0 \leq \beta \leq 1 \\
+\alpha + \beta \leq 1
+\end{cases}
+\]
+
+These constraints ensure that the weights are non-negative and their sum does not exceed 1, maintaining a probabilistic interpretation of the contributions from each time scale.
 
 \subsection{Additional Strategy Considerations}
 Building on the strategies explored in this study, there are numerous opportunities to enhance and diversify approaches to better align with a range of market conditions. One promising modification involves the development of factor-based dynamic strategies. By combining GPR predictions with established factor models such as momentum or value, it is possible to create hybrid strategies that adapt not only to macroeconomic cycles but also to specific factor-driven opportunities. For example, during periods of economic expansion, the strategy could tilt toward value stocks identified through GPR forecasts, while momentum factors might be prioritized during market uptrends.
@@ -77,7 +135,7 @@ In the realm of algorithmic trading, GPR can guide trading systems by forecastin
 
 The methodologies could also be extended to macroeconomic forecasting, where GPR could predict key economic indicators such as unemployment rates, consumer confidence, or inflation. Policymakers and financial analysts could use these forecasts to make informed decisions, improving the accuracy of policy interventions or market predictions.
 
-Another promising area of application is renewable energy forecasting. Given the influence of weather conditions on renewable energy outputs, GPR can model and predict these fluctuations, aiding energy traders and utility companies in balancing supply and demand. This capability would improve efficiency in energy markets and support the transition to sustainable energy systems.
+Another promising area of application is renewable energy forecasting. Given the influence of weather conditions on renewable energy outputs, GPR can model and predict these fluctuations, aiding energy traders and utility companies in balancing supply and demand \cite{en13205509}. This capability would improve efficiency in energy markets and support the transition to sustainable energy systems.
 
 Lastly, GPR can play a vital role in ESG (Environmental, Social, and Governance) and impact investing by forecasting ESG-related metrics. By providing reliable predictions on factors such as carbon emissions, social impact scores, or governance indicators, GPR enables investors to align their portfolios with sustainability objectives. This alignment is increasingly important in meeting the growing demand for socially responsible investment strategies.
 
@@ -92,10 +150,18 @@ Sparse Gaussian Processes (GPs) present another effective solution. By employing
 
 Hierarchical modeling offers an additional avenue to enhance scalability. By grouping assets based on sectors, regions, or other logical categories and applying GPR within these clusters, the complexity of covariance estimation is significantly reduced. This hierarchical approach not only simplifies the computation but also maintains accuracy by tailoring predictions to specific subsets of the portfolio.
 
-For real-time applications, edge computing provides a practical solution to reduce latency. Deploying GPR models on edge devices, such as servers located closer to trading platforms or risk management systems, ensures faster response times. This approach is particularly beneficial for high-frequency trading or dynamic risk monitoring, where delays can result in missed opportunities or increased exposure.
+For real-time applications, edge computing provides a practical solution to reduce latency. Deploying GPR models on edge devices, such as servers located closer to trading platforms or risk management systems, ensures faster response times. This approach is particularly beneficial for high-frequency trading or dynamic risk monitoring, where delays can result in missed opportunities or increased exposure \cite{Doe2021}.
 
 Cloud-based scalability further complements these solutions by leveraging platforms such as AWS SageMaker or Google Vertex AI. These platforms offer on-demand scaling of computational resources, allowing GPR models to handle fluctuating workloads efficiently. Additionally, they support real-time data ingestion and model deployment, ensuring that the system can adapt to evolving market conditions without manual intervention.
 
 Lastly, integrating alternative data sources, such as satellite imagery, social media sentiment, or web scraping outputs, can enrich GPR's input features, enhancing its predictive power. However, incorporating such diverse data types requires robust preprocessing and scalable storage solutions. Distributed databases and cloud-based architectures can ensure that these non-traditional data sources are processed efficiently and seamlessly integrated into the modeling pipeline.
 
 By adopting these strategies, GPR can be scaled effectively for large portfolios and real-time applications, providing accurate and timely predictions without compromising computational efficiency or resource availability. These considerations are essential for extending the practical utility of GPR in modern financial systems.
+
+
+
+
+
+
+
+
